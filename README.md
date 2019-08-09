@@ -45,7 +45,22 @@ Depois de feita a configuração, você pode baixar este repositório no seu com
 
 #### Node.js
 
+O **Node.js** é uma importante ferramenta de servidores atualmente, consegue-se fazer um FullStack inteiro com este servidor e um Front-End em JavaScript, mas isso não vem ao caso, como utilizaremos Ruby, o JavaScript será suporte para nossas operações no navegador do cliente.
 
+Para instalar, precisamos primeiro colocar o PPA do Node.js para baixarmos:
+
+```bash
+sudo apt-get install curl python-software-properties
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+```
+
+Uma vez feito com sucesso, podemos executar o comando de instalação:
+
+```bash
+sudo apt-get install nodejs
+```
+
+E estaremos prontos para levantar um servidor com Node.js.
 
 #### Gerenciador de versões do Ruby
 
@@ -85,6 +100,7 @@ rails -v
 #### MySQL
 
 Criando o banco de dados (**RODAR SOMENTE SE FOR A PRIMEIRA VEZ**)
+Cuidado, esta parte da instalação pode gerar diversos problemas.
 
 ```bash
 sudo apt install mysql-client-core-5.7
@@ -106,10 +122,15 @@ OBS: rails.user → usuário e  Rails@123 → senha
 
 ## Executando
 
-Execute o projeto Rails através do Terminal, estando na pasta `apps`, clonada do repositório, ela se localiza dentro de `src`.
+Execute o projeto Rails através do Terminal, estando na pasta `app`, clonada do repositório, ela se localiza dentro de `src`.
 
 ```bash
 rails s 
 ```
 
 Abra seu browser e vá para o endereço <http://localhost:3000>, seu projeto estará lá.
+
+## Links úteis
+
+<https://www.devmedia.com.br/ruby-on-rails-tutorial/31285>
+<https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/>
