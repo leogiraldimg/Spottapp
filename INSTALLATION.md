@@ -32,7 +32,7 @@ git config --global user.email "EMAIL QUE CADASTROU NO GITHUB"
 git config --global user.password "SENHA QUE CADASTROU NO GITHUB"
 ```
 
-Depois de feita a configuração, você pode baixar este repositório no seu computador (VMWP no caso, ou não) se o ainda não fez.
+Depois de feita a configuração, você pode **baixar este repositório** no seu computador (VMWP no caso, ou não) se o ainda não fez.
 
 ### Node.js
 
@@ -104,10 +104,12 @@ Cuidado, esta parte da instalação pode gerar diversos problemas.
 ```bash
 sudo apt install mysql-client-core-5.7
 sudo apt-get install mysql-server
-mysql -u root -p
+sudo mysql -u root -p
 ```
 
 Colocar a senha do sudo do Ubuntu.
+
+Uma vez dentro do MySQL Console, rode estes comandos:
 
 ```sql
 CREATE DATABASE app_development;
@@ -118,6 +120,8 @@ GRANT ALL PRIVILEGES ON nome_da_aplicacao_test.* TO 'rails.user'@'localhost' IDE
 ```
 
 OBS: rails.user → usuário e  Rails@123 → senha
+
+Depois de executados, digite `exit` para voltar ao terminal normal.
 
 ## Executando
 
