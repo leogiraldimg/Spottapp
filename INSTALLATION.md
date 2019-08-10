@@ -6,9 +6,17 @@ Para que seja possível rodar o projeto, serão necessárias algumas instalaçõ
 
 Para que rode o ambiente com a máquina virtual, é necessário primeiro possuir uma. Iremos utilizar a máquina virtual da VMware, o VMware Workstation Player, disponível através do link: <https://www.vmware.com/br/products/workstation-player/workstation-player-evaluation.html>. É um programa gratuito(nesta versão).
 
-Após feito o download e instalação da VMWP, baixe a `.iso` da distribuição Ubuntu 18.04.2 para que todos tenham a maior compatibilidade possível com o projeto. Disponível em: <https://ubuntu.com/download/desktop>, o arquivo pesa cerca de 1.9 Gigabytes.
+Após feito o download da VMWP, baixe a `.iso` da distribuição Ubuntu 18.04 para que todos tenham a maior compatibilidade possível com o projeto. Disponível em: <https://ubuntu.com/download/desktop>, o arquivo pesa cerca de 1.9 Gigabytes.
 
-(A complementar sobre como colocar e iniciar uma VM com a .iso ...)
+### Instalação da VMware e Ubuntu
+
+Execute o programa de instalação da VMware, aceite os termos e passe para a próxima tela, até chegar na parte de *User Experience Settings* (Configuração da Experiência de Usuário), desabilite a segunda opção do programa de usuário da VMware, dê *next*, *next* e instale.
+
+Após a instalação, abra o programa do VMWP. Selecione a licença para uso não comercial. E então crie uma nova máquina virtual com *Create a New Virtual Machine*. Selecione o `.iso` da distribuição Ubuntu que baixamos para utilizar em *Installer disc image file*. Dê *Next* e coloca um nome para sua máquina virtual, um nome de usuário e uma senha. Passe para a próxima etapa, agora selecione a quantidade de disco físico que você irá disponibilizar para a máquina virtual, sugiro entre 30Gb e 40Gb por garantia. Vá para a próxima etapa, e desabilite a opção de dar *boot* assim que terminar a criação para evitar problemas.
+
+Se tudo ocorreu como planejado, sua máquina virtual com Ubuntu está pronta para ser utilizada! Agora é só iniciar a máquina.
+
+**Observação importante: O seu processador deve suportar a funcionalidade Intel "VMX Unrestricted Guest" para executar.**
 
 ## Programas
 
