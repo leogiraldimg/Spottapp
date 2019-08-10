@@ -104,6 +104,7 @@ Cuidado, esta parte da instalação pode gerar diversos problemas.
 ```bash
 sudo apt install mysql-client-core-5.7
 sudo apt-get install mysql-server
+sudo apt-get install libmysqlclient-dev
 sudo mysql -u root -p
 ```
 
@@ -122,6 +123,14 @@ GRANT ALL PRIVILEGES ON nome_da_aplicacao_test.* TO 'rails.user'@'localhost' IDE
 OBS: rails.user → usuário e  Rails@123 → senha
 
 Depois de executados, digite `exit` para voltar ao terminal normal.
+
+### Bundles
+
+Antes de executarmos o nosso projeto, precisamos construir as nossas bibliotecas do projeto para que ele execute e instale as adicionais faltantes. Para fazermos isso, rode o seguinte comando dentro da pasta `/app`, que se localiza em `/src`:
+
+```bash
+bundle install
+```
 
 ## Executando
 
