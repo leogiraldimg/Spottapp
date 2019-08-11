@@ -132,6 +132,24 @@ OBS: rails.user → usuário e  Rails@123 → senha
 
 Depois de executados, digite `exit` para voltar ao terminal normal.
 
+### Visual Studio Code
+
+O Visual Studio Code é uma IDE/Editor da Microsoft que está sendo utilizada mundialmente e atualizada diariamente, sua performance é muito boa e possui uma vasta gama de extensões que podem ser utilizadas e ajudarem na sua produtividade.
+
+O programa não fica disponível nativamente no repositório do sistema operacional, para obtê-lo, devemos instalar um programa que também gerencia repositórios ou programas chamado *Snapd*, para instalá-lo, basta rodar o comando no terminal:
+
+```bash
+sudo apt-get install snapd
+```
+
+Assim que o gerenciador for instalado, podemos instalar o VSCode através do comando:
+
+```bash
+sudo apt-get install code
+```
+
+E uma vez pronto, você já pode desenvolver usando esta ferramenta maravilhosa!
+
 ### Bundles
 
 Antes de executarmos o nosso projeto, precisamos construir as nossas bibliotecas do projeto para que ele execute e instale as adicionais faltantes. Para fazermos isso, rode o seguinte comando dentro da pasta `/app`, que se localiza em `/src`:
