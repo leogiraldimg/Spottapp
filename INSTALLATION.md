@@ -145,7 +145,7 @@ sudo apt-get install snapd
 Assim que o gerenciador for instalado, podemos instalar o VSCode através do comando:
 
 ```bash
-sudo apt-get install code
+sudo snap install code --classic
 ```
 
 E uma vez pronto, você já pode desenvolver usando esta ferramenta maravilhosa!
