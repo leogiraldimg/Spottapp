@@ -1,4 +1,4 @@
-# ESI-PROJETO-RUBY
+# Spottapp
 
 [![Build Status](https://travis-ci.com/leogiraldimg/Spottapp.svg?branch=master)](https://travis-ci.com/leogiraldimg/Spottapp)
 * CodeClimate badge
