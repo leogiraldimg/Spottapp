@@ -5,7 +5,7 @@
 
 ## Link Heroku
 
-Link teste
+Link
 
 ## Pivotal Tracker
 
