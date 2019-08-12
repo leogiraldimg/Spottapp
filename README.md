@@ -15,6 +15,8 @@ Link teste
 
 [Travis CI - Spottapp](https://travis-ci.com)
 
+[![Build Status](https://travis-ci.com/leogiraldimg/Spottapp.svg?branch=master)](https://travis-ci.com/leogiraldimg/Spottapp)
+
 ## Alunos
 
 * Fernando Karchiloff Gouveia de Amorim - 10387644
