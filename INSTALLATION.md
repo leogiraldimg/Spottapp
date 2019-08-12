@@ -49,7 +49,6 @@ O **Node.js** é uma importante ferramenta de servidores atualmente, consegue-se
 Para instalar, precisamos primeiro colocar o PPA do Node.js para baixarmos:
 
 ```bash
-sudo apt-get install curl python-software-properties
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 ```
 
