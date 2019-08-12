@@ -7,9 +7,13 @@
 
 Link teste
 
-## Pivotial Tracker
+## Pivotal Tracker
 
-[Pivotial Tracker - Spottapp](https://www.pivotaltracker.com/projects/2384216)
+[Pivotal Tracker - Spottapp](https://www.pivotaltracker.com/projects/2384216)
+
+## Travis CI
+
+[Travis CI - Spottapp](https://travis-ci.com)
 
 ## Alunos
 
