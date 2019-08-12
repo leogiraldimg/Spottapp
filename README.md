@@ -7,9 +7,15 @@
 
 Link
 
-## Pivotial Tracker
+## Pivotal Tracker
 
-Link
+[Pivotal Tracker - Spottapp](https://www.pivotaltracker.com/projects/2384216)
+
+## Travis CI
+
+[Travis CI - Spottapp](https://travis-ci.com)
+
+[![Build Status](https://travis-ci.com/leogiraldimg/Spottapp.svg?branch=master)](https://travis-ci.com/leogiraldimg/Spottapp)
 
 ## Alunos
 
