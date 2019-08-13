@@ -3,7 +3,7 @@ rvm:
   - 2.6.1
 gemfile:
   - src/app/Gemfile
-
+sudo: required
 before_install:
   - systemctl start mysql
   - cd ./src/app
