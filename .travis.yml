@@ -3,7 +3,10 @@ rvm:
   - 2.6.1
 gemfile:
   - src/app/Gemfile
-
+addons:
+  apt:
+    packages:
+      - mysql-server-5.7.27
 before_install:
   - cd ./src/app
   - gem install rails
