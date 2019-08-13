@@ -5,6 +5,7 @@ gemfile:
   - src/app/Gemfile
 
 before_install:
+  - cd ./src/app
+  - gem install rails
   - gem update --system
   - gem install bundler
-  - cd ./src/app
