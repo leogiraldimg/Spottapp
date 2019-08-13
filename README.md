@@ -11,7 +11,6 @@
 
 ## Integrantes do projeto
 
-* Fernando Gardim Casarotto - 10346742
 * Fernando Karchiloff Gouveia de Amorim - 10387644
 * Higor Moles Lima - 10284500
 * Leonardo Giraldi Moreno Giuranno - 10284218
