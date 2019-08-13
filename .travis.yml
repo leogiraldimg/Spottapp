@@ -6,7 +6,7 @@ gemfile:
 addons:
   apt:
     packages:
-      - mysql-server-5.7.27
+      - mysql-server-5.7
 before_install:
   - cd ./src/app
   - gem install rails
