@@ -1,15 +1,15 @@
 # Spottapp
 
 [![Build Status](https://travis-ci.com/leogiraldimg/Spottapp.svg?branch=master)](https://travis-ci.com/leogiraldimg/Spottapp)
-* CodeClimate badge
 
 ## Plataformas
 
+* [CodeClimate badge](https://codeclimate.com/github/leogiraldimg/Spottapp)
+* [Travis CI - Spottapp](https://www.travis-ci.com/leogiraldimg/Spottapp)
 * Heroku
 * [Pivotal Tracker - Spottapp](https://www.pivotaltracker.com/projects/2384216)
-* [Travis CI - Spottapp](https://www.travis-ci.com/leogiraldimg/Spottapp)
 
-## Alunos
+## Integrantes do projeto
 
 * Fernando Gardim Casarotto - 10346742
 * Fernando Karchiloff Gouveia de Amorim - 10387644
