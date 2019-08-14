@@ -10,6 +10,8 @@ before_install:
   - gem update --system
   - gem install bundler
   - bundle install
+  - mysql -u root -e "CREATE DATABASE IF NOT EXISTS app_test";
+  - mysql -u root -e "GRANT ALL PRIVILEGES ON nome_da_aplicacao_test.* TO 'rails.user'@'localhost' IDENTIFIED BY 'Rails@123'";
 
 services:
   - mysql

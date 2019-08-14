@@ -18,29 +18,21 @@ default: &default
   host: localhost
 
 development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
+  <<: *default
   database: app_development
-  pool: 5
   username: rails.user
   password: Rails@123
   socket: /var/run/mysqld/mysqld.sock
-  database: app_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
+  <<: *default
   database: app_test
-  pool: 5
   username: rails.user
   password: Rails@123
   socket: /var/run/mysqld/mysqld.sock
-  database: app_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
