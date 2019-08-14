@@ -1,1 +1,0 @@
-web: cd src/app && rails s
