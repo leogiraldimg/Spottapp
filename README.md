@@ -8,7 +8,7 @@
 
 * [CodeClimate - Spottapp](https://codeclimate.com/github/leogiraldimg/Spottapp)
 * [Travis CI - Spottapp](https://www.travis-ci.com/leogiraldimg/Spottapp)
-* Heroku
+* [Heroku - spottapp](https://spottappv1.herokuapp.com/)
 * [Pivotal Tracker - Spottapp](https://www.pivotaltracker.com/projects/2384216)
 
 ## Integrantes do projeto
