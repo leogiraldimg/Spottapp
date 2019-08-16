@@ -73,3 +73,7 @@ group :test do
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
 end
+
+gem 'rake', '~> 12.3', '>=12.3.2'
+gem 'therubyracer'
+gem 'execjs'
