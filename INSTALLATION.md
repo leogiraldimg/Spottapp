@@ -123,7 +123,7 @@ Uma vez dentro do MySQL Console, rode estes comandos:
 CREATE DATABASE app_development;
 CREATE DATABASE app_test;
 GRANT ALL PRIVILEGES ON app_development.* TO 'rails.user'@'localhost' IDENTIFIED BY 'Rails@123';
-GRANT ALL PRIVILEGES ON nome_da_aplicacao_test.* TO 'rails.user'@'localhost' IDENTIFIED BY 'Rails@123';
+GRANT ALL PRIVILEGES ON app_test.* TO 'rails.user'@'localhost' IDENTIFIED BY 'Rails@123';
 
 ```
 
