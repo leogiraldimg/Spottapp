@@ -9,6 +9,14 @@ pt-BR:
         password: 'Senha'
         password_confirmation: 'Confirmação da senha'
 
+      college:
+        name: 'Nome'
+        initials: 'Sigla'
+        city: 'Cidade'
+        state: 'Estado'
+        country: 'País'
+        unit: 'Unidade'
+
     errors:
       messages:
         blank: 'não pode ser em branco'

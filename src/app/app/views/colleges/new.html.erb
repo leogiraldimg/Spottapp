@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Cadastre sua faculdade</h1>
+</div>
+
+<%= form_for @college do |f| %>
+    <%= render 'layouts/error_messages', object: f.object %>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class=form-group>
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class=form-group>
+                <%= f.label :initials %>
+                <%= f.text_field :initials, class: 'form-control' %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class=form-group>
+                <%= f.label :city %>
+                <%= f.text_field :city, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class=form-group>
+                <%= f.label :state %>
+                <%= f.text_field :state, class: 'form-control' %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class=form-group>
+                <%= f.label :country %>
+                <%= f.text_field :country, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class=form-group>
+                <%= f.label :unit %>
+                <%= f.text_field :unit, class: 'form-control' %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+        </div>
+    </div>
+<% end %>
