@@ -8,4 +8,5 @@ class User < ApplicationRecord
     validates :last_name, presence: true, length: {maximum: 50}
     validates :password, length: {minimum: 6}
 
+    has_many :spotteds
 end
