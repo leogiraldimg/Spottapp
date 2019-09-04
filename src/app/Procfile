@@ -1,1 +1,2 @@
+web: mysql.server start
 web: rails db:migrate
