@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_09_03_003832) do
 
-  create_table "colleges", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "colleges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "initials", default: ""
     t.string "city", default: "", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_003832) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
