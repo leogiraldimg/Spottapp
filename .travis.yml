@@ -10,8 +10,10 @@ before_install:
   - gem update --system
   - gem install bundler
   - bundle install
-  - mysql -u root -e "CREATE DATABASE IF NOT EXISTS app_test";
-  - mysql -u root -e "GRANT ALL PRIVILEGES ON app_test.* TO 'rails.user'@'localhost' IDENTIFIED BY 'Rails@123'";
+  - psql -c 'create database app_development;' -U postgres
+  - psql -c 'create database app_test;' -U postgres
+  - psql -c 'CREATE USER railsuser SUPERUSER INHERIT CREATEDB CREATEROLE' -U postgres
+  - psql -c "alter user railsuser with password 'Rails@123'" -U postgres
 
 services:
-  - mysql
+  - postgresql
