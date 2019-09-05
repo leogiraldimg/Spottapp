@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_09_04_032115) do
 
-  create_table "colleges", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "colleges", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "initials", default: ""
     t.string "city", default: "", null: false
