@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   get 'entrar', to: 'sessions#new'
   post 'entrar', to: 'sessions#create'
   delete 'sair', to: 'sessions#destroy'
-
-
+  get '/users', to: 'users#new'
 
   resources :users, only: [:new, :create, :show]
   resources :colleges, only: [:new, :create]
