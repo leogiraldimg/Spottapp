@@ -1,8 +1,11 @@
 class CollegesController < ApplicationController
-    before_action :set_college, only: [:show]
 
     def new
         @college = College.new
+    end
+
+    def show
+        @college = College.find(params[:id])
     end
 
     def create
@@ -18,9 +21,5 @@ class CollegesController < ApplicationController
     private 
         def college_params
             params.require(:college).permit(:name, :initials, :city, :state, :country, :unit)
-        end
-
-        def set_college
-            @college = College.find(params[:college_id])
         end
 end
