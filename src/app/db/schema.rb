@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 2019_09_04_032115) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "spotteds", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "spotteds", force: :cascade do |t|
     t.text "content"
+    t.integer "college_spotted_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -36,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_032115) do
     t.index ["user_id"], name: "index_spotteds_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false

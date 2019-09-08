@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Mande seu spotted!</h1>
+    </div>
+</div>
+
+<%= form_for(@spotted, url: college_spotteds_path) do |f| %>
+    <%= render 'layouts/error_messages', object: f.object %>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class=form-group>
+                <%= f.label :content %>
+                <%= f.text_field :content, class: 'form-control' %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            <%= f.submit 'Mandar spotted', class: 'btn btn-primary' %>
+        </div>
+    </div>
+<% end %>

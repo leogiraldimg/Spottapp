@@ -20,6 +20,9 @@ pt-BR:
       sessions:
         password: 'Senha'
 
+      spotted:
+        content: 'Spotted'
+
     errors:
       messages:
         blank: 'não pode ser em branco'
@@ -28,4 +31,5 @@ pt-BR:
         confirmation: 'não é igual. Insira a mesma senha.'
         too_long: 'muito grande. Máximo de %{count} caracteres'
         too_short: 'muito curta. Mínimo de %{count} caracteres'
+        required: 'necessário'
     

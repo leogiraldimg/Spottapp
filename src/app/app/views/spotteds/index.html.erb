@@ -1,0 +1,14 @@
+<h2>Spotteds de <%= @college.name %></h2>
+<%= link_to 'Novo spotted', new_college_spotted_path, class: 'btn btn-primary btn-lg' %>
+<hr>
+
+<% @spotteds.each do |spotted| %>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p>
+            <%= spotted.college_spotted_counter %>. <%= spotted.content %>
+        </p>
+        <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-primary btn-sm' %>
+    </div>
+</div>
+<% end %>
