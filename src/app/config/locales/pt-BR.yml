@@ -17,8 +17,6 @@ pt-BR:
         country: 'País'
         unit: 'Unidade'
         
-      sessions:
-        password: 'Senha'
 
       spotted:
         content: 'Spotted'
