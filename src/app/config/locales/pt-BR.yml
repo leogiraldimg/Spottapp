@@ -8,6 +8,9 @@ pt-BR:
         birth_date: 'Data de nascimento'
         password: 'Senha'
         password_confirmation: 'Confirmação da senha'
+        city: 'Cidade'
+        state: 'Estado'
+        country: 'País'
 
       college:
         name: 'Nome'
