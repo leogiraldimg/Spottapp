@@ -34,6 +34,38 @@
             </tbody>
           </table>
 
+          <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+          <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+          <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+          <script>
+            $(document).ready(function(){
+                $('#college-table').DataTable({
+                  "language": {
+                    "lengthMenu": "Exibindo _MENU_ registros por página",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "infoFiltered": "(filtrado de _MAX_ registros no total)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nada encontrado",
+                    "sSearch": "Pesquisar",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                }
+                });
+            });
+          </script>
+
           <br>
         </div>
       </div>
