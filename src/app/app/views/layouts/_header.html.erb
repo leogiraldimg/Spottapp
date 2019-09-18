@@ -16,6 +16,9 @@
                     </a>
                     <ul class="dropdown-menu">
                     <li>
+                        <%= link_to 'Menu Inicial', user_path(current_user) %>
+                    </li>
+                    <li>
                         <%= link_to 'Sair', sair_path, method: :delete %>
                     </li>
                     </ul>

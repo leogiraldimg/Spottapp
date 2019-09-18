@@ -3,11 +3,15 @@
   <p>
     Encontre seu crush aqui
   </p>
-  <p>
-    <%= link_to 'Crie Sua Conta', new_user_path, class: 'btn btn-primary btn-lg' %>
-  </p>
+ 
+  <% if !user_signed_in? %>
+    <p>
+      <%= link_to 'Crie Sua Conta', new_user_path, class: 'btn btn-primary btn-lg' %>
+    </p>
 
-  <p>
-  <%= link_to 'Faça login', entrar_path, class: 'btn btn-primary btn-lg' %>
-</p>
+    <p>
+      <%= link_to 'Faça Login', entrar_path, class: 'btn btn-primary btn-lg' %>
+    </p>
+  <% end %>
+
 </div>
