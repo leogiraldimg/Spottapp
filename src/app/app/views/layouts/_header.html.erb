@@ -2,7 +2,11 @@
     <div class="container">
         <div class="navbar-header" id="expanded-menu">
             <%= image_tag 'logo.png', id: 'spottapp-logo' %>
-            <%= link_to 'Spottapp', root_url, class: 'navbar-brand' %>
+            <% if user_signed_in? %>
+                <%= link_to 'Spottapp', user_path(current_user), class: 'navbar-brand' %>
+            <% else %>
+                <%= link_to 'Spottapp', root_url, class: 'navbar-brand' %>
+            <% end %>
         </div>
     
         <!-- Conteudo exibido em telas maiores e que serao escondidos em telas menores -->
@@ -15,9 +19,6 @@
                     bem vindo, <%= current_user.first_name %> <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                    <li>
-                        <%= link_to 'Menu Inicial', user_path(current_user) %>
-                    </li>
                     <li>
                         <%= link_to 'Sair', sair_path, method: :delete %>
                     </li>
