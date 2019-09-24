@@ -6,5 +6,7 @@ class College < ApplicationRecord
     validates :country, presence:true, length: { maximum:30 }
     validates :unit, length: { maximum:20 }
 
+    belongs_to :user
+
     has_many :spotteds
 end

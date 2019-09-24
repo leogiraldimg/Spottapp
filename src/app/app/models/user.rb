@@ -12,4 +12,5 @@ class User < ApplicationRecord
     validates :country, presence: true
 
     has_many :spotted
+    has_many :college
 end
