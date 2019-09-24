@@ -33,27 +33,9 @@ footer {
             margin-left: 15px;
         }
     }
-}
 
-#application-header {
-    background-color: $white;
-    margin-bottom: 0;
-    border-bottom: 1px solid rgba(0,0,0,.0975);
-    height: 70px;
-
-    .navbar-brand {
-        color: $gray-strong-dark;
-        font-weight: 700;
-        line-height: 35px;
-    }
-
-    #spottapp-logo {
-        float: left;
-        width: 25%;
-        height: auto;
-        margin-top: 8%;
-        margin-right: 10%;
-        line-height: 35px;
+    #spottapp-static-links {
+        font-size: 12px;
     }
 }
 
@@ -61,4 +43,25 @@ footer {
     background-color: $gray-strong-dark !important;
     border-color: $gray-strong-dark;
     color: $white;
+}
+
+#spottapp-header {
+    background-color: $white;
+}
+
+#spottapp-logo {
+    width: 45px;
+    margin-right: 20px;
+}
+
+[data-toggle=collapse] {
+    background-color: $white;
+    border-color: $white !important;
+}
+
+@media (max-width: 768px) {
+    #spottapp-logo {
+        height: 0;
+        width: 0;
+    }   
 }
