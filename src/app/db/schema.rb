@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_194746) do
+ActiveRecord::Schema.define(version: 2019_09_24_020758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_09_21_194746) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.index ["user_id"], name: "index_collegUseres_on_user_id"
+    t.index ["user_id"], name: "index_colleges_on_user_id"
   end
 
   create_table "spotteds", force: :cascade do |t|
@@ -50,6 +50,11 @@ ActiveRecord::Schema.define(version: 2019_09_21_194746) do
     t.string "city"
     t.string "state"
     t.string "country"
+    t.string "token"
+    t.string "uid"
+    t.string "name"
+    t.string "avatar"
+    t.string "nickname", default: "", null: false
   end
 
   add_foreign_key "colleges", "users"
