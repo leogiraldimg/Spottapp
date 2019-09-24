@@ -13,4 +13,5 @@ class User < ApplicationRecord
 
     has_many :spotted
     has_many :college
+    has_many :like, dependent: :destroy
 end
