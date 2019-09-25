@@ -4,5 +4,12 @@
         <p>
             <%= @spotted.content %>
         </p>
+        <p><%= @spotted.like.count %> <%= (@spotted.like.count) == 1 ? 'Like' : 'Likes'%></p>
     </div>
+        <% pre_like = @spotted.like.find { |like| like.user_id == current_user.id} %>
+        <% if pre_like %>
+            <%= button_to 'Unlike', college_spotted_like_path(@spotted.college, @spotted, pre_like), method: :delete %>
+        <% else %>
+            <%= button_to 'Like', college_spotted_likes_path(@spotted.college, @spotted), method: :post %>
+        <% end %>
 <div>

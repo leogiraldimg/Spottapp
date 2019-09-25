@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
   resources :colleges, only: [:new, :create, :show] do
-    resources :spotteds, only: [:new, :create, :show, :index]
+    resources :spotteds, only: [:new, :create, :show, :index] do
+      resources :likes
+    end
   end
   resources :spotteds, only: [:new, :create, :show, :index] do
     resources :comments

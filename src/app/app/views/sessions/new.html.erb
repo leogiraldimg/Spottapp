@@ -7,8 +7,8 @@
         <%= form_for :session, url: entrar_path, method: :post do |f| %>
 
             <div class="form-group">
-                <%= f.label :email %>
-                <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
+                <label for="login">Login</label>
+                <%= f.text_field :email, placeholder: 'Email ou usuário', class: 'form-control' %>
             </div>
 
             <div class="form-group">

@@ -2,7 +2,7 @@ class SpottedsController < ApplicationController
     before_action :set_college, only: [:index, :new]
     
     def index
-        @spotteds = @college.spotteds
+        @spotteds = @college.spotteds 
     end
 
     def new

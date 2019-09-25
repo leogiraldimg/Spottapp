@@ -4,4 +4,5 @@ class Spotted < ApplicationRecord
 
     belongs_to :college
     belongs_to :user
+    has_many :like, dependent: :destroy
 end

@@ -3,6 +3,7 @@ pt-BR:
     attributes: 
       user:
         email: 'Email'
+        nickname: 'Nome de usuário'
         first_name: 'Primeiro nome'
         last_name: 'Sobrenome'
         birth_date: 'Data de nascimento'
