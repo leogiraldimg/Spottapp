@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_020758) do
+ActiveRecord::Schema.define(version: 2019_09_26_031057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 2019_09_24_020758) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_colleges_on_user_id"
+  end
+
+  create_table "favorite_colleges", force: :cascade do |t|
+    t.integer "college_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
@@ -59,11 +66,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_020758) do
     t.string "city"
     t.string "state"
     t.string "country"
-    t.string "token"
-    t.string "uid"
-    t.string "name"
-    t.string "avatar"
-    t.string "nickname", default: "", null: false
+    t.string "nickname"
   end
 
   add_foreign_key "colleges", "users"

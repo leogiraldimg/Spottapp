@@ -21,6 +21,22 @@ class CollegesController < ApplicationController
         end
     end
 
+    def favorite
+        @college = College.find(params[:id])
+        type = params[:type]
+        if type == "favorite"
+            current_user.favorites << @college
+            redirect_back fallback_location: root_path, notice: "Você favoritou #{@college.name}"
+
+        elsif type == "unfavorite"
+            current_user.favorites.delete(@college)
+            redirect_back fallback_location: root_path, notice: "Você desfavoritou #{@college.name}"
+    
+        else
+            redirect_back fallback_location: root_path, notice: 'Nada aconteceu.'
+        end
+    end
+
     private 
         def college_params
             params.require(:college).permit(:name, :initials, :city, :state, :country, :unit, :user_id)
