@@ -29,10 +29,15 @@ ActiveRecord::Schema.define(version: 2019_09_24_020758) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "spotted_id"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["spotted_id"], name: "index_comments_on_spotted_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
-  
+
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "spotted_id"
@@ -64,14 +69,12 @@ ActiveRecord::Schema.define(version: 2019_09_24_020758) do
     t.string "city"
     t.string "state"
     t.string "country"
-    t.string "token"
-    t.string "uid"
-    t.string "name"
-    t.string "avatar"
-    t.string "nickname", default: "", null: false
+    t.string "nickname"
   end
 
   add_foreign_key "colleges", "users"
+  add_foreign_key "comments", "spotteds"
+  add_foreign_key "comments", "users"
   add_foreign_key "likes", "spotteds"
   add_foreign_key "likes", "users"
   add_foreign_key "spotteds", "colleges"
