@@ -10,7 +10,6 @@
 * [Travis CI - Spottapp](https://www.travis-ci.com/leogiraldimg/Spottapp)
 * [Heroku - spottapp](https://spottappv1.herokuapp.com/)
 * [Pivotal Tracker - Spottapp](https://www.pivotaltracker.com/n/projects/2397598)
-* [Pivotal Tracker - Spottapp (antigo)](https://www.pivotaltracker.com/projects/2384216)
 
 ## Integrantes do projeto
 

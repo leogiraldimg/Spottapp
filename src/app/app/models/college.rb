@@ -9,4 +9,7 @@ class College < ApplicationRecord
     belongs_to :user
 
     has_many :spotteds
+    has_many :favorite_colleges
+    has_many :favorited_by, through: :favorite_colleges, source: :user
+  
 end

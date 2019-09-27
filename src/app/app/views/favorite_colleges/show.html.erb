@@ -1,0 +1,33 @@
+<div class='container-fluid'>
+  <p id="notice"><%= notice %></p>
+  <div class='row py-3 px-3'>
+    <div class='col-xs-12'>
+
+      <h3>Minhas faculdades favoritas</h3>
+
+      <table id='favorite-college-table' class="table table-hover">
+        <thead  class="thead-light">
+          <tr>
+            <th>Nome</th>
+            <th>Sigla</th>
+            <th>Spotted</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @favorite_colleges.each do |fav| %>
+
+            <tr>
+              <td><%= fav.college.name %></td>
+              <td><%= fav.college.initials %></td>
+              <td><%= link_to 'Abrir', college_spotteds_path(college_id: fav.college.id) %></td>
+            </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+    </div>
+  </div>
+</div>
