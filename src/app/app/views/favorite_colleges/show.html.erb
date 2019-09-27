@@ -9,6 +9,7 @@
         <thead  class="thead-light">
           <tr>
             <th>Nome</th>
+            <th>Sigla</th>
             <th>Spotted</th>
           </tr>
         </thead>
@@ -18,6 +19,7 @@
 
             <tr>
               <td><%= fav.college.name %></td>
+              <td><%= fav.college.initials %></td>
               <td><%= link_to 'Abrir', college_spotteds_path(college_id: fav.college.id) %></td>
             </tr>
 
