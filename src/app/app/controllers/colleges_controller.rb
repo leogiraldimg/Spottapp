@@ -30,14 +30,14 @@ class CollegesController < ApplicationController
         type = params[:type]
         if type == "favorite"
             current_user.favorites << @college
-            redirect_back fallback_location: root_path, notice: "Você favoritou #{@college.name}"
+            redirect_back fallback_location: colleges_path, notice: "Você favoritou #{@college.name}"
 
         elsif type == "unfavorite"
             current_user.favorites.delete(@college)
-            redirect_back fallback_location: root_path, notice: "Você desfavoritou #{@college.name}"
+            redirect_back fallback_location: colleges_path, notice: "Você desfavoritou #{@college.name}"
     
         else
-            redirect_back fallback_location: root_path, notice: 'Nada aconteceu.'
+            redirect_back fallback_location: colleges_path, notice: 'Nada aconteceu.'
         end
     end
 
