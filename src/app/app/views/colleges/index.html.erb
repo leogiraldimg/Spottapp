@@ -25,7 +25,13 @@
               <td><%= college.city %></td>
               <td><%= college.unit %></td>
               <td><%= link_to 'Abrir', college_spotteds_path(college_id: college.id) %></td>
-              <td style="text-align: center"><%= link_to image_tag('star.png'), favorite_college_path(college, type: "favorite"), method: :put %></td>
+
+              <% if already_favorited(college.id) %>
+                <td style="text-align: center"><%= link_to image_tag('star.png'), favorite_college_path(college, type: "unfavorite"), method: :put %></td>
+              <% else %>
+                <td style="text-align: center"><%= link_to image_tag('star-white.png'), favorite_college_path(college, type: "favorite"), method: :put %></td>
+              <% end %>
+
             </tr>
           <% end %>
         </tbody>
