@@ -10,6 +10,10 @@ class CollegesController < ApplicationController
         @college = College.find(params[:id])
     end
 
+    def index
+        @colleges = College.all
+    end
+
     def create
         @college = College.new(college_params)
         @college.user = current_user

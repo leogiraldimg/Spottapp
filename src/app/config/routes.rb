@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'favorite_colleges', to: 'favorite_colleges#show'
 
   resources :users, only: [:new, :create, :show]
-  resources :colleges, only: [:new, :create, :show] do
+  resources :colleges, only: [:new, :create, :show, :index] do
     resources :spotteds, only: [:new, :create, :show, :index] do
       resources :likes
     end
