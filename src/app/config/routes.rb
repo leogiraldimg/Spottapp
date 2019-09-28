@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   delete 'sair', to: 'sessions#destroy'
   get '/users', to: 'users#new'
 
-  get 'navegation', to: 'navegation#show'
   get 'favorite_colleges', to: 'favorite_colleges#show'
 
   resources :users, only: [:new, :create, :show]
