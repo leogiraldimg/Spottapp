@@ -1,13 +1,14 @@
-<h2>Spotteds de <%= @college.name %></h2>
+<h2>Spotteds de <%= @college.name %>
 
-<p>
 <% if current_user %>
-  <%= link_to "Favoritar", favorite_college_path(@college, type: "favorite"), method: :put %>
-  <%= link_to image_tag('star.png'), favorite_college_path(@college, type: "favorite"), method: :put %>
-  <br>
-  <%= link_to "Desfavoritar", favorite_college_path(@college, type: "unfavorite"), method: :put %>
+    <% if already_favorited(@college.id) %>
+    <td style="text-align: center"><%= link_to image_tag('star-bigger.png'), favorite_college_path(@college, type: "unfavorite"), method: :put %></td>
+    <% else %>
+    <td style="text-align: center"><%= link_to image_tag('star-bigger-white.png'), favorite_college_path(@college, type: "favorite"), method: :put %></td>
+    <% end %>
 <% end %>
-</p>
+
+</h2>
 
 <%= link_to 'Novo spotted', new_college_spotted_path, class: 'btn btn-primary btn-lg' %>
 <hr>

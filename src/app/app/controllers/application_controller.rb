@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
         end
     end
     
+    def already_favorited(college_id)
+        FavoriteCollege.exists?(user_id: current_user.id, college_id: college_id)
+    end
+    helper_method :already_favorited
+
 end
