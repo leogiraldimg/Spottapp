@@ -1,47 +1,22 @@
-<div class='container-fluid'>
-  <div class='row py-3 px-3'>
-    <div class='col-xs-12'>
-
+<div class='container'>
+  <div class='row'>
+    <div class='col-4' align='center'>
       <h3>Minhas faculdades favoritas</h3>
-
-      <table id='favorite-college-table' class="table table-hover">
-        <thead  class="thead-light">
-          <tr>
-            <th>Nome</th>
-            <th>Sigla</th>
-            <th>Spotted</th>
-            <th style="text-align: center">Desfavoritar</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @favorite_colleges.each do |fav| %>
-
-            <tr>
-              <td><%= fav.college.name %></td>
-              <td><%= fav.college.initials %></td>
-              <td><%= link_to 'Abrir', college_spotteds_path(college_id: fav.college.id) %></td>
-
-              <% if already_favorited(fav.college.id) %>
-                <td style="text-align: center"><%= link_to image_tag('star.png'), favorite_college_path(fav.college, type: "unfavorite"), method: :put %></td>
-              <% else %>
-                <td style="text-align: center"><%= link_to image_tag('star-white.png'), favorite_college_path(fav.college, type: "favorite"), method: :put %></td>
-              <% end %>
-
-              <% if isPageAdmin(fav.college.id) %>
-                <td style="text-align: center"><%= link_to "Editar", edit_college_path(fav.college) %></td>
-              <% else %>
-                <td style="text-align: center"></td>
-              <% end %>
-              
-            </tr>
-
-          <% end %>
-        </tbody>
-      </table>
-
-      <br>
+      <% @favorite_colleges.each do |fav| %>
+          <div class="block">
+            <a class="overlay" href="<%= college_spotteds_path(college_id: fav.college.id) %>"><%= fav.college.name %></a>
+            <div class="inner" id="edit-and-favorite">
+                <% if isPageAdmin(fav.college.id) %>
+                  <%= link_to "Editar", edit_college_path(fav.college) %>
+                <% end %>
+                <% if already_favorited(fav.college.id) %>
+                  <%= link_to image_tag('star.png'), favorite_college_path(fav.college, type: "unfavorite"), method: :put %>
+                <% else %>
+                  <%= link_to image_tag('star-white.png'), favorite_college_path(fav.college, type: "favorite"), method: :put %>
+                <% end %>
+            </div>
+          </div>
+      <%end%>
     </div>
   </div>
 </div>
-

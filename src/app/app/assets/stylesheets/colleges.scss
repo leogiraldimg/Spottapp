@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .block {
-  width: 400px;
+  width: 50%;
   height: 50px;
   background-color:#fdfdfd;
   position:relative;
@@ -58,3 +58,8 @@ a:hover {
   color: green;
 }
 
+@media (max-width: 768px) {
+  .block {
+    width: 80%;
+  }  
+}
