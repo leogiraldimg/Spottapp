@@ -14,10 +14,10 @@ class CommentsController < ApplicationController
     def create
         @comment = Comment.new(comment_params)
         @comment.user = current_user
-        @comment.spotted = Spotted.find(id: params[:id])
+        @comment.spotted = Spotted.find(params[:spotted_id])
         if @comment.save
             flash[:sucess] = 'Comentário feito com sucesso'
-            redirect_to root_path
+            redirect_to spotted_path(@comment.spotted)
         else
             render 'new'
         end

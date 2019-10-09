@@ -12,6 +12,7 @@ class SpottedsController < ApplicationController
 
     def show
         @spotted = Spotted.find(params[:id])
+        @comments = @spotted.comment.all
     end
 
     def create
