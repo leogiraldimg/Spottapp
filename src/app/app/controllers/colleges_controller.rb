@@ -1,5 +1,6 @@
 class CollegesController < ApplicationController
     before_action :require_logged_in_user
+    before_action :set_college, only: [:edit, :update] 
 
     def new
         @college = College.new
@@ -41,8 +42,21 @@ class CollegesController < ApplicationController
         end
     end
 
+    def update
+        if @college.update(college_params)
+            flash[:success] = 'Dados atualizados'
+            redirect_to edit_college_path(@college)
+        else
+            render 'edit'
+        end
+    end
+
     private 
         def college_params
-            params.require(:college).permit(:name, :initials, :city, :state, :country, :unit, :user_id)
+            params.require(:college).permit(:name, :initials, :city, :state, :country, :unit, :user_id, :background_color, :font_family, :background_image, :font_color)
+        end
+
+        def set_college
+            @college = College.find(params[:id])
         end
 end

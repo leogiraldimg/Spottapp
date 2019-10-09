@@ -7,7 +7,12 @@ class LikesController < ApplicationController
         else
             @spotted.like.create(user_id: current_user.id)
         end
+
+        if params[:origin] == 'modal'
+            redirect_to college_spotted_path(@spotted.college.id, @spotted.id)
+        else
             redirect_to college_spotteds_path(@spotted.college)
+        end
     end
 
     def destroy
@@ -17,7 +22,11 @@ class LikesController < ApplicationController
           @like = Like.find(params[:id])  
           @like.destroy
         end
-        redirect_to college_spotteds_path(@spotted.college)
+        if params[:origin] == 'modal'
+            redirect_to college_spotted_path(@spotted.college.id, @spotted.id)
+        else
+            redirect_to college_spotteds_path(@spotted.college)
+        end
       end
 
     private

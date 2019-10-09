@@ -1,16 +1,30 @@
 <h2>Spotted n. <%= @spotted.college_spotted_counter %></h2>
+<p><%= link_to 'Voltar', college_spotteds_path(@spotted.college.id), class: 'btn btn-primary btn-sm' %></p>
+
 <div class="panel panel-default">
     <div class="panel-body">
         <p>
             <%= @spotted.content %>
         </p>
-        <p><%= @spotted.like.count %> <%= (@spotted.like.count) == 1 ? 'Like' : 'Likes'%></p>
+        <div class="row">
+            <div class="col-sm-1">
+                <p><%= @spotted.like.count %> <%= (@spotted.like.count) == 1 ? 'Like' : 'Likes'%></p>
+            </div>
+            <div class="col-sm-1">
+                <% pre_like = @spotted.like.find { |like| like.user_id == current_user.id} %>
+                <% if pre_like %>
+                    <%= link_to image_tag('thumbs-up-hand-symbol.png'), college_spotted_like_path(@spotted.college, @spotted, pre_like, :origin => 'modal'), method: :delete %>
+                <% else %>
+                    <%= link_to image_tag('thumbs-up.png'), college_spotted_likes_path(@spotted.college, @spotted, :origin => 'modal'), method: :post %>
+                <% end %>        
+            </div>
+        </div>
+        <hr/>
+        <div class="row col-md-12 col-sm-12">
+            <%= render 'spotteds/new_comments' %>
+        </div>
+        <div class="row col-md-12 col-sm-12">
+            <%= render 'spotteds/list_comments' %>
+        </div>
     </div>
-    
-    <% pre_like = @spotted.like.find { |like| like.user_id == current_user.id} %>
-    <% if pre_like %>
-        <%= button_to 'Unlike', college_spotted_like_path(@spotted.college, @spotted, pre_like), method: :delete %>
-    <% else %>
-        <%= button_to 'Like', college_spotted_likes_path(@spotted.college, @spotted), method: :post %>
-    <% end %>
 <div>

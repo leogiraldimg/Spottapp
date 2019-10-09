@@ -20,7 +20,11 @@ pt-BR:
         state: 'Estado'
         country: 'País'
         unit: 'Unidade'
-        
+        background_color: 'Cor de fundo'
+        font_family: 'Família da fonte'
+        background_image: 'Imagem de fundo'
+        identidade_visual: 'Identidade visual'
+        font_color: 'Cor da fonte'
 
       spotted:
         content: 'Spotted'
