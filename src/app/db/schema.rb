@@ -66,7 +66,11 @@ ActiveRecord::Schema.define(version: 2019_09_26_031057) do
     t.string "city"
     t.string "state"
     t.string "country"
-    t.string "nickname"
+    t.string "token"
+    t.string "uid"
+    t.string "name"
+    t.string "avatar"
+    t.string "nickname", default: "", null: false
   end
 
   add_foreign_key "colleges", "users"
