@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
     end
     helper_method :already_favorited
 
+    def isPageAdmin(college_id)
+        College.exists?(user_id: current_user.id, id: college_id)
+    end
+    helper_method :isPageAdmin
+
 end

@@ -2,7 +2,22 @@ class SpottedsController < ApplicationController
     before_action :set_college, only: [:index, :new]
     
     def index
-        @spotteds = @college.spotteds 
+        @spotteds = @college.spotteds
+        @college_style = ''
+
+        if @college.background_image.present?
+            @college_style.concat('body { background-image: url(' + @college.background_image + '); }')
+        elsif @college.background_color.present?
+            @college_style.concat('body { background-color:' + @college.background_color + ';}')
+        end
+        
+        if @college.font_family.present? && @college.font_color.present?
+            @college_style.concat('#content-container { font-family: ' + @college.font_family + '!important; color: ' + @college.font_color + '; }')
+        elsif @college.font_family.present?
+            @college_style.concat('#content-container { font-family: ' + @college.font_family + '!important; }')
+        elsif @college.font_color.present?
+            @college_style.concat('#content-container { color: ' + @college.font_color + '; }')
+        end
     end
 
     def new

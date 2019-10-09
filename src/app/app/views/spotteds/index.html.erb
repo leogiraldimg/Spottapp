@@ -1,3 +1,7 @@
+<style>
+    <%= @college_style %>
+</style>
+
 <h2>Spotteds de <%= @college.name %>
 
 <% if current_user %>
@@ -10,7 +14,9 @@
 
 </h2>
 
-<%= link_to 'Novo spotted', new_college_spotted_path, class: 'btn btn-primary btn-lg' %>
+<p><%= link_to 'Novo spotted', new_college_spotted_path, class: 'btn btn-primary btn-lg' %></p>
+<p><%= link_to 'Voltar', colleges_path, class: 'btn btn-primary' %></p>
+
 <hr>
 
 <% @spotteds.each do |spotted| %>

@@ -27,6 +27,13 @@
               <% else %>
                 <td style="text-align: center"><%= link_to image_tag('star-white.png'), favorite_college_path(fav.college, type: "favorite"), method: :put %></td>
               <% end %>
+
+              <% if isPageAdmin(fav.college.id) %>
+                <td style="text-align: center"><%= link_to "Editar", edit_college_path(fav.college) %></td>
+              <% else %>
+                <td style="text-align: center"></td>
+              <% end %>
+              
             </tr>
 
           <% end %>
