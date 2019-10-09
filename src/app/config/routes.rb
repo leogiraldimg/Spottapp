@@ -15,7 +15,9 @@ Rails.application.routes.draw do
       resources :likes
     end
   end
-
+  resources :spotteds, only: [:new, :create, :show, :index] do
+    resources :comments
+  end
   resources :colleges do
     put :favorite, on: :member
   end
