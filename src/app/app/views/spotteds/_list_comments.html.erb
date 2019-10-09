@@ -1,0 +1,6 @@
+<% @comments.each do |comment| %>
+<div class="row col-md-12 col-xs-12">
+    <label><%= comment.user.first_name + ' ' + comment.user.last_name %></label>
+    <p><%= comment.content %></p>
+</div>
+<% end %>

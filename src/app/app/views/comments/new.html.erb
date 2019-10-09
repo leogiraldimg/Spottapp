@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Mande seu comentario!</h1>
+    </div>
+</div>
+
+<%= form_for(@comment, url: spotted_comments_path) do |f| %>
+    <%= render 'layouts/error_messages', object: f.object %>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class=form-group>
+                <%= f.text_field :content, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <%= f.submit 'Mandar comment', class: 'btn btn-primary' %>
+        </div>
+    </div>
+<% end %>

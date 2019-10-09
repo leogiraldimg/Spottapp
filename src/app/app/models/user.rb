@@ -15,6 +15,7 @@ class User < ApplicationRecord
     has_many :spotted
     has_many :college
     has_many :like, dependent: :destroy
+    has_many :comment, dependent: :destroy
     has_many :favorite_colleges
     has_many :favorites, through: :favorite_colleges, source: :college
 
