@@ -25,9 +25,9 @@
         <div class='row'>
             <div class="col-sm-1">
                 <% if pre_like %>
-                    <%= link_to image_tag('thumbs-up-hand-symbol.png'), college_spotted_like_path(@spotted.college, @spotted, pre_like, :origin => 'modal'), method: :delete %>
+                    <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(@spotted, pre_like, :origin => 'modal'), method: :delete %>
                 <% else %>
-                    <%= link_to image_tag('thumbs-up.png'), college_spotted_likes_path(@spotted.college, @spotted, :origin => 'modal'), method: :post %>
+                    <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(@spotted, :origin => 'modal'), method: :post %>
                 <% end %>        
             </div>
         </div>
