@@ -70,6 +70,8 @@ a:hover {
   border-color: #000000;
   text-align: center;
   border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
   padding: 10px;
 
   /* Position the tooltip */
