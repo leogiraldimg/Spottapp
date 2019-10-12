@@ -32,7 +32,7 @@
               </tr>
             </table>
           </span>
-          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.unit %></a>
+          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.initials %> - <%= college.unit %></a>
           <div class="inner">
             <% if already_favorited(college.id) %>
               <p><%= link_to image_tag('star.png'), favorite_college_path(college, type: "unfavorite"), method: :put %></p>
