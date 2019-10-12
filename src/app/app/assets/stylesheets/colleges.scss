@@ -19,6 +19,25 @@
   padding-right:20px;
 }
 
+.block .overlay {
+  text-decoration: none;
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+  color:black; 
+  padding-left:20px;
+  padding-top:15px;
+}
+
+.block .overlay:hover {
+  background-color: #cce5fbef;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
 .block .inner {
   position:relative;
   pointer-events: none;

@@ -4,7 +4,35 @@
       <h3>Minhas faculdades favoritas</h3>
       <% @favorite_colleges.each do |fav| %>
           <div class="block">
-            <a class="overlay" href="<%= college_spotteds_path(college_id: fav.college.id) %>"><%= fav.college.name %></a>
+            <span class="tooltiptext">
+              <table>
+                <tr>
+                  <td>Nome</td>
+                  <td><%= fav.college.name %></td>
+                </tr>
+                <tr>
+                  <td>Sigla</td>
+                  <td><%= fav.college.initials %></td>
+                </tr>
+                <tr>
+                  <td>Cidade</td>
+                  <td><%= fav.college.city %></td>
+                </tr>
+                <tr>
+                  <td>Estado</td>
+                  <td><%= fav.college.state %></td>
+                </tr>
+                <tr>
+                  <td>País</td>
+                  <td><%= fav.college.country %></td>
+                </tr>
+                <tr class="noBorder">
+                  <td>Unidade</td>
+                  <td><%= fav.college.unit %></td>
+                </tr>
+              </table>
+            </span>
+            <a class="overlay" href="<%= college_spotteds_path(college_id: fav.college.id) %>"><%= fav.college.initials %> - <%= fav.college.unit %></a>
             <div class="inner" id="edit-and-favorite">
                 <% if isPageAdmin(fav.college.id) %>
                   <%= link_to "Editar", edit_college_path(fav.college) %>
