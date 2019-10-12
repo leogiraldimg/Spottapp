@@ -6,33 +6,33 @@
         <div class="block">
           <span class="tooltiptext">
             <table>
-            <tr>
-              <td>Nome</td>
-              <td><%= college.name %></td>
-            </tr>
-            <tr>
-              <td>Sigla</td>
-              <td><%= college.initials %></td>
-            </tr>
-            <tr>
-              <td>Cidade</td>
-              <td><%= college.city %></td>
-            </tr>
-            <tr>
-              <td>Estado</td>
-              <td><%= college.state %></td>
-            </tr>
-            <tr>
-              <td>País</td>
-              <td><%= college.country %></td>
-            </tr>
-            <tr class="noBorder">
-              <td>Unidade</td>
-              <td><%= college.unit %></td>
-            </tr>
-          </table>
+              <tr>
+                <td>Nome</td>
+                <td><%= college.name %></td>
+              </tr>
+              <tr>
+                <td>Sigla</td>
+                <td><%= college.initials %></td>
+              </tr>
+              <tr>
+                <td>Cidade</td>
+                <td><%= college.city %></td>
+              </tr>
+              <tr>
+                <td>Estado</td>
+                <td><%= college.state %></td>
+              </tr>
+              <tr>
+                <td>País</td>
+                <td><%= college.country %></td>
+              </tr>
+              <tr class="noBorder">
+                <td>Unidade</td>
+                <td><%= college.unit %></td>
+              </tr>
+            </table>
           </span>
-          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.initials %></a>
+          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.unit %></a>
           <div class="inner">
             <% if already_favorited(college.id) %>
               <p><%= link_to image_tag('star.png'), favorite_college_path(college, type: "unfavorite"), method: :put %></p>
@@ -41,9 +41,9 @@
             <% end %>
           </div>
         </div>
-	  <%end%>
-	  <br>
-      	<p><%= link_to 'Criar nova página', new_college_path, class: 'btn btn-primary' %></p>
+      <%end%>
+	    <br>
+        <p><%= link_to 'Criar nova página', new_college_path, class: 'btn btn-primary' %></p>
       <br>
     </div>
   </div>
