@@ -17,27 +17,6 @@
   padding-top:13px;
   padding-left:20px;
   padding-right:20px;
-
-  
-}
-
-.block .overlay {
-  text-decoration: none;
-  position:absolute;
-  left:0;
-  top:0;
-  bottom:0;
-  right:0;
-  color:black; 
-  padding-left:20px;
-  padding-top:15px;
-
-}
-.block .overlay:hover {
-  background-color: #cce5fbef;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
 }
 
 .block .inner {
@@ -45,21 +24,90 @@
   pointer-events: none;
   z-index: 1;
   text-align: right;
-  
 }
 
 .block .inner a {
   pointer-events: all;
   position:relative;
-  
 }
 
 a:hover {
   color: green;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.block .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #fdfdfd;
+  color: black;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #000000;
+  text-align: center;
+  border-radius: 15px;
+  padding: 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 5;
+
+  top: 0px;
+  left: 102%;
+}
+
+.block:hover .tooltiptext {
+  visibility: visible;
+}
+
+.block table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.block table td {
+  border-bottom: 1px solid #000;
+  text-align: left;
+  vertical-align: bottom;
+  padding: 5px;
+}
+
+.block table tr.noBorder td {
+  border: 0;
+}
+
 @media (max-width: 768px) {
+
   .block {
     width: 80%;
   }  
+}
+
+@media screen and (max-width: 900px) {
+
+  .block .tooltiptext {
+    top: 20px;
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  .block .tooltiptext {
+    top: 40px;
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+
+  .block .tooltiptext {
+    top: 45px;
+    left: -15%;
+  }
 }

@@ -4,7 +4,35 @@
       <h2 align='center'>Menu de Faculdades </h2>
       <% @colleges.each do |college| %>
         <div class="block">
-          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.name %></a>
+          <span class="tooltiptext">
+            <table>
+            <tr>
+              <td>Nome</td>
+              <td><%= college.name %></td>
+            </tr>
+            <tr>
+              <td>Sigla</td>
+              <td><%= college.initials %></td>
+            </tr>
+            <tr>
+              <td>Cidade</td>
+              <td><%= college.city %></td>
+            </tr>
+            <tr>
+              <td>Estado</td>
+              <td><%= college.state %></td>
+            </tr>
+            <tr>
+              <td>País</td>
+              <td><%= college.country %></td>
+            </tr>
+            <tr class="noBorder">
+              <td>Unidade</td>
+              <td><%= college.unit %></td>
+            </tr>
+          </table>
+          </span>
+          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.initials %></a>
           <div class="inner">
             <% if already_favorited(college.id) %>
               <p><%= link_to image_tag('star.png'), favorite_college_path(college, type: "unfavorite"), method: :put %></p>
