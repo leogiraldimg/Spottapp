@@ -19,3 +19,13 @@ end
 Then (/^I should see the initial user page$/) do
     expect(page).to have_xpath('.//a[@id="pages-menu-access"]') 
 end
+
+Given (/^I logged in successfully$/) do
+    steps %Q{
+        Given I am on the login page
+        And There is an registered user
+        When I fill the login form with login information
+        And I click the Entrar button
+        Then I should see the initial user page
+    }
+end
