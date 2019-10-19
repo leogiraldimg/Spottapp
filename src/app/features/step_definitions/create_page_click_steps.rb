@@ -18,11 +18,11 @@ When (/^I click the Cadastrar Nova Página button$/) do
     click_button "Cadastrar"
 end
 
-Given (/^I created a college page$/) do
+Given(/^There is a college page created$/) do
     steps %Q{
         Given I am on the create new page page
         When I fill the create new page form
         And I click the Cadastrar Nova Página button
         Then I should see the initial user page
     }
-end 
+end
