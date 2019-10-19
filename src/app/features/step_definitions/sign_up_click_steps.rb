@@ -24,3 +24,11 @@ Then(/^I should see the welcome page$/) do
     expect(page).to have_xpath('.//a[@href="/users/new"]')
     expect(page).to have_xpath('.//a[@href="/entrar"]')
 end
+
+Given(/^I have an account$/) do
+    steps %Q{
+        Given I am on the create account page
+        When I fill the user registration form
+        And I click the Cadastrar button
+    }
+end

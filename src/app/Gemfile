@@ -86,3 +86,5 @@ end
 gem 'rake', '~> 12.3', '>=12.3.2'
 gem 'therubyracer'
 gem 'execjs'
+
+gem 'report_builder'

@@ -6,9 +6,9 @@
 
 <% if current_user %>
     <% if already_favorited(@college.id) %>
-    <td style="text-align: center"><%= link_to image_tag('star-bigger.png'), favorite_college_path(@college, type: "unfavorite"), method: :put, class: "star" %></td>
+    <td style="text-align: center"><%= link_to image_tag('star-bigger.png'), favorite_college_path(@college, type: "unfavorite"), method: :put, id: "star" %></td>
     <% else %>
-    <td style="text-align: center"><%= link_to image_tag('star-bigger-white.png'), favorite_college_path(@college, type: "favorite"), method: :put, class: "star-white" %></td>
+    <td style="text-align: center"><%= link_to image_tag('star-bigger-white.png'), favorite_college_path(@college, type: "favorite"), method: :put, id: "star-white" %></td>
     <% end %>
 <% end %>
 
