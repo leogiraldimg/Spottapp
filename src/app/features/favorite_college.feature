@@ -6,7 +6,7 @@ Feature: Favorite a college
 
     Background: I am logged in
         Given I logged in successfully
-        And I created a college page
+        And There is a college page created
 
     Scenario: Show a yellow star on colleges menu page when I favorite the college on colleges menu page
         Given I am on the colleges menu page
