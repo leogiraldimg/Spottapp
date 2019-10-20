@@ -36,10 +36,15 @@
     float: right;
     overflow: auto;
 }
+    
+#index #clear {
+    clear: both;
+} 
 
 @media (max-width: 800px) {
     #index .container-left {
         width: 100%;
+        height: auto;
     }
     
     #index .panel.panel-default {
@@ -48,8 +53,4 @@
         float: right;
         overflow: auto;
     }
-    
-    #index #clear {
-        clear: both;
-    } 
 }
