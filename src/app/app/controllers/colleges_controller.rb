@@ -53,7 +53,7 @@ class CollegesController < ApplicationController
 
     private 
         def college_params
-            params.require(:college).permit(:name, :initials, :city, :state, :country, :unit, :user_id, :background_color, :font_family, :background_image, :font_color)
+            params.require(:college).permit(:name, :initials, :city, :state, :country, :unit, :user_id, :background_color, :font_family, :background_image, :font_color, :request_to_participate, :admin_approves_spotted)
         end
 
         def set_college

@@ -4,13 +4,15 @@ class College < ApplicationRecord
     validates :name, presence:true, length: { maximum:65 }
     validates :initials, length: { maximum:8 }
     validates :city, presence:true, length: { maximum:30 }
-    validates :state, presence:true, length: { maximum:30 }
+    validates :state, presence:true, length: { maximum:2 }
     validates :country, presence:true, length: { maximum:30 }
     validates :unit, length: { maximum:20 }
     validates :background_color, format: { with: VALID_HEX_COLOR }, :allow_nil => true
     validates :font_family, length: { maximum: 30 }
     validates :background_image, url: {no_local: true, allow_blank: true}
     validates :font_color, format: { with: VALID_HEX_COLOR }, :allow_nil => true
+    validates :request_to_participate, presence: false
+    validates :admin_approves_spotted, presence: false
 
     belongs_to :user
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_09_015901) do
+ActiveRecord::Schema.define(version: 2019_10_18_023813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2019_10_09_015901) do
     t.string "font_family"
     t.string "background_image"
     t.string "font_color"
+    t.string "request_to_participate"
+    t.string "admin_approves_spotted"
     t.index ["user_id"], name: "index_colleges_on_user_id"
   end
 
