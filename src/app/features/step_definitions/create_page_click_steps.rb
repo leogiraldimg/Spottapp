@@ -26,4 +26,3 @@ Given(/^There is a college page created$/) do
         Then I should see the initial user page
     }
 end
-  

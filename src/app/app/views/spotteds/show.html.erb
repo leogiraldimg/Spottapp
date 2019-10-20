@@ -1,10 +1,15 @@
 <h2>Spotted n. <%= @spotted.college_spotted_counter %></h2>
 <p><%= link_to 'Voltar', college_spotteds_path(@spotted.college.id), class: 'btn btn-primary btn-sm' %></p>
 
-<div class="panel panel-default">
+<div class="panel panel-default" id="show">
     <div class="panel-body">
         <p>
             <%= @spotted.content %>
+            <p>
+            <% if @spotted.images.attached? %>
+                <image src = "<%= (url_for(@spotted.images.variant(resize: '300x300').processed)) %>">
+            <% end %>
+            </p>
         </p>
         <div class="row">
             <div class="col-sm-3">
@@ -39,4 +44,4 @@
             <%= render 'spotteds/list_comments' %>
         </div>
     </div>
-<div>
+</div>
