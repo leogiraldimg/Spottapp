@@ -2,59 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#index .container-left {
+#index {
     width: 100%;
+    height: 67vh;
+}
+
+#index .container-left {
+    float: left;
+    width: 20%;
+    height: 100%;
+    overflow: auto;
+}
+
+#index .container-left table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+}
+
+#index .container-left table td {
+    text-align: left;
+    vertical-align: bottom;
+    padding: 1px;
+}
+
+#index .container-left table thead th.col1 {
+    width: 30%;
 }
 
 #index .panel.panel-default {
-    width: 100%;
-    height: 60vh;
+    width: 70%;
+    height: 100%;
     float: right;
     overflow: auto;
 }
 
-#index #clear {
-    clear: both;
-}
-
-@media (min-width: 800px) {
-    #index {
-        width: 100%;
-        height: 67vh;
-    }
-    
+@media (max-width: 800px) {
     #index .container-left {
-        float: left;
-        width: 20%;
-        height: 100%;
-        overflow: auto;
-    }
-    
-    #index .container-left table {
-        border-collapse: collapse;
         width: 100%;
-        font-size: 16px;
-    }
-    
-    #index .container-left table td {
-        text-align: left;
-        vertical-align: bottom;
-        padding: 1px;
-    }
-    
-    #index .container-left table thead th.col1 {
-        width: 30%;
     }
     
     #index .panel.panel-default {
-        width: 70%;
-        height: 100%;
+        width: 100%;
+        height: 60vh;
         float: right;
         overflow: auto;
     }
     
     #index #clear {
         clear: both;
-    }
+    } 
 }
-
