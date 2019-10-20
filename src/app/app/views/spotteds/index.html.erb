@@ -59,30 +59,30 @@
 
     <div class="panel panel-default">
         <% @spotteds.reverse_each do |spotted| %>
-        <div class="panel-body">
-            <p>
-                <%= spotted.college_spotted_counter %>. <%= spotted.content %>
-            </p>
-            <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
-            <% like_count = spotted.like.count %>
+            <div class="panel-body">
                 <p>
-                    <% if pre_like %>
-                        <%= (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
-                    <% else %>
-                        <%if like_count >= 1 %>
-                            <%= (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
-                        <% else %>
-                        <% end %>
-                        <% end %>
+                    <%= spotted.college_spotted_counter %>. <%= spotted.content %>
                 </p>
-            <% if pre_like %> 
-                <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(spotted, pre_like), method: :delete %>
-            <% else %>
-                <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(spotted), method: :post %>
-            <% end %>
-            <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-primary btn-sm' %>
-        </div>
-        <hr>
+                <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
+                <% like_count = spotted.like.count %>
+                    <p>
+                        <% if pre_like %>
+                            <%= (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
+                        <% else %>
+                            <%if like_count >= 1 %>
+                                <%= (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
+                            <% else %>
+                            <% end %>
+                            <% end %>
+                    </p>
+                <% if pre_like %> 
+                    <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(spotted, pre_like), method: :delete %>
+                <% else %>
+                    <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(spotted), method: :post %>
+                <% end %>
+                <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-primary btn-sm' %>
+            </div>
+            <hr>
         <% end %>
     </div>
 

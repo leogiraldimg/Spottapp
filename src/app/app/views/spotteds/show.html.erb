@@ -7,7 +7,9 @@
             <%= @spotted.content %>
             <p>
             <% if @spotted.images.attached? %>
-                <image src = "<%= (url_for(@spotted.images.variant(resize: '300x300').processed)) %>">
+                <% @spotted.images.each do |image| %>
+                    <image src = "<%= (url_for(image.variant(resize: '300x300').processed)) %>", id="image">
+                <% end %>
             <% end %>
             </p>
         </p>

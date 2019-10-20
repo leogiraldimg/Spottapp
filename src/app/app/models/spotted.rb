@@ -1,6 +1,6 @@
 class Spotted < ApplicationRecord
 
-    has_one_attached :images
+    has_many_attached :images
 
     validates :content, presence: true, length: {minimum: 1}    
 
