@@ -19,8 +19,8 @@
 
 <hr>
 
-<% @spotteds.each do |spotted| %>
-<div class="panel panel-default">
+<div class="panel panel-default" id="index">
+    <% @spotteds.each do |spotted| %>
     <div class="panel-body">
         <p>
             <%= spotted.college_spotted_counter %>. <%= spotted.content %>
@@ -44,5 +44,6 @@
         <% end %>
         <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-primary btn-sm' %>
     </div>
+    <hr>
+    <% end %>
 </div>
-<% end %>
