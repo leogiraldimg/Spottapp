@@ -14,10 +14,7 @@ before_install:
   - psql -c 'create database app_test;' -U postgres
   - psql -c 'CREATE USER railsuser SUPERUSER INHERIT CREATEDB CREATEROLE' -U postgres
   - psql -c "alter user railsuser with password 'Rails@123'" -U postgres
-  - set -ex
-  - wget http://www.imagemagick.org/download/ImageMagick-${VERSION}.tar.gz
-  - tar -xzvf ImageMagick-${VERSION}.tar.gz
-  - cd ImageMagick-${VERSION}  && ./configure --prefix=/usr && make && sudo make install
+  - sudo apt-get install imagemagick
 
 services:
   - postgresql
