@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(version: 2019_10_19_232926) do
     t.string "nickname", default: "", null: false
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "colleges", "users"
   add_foreign_key "comments", "spotteds"
   add_foreign_key "comments", "users"
