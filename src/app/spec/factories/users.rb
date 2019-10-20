@@ -10,6 +10,5 @@ FactoryBot.define do
 		city {"São Paulo"}
 		state {"SP"}
 		country {"Brasil"}
-		id {"1"}
 	end
 end
