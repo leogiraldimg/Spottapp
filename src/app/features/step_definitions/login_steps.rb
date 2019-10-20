@@ -24,3 +24,10 @@ Given (/^I logged in successfully$/) do
         Then I should see the initial user page
     }
 end
+
+Given (/^There is an registered user$/) do
+    u = User.new(:email => "teste001.user@spottapp.com.br", :nickname => "teste001.user", :first_name => "teste001" , :last_name => "user", :password => "teste001user", :password_confirmation => "teste001user", :birth_date => "10/10/1998", :city => "São Paulo", :state => "SP", :country => "Brasil")
+    u.save
+
+    @user = User.where(email: u.email).take
+end
