@@ -87,3 +87,7 @@ gem 'rake', '~> 12.3', '>=12.3.2'
 gem 'therubyracer'
 gem 'execjs'
 gem 'rails-controller-testing'
+
+gem 'report_builder'
+
+gem 'image_processing', '~> 1.2'

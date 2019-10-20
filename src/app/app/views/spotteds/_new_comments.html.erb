@@ -1,6 +1,6 @@
 <%= form_for([@spotted, @spotted.comment.build]) do |f| %>
     <%= render 'layouts/error_messages', object: f.object %>
-    <div class="row">
+    <div class="row" id="new-comment">
         <div class="col-xs-9 col-md-9">
             <div class="form-group">
                 <%= f.text_field :content, class: 'form-control' %>

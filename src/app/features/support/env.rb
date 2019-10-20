@@ -59,3 +59,9 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+require 'report_builder'
+
+# Capybara.configure do |config|
+#   config.default_driver = :selenium_chrome #roda no navegador
+#   # config.default_driver = :selenium_chrome_headless #roda com o nageador em background
+# end

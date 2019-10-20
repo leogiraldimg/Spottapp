@@ -1,42 +1,59 @@
 <h2>Spotted n. <%= @spotted.college_spotted_counter %></h2>
 <p><%= link_to 'Voltar', college_spotteds_path(@spotted.college.id), class: 'btn btn-primary btn-sm' %></p>
 
-<div class="panel panel-default">
-    <div class="panel-body">
-        <p>
-            <%= @spotted.content %>
-        </p>
-        <div class="row">
-            <div class="col-sm-3">
-                <% like_count = @spotted.like.count %>
-                <% pre_like = @spotted.like.find { |like| like.user_id == current_user.id} %>
+<div class="panel panel-default" id="show">
+
+    <div class="container-left">
+        <div class="panel-body">
+            <p>
+                <%= @spotted.content %>
                 <p>
-                <% if pre_like %>
-                    <%= (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
-                <% else %>
-                    <%if like_count >= 1 %>
-                        <%= (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
-                    <% else %>
+                <% if @spotted.images.attached? %>
+                    <% @spotted.images.each do |image| %>
+                        <image src = "<%= (url_for(image.variant(resize: '300x300').processed)) %>", id="image">
                     <% end %>
                 <% end %>
                 </p>
+            </p>
+            <div class="row">
+                <div class="col-sm-3">
+                    <% like_count = @spotted.like.count %>
+                    <% pre_like = @spotted.like.find { |like| like.user_id == current_user.id} %>
+                    <p>
+                    <% if pre_like %>
+                        <%= (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
+                    <% else %>
+                        <%if like_count >= 1 %>
+                            <%= (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
+                        <% else %>
+                        <% end %>
+                    <% end %>
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class='row'>
-            <div class="col-sm-1">
-                <% if pre_like %>
-                    <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(@spotted, pre_like, :origin => 'modal'), method: :delete %>
-                <% else %>
-                    <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(@spotted, :origin => 'modal'), method: :post %>
-                <% end %>        
+            <div class='row'>
+                <div class="col-sm-1">
+                    <% if pre_like %>
+                        <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(@spotted, pre_like, :origin => 'modal'), method: :delete %>
+                    <% else %>
+                        <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(@spotted, :origin => 'modal'), method: :post %>
+                    <% end %>        
+                </div>
             </div>
-        </div>
-        <hr/>
-        <div class="row col-md-12 col-sm-12">
-            <%= render 'spotteds/new_comments' %>
-        </div>
-        <div class="row col-md-12 col-sm-12">
-            <%= render 'spotteds/list_comments' %>
         </div>
     </div>
-<div>
+
+    <div class="container-right">
+        <div class="comment">
+            <div class="row col-md-12 col-sm-12">
+                <%= render 'spotteds/new_comments' %>
+            </div>
+        </div>
+        <div class="scroll">
+            <div class="row col-md-12 col-sm-12">
+                <%= render 'spotteds/list_comments' %>
+            </div>
+        </div>
+    </div>
+
+</div>
