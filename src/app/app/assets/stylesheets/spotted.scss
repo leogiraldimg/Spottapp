@@ -10,11 +10,14 @@
 #index .container-left {
     float: left;
     width: 20%;
+    height: 100%;
+    overflow: auto;
 }
 
 #index .container-left table {
     border-collapse: collapse;
-    width: 100%;font-size: 16px;
+    width: 100%;
+    font-size: 16px;
 }
 
 #index .container-left table td {
