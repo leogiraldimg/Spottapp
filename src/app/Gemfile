@@ -88,3 +88,5 @@ gem 'therubyracer'
 gem 'execjs'
 
 gem 'report_builder'
+
+gem 'image_processing', '~> 1.2'
