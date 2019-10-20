@@ -13,6 +13,10 @@
     overflow: auto;
 }
 
+#index #clear {
+    clear: both;
+}
+
 @media (min-width: 800px) {
     #index {
         width: 100%;
