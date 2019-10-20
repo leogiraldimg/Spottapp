@@ -3,6 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #index {
-    height: 50vh;
+    width: 100%;
+    height: 67vh;
+}
+
+#index .container-left {
+    float: left;
+    width: 20%;
+}
+
+#index .container-left table {
+    border-collapse: collapse;
+    width: 100%;font-size: 16px;
+}
+
+#index .container-left table td {
+    text-align: left;
+    vertical-align: bottom;
+    padding: 1px;
+}
+
+#index .container-left table thead th.col1 {
+    width: 30%;
+}
+
+#index .panel.panel-default {
+    width: 70%;
+    height: 100%;
+    float: right;
     overflow: auto;
+}
+
+#index #clear {
+    clear: both;
 }
