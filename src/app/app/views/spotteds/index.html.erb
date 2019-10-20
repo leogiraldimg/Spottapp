@@ -58,7 +58,7 @@
     </div>
 
     <div class="panel panel-default">
-        <% @spotteds.each do |spotted| %>
+        <% @spotteds.reverse_each do |spotted| %>
         <div class="panel-body">
             <p>
                 <%= spotted.college_spotted_counter %>. <%= spotted.content %>
