@@ -29,3 +29,6 @@ src/app.byebug_history
 
 # Ignore master key for decrypting credentials and more.
 src/app/config/master.key
+
+# Ignore gmail credentials
+src/app/.env

@@ -59,12 +59,12 @@
 
     <div class="panel panel-default">
         <% @spotteds.reverse_each do |spotted| %>
-        <div class="panel-body">
-            <p>
-                <%= spotted.college_spotted_counter %>. <%= spotted.content %>
-            </p>
-            <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
-            <% like_count = spotted.like.count %>
+            <div class="panel-body">
+                <p>
+                    <%= spotted.college_spotted_counter %>. <%= spotted.content %>
+                </p>
+                <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
+                <% like_count = spotted.like.count %>
                 <p>
                     <% link = '' %>
                     <% if pre_like %>

@@ -54,7 +54,7 @@ class SpottedsController < ApplicationController
 
     private 
         def spotted_params
-            params.require(:spotted).permit(:content, :images)
+            params.require(:spotted).permit(:content, images: [])
         end
 
         def set_user_creator

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  
+  get 'static_pages/new'
+  get 'static_pages/create'
+
+  get '/about', to:'static_pages#about' 
+  
+  resources :contact, only: [:index, :new, :create]
+
   root to: "welcome#index"
 
   get 'entrar', to: 'sessions#new'

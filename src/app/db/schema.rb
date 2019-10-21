@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_232926) do
+ActiveRecord::Schema.define(version: 2019_10_19_024502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_10_19_232926) do
     t.string "font_family"
     t.string "background_image"
     t.string "font_color"
+    t.string "request_to_participate"
+    t.string "admin_approves_spotted"
     t.index ["user_id"], name: "index_colleges_on_user_id"
   end
 
@@ -105,10 +107,9 @@ ActiveRecord::Schema.define(version: 2019_10_19_232926) do
     t.string "uid"
     t.string "name"
     t.string "avatar"
-    t.string "nickname", default: "", null: false
+    t.string "nickname"
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "colleges", "users"
   add_foreign_key "comments", "spotteds"
   add_foreign_key "comments", "users"
