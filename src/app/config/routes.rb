@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   
-  get '/about', to:'static_pages#about'
+  get 'static_pages/new'
+  get 'static_pages/create'
+
+  get '/about', to:'static_pages#about' 
   
   resources :contact, only: [:index, :new, :create]
 
