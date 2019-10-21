@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Cucumber Report Builder web automation test results</title><link rel="icon" href="https://reportbuilder.rajatthareja.com/rb.ico">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" media="screen,projection"/>
+<link href="https://cdn.rawgit.com/rajatthareja/ReportBuilder/v1.8/css/report.builder.min.css" rel="stylesheet">
+</head><body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script><header class="brown lighten-5">
+<div class="row brown lighten-1">
+<div class="col m6 hide-on-small-only">
+<h5 class="truncate white-text tooltipped" data-tooltip="Cucumber Report Builder web automation test results">Cucumber Report Builder web automation test results</h5>
+</div><div class="col m6 s12 brown lighten-1">
+<ul class="tabs brown lighten-1 row" style="overflow-x: hidden">
+<li class="tab col s3">
+<a class="brown lighten-3 active blue-text waves-effect waves-light tooltipped" data-tooltip="Results Overview" href="#overview"><i class="material-icons">assessment</i> Overview</a>
+</li>
+<li class="tab col s3">
+<a class="brown lighten-3 white-text waves-effect waves-light tooltipped" data-tooltip="Scenarios by Features" href="#features"><i class="material-icons">view_headline</i> Features</a>
+</li>
+<li class="tab col s3">
+<a class="brown lighten-3 white-text waves-effect waves-light tooltipped" data-tooltip="Scenarios Summary Table" href="#summary"><i class="material-icons">view_comfy</i> Summary</a>
+</li>
+<li class="tab col s3">
+<a class="brown lighten-3 white-text waves-effect waves-light tooltipped" data-tooltip="Failed Scenarios" href="#errors"><i class="material-icons">bug_report</i> Errors</a>
+</li>
+</ul>
+</div>
+</div>
+</header>
+<div id="g0f0s0" class="modal modal-fixed-footer">
+<div class="modal-content"><h5>student clicks on a college link at the colleges menu and acsess the college page (0.436s)</h5>
+features/access_college_page.feature:11<ul class="collection stepList"><li class="collection-item step passed">
+<b>Given </b> I logged in successfully (Background) (0.301s)</li>
+<li class="collection-item step passed">
+<b>Given </b> There is a college page created (Background) (0.088s)</li>
+<li class="collection-item step passed">
+<b>Given </b> I am on the colleges menu (0.014s)</li>
+<li class="collection-item step passed">
+<b>When </b> I click on a link to college (0.032s)</li>
+<li class="collection-item step passed">
+<b>Then </b> I should see the college page (0.002s)</li>
+</ul><pre>Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)
+./features/support/hooks.rb:13:in `add_screenshot&#39;
+./features/support/hooks.rb:2:in `After&#39;</pre></div><div class="modal-footer">
+<span class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></span>
+</div>
+</div><div id="g0f1s0" class="modal modal-fixed-footer">
+<div class="modal-content"><h5>spotted page manager clicks the create new page button with valid data and all fields filled except &quot;background_image&quot; (0.102s)</h5>
+features/create_page_click.feature:10<ul class="collection stepList"><li class="collection-item step passed">
+<b>Given </b> I logged in successfully (Background) (0.055s)</li>
+<li class="collection-item step passed">
+<b>Given </b> I am on the create new page page (0.007s)</li>
+<li class="collection-item step passed">
+<b>When </b> I fill the create new page form (0.021s)</li>
+<li class="collection-item step passed">
+<b>And </b> I click the Cadastrar Nova Página button (0.018s)</li>
+<li class="collection-item step passed">
+<b>Then </b> I should see the initial user page (0.001s)</li>
+</ul><pre>Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)
+./features/support/hooks.rb:13:in `add_screenshot&#39;
+./features/support/hooks.rb:2:in `After&#39;</pre></div><div class="modal-footer">
+<span class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></span>
+</div>
+</div><div id="g0f2s0" class="modal modal-fixed-footer">
+<div class="modal-content"><h5>Show a yellow star on colleges menu page when I favorite the college on colleges menu page (0.121s)</h5>
+features/favorite_college.feature:11<ul class="collection stepList"><li class="collection-item step passed">
+<b>Given </b> I logged in successfully (Background) (0.029s)</li>
+<li class="collection-item step passed">
+<b>And </b> There is a college page created (Background) (0.060s)</li>
+<li class="collection-item step passed">
+<b>Given </b> I am on the colleges menu page (0.007s)</li>
+<li class="collection-item step passed">
+<b>When </b> I click on the star icon (0.022s)</li>
+<li class="collection-item step passed">
+<b>Then </b> The star icon must change to yellow (0.002s)</li>
+</ul><pre>Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)
+./features/support/hooks.rb:13:in `add_screenshot&#39;
+./features/support/hooks.rb:2:in `After&#39;</pre></div><div class="modal-footer">
+<span class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></span>
+</div>
+</div><div id="g0f2s1" class="modal modal-fixed-footer">
+<div class="modal-content"><h5>Show a college on favorite colleges menu page when I favorite the college on colleges menu page (0.118s)</h5>
+features/favorite_college.feature:16<ul class="collection stepList"><li class="collection-item step passed">
+<b>Given </b> I logged in successfully (Background) (0.031s)</li>
+<li class="collection-item step passed">
+<b>And </b> There is a college page created (Background) (0.051s)</li>
+<li class="collection-item step passed">
+<b>Given </b> I am on the colleges menu page (0.007s)</li>
+<li class="collection-item step passed">
+<b>When </b> I click on the star icon (0.017s)</li>
+<li class="collection-item step passed">
+<b>And </b> I go to favorite colleges menu page (0.011s)</li>
+<li class="collection-item step passed">
+<b>Then </b> I should see the college (0.001s)</li>
+</ul><pre>Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)
+./features/support/hooks.rb:13:in `add_screenshot&#39;
+./features/support/hooks.rb:2:in `After&#39;</pre></div><div class="modal-footer">
+<span class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></span>
+</div>
+</div><div id="g0f3s0" class="modal modal-fixed-footer">
+<div class="modal-content"><h5>student clicks the login button (0.030s)</h5>
+features/login_click.feature:7<ul class="collection stepList"><li class="collection-item step passed">
+<b>Given </b> I am on the login page (0.005s)</li>
+<li class="collection-item step passed">
+<b>And </b> There is an registered user (0.006s)</li>
+<li class="collection-item step passed">
+<b>When </b> I fill the login form with login information (0.004s)</li>
+<li class="collection-item step passed">
+<b>And </b> I click the Entrar button (0.013s)</li>
+<li class="collection-item step passed">
+<b>Then </b> I should see the initial user page (0.001s)</li>
+</ul><pre>Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)
+./features/support/hooks.rb:13:in `add_screenshot&#39;
+./features/support/hooks.rb:2:in `After&#39;</pre></div><div class="modal-footer">
+<span class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></span>
+</div>
+</div><div id="g0f4s0" class="modal modal-fixed-footer">
+<div class="modal-content"><h5>student clicks the register button with valid data and all fields filled (0.054s)</h5>
+features/sign_up_click.feature:7<ul class="collection stepList"><li class="collection-item step passed">
+<b>Given </b> I am on the create account page (0.011s)</li>
+<li class="collection-item step passed">
+<b>When </b> I fill the user registration form (0.024s)</li>
+<li class="collection-item step passed">
+<b>And </b> I click the Cadastrar button (0.018s)</li>
+<li class="collection-item step passed">
+<b>Then </b> I should see the welcome page (0.001s)</li>
+</ul><pre>Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)
+./features/support/hooks.rb:13:in `add_screenshot&#39;
+./features/support/hooks.rb:2:in `After&#39;</pre></div><div class="modal-footer">
+<span class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></span>
+</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function () {$('#g0f0s0').modal();$('#g0f0s1').modal();$('#g0f1s0').modal();$('#g0f1s1').modal();$('#g0f2s0').modal();$('#g0f2s1').modal();$('#g0f2s2').modal();$('#g0f3s0').modal();$('#g0f3s1').modal();$('#g0f4s0').modal();$('#g0f4s1').modal();});
+</script>
+<main class="brown lighten-5">
+<div class="row"><div id="overview" class="col s12 brown lighten-5">
+<div class="row">
+<div class="col m4 s12">
+<canvas id="featuresDoughnut" width="400" height="400"></canvas>
+<table id="metaDataFeatures" class="bordered">
+<tbody></tbody>
+</table>
+</div><div class="col m4 s12">
+<canvas id="scenariosDoughnut" width="400" height="400"></canvas>
+<table id="metaDataScenarios" class="bordered">
+<tbody></tbody>
+</table>
+</div><div class="col m4 s12">
+<table id="metaData" class="bordered">
+<tbody>
+<tr><th>Total Time</th><td>0.860s</td></tr><tr>
+<th>Project name</th>
+<td>Test</td>
+</tr><tr>
+<th>Platform</th>
+<td>Integration</td>
+</tr><tr>
+<th>Report generated</th>
+<td>2019-10-20 20:13:52 UTC</td>
+</tr></tbody>
+</table>
+</div>
+</div></div><div id="features" class="col s12 brown lighten-5 white-text">
+<ul class="featureList collapsible popout" data-collapsible="expandable">
+<li class="feature broken">
+<div class="collapsible-header brown lighten-1 waves-effect waves-light">
+<i class="material-icons">featured_play_list</i>
+<b>Feature</b>&nbsp;Access a college page&nbsp;(0.436s)
+</div><div class="collapsible-body brown lighten-4">
+<ul class="collection scenarioList"><li class="collection-item scenario failed">
+<a class="waves-effect waves-light modal-trigger white-text" href="#g0f0s0">
+<b>Scenario</b> student clicks on a college link at the colleges menu and acsess the college page&nbsp;(0.436s)
+</a>
+</li></ul>
+</div>
+</li><li class="feature broken">
+<div class="collapsible-header brown lighten-1 waves-effect waves-light">
+<i class="material-icons">featured_play_list</i>
+<b>Feature</b>&nbsp;Create a new page&nbsp;(0.102s)
+</div><div class="collapsible-body brown lighten-4">
+<ul class="collection scenarioList"><li class="collection-item scenario failed">
+<a class="waves-effect waves-light modal-trigger white-text" href="#g0f1s0">
+<b>Scenario</b> spotted page manager clicks the create new page button with valid data and all fields filled except &quot;background_image&quot;&nbsp;(0.102s)
+</a>
+</li></ul>
+</div>
+</li><li class="feature broken">
+<div class="collapsible-header brown lighten-1 waves-effect waves-light">
+<i class="material-icons">featured_play_list</i>
+<b>Feature</b>&nbsp;Favorite a college&nbsp;(0.239s)
+</div><div class="collapsible-body brown lighten-4">
+<ul class="collection scenarioList"><li class="collection-item scenario failed">
+<a class="waves-effect waves-light modal-trigger white-text" href="#g0f2s0">
+<b>Scenario</b> Show a yellow star on colleges menu page when I favorite the college on colleges menu page&nbsp;(0.121s)
+</a>
+</li><li class="collection-item scenario failed">
+<a class="waves-effect waves-light modal-trigger white-text" href="#g0f2s1">
+<b>Scenario</b> Show a college on favorite colleges menu page when I favorite the college on colleges menu page&nbsp;(0.118s)
+</a>
+</li></ul>
+</div>
+</li><li class="feature broken">
+<div class="collapsible-header brown lighten-1 waves-effect waves-light">
+<i class="material-icons">featured_play_list</i>
+<b>Feature</b>&nbsp;Login in the application&nbsp;(0.030s)
+</div><div class="collapsible-body brown lighten-4">
+<ul class="collection scenarioList"><li class="collection-item scenario failed">
+<a class="waves-effect waves-light modal-trigger white-text" href="#g0f3s0">
+<b>Scenario</b> student clicks the login button&nbsp;(0.030s)
+</a>
+</li></ul>
+</div>
+</li><li class="feature broken">
+<div class="collapsible-header brown lighten-1 waves-effect waves-light">
+<i class="material-icons">featured_play_list</i>
+<b>Feature</b>&nbsp;Sign up in the application&nbsp;(0.054s)
+</div><div class="collapsible-body brown lighten-4">
+<ul class="collection scenarioList"><li class="collection-item scenario failed">
+<a class="waves-effect waves-light modal-trigger white-text" href="#g0f4s0">
+<b>Scenario</b> student clicks the register button with valid data and all fields filled&nbsp;(0.054s)
+</a>
+</li></ul>
+</div>
+</li>
+</ul></div><div id="summary" class="col s12 brown lighten-5">
+<table id="summaryTable" class="bordered brown lighten-1 white-text" width="100%">
+<thead>
+<tr>
+<th class="hide-on-small-only">Feature</th>
+<th>Scenario</th>
+<th class="hide">Tags</th>
+<th>Status</th>
+<th class="hide-on-small-only">Error</th>
+</tr>
+</thead>
+<tbody><tr class="failed">
+<td class="hide-on-small-only">
+Access a college page
+</td><td class="hoverable">
+<a class="modal-trigger white-text" href="#g0f0s0">student clicks on a college link at the colleges menu and acsess the college page</a>
+</td><td class="hide"></td><td class="uppercase">
+failed
+</td><td class="hide-on-small-only">Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)</td></tr>
+<tr class="failed">
+<td class="hide-on-small-only">
+Create a new page
+</td><td class="hoverable">
+<a class="modal-trigger white-text" href="#g0f1s0">spotted page manager clicks the create new page button with valid data and all fields filled except &quot;background_image&quot;</a>
+</td><td class="hide"></td><td class="uppercase">
+failed
+</td><td class="hide-on-small-only">Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)</td></tr>
+<tr class="failed">
+<td class="hide-on-small-only">
+Favorite a college
+</td><td class="hoverable">
+<a class="modal-trigger white-text" href="#g0f2s0">Show a yellow star on colleges menu page when I favorite the college on colleges menu page</a>
+</td><td class="hide"></td><td class="uppercase">
+failed
+</td><td class="hide-on-small-only">Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)</td></tr>
+<tr class="failed">
+<td class="hide-on-small-only">
+Favorite a college
+</td><td class="hoverable">
+<a class="modal-trigger white-text" href="#g0f2s1">Show a college on favorite colleges menu page when I favorite the college on colleges menu page</a>
+</td><td class="hide"></td><td class="uppercase">
+failed
+</td><td class="hide-on-small-only">Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)</td></tr>
+<tr class="failed">
+<td class="hide-on-small-only">
+Login in the application
+</td><td class="hoverable">
+<a class="modal-trigger white-text" href="#g0f3s0">student clicks the login button</a>
+</td><td class="hide"></td><td class="uppercase">
+failed
+</td><td class="hide-on-small-only">Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)</td></tr>
+<tr class="failed">
+<td class="hide-on-small-only">
+Sign up in the application
+</td><td class="hoverable">
+<a class="modal-trigger white-text" href="#g0f4s0">student clicks the register button with valid data and all fields filled</a>
+</td><td class="hide"></td><td class="uppercase">
+failed
+</td><td class="hide-on-small-only">Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)</td></tr>
+</tbody>
+</table></div><div id="errors" class="col s12 brown lighten-5">
+<ul class="errorList collapsible popout" data-collapsible="expandable"><li class="error">
+<div class="collapsible-header red lighten-2 white-text waves-effect waves-light">
+<i class="material-icons">bug_report</i>Capybara::Driver::Base#save_screenshot (Capybara::NotSupportedByDriverError)
+</div><div class="collapsible-body brown lighten-4">
+<ul class="collection failedScenarioList">
+<li class="collection-item failedScenario brown lighten-5 red-text">
+<i class="material-icons">highlight_off</i>&nbsp;<a class="modal-trigger red-text" href="#g0f0s0">student clicks on a college link at the colleges menu and acsess the college page</a>
+</li><li class="collection-item failedScenario brown lighten-5 red-text">
+<i class="material-icons">highlight_off</i>&nbsp;<a class="modal-trigger red-text" href="#g0f1s0">spotted page manager clicks the create new page button with valid data and all fields filled except &quot;background_image&quot;</a>
+</li><li class="collection-item failedScenario brown lighten-5 red-text">
+<i class="material-icons">highlight_off</i>&nbsp;<a class="modal-trigger red-text" href="#g0f2s0">Show a yellow star on colleges menu page when I favorite the college on colleges menu page</a>
+</li><li class="collection-item failedScenario brown lighten-5 red-text">
+<i class="material-icons">highlight_off</i>&nbsp;<a class="modal-trigger red-text" href="#g0f2s1">Show a college on favorite colleges menu page when I favorite the college on colleges menu page</a>
+</li><li class="collection-item failedScenario brown lighten-5 red-text">
+<i class="material-icons">highlight_off</i>&nbsp;<a class="modal-trigger red-text" href="#g0f3s0">student clicks the login button</a>
+</li><li class="collection-item failedScenario brown lighten-5 red-text">
+<i class="material-icons">highlight_off</i>&nbsp;<a class="modal-trigger red-text" href="#g0f4s0">student clicks the register button with valid data and all fields filled</a>
+</li>
+</ul>
+</div>
+</li>
+</ul></div>
+</div>
+</main><footer class="page-footer brown lighten-4">
+<div class="footer-copyright brown lighten-1">
+<div class="container">
+Happy Reporting!
+<a class="white-text text-lighten-4 right" href="https://reportbuilder.rajatthareja.com">Generated by Report Builder</a>
+</div>
+</div>
+</footer><script type="text/javascript" src="https://cdn.rawgit.com/rajatthareja/ReportBuilder/v1.8/js/report.builder.min.js"></script></body>
+</html>

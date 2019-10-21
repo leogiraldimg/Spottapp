@@ -13,6 +13,5 @@ FactoryBot.define do
 		request_to_participate {"1"}
 		admin_approves_spotted {"1"}
 		user {User.first || association(:user)}
-		id {"1"}
 	end
 end
