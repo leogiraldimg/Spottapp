@@ -86,3 +86,6 @@ end
 gem 'rake', '~> 12.3', '>=12.3.2'
 gem 'therubyracer'
 gem 'execjs'
+
+gem 'mail_form'
+gem 'dotenv-rails', groups: [:development, :test]

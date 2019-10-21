@@ -38,4 +38,11 @@ pt-BR:
         too_long: 'muito grande. Máximo de %{count} caracteres'
         too_short: 'muito curta. Mínimo de %{count} caracteres'
         required: 'necessário'
+  
+  mail_form:
+    attributes:
+      contact:
+        name: 'Nome'
+        email:  'Email'
+        message: 'Mensagem'
     

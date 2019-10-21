@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_015901) do
     t.string "uid"
     t.string "name"
     t.string "avatar"
-    t.string "nickname", default: "", null: false
+    t.string "nickname"
   end
 
   add_foreign_key "colleges", "users"

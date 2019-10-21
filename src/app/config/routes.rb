@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  
+  get '/about', to:'static_pages#about'
+  
+  resources :contact, only: [:index, :new, :create]
+
   root to: "welcome#index"
 
   get 'entrar', to: 'sessions#new'
