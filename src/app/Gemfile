@@ -89,3 +89,8 @@ gem 'execjs'
 
 gem 'mail_form'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'rails-controller-testing'
+
+gem 'report_builder'
+
+gem 'image_processing', '~> 1.2'

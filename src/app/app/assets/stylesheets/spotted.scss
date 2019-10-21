@@ -1,3 +1,164 @@
 // Place all the styles related to the Spotted controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#index {
+    width: 100%;
+    height: 67vh;
+}
+
+#index .container-left {
+    float: left;
+    width: 20%;
+    height: 100%;
+    overflow: auto;
+}
+
+#index .container-left table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+}
+
+#index .container-left table td {
+    text-align: left;
+    vertical-align: bottom;
+    padding: 1px;
+}
+
+#index .container-left table thead th.col1 {
+    width: 30%;
+}
+
+#index .panel.panel-default {
+    width: 70%;
+    height: 100%;
+    float: right;
+    overflow: auto;
+    border-style: none;
+    border-radius: 20px;
+}
+
+#index .panel.panel-default .panel-body {
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    margin-bottom:10px;
+}
+
+    
+#index #clear {
+    clear: both;
+} 
+
+@media (max-width: 800px) {
+    #index .container-left {
+        width: 100%;
+        height: auto;
+    }
+    
+    #index .panel.panel-default {
+        width: 100%;
+        height: 60vh;
+        overflow: auto;
+    }
+}
+
+#show {
+    width: 100%;
+    height: 67vh;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    border-radius: 18px;
+}
+
+#show .container-left {
+    float: left;
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+    border-right: 1px solid;
+}
+
+#show .container-right {
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#show .container-right .comment {
+    width: 100%;
+    height: 55px;
+    padding-top: 10px;
+    border-bottom: 1px solid;
+}
+
+#show .container-right .scroll {
+    width: 100%;
+    height: calc(100% - 60px);
+    height: -moz-calc(100% - 60px);
+    height: -webkit-calc(100% - 60px);
+    height: -o-calc(100% - 60px);
+    overflow: auto;
+}
+
+#comment-area {
+    width: 100%;
+}
+
+#new-comment {
+    width: calc(100% - 120px);
+    width: -moz-calc(100% - 120px);
+    width: -webkit-calc(100% - 130px);
+    width: -o-calc(100% - 120px);
+}
+
+@media (max-width: 700px) {
+    #show {
+        border-style: none;
+        height: 130vh;
+    }
+
+    #show .container-left {
+        width: 100%;
+        height: 40%;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #000000;
+        border-radius: 10px;
+    }
+    
+    #show .container-right {
+        width: 100%;
+        height: 60%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #new-comment {
+        width: 100vw;
+    }
+
+    #button-send {
+        width: 100%;
+        height: 45px;
+    }
+    
+    #show .container-right .comment {
+        border-bottom: none;
+    }
+    
+    #show .container-right .scroll {
+        width: 100%;
+        height: calc(100% - 110px);
+        height: -moz-calc(100% - 110px);
+        height: -webkit-calc(100% - 110px);
+        height: -o-calc(100% - 110px);
+        border-top: 1px solid;
+        overflow-x: hidden;
+    }
+}
