@@ -12,6 +12,3 @@ When /^I click the Enviar Mensagem button$/ do
     click_button "Enviar Mensagem"
 end
 
-Then /^I should see the green success toast message$/ do
-    expect(page).to have_xpath('.//div[@class="alert alert-success alert-dismissible"]')
-end
