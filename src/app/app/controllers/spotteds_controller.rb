@@ -43,6 +43,15 @@ class SpottedsController < ApplicationController
         end
     end
 
+    def list_likes
+        @spotted = Spotted.find(params[:spotted_id])
+        respond_to do |format|
+            format.html
+            format.js
+        end
+    end
+
+
     private 
         def spotted_params
             params.require(:spotted).permit(:content, :images)

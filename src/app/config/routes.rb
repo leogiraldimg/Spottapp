@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/users', to: 'users#new'
 
   get 'favorite_colleges', to: 'favorite_colleges#show'
+  get 'list_likes', to: 'spotteds#list_likes'
 
   resources :users, only: [:new, :create, :show]
   

@@ -66,14 +66,16 @@
             <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
             <% like_count = spotted.like.count %>
                 <p>
+                    <% link = '' %>
                     <% if pre_like %>
-                        <%= (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
+                        <% link = (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
                     <% else %>
                         <%if like_count >= 1 %>
-                            <%= (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
+                            <% link = (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
                         <% else %>
                         <% end %>
-                        <% end %>
+                    <% end %>
+                    <%= link_to link, list_likes_path(spotted_id: spotted.id), {:remote => true, 'data-toggle' => "modal", 'data-target' => "#modal-window"}%>
                 </p>
             <% if pre_like %> 
                 <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(spotted, pre_like), method: :delete %>
@@ -81,7 +83,13 @@
                 <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(spotted), method: :post %>
             <% end %>
             <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-primary btn-sm' %>
-        </div>
+
+           <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content"></div>
+                    </div>
+                </div>
+            </div>
         <hr>
         <% end %>
     </div>
