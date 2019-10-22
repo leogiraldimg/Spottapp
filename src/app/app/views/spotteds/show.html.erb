@@ -8,9 +8,17 @@
             <p>
                 <%= @spotted.content %>
                 <% if @spotted.image.exists? %>
-                    <p id="image">
-                        <%= link_to image_tag(@spotted.image.url, class: 'media-object'), @spotted.image.url, target: '_blank' %>
-                    </p>
+                    <div id="image">
+                        <p id="small">
+                            <%= link_to image_tag(@spotted.image.url(:small), class: 'media-object'), @spotted.image.url, target: '_blank' %>
+                        </p>
+                        <p id="medium">
+                            <%= link_to image_tag(@spotted.image.url(:medium), class: 'media-object'), @spotted.image.url, target: '_blank' %>
+                        </p>
+                        <p id="large">
+                            <%= link_to image_tag(@spotted.image.url(:large), class: 'media-object'), @spotted.image.url, target: '_blank' %>
+                        </p>
+                    </div>
                 <% end %>
             </p>
             <div class="row">
