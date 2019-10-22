@@ -35,6 +35,12 @@ class SpottedsController < ApplicationController
         @spotted.user = current_user
         @spotted.college = College.find(params[:college_id])
         @spotted.college_spotted_counter = Spotted.where(college_id: @spotted.college_id).count + 1
+        
+        if (spotted_params[:image])
+            img_file = spotted_params[:image].tempfile.open.read.force_encoding(Encoding::UTF_8)
+            @spotted.image = Base64.encode64(img_file)
+        end
+
         if @spotted.save
             flash[:sucess] = 'Spotted cadastrado com sucesso'
             redirect_to college_spotteds_path
@@ -54,7 +60,7 @@ class SpottedsController < ApplicationController
 
     private 
         def spotted_params
-            params.require(:spotted).permit(:content, images: [])
+            params.require(:spotted).permit(:content, :image)
         end
 
         def set_user_creator

@@ -8,10 +8,8 @@
             <p>
                 <%= @spotted.content %>
                 <p>
-                <% if @spotted.images.attached? %>
-                    <% @spotted.images.each do |image| %>
-                        <image src = "<%= (url_for(image.variant(resize: '300x300').processed)) %>", id="image">
-                    <% end %>
+                <% if @spotted.image? %>
+                    <img src="data:image;base64,<%= @spotted.image %>" id="image" class="img-responsive" style="width: 100%; height: auto;">
                 <% end %>
                 </p>
             </p>

@@ -1,7 +1,5 @@
 class Spotted < ApplicationRecord
-
-    has_many_attached :images
-
+    validates :image, presence: false
     validates :content, presence: true, length: {minimum: 1}    
 
     belongs_to :college
