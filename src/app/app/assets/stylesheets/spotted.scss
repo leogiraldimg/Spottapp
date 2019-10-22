@@ -48,7 +48,7 @@
 }
 
     
-#index #clear {
+#clear {
     clear: both;
 } 
 
@@ -160,5 +160,33 @@
         height: -o-calc(100% - 110px);
         border-top: 1px solid;
         overflow-x: hidden;
+    }
+}
+
+#small {
+    display: block;
+}
+
+#medium, #large {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    #small, #medium {
+        display: none;
+    }
+
+    #large {
+        display: block;
+    }
+}
+
+@media (min-width: 200px) {
+    #small, #large {
+        display: none;
+    }
+
+    #medium {
+        display: block;
     }
 }
