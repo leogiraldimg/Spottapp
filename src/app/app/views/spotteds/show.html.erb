@@ -7,13 +7,11 @@
         <div class="panel-body">
             <p>
                 <%= @spotted.content %>
-                <p>
-                <% if @spotted.images.attached? %>
-                    <% @spotted.images.each do |image| %>
-                        <image src = "<%= (url_for(image.variant(resize: '300x300').processed)) %>", id="image">
-                    <% end %>
+                <% if @spotted.image.exists? %>
+                    <p id="image">
+                        <%= link_to image_tag(@spotted.image.url, class: 'media-object'), @spotted.image.url, target: '_blank' %>
+                    </p>
                 <% end %>
-                </p>
             </p>
             <div class="row">
                 <div class="col-sm-3">

@@ -1,5 +1,5 @@
 When("I upload an image to the spotted") do
-    page.attach_file "spotted[images][]", Rails.root.join('features', 'images', 'cat_and_dog.jpg')
+    page.attach_file "spotted[image]", Rails.root.join('features', 'images', 'cat_and_dog.jpg')
 end
 
 When("I go to spotted page") do

@@ -1,6 +1,7 @@
 class Spotted < ApplicationRecord
 
-    has_many_attached :images
+    has_attached_file :image, :styles => { :original => "350x350>" }
+    validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
     validates :content, presence: true, length: {minimum: 1}    
 
