@@ -67,14 +67,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_024453) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "college_id"
-<<<<<<< HEAD
     t.string "image"
-=======
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
->>>>>>> b8c92f118dcf5dfbdf19815b89ff6cb8b4fd0cd0
     t.index ["college_id"], name: "index_spotteds_on_college_id"
     t.index ["user_id"], name: "index_spotteds_on_user_id"
   end
