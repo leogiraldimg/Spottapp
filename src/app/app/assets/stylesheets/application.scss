@@ -69,6 +69,11 @@ footer {
     border-color: $white !important;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
 @media (max-width: 768px) {
     #spottapp-logo {
         height: 0;

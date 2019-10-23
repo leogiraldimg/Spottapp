@@ -7,18 +7,9 @@
         <div class="panel-body">
             <p>
                 <%= @spotted.content %>
-                <% if @spotted.image.exists? %>
-                    <div id="image">
-                        <p id="small">
-                            <%= link_to image_tag(@spotted.image.url(:small), class: 'media-object'), @spotted.image.url, target: '_blank' %>
-                        </p>
-                        <p id="medium">
-                            <%= link_to image_tag(@spotted.image.url(:medium), class: 'media-object'), @spotted.image.url, target: '_blank' %>
-                        </p>
-                        <p id="large">
-                            <%= link_to image_tag(@spotted.image.url(:large), class: 'media-object'), @spotted.image.url, target: '_blank' %>
-                        </p>
-                    </div>
+                <p>
+                <% if @spotted.image? %>
+                    <img src="data:image;base64,<%= @spotted.image %>" id="image" class="img-responsive" style="width: 100%; height: auto;">
                 <% end %>
             </p>
             <div class="row">
