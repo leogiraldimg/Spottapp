@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h2.title {
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
 #index {
     width: 100%;
     height: 67vh;
@@ -9,9 +18,14 @@
 
 #index .container-left {
     float: left;
-    width: 20%;
+    width: 25%;
     height: 100%;
     overflow: auto;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 10px;
 }
 
 #index .container-left table {
@@ -24,6 +38,7 @@
     text-align: left;
     vertical-align: bottom;
     padding: 1px;
+    vertical-align: middle;
 }
 
 #index .container-left table thead th.col1 {
@@ -37,6 +52,7 @@
     overflow: auto;
     border-style: none;
     border-radius: 20px;
+    background-color: transparent;
 }
 
 #index .panel.panel-default .panel-body {
@@ -45,6 +61,7 @@
     border-color: #000000;
     border-style: solid;
     margin-bottom:10px;
+    background-color: #FFFFFF;
 }
 
     
@@ -106,6 +123,10 @@
     overflow: auto;
 }
 
+#show .curtida {
+    padding-left: 10px;
+}
+
 #comment-area {
     width: 100%;
 }
@@ -160,33 +181,5 @@
         height: -o-calc(100% - 110px);
         border-top: 1px solid;
         overflow-x: hidden;
-    }
-}
-
-#small {
-    display: block;
-}
-
-#medium, #large {
-    display: none;
-}
-
-@media (min-width: 1200px) {
-    #small, #medium {
-        display: none;
-    }
-
-    #large {
-        display: block;
-    }
-}
-
-@media (min-width: 200px) {
-    #small, #large {
-        display: none;
-    }
-
-    #medium {
-        display: block;
     }
 }

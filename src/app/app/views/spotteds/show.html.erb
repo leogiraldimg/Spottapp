@@ -13,7 +13,7 @@
                 <% end %>
             </p>
             <div class="row">
-                <div class="col-sm-3">
+                <div class="curtida">
                     <% like_count = @spotted.like.count %>
                     <% pre_like = @spotted.like.find { |like| like.user_id == current_user.id} %>
                     <p>

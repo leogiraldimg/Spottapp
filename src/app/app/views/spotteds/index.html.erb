@@ -2,7 +2,7 @@
     <%= @college_style %>
 </style>
 
-<h2>Spotteds de <%= @college.name %>
+<h2 class="title">Spotteds de <%= @college.name %>
 
 <% if current_user %>
     <% if already_favorited(@college.id) %>
