@@ -5,9 +5,7 @@
 /* FontAwesome for working BootSnippet :> */
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-#team {
-    background: #eee !important;
-}
+
 
 .btn-primary:hover,
 .btn-primary:focus {
@@ -36,7 +34,9 @@
 
 #team .card {
     border: none;
-    background: #ffffff;
+    background:white;
+    border-radius: 15px;
+    box-shadow: 5px 10px 18px #e2dde6
 }
 
 .image-flip:hover .backside,
@@ -46,7 +46,7 @@
     -o-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
     transform: rotateY(0deg);
-    border-radius: .25rem;
+    border-radius: 15px;
 }
 
 .image-flip:hover .frontside,
@@ -71,7 +71,7 @@
 
 .frontside {
     position: relative;
-    z-index: 2;
+    
     margin-bottom: 30px;
 }
 
@@ -113,11 +113,6 @@
     min-height: 312px;
 }
 
-.backside .card a {
-    font-size: 18px;
-    color: #007b5e !important;
-}
-
 .frontside .card .card-title,
 .backside .card .card-title {
     color: #007b5e !important;
@@ -129,3 +124,28 @@
     border-radius: 50%;
 }
 
+#team .row {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+#blockContainer {
+    display : flex;
+  }
+  #first-div {
+    flex : 1;
+  }
+  #second-div {
+    flex : 1;
+  }
+  @media only screen and (max-width: 700px) {
+   #blockContainer {
+     flex-direction : column;
+   }
+   #first-div {
+        order : 2;
+    }
+   #second-div {
+        order : 1;
+      }
+  }
