@@ -12,44 +12,40 @@
                     <img src="data:image;base64,<%= @spotted.image %>" id="image" class="img-responsive" style="width: 100%; height: auto;">
                 <% end %>
             </p>
-            <div class="row">
-                <div class="curtida">
-                    <% like_count = @spotted.like.count %>
-                    <% pre_like = @spotted.like.find { |like| like.user_id == current_user.id} %>
-                    <p>
-                        <% link = '' %>
-                        <% if pre_like %>
-                            <% link = (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
-                        <% else %>
-                            <%if like_count >= 1 %>
-                                <% link = (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
-                            <% else %>
-                            <% end %>
-                        <% end %>
-                        <%= link_to link, list_likes_path(spotted_id: @spotted.id), {:remote => true, 'data-toggle' => "modal", 'data-target' => "#modal-window"}%>
-                    </p>
-                </div>
-            </div>
-            <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content"></div>
-                </div>
-            </div>
-            <div class='row'>
-                <div class="col-sm-1">
-                    <% if pre_like %>
-                        <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(@spotted, pre_like, :origin => 'modal'), method: :delete %>
-                    <% else %>
-                        <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(@spotted, :origin => 'modal'), method: :post %>
-                    <% end %>        
-                </div>
-            </div>
         </div>
     </div>
 
     <div class="container-right">
-        <div class="comment">
-            <div class="row col-md-12 col-sm-12">
+        <div class="row">
+            <% like_count = @spotted.like.count %>
+            <% pre_like = @spotted.like.find { |like| like.user_id == current_user.id} %>
+            <p class="curtida">
+                <% link = '' %>
+                <% if pre_like %>
+                    <% link = (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
+                <% else %>
+                    <%if like_count >= 1 %>
+                        <% link = (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
+                    <% else %>
+                    <% end %>
+                <% end %>
+                <%= link_to link, list_likes_path(spotted_id: @spotted.id), {:remote => true, 'data-toggle' => "modal", 'data-target' => "#modal-window"}%>
+            </p>
+        </div>
+        <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"></div>
+            </div>
+        </div>
+        <div class='row' id="curtir-e-comentar">
+            <div class="mao">
+                <% if pre_like %>
+                    <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(@spotted, pre_like, :origin => 'modal'), method: :delete %>
+                <% else %>
+                    <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(@spotted, :origin => 'modal'), method: :post %>
+                <% end %>        
+            </div>
+            <div class="comment">
                 <%= render 'spotteds/new_comments' %>
             </div>
         </div>

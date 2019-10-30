@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 h2.title {
-    background-color: #FFFFFF;
+    background-color: #FFFFFFE0;
     border-style: solid;
     border-width: 1px;
-    border-radius: 20px;
+    border-radius: 40px;
     padding: 10px;
     text-align: center;
 }
@@ -21,7 +21,7 @@ h2.title {
     width: 25%;
     height: 100%;
     overflow: auto;
-    background-color: #FFFFFF;
+    background-color: #FFFFFFE0;
     border-radius: 20px;
     border-style: solid;
     border-width: 1px;
@@ -107,11 +107,32 @@ h2.title {
     padding-right: 15px;
 }
 
+#show .container-right .curtida {
+    padding-top: 10px;
+    margin: 0 0 0 0px;
+}
+
+#show #curtir-e-comentar {
+    margin: 0 0 0 0px;
+    border-bottom: 1px solid;
+}
+
+#show .container-right .mao {
+    width: 30px;
+    float: left;
+    align-content: center;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
 #show .container-right .comment {
-    width: 100%;
+    width: calc(100% - 60px);
+    width: -moz-calc(100% - 60px);
+    width: -webkit-calc(100% - 60px);
+    width: -o-calc(100% - 60px);
+    float: right;
     height: 55px;
     padding-top: 10px;
-    border-bottom: 1px solid;
 }
 
 #show .container-right .scroll {
@@ -128,14 +149,15 @@ h2.title {
 }
 
 #comment-area {
-    width: 100%;
+    width: 95%;
 }
 
 #new-comment {
-    width: calc(100% - 120px);
-    width: -moz-calc(100% - 120px);
+    width: calc(100% - 130px);
+    width: -moz-calc(100% - 130px);
     width: -webkit-calc(100% - 130px);
-    width: -o-calc(100% - 120px);
+    width: -o-calc(100% - 130px);
+    padding: 0 0 0 0px;
 }
 
 @media (max-width: 700px) {
@@ -160,17 +182,20 @@ h2.title {
         padding-right: 0;
     }
 
+    #show #curtir-e-comentar {
+        border-bottom: none;
+        height: 105px;
+    }
+
     #new-comment {
-        width: 100vw;
+        width: calc(100vw - 75px);
+        width: -moz-calc(100vw - 75px);
+        width: -webkit-calc(100vw - 75px);
+        width: -o-calc(100vw - 75px);
     }
 
     #button-send {
-        width: 100%;
-        height: 45px;
-    }
-    
-    #show .container-right .comment {
-        border-bottom: none;
+        padding: 0 0 0 0px;
     }
     
     #show .container-right .scroll {
