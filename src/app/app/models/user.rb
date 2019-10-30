@@ -7,7 +7,9 @@ class User < ApplicationRecord
     validates :nickname, presence: true, length: {maximum: 30}, uniqueness: { case_sensitive: true }
     validates :first_name, presence: true, length: {maximum: 50}
     validates :last_name, presence: true, length: {maximum: 50}
-    validates :password, length: {minimum: 6}
+    validates :password, presence: true, length: {minimum: 6}
+    validates :password_confirmation, presence: true, length: {minimum: 6}
+    validates :birth_date, presence: true
     validates :city, presence: true
     validates :state, presence: true
     validates :country, presence: true

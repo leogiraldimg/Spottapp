@@ -6,7 +6,7 @@ FactoryBot.define do
 		last_name {"user"}
 		password {"teste001user"}
 		password_confirmation {"teste001user"}
-		birth_date {"10/10/1998"}
+		birth_date {"1998-10-25"}
 		city {"São Paulo"}
 		state {"SP"}
 		country {"Brasil"}
