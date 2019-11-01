@@ -1,6 +1,9 @@
-<style>
-    <%= @college_style %>
-</style>
+<% content_for :for_head do %>
+    <style>
+        <%= @college_style %>
+    </style>
+    <link href="<%= @font_google_link %>" rel='stylesheet'>
+<% end %>
 
 <h2 class="title">Spotteds de <%= @college.name %>
 
