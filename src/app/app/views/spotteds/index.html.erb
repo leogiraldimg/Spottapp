@@ -82,6 +82,14 @@
             <% else %>
                 <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(spotted), method: :post %>
             <% end %>
+
+            <% if @current_user.id == @college.user_id %> 
+
+            <%= link_to college_spotted_path(:college_id, spotted.id), method: :delete, id: "trash-bt" do %>
+                    <i class="fa fa-trash"></i> 
+            <% end %>
+                  
+            <% end %>
             <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-primary btn-sm' %>
 
            <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

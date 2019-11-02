@@ -1,6 +1,7 @@
 class SpottedsController < ApplicationController
     before_action :set_college, only: [:index, :new]
     
+    
     def index
         @spotteds = @college.spotteds
         @college_style = ''
@@ -55,6 +56,13 @@ class SpottedsController < ApplicationController
             format.html
             format.js
         end
+    end
+
+    def destroy
+        @spotted = Spotted.find(params[:id])  
+        @spotted.destroy
+        flash[:success] = 'Spotted apagado com sucesso'
+        redirect_to college_spotteds_path(@spotted.college)
     end
 
 
