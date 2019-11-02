@@ -18,15 +18,9 @@ Rails.application.routes.draw do
   get 'list_likes', to: 'spotteds#list_likes'
 
   resources :users, only: [:new, :create, :show]
-<<<<<<< HEAD
-
-  resources :colleges, only: [:new, :create, :show, :index, :edit, :update, :destroy] do
-    resources :spotteds, only: [:new, :create, :show, :index]
-=======
   
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
     resources :spotteds, only: [:new, :create, :show, :index, :destroy]
->>>>>>> 36ff9822dca478f529bc7e20dad20386d96013b5
   end
   resources :spotteds, only: [:new, :create, :show, :index, :delete] do
     resources :comments
