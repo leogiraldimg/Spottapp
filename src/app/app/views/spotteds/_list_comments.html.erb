@@ -1,6 +1,14 @@
 <% @comments.each do |comment| %>
 <div class="row col-md-12 col-xs-12">
-    <label><%= comment.user.first_name + ' ' + comment.user.last_name %></label>
+    <p><label><%= comment.user.first_name + ' ' + comment.user.last_name %></label>
+    
+    <% if current_user.id == comment.user.id %> 
+        <%= link_to spotted_comment_path(@spotted, comment), method: :delete, id: "trash-bt" do %>
+                
+                <i class="fa fa-trash fa-2x"  style="color:black"></i> 
+        <% end %>
+    <% end %>   
+    </p>
     <p><%= comment.content %></p>
 </div>
 <% end %>

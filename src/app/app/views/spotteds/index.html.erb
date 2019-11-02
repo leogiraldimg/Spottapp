@@ -1,6 +1,9 @@
-<style>
-    <%= @college_style %>
-</style>
+<% content_for :for_head do %>
+    <style>
+        <%= @college_style %>
+    </style>
+    <link href="<%= @font_google_link %>" rel='stylesheet'>
+<% end %>
 
 <h2 class="title">Spotteds de <%= @college.name %>
 
@@ -81,6 +84,14 @@
                 <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(spotted, pre_like), method: :delete %>
             <% else %>
                 <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(spotted), method: :post %>
+            <% end %>
+
+            <% if @current_user.id == @college.user_id %> 
+
+            <%= link_to college_spotted_path(:college_id, spotted.id), method: :delete, id: "trash-bt" do %>
+                    <i class="fa fa-trash fa-2x"  style="color:black"></i> 
+            <% end %>
+                  
             <% end %>
             <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-primary btn-sm' %>
 
