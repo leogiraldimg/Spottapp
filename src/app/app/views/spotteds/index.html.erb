@@ -7,11 +7,13 @@
 
 <h2 class="title">Spotteds de <%= @college.name %>
 
-<% if current_user %>
+<% if current_user.id == @college.user_id %>
+    <td style="text-align: center"><%= link_to image_tag('star-bigger-purple.png'), favorite_college_path(@college, type: "admin"), method: :put, id: "star-purple" %></td>
+<% else %>
     <% if already_favorited(@college.id) %>
-    <td style="text-align: center"><%= link_to image_tag('star-bigger.png'), favorite_college_path(@college, type: "unfavorite"), method: :put, id: "star" %></td>
+        <td style="text-align: center"><%= link_to image_tag('star-bigger.png'), favorite_college_path(@college, type: "unfavorite"), method: :put, id: "star" %></td>
     <% else %>
-    <td style="text-align: center"><%= link_to image_tag('star-bigger-white.png'), favorite_college_path(@college, type: "favorite"), method: :put, id: "star-white" %></td>
+        <td style="text-align: center"><%= link_to image_tag('star-bigger-white.png'), favorite_college_path(@college, type: "favorite"), method: :put, id: "star-white" %></td>
     <% end %>
 <% end %>
 

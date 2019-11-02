@@ -34,10 +34,14 @@
           </span>
           <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.initials %> - <%= college.unit %></a>
           <div class="inner">
-            <% if already_favorited(college.id) %>
-              <%= link_to image_tag('star.png'), favorite_college_path(college, type: "unfavorite"), method: :put, id: "star" %>
+            <% if current_user.id == college.user_id %>
+              <%= link_to image_tag('star-purple.png'), favorite_college_path(college, type: "admin"), method: :put, id: "star-purple" %>
             <% else %>
-              <%= link_to image_tag('star-white.png'), favorite_college_path(college, type: "favorite"), method: :put, id: "star-white" %>
+              <% if already_favorited(college.id) %>
+                <%= link_to image_tag('star.png'), favorite_college_path(college, type: "unfavorite"), method: :put, id: "star" %>
+              <% else %>
+                <%= link_to image_tag('star-white.png'), favorite_college_path(college, type: "favorite"), method: :put, id: "star-white" %>
+              <% end %>
             <% end %>
           </div>
         </div>
