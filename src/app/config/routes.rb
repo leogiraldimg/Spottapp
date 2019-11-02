@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
     resources :spotteds, only: [:new, :create, :show, :index, :destroy]
   end
-  resources :spotteds, only: [:new, :create, :show, :index] do
+  resources :spotteds, only: [:new, :create, :show, :index, :delete] do
     resources :comments
   end
 
