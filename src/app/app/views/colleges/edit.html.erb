@@ -39,4 +39,8 @@
             <%= f.submit 'Atualizar', class: 'btn btn-primary' %>
         </div>
     </div>
+    <legend><%= translate 'apagar_pagina' %></legend>
 <% end %>
+<div class="delete-button">
+    <%= link_to "Apagar a página", college_path(@college), method: :delete, data: { confirm: "Você tem certeza que quer apagar está página e todo o conteúdo dentro dela? Essa ação não pode ser desfeita." }, class: 'btn btn-primary' %>
+</div>

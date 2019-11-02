@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  
   get 'static_pages/new'
   get 'static_pages/create'
 
   get '/about', to:'static_pages#about' 
-  
+
   resources :contact, only: [:index, :new, :create]
 
   root to: "welcome#index"
@@ -19,8 +18,8 @@ Rails.application.routes.draw do
   get 'list_likes', to: 'spotteds#list_likes'
 
   resources :users, only: [:new, :create, :show]
-  
-  resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
+
+  resources :colleges, only: [:new, :create, :show, :index, :edit, :update, :destroy] do
     resources :spotteds, only: [:new, :create, :show, :index]
   end
   resources :spotteds, only: [:new, :create, :show, :index] do

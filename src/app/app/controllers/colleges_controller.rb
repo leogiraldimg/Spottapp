@@ -51,6 +51,12 @@ class CollegesController < ApplicationController
         end
     end
 
+    def destroy
+        @college = College.find(params[:id])
+        @college.destroy
+        redirect_to favorite_colleges_path, notice:  "A página do(a) #{@college.name} foi deletada."
+    end
+
     private 
         def college_params
             params.require(:college).permit(:name, :initials, :city, :state, :country, :unit, :user_id, :background_color, :font_family, :background_image, :font_color, :request_to_participate, :admin_approves_spotted)
