@@ -3,11 +3,11 @@ Given(/^I am on the colleges menu page$/) do
 end
   
 When(/^I click on the star icon$/) do
-    find('#star-purple').click
+    find('#star-white').click
 end
 
 Then(/^The star icon must change to yellow$/) do
-    find('#star-purple')
+    find('#star')
 end
 
 When(/^I go to favorite colleges menu page$/) do

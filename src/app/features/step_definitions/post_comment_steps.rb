@@ -18,6 +18,8 @@ And(/^I should see my new comment on the timeline$/) do
     expect(page).to have_xpath('.//div', text: "Comment Teste")
 end
 
+# - - -
+
 Given (/^I posted a comment successfully$/) do
     steps %Q{
         Given I am on the view spotted page

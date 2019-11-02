@@ -25,10 +25,20 @@ Then(/^I should see the welcome page$/) do
     expect(page).to have_xpath('.//a[@href="/entrar"]')
 end
 
+# - - -
+
 Given(/^I have an account$/) do
     steps %Q{
         Given I am on the create account page
         When I fill the user registration form
         And I click the Cadastrar button
+        Then I should see the welcome page
     }
+end
+
+Given (/^There is an unregistered user$/) do
+    u = User.new(:email => "teste002.user@spottapp.com.br", :nickname => "teste002.user", :first_name => "teste002" , :last_name => "user", :password => "teste002user", :password_confirmation => "teste002user", :birth_date => "10/10/1998", :city => "São Paulo", :state => "SP", :country => "Brasil")
+    u.save
+
+    @user = User.find_by(nickname: "teste002.user")
 end

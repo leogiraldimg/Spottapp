@@ -1,10 +1,3 @@
-Given(/^There is a page created by me$/) do
-    u = College.new(:name => "Universidade Teste 001", :initials => "UT001", :city => "São Paulo", :state => "SP", :country => "Brasil", :unit => "Faculdade Teste 001", :user_id => @user.id, :background_color => "fafafa", :font_family => "Arial", :background_image => "", :font_color => "#000000")
-    u.save
-
-    @college = College.where(name: u.name, city: u.city, state: u.state, country: u.country, unit: u.unit).take
-end
-
 Given(/^I am on the edit page settings page$/) do
     visit edit_college_path(@college, :id => @college.id)
 end

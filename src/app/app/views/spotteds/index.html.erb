@@ -89,8 +89,7 @@
             <% end %>
 
             <% if @current_user.id == @college.user_id %> 
-
-            <%= link_to college_spotted_path(:college_id, spotted.id), method: :delete, id: "trash-bt" do %>
+                <%= link_to college_spotted_path(:college_id, spotted.id), method: :delete, id: "trash-bt" do %>
                     <i class="fa fa-trash fa-2x"  style="color:black"></i> 
             <% end %>
                   

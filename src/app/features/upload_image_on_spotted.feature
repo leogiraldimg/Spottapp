@@ -5,8 +5,8 @@ I want to post a spotted with an image
 So that the image appears on the spotted I posted on spotted page
 
 Background: I am logged in and there is a college page created
-    Given I logged in successfully
-    And There is a college page created
+    Given There is a college page created
+    And I logged in successfully
     And I accessed a college page successfully
 
 Scenario: Post a spotted with an image when I create a new spotted and upload an image

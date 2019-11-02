@@ -19,8 +19,8 @@ class CollegesController < ApplicationController
         @college = College.new(college_params)
         @college.user = current_user
         if @college.save
-            flash[:sucess] = 'Faculdade cadastrada com sucesso'
             current_user.favorites << @college
+            flash[:sucess] = 'Faculdade cadastrada com sucesso'
             redirect_to root_url
         else
             render 'new'
