@@ -9,7 +9,7 @@ Background: I am logged in and there is a college page created
     And There is a college page created
     And I accessed a college page successfully
 
-Scenario: Post a posted with an image when I create a new spotted and upload an image
+Scenario: Post a spotted with an image when I create a new spotted and upload an image
     Given I am on the new spotted page
     When I fill the content spotted field with some information
     And I upload an image to the spotted
