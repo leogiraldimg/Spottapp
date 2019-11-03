@@ -23,6 +23,13 @@ class CommentsController < ApplicationController
         end
     end
 
+    def destroy
+        @comment = Comment.find(params[:id])  
+        @comment.destroy
+        flash[:success] = 'Comentário apagado com sucesso'
+        redirect_to spotted_path(@comment.spotted)
+    end
+
     private 
         def comment_params
             params.require(:comment).permit(:content)

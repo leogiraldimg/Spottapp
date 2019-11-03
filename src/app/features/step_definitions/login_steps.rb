@@ -15,6 +15,8 @@ Then (/^I should see the initial user page$/) do
     expect(page).to have_xpath('.//a[@id="pages-menu-access"]') 
 end
 
+# - - -
+
 Given (/^I logged in successfully$/) do
     steps %Q{
         Given I have an account
@@ -23,11 +25,5 @@ Given (/^I logged in successfully$/) do
         And I click the Entrar button
         Then I should see the initial user page
     }
-end
-
-Given (/^There is an registered user$/) do
-    u = User.new(:email => "teste001.user@spottapp.com.br", :nickname => "teste001.user", :first_name => "teste001" , :last_name => "user", :password => "teste001user", :password_confirmation => "teste001user", :birth_date => "10/10/1998", :city => "São Paulo", :state => "SP", :country => "Brasil")
-    u.save
-
-    @user = User.where(email: u.email).take
+    @user = User.find_by(nickname: "teste001.user")
 end

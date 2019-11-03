@@ -19,6 +19,7 @@ class CollegesController < ApplicationController
         @college = College.new(college_params)
         @college.user = current_user
         if @college.save
+            current_user.favorites << @college
             flash[:sucess] = 'Faculdade cadastrada com sucesso'
             redirect_to root_url
         else
@@ -36,7 +37,10 @@ class CollegesController < ApplicationController
         elsif type == "unfavorite"
             current_user.favorites.delete(@college)
             redirect_back fallback_location: colleges_path, notice: "Você desfavoritou #{@college.name}"
-    
+        
+        elsif type == "admin"
+            redirect_back fallback_location: colleges_path, notice: "Você é o administrador de #{@college.name} e não pode desfavoritá-la."
+
         else
             redirect_back fallback_location: colleges_path, notice: 'Nada aconteceu.'
         end
@@ -49,6 +53,12 @@ class CollegesController < ApplicationController
         else
             render 'edit'
         end
+    end
+
+    def destroy
+        @college = College.find(params[:id])
+        @college.destroy
+        redirect_to favorite_colleges_path, notice:  "A página do(a) #{@college.name} foi deletada."
     end
 
     private 

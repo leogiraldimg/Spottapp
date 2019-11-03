@@ -1,23 +1,11 @@
 class SpottedsController < ApplicationController
+    
     before_action :set_college, only: [:index, :new]
+    before_action :set_font_google, only: [:index, :new]
+    before_action :set_style, only: [:index, :new]
     
     def index
         @spotteds = @college.spotteds
-        @college_style = ''
-
-        if @college.background_image.present?
-            @college_style.concat('body { background-image: url(' + @college.background_image + '); }')
-        elsif @college.background_color.present?
-            @college_style.concat('body { background-color:' + @college.background_color + ';}')
-        end
-        
-        if @college.font_family.present? && @college.font_color.present?
-            @college_style.concat('#content-container { font-family: ' + @college.font_family + '!important; color: ' + @college.font_color + '; }')
-        elsif @college.font_family.present?
-            @college_style.concat('#content-container { font-family: ' + @college.font_family + '!important; }')
-        elsif @college.font_color.present?
-            @college_style.concat('#content-container { color: ' + @college.font_color + '; }')
-        end
     end
 
     def new
@@ -57,6 +45,12 @@ class SpottedsController < ApplicationController
         end
     end
 
+    def destroy
+        @spotted = Spotted.find(params[:id])  
+        @spotted.destroy
+        flash[:success] = 'Spotted apagado com sucesso'
+        redirect_to college_spotteds_path(@spotted.college)
+    end
 
     private 
         def spotted_params
@@ -69,5 +63,31 @@ class SpottedsController < ApplicationController
 
         def set_college
             @college = College.find(params[:college_id])
+        end
+
+        def set_style
+            @college_style = ''
+
+            if @college.background_image.present?
+                @college_style.concat('body { background-image: url(' + @college.background_image + '); }')
+            elsif @college.background_color.present?
+                @college_style.concat('body { background-color:' + @college.background_color + ';}')
+            end
+            
+            if @college.font_family.present? && @college.font_color.present?
+                @college_style.concat('#content-container { font-family: ' + @college.font_family + '!important; color: ' + @college.font_color + '; }')
+            elsif @college.font_family.present?
+                @college_style.concat('#content-container { font-family: ' + @college.font_family + '!important; }')
+            elsif @college.font_color.present?
+                @college_style.concat('#content-container { color: ' + @college.font_color + '; }')
+            end
+        end
+
+        def set_font_google
+            response = HTTParty.get('https://fonts.googleapis.com/css?family=' + @college.font_family)
+
+            if response.code == 200 || response.code == "200"
+                @font_google_link = "https://fonts.googleapis.com/css?family=" + @college.font_family
+            end
         end
 end

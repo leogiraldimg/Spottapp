@@ -200,4 +200,21 @@ RSpec.describe CollegesController, type: :controller do
             end
         end
     end
+
+    describe "DELETE #destroy" do
+
+        context "current user is the page manager" do
+            before(:each) do
+                @current_user = FactoryBot.create(:user)
+                @college = FactoryBot.create(:college)
+            end
+
+             it 'success delete college' do
+                @college.destroy
+                expect{
+                    @college.reload
+                }.to raise_error ActiveRecord::RecordNotFound
+             end
+        end
+    end
 end

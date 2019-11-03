@@ -5,8 +5,8 @@ I want to favorite a college
 So that the college appears on my favorite colleges menu
 
 Background: I am logged in and there is a college page created
-    Given I logged in successfully
-    And There is a college page created
+    Given There is a college page created
+    And I logged in successfully
 
 Scenario: Show a yellow star on colleges menu page when I favorite the college on colleges menu page
     Given I am on the colleges menu page
