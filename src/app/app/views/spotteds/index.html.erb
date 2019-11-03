@@ -58,51 +58,56 @@
                 </tbody>
             </table>
         </p>
-        <p><%= link_to 'Novo spotted', new_college_spotted_path, class: 'btn btn-primary btn-lg' %></p>
-        <p><%= link_to 'Voltar', colleges_path, class: 'btn btn-primary' %></p>
+        <div class="botoes">
+            <br>
+            <p><%= link_to 'Novo spotted', new_college_spotted_path, class: 'btn' %></p>
+            <% if isPageAdmin(@college.id) %>
+                <p><%= link_to "Editar", edit_college_path(@college.id), class: 'btn', id: "editar-button" %></p>
+            <% end %>
+            <p><%= link_to 'Voltar', colleges_path, class: 'btn' %></p>
+        </div>
     </div>
 
     <div class="panel panel-default">
         <% @spotteds.reverse_each do |spotted| %>
             <div class="panel-body">
-                <p>
-                    <%= spotted.college_spotted_counter %>. <%= spotted.content %>
-                </p>
-                <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
-                <% like_count = spotted.like.count %>
-                <p>
-                    <% link = '' %>
-                    <% if pre_like %>
-                        <% link = (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
-                    <% else %>
-                        <%if like_count >= 1 %>
-                            <% link = (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
+                <div class="spotted-content">
+                    <p>
+                        <%= spotted.college_spotted_counter %>. <%= spotted.content %>
+                    </p>
+                    <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
+                    <% like_count = spotted.like.count %>
+                    <p>
+                        <% link = '' %>
+                        <% if pre_like %>
+                            <% link = (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
                         <% else %>
+                            <%if like_count >= 1 %>
+                                <% link = (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
+                            <% else %>
+                            <% end %>
                         <% end %>
-                    <% end %>
-                    <%= link_to link, list_likes_path(spotted_id: spotted.id), {:remote => true, 'data-toggle' => "modal", 'data-target' => "#modal-window"}%>
-                </p>
-            <% if pre_like %> 
-                <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(spotted, pre_like), method: :delete %>
-            <% else %>
-                <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(spotted), method: :post %>
-            <% end %>
-
-            <% if @current_user.id == @college.user_id %> 
-                <%= link_to college_spotted_path(:college_id, spotted.id), method: :delete, id: "trash-bt" do %>
-                    <i class="fa fa-trash fa-2x"  style="color:black"></i> 
-            <% end %>
-                  
-            <% end %>
-            <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-primary btn-sm' %>
-
-           <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content"></div>
+                        <%= link_to link, list_likes_path(spotted_id: spotted.id), {:remote => true, 'data-toggle' => "modal", 'data-target' => "#modal-window"}%>
+                    </p>
+                </div>
+                <div class="spotted-options">
+                    <div class="thumbs">
+                        <% if pre_like %> 
+                            <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(spotted, pre_like), method: :delete %>
+                        <% else %>
+                            <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(spotted), method: :post %>
+                        <% end %>
                     </div>
+                    <div class="trash">
+                        <% if @current_user.id == @college.user_id %> 
+                            <%= link_to college_spotted_path(:college_id, spotted.id), method: :delete, id: "trash-bt" do %>
+                                <i class="fa fa-trash fa-2x"  style="color:black"></i> 
+                            <% end %>
+                        <% end %>
+                    </div>
+                    <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-sm' %>
                 </div>
             </div>
-            
         <% end %>
     </div>
 
