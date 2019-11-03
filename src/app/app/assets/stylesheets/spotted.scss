@@ -255,10 +255,6 @@ h2.title {
     }
 }
 
-// #new {
-//     display: ;
-// }
-
 #new h2.title {
     background-color: #FFFFFFE0;
     border-style: solid;
@@ -310,4 +306,16 @@ h2.title {
     color: #000000;
     background-color: #FFFFFF;
     border-color: #000000;
+}
+
+@media (max-width: 767px) {
+    #new .spotted-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 420px) {
+    #new .spotted-content {
+        width: 100%;
+    }
 }
