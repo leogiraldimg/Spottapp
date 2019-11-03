@@ -6,7 +6,7 @@ So that i can distribute the page administration responsibility
 
 Background:
 Given I logged in successfully
-And There is a college page created
+And I created a college page
 
 Scenario: college page administrator defines a new user to be a administrator informing his nickname and clicking on the button "Adicionar"
     Given There is more than one user registered 
