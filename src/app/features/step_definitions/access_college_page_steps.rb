@@ -7,7 +7,7 @@ When (/^I click on a link to college$/) do
 end
 
 Then (/^I should see the college page$/) do
-    expect(page).to have_xpath('.//h2', text: "Spotteds de Universidade Teste 002")
+    expect(page).to have_xpath('.//h2', text: "Universidade Teste 002")
 end
 
 # - - -
@@ -25,7 +25,7 @@ When (/^I click on my college page link$/) do
 end
 
 Then (/^I should see my college page$/) do
-    expect(page).to have_xpath('.//h2', text: "Spotteds de Universidade Teste 001")
+    expect(page).to have_xpath('.//h2', text: "Universidade Teste 001")
 end
 
 Given (/^I accessed my college page successfully$/) do
