@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_024453) do
+ActiveRecord::Schema.define(version: 2019_11_01_010849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "administrators", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "college_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["college_id"], name: "index_administrators_on_college_id"
+    t.index ["user_id"], name: "index_administrators_on_user_id"
+  end
 
   create_table "colleges", force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -90,6 +99,8 @@ ActiveRecord::Schema.define(version: 2019_10_22_024453) do
     t.string "nickname", default: "", null: false
   end
 
+  add_foreign_key "administrators", "colleges"
+  add_foreign_key "administrators", "users"
   add_foreign_key "colleges", "users"
   add_foreign_key "comments", "spotteds"
   add_foreign_key "comments", "users"

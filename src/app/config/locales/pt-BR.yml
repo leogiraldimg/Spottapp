@@ -28,7 +28,7 @@ pt-BR:
         administracao: 'Administração'
         request_to_participate: 'Requer permissão'
         admin_approves_spotted: 'Aprovação de spotteds'
-
+        
       spotted:
         content: 'Spotted'
 

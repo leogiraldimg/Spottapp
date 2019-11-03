@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'favorite_colleges', to: 'favorite_colleges#show'
   get 'list_likes', to: 'spotteds#list_likes'
+  post 'setting_manager', to: 'administrators#setting_manager'
 
   resources :users, only: [:new, :create, :show]
   
