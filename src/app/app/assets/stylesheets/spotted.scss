@@ -160,30 +160,45 @@ h2.title {
 
 #show .container-right .curtida {
     padding-top: 10px;
-    margin: 0 0 0 0px;
+    padding-left: 10px;
+    margin: 0px;
 }
 
 #show #curtir-e-comentar {
-    margin: 0 0 0 0px;
+    margin: 0px;
     border-bottom: 1px solid;
+    display: flex;
 }
 
 #show .container-right .mao {
     width: 30px;
     float: left;
-    align-content: center;
-    margin-right: 10px;
     margin-top: 15px;
 }
 
 #show .container-right .comment {
-    width: calc(100% - 60px);
-    width: -moz-calc(100% - 60px);
-    width: -webkit-calc(100% - 60px);
-    width: -o-calc(100% - 60px);
+    width: 100%;
     float: right;
     height: 55px;
     padding-top: 10px;
+}
+
+#comment-area {
+    width: 100%;
+    display: flex;
+}
+
+#new-comment {
+    width: calc(100% - 40px);
+    width: -moz-calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
+    width: -o-calc(100% - 40px);
+    margin-left: 10px;
+    float: left;
+}
+
+#send-button {
+    float: right;
 }
 
 #show .container-right .scroll {
@@ -193,22 +208,6 @@ h2.title {
     height: -webkit-calc(100% - 60px);
     height: -o-calc(100% - 60px);
     overflow: auto;
-}
-
-#show .curtida {
-    padding-left: 10px;
-}
-
-#comment-area {
-    width: 95%;
-}
-
-#new-comment {
-    width: calc(100% - 130px);
-    width: -moz-calc(100% - 130px);
-    width: -webkit-calc(100% - 130px);
-    width: -o-calc(100% - 130px);
-    padding: 0 0 0 0px;
 }
 
 @media (max-width: 700px) {
@@ -232,22 +231,6 @@ h2.title {
         padding-left: 0;
         padding-right: 0;
     }
-
-    #show #curtir-e-comentar {
-        border-bottom: none;
-        height: 105px;
-    }
-
-    #new-comment {
-        width: calc(100vw - 75px);
-        width: -moz-calc(100vw - 75px);
-        width: -webkit-calc(100vw - 75px);
-        width: -o-calc(100vw - 75px);
-    }
-
-    #button-send {
-        padding: 0 0 0 0px;
-    }
     
     #show .container-right .scroll {
         width: 100%;
@@ -255,7 +238,6 @@ h2.title {
         height: -moz-calc(100% - 110px);
         height: -webkit-calc(100% - 110px);
         height: -o-calc(100% - 110px);
-        border-top: 1px solid;
         overflow-x: hidden;
     }
 }

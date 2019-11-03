@@ -1,13 +1,16 @@
 <%= form_for([@spotted, @spotted.comment.build]) do |f| %>
     <%= render 'layouts/error_messages', object: f.object %>
-    <div class="row" id="comment-area">
-        <div class="col-xs-9 col-md-9" id="new-comment">
-            <div class="form-group">
-                <%= f.text_field :content, class: 'form-control' %>
-            </div>
+    <div class="form-group" id="comment-area">
+
+        <div id="new-comment">
+            <%= f.text_field :content, class: 'form-control' %>
         </div>
-        <div class="col-xs-3 col-md-3" id="button-send">
-            <%= f.submit 'Mandar comentário', class: 'btn btn-primary' %>
+
+        <div id="send-button">
+            <%= button_tag type: 'submit', class: "btn btn-primary" do %>
+                <i class="fa fa-paper-plane"></i>
+            <% end %>
         </div>
+        
     </div>
 <% end %>
