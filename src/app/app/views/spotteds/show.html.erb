@@ -5,13 +5,10 @@
 
     <div class="container-left">
         <div class="panel-body">
-            <p>
-                <%= @spotted.content %>
-                <p>
-                <% if @spotted.image? %>
-                    <img src="data:image;base64,<%= @spotted.image %>" id="image" class="img-responsive" style="width: 100%; height: auto;">
-                <% end %>
-            </p>
+            <%= simple_format(@spotted.content) %>
+            <% if @spotted.image? %>
+                <p><img src="data:image;base64,<%= @spotted.image %>" id="image" class="img-responsive" style="width: 100%; height: auto;"></p>
+            <% end %>
         </div>
     </div>
 

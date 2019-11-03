@@ -5,7 +5,7 @@
     <link href="<%= @font_google_link %>" rel='stylesheet'>
 <% end %>
 
-<h2 class="title">Spotteds de <%= @college.name %>
+<h2 class="title"><%= @college.name %>
 
 <% if current_user.id == @college.user_id %>
     <td style="text-align: center"><%= link_to image_tag('star-bigger-purple.png'), favorite_college_path(@college, type: "admin"), method: :put, id: "star-purple" %></td>
@@ -72,9 +72,7 @@
         <% @spotteds.reverse_each do |spotted| %>
             <div class="panel-body">
                 <div class="spotted-content">
-                    <p>
-                        <%= spotted.college_spotted_counter %>. <%= spotted.content %>
-                    </p>
+                    <%= spotted.college_spotted_counter %>. <%= simple_format(spotted.content) %>
                     <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
                     <% like_count = spotted.like.count %>
                     <p>

@@ -4,26 +4,23 @@
     </style>
     <link href="<%= @font_google_link %>" rel='stylesheet'>
 <% end %>
-<div class="row">
-    <div class="col-xs-12">
-        <h1>Mande seu spotted!</h1>
-    </div>
-</div>
 
-<%= form_for(@spotted, url: college_spotteds_path) do |f| %>
-    <%= render 'layouts/error_messages', object: f.object %>
-    <div class="row">
-        <div class="col-xs-12 col-md-6">
+<div id="new">
+
+    <h2 class="title">Mande seu spotted!</h2>
+
+    <div class="spotted-content">
+        <%= form_for(@spotted, url: college_spotteds_path) do |f| %>
+            <%= render 'layouts/error_messages', object: f.object %>
             <div class=form-group>
                 <%= f.label :content %>
-                <%= f.text_field :content, class: 'form-control' %>
+                <%= f.text_area :content, class: 'form-control', id: 'text-area', placeholder: 'Escreva o seu spotted aqui' %>
                 <%= f.file_field :image, class: 'form-control' %>
             </div>
-        </div>
+            <div class="mandar">
+                <%= f.submit 'Mandar spotted', class: 'btn' %>
+            </div>
+        <% end %>
     </div>
-    <div class="row">
-        <div class="col-xs-6 col-md-6">
-            <%= f.submit 'Mandar spotted', class: 'btn btn-primary' %>
-        </div>
-    </div>
-<% end %>
+
+</div>
