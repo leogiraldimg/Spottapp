@@ -98,9 +98,13 @@
                 <div class="spotted-options">
                     <div class="thumbs">
                         <% if pre_like %> 
-                            <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(spotted, pre_like), method: :delete %>
+                            <%= link_to spotted_like_path(spotted, pre_like), method: :delete do %>
+                                <i class="fa fa-thumbs-up fa-2x"  style="color:black"></i> 
+                            <% end %>
                         <% else %>
-                            <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(spotted), method: :post %>
+                            <%= link_to spotted_likes_path(spotted), method: :post do %>
+                                <i class="fa fa-thumbs-o-up fa-2x"  style="color:black"></i> 
+                            <% end %>
                         <% end %>
                     </div>
                     <div class="trash">
