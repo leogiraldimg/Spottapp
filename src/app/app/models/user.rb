@@ -20,5 +20,6 @@ class User < ApplicationRecord
     has_many :comment, dependent: :destroy
     has_many :favorite_colleges
     has_many :favorites, through: :favorite_colleges, source: :college
+    has_many :administrator
 
 end
