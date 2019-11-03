@@ -37,7 +37,7 @@
                 <% if isPageAdmin(fav.college.id) %>
                   <%= link_to "Editar", edit_college_path(fav.college) %>
                 <% end %>
-                <% if current_user.id == fav.user_id %>
+                <% if current_user.id == fav.college.user_id %>
                   <%= link_to image_tag('star-purple.png'), favorite_college_path(fav.college, type: "admin"), method: :put, id: "star-purple" %>
                 <% else %>
                   <% if already_favorited(fav.college.id) %>
