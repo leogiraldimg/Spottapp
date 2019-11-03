@@ -1,53 +1,53 @@
 <div class='container'>
   <div class='row'>
     <div class='col-4' align='center'>
-      <h3>Minhas faculdades favoritas</h3>
+      <h2>Minhas Faculdades Favoritas</h2>
       <% @favorite_colleges.each do |fav| %>
-          <div class="block">
-            <span class="tooltiptext">
-              <table>
-                <tr>
-                  <td>Nome</td>
-                  <td><%= fav.college.name %></td>
-                </tr>
-                <tr>
-                  <td>Sigla</td>
-                  <td><%= fav.college.initials %></td>
-                </tr>
-                <tr>
-                  <td>Cidade</td>
-                  <td><%= fav.college.city %></td>
-                </tr>
-                <tr>
-                  <td>Estado</td>
-                  <td><%= fav.college.state %></td>
-                </tr>
-                <tr>
-                  <td>País</td>
-                  <td><%= fav.college.country %></td>
-                </tr>
-                <tr class="noBorder">
-                  <td>Unidade</td>
-                  <td><%= fav.college.unit %></td>
-                </tr>
-              </table>
-            </span>
-            <a class="overlay" href="<%= college_spotteds_path(college_id: fav.college.id) %>"><%= fav.college.initials %> - <%= fav.college.unit %></a>
-            <div class="inner" id="edit-and-favorite">
-                <% if isPageAdmin(fav.college.id) %>
-                  <%= link_to "Editar", edit_college_path(fav.college) %>
-                <% end %>
-                <% if current_user.id == fav.college.user_id %>
-                  <%= link_to image_tag('star-purple.png'), favorite_college_path(fav.college, type: "admin"), method: :put, id: "star-purple" %>
+        <div class="block">
+          <span class="tooltiptext">
+            <table>
+              <tr>
+                <td>Nome</td>
+                <td><%= fav.college.name %></td>
+              </tr>
+              <tr>
+                <td>Sigla</td>
+                <td><%= fav.college.initials %></td>
+              </tr>
+              <tr>
+                <td>Cidade</td>
+                <td><%= fav.college.city %></td>
+              </tr>
+              <tr>
+                <td>Estado</td>
+                <td><%= fav.college.state %></td>
+              </tr>
+              <tr>
+                <td>País</td>
+                <td><%= fav.college.country %></td>
+              </tr>
+              <tr class="noBorder">
+                <td>Unidade</td>
+                <td><%= fav.college.unit %></td>
+              </tr>
+            </table>
+          </span>
+          <a class="overlay" href="<%= college_spotteds_path(college_id: fav.college.id) %>"><%= fav.college.initials %> - <%= fav.college.unit %></a>
+          <div class="inner" id="edit-and-favorite">
+              <% if isPageAdmin(fav.college.id) %>
+                <%= link_to "Editar", edit_college_path(fav.college) %>
+              <% end %>
+              <% if current_user.id == fav.college.user_id %>
+                <%= link_to image_tag('star-purple.png'), favorite_college_path(fav.college, type: "admin"), method: :put, id: "star-purple" %>
+              <% else %>
+                <% if already_favorited(fav.college.id) %>
+                  <%= link_to image_tag('star.png'), favorite_college_path(fav.college, type: "unfavorite"), method: :put, id: "star" %>
                 <% else %>
-                  <% if already_favorited(fav.college.id) %>
-                    <%= link_to image_tag('star.png'), favorite_college_path(fav.college, type: "unfavorite"), method: :put, id: "star" %>
-                  <% else %>
-                    <%= link_to image_tag('star-white.png'), favorite_college_path(fav.college, type: "favorite"), method: :put, id: "star-white" %>
-                  <% end %>
+                  <%= link_to image_tag('star-white.png'), favorite_college_path(fav.college, type: "favorite"), method: :put, id: "star-white" %>
                 <% end %>
-            </div>
+              <% end %>
           </div>
+        </div>
       <%end%>
     </div>
   </div>
