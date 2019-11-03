@@ -94,13 +94,13 @@ h2.title {
     background-color: #FFFFFF;
 }
 
-#index .spotted-content {
-    overflow: auto;
-}
-
 #index .spotted-content .spotted-number {
     text-align: center;
     text-decoration: underline;
+}
+
+#index .spotted-content .spotted-text {
+    overflow: auto;
 }
 
 #index .spotted-options {
