@@ -1,8 +1,8 @@
 class SpottedsController < ApplicationController
+    
     before_action :set_college, only: [:index, :new]
     before_action :set_font_google, only: [:index, :new]
     before_action :set_style, only: [:index, :new]
-    
     
     def index
         @spotteds = @college.spotteds
@@ -51,7 +51,6 @@ class SpottedsController < ApplicationController
         flash[:success] = 'Spotted apagado com sucesso'
         redirect_to college_spotteds_path(@spotted.college)
     end
-
 
     private 
         def spotted_params
