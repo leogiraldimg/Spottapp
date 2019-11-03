@@ -32,14 +32,20 @@ class CollegesController < ApplicationController
         type = params[:type]
         if type == "favorite"
             current_user.favorites << @college
-            redirect_back fallback_location: colleges_path, notice: "Você favoritou #{@college.name}"
+            notice = "Você favoritou #{@college.name}"
+            flash[:success] = notice
+            redirect_back fallback_location: colleges_path
 
         elsif type == "unfavorite"
             current_user.favorites.delete(@college)
-            redirect_back fallback_location: colleges_path, notice: "Você desfavoritou #{@college.name}"
+            notice = "Você desfavoritou #{@college.name}"
+            flash[:success] = notice
+            redirect_back fallback_location: colleges_path
         
         elsif type == "admin"
-            redirect_back fallback_location: colleges_path, notice: "Você é o administrador de #{@college.name} e não pode desfavoritá-la."
+            notice = "Você é o administrador de #{@college.name} e não pode desfavoritá-la."
+            flash[:danger] = notice
+            redirect_back fallback_location: colleges_path
 
         else
             redirect_back fallback_location: colleges_path, notice: 'Nada aconteceu.'
@@ -58,7 +64,9 @@ class CollegesController < ApplicationController
     def destroy
         @college = College.find(params[:id])
         @college.destroy
-        redirect_to favorite_colleges_path, notice:  "A página do(a) #{@college.name} foi deletada."
+        notice = "A página do(a) #{@college.name} foi deletada."
+        flash[:success] = notice
+        redirect_to favorite_colleges_path
     end
 
     private 
