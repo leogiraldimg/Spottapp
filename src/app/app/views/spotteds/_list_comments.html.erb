@@ -1,14 +1,40 @@
-<% @comments.each do |comment| %>
-<div class="row col-md-12 col-xs-12">
-    <p><label><%= comment.user.first_name + ' ' + comment.user.last_name %></label>
-    
-    <% if current_user.id == comment.user.id %> 
-        <%= link_to spotted_comment_path(@spotted, comment), method: :delete, id: "trash-bt" do %>
-                
-                <i class="fa fa-trash fa-2x"  style="color:black"></i> 
-        <% end %>
-    <% end %>   
-    </p>
-    <p><%= comment.content %></p>
+<div id="list-comment">
+
+    <% @comments.each do |comment| %>
+        <div class="comment-container">
+            <% if current_user.id == comment.user.id %> 
+                <div class="dropdown">
+                    <label>
+                        <%= comment.user.first_name + ' ' + comment.user.last_name %>
+                    </label>
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <%= link_to spotted_comment_path(@spotted, comment), method: :delete, data: { confirm: "Você tem certeza que deseja apagar este comentário? Essa ação não pode ser desfeita." }, id: "trash-bt" do %>
+                                <i class="fa fa-trash fa-lg"  style="color:black"></i>
+                                Apagar comentário
+                            <% end %>
+                        </li>
+                        <li>
+                            <%= link_to "#", method: :get do %>
+                                <i class="fa fa-pencil fa-lg"  style="color:black"></i>
+                                Editar comentário
+                            <% end %>
+                        </li>
+                    </ul>
+                </div>
+            <% else %>
+                <label>
+                    <%= comment.user.first_name + ' ' + comment.user.last_name %>
+                </label>
+            <% end %>   
+
+            <div class="comentario">
+                <p><%= comment.content %></p>
+            </div>
+        </div>
+    <% end %>
+
 </div>
-<% end %>
