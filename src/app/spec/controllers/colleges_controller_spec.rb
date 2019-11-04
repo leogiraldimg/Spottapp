@@ -127,14 +127,14 @@ RSpec.describe CollegesController, type: :controller do
                 post :favorite, params: {id: @college.id, type: "favorite"}
 
                 expect(response).to redirect_to(colleges_path)
-                expect(flash[:notice]).to match(/Você favoritou*/)
+                expect(flash[:success]).to match(/Você favoritou*/)
             end
 
             it "notice that you have unfavorited" do
                 post :favorite, params: {id: @college.id, type: "unfavorite"}
 
                 expect(response).to redirect_to(colleges_path)
-                expect(flash[:notice]).to match(/Você desfavoritou*/)
+                expect(flash[:success]).to match(/Você desfavoritou*/)
             end
 
             it "notice that you have done nothing" do

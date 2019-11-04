@@ -5,9 +5,9 @@
     <link href="<%= @font_google_link %>" rel='stylesheet'>
 <% end %>
 
-<h2 class="title">Spotteds de <%= @college.name %>
+<h2 class="title"><%= @college.name %>
 
-<% if current_user.id == @college.user_id %>
+<% if isPageAdmin(@college.id) %>
     <td style="text-align: center"><%= link_to image_tag('star-bigger-purple.png'), favorite_college_path(@college, type: "admin"), method: :put, id: "star-purple" %></td>
 <% else %>
     <% if already_favorited(@college.id) %>
@@ -72,9 +72,14 @@
         <% @spotteds.reverse_each do |spotted| %>
             <div class="panel-body">
                 <div class="spotted-content">
-                    <p>
-                        <%= spotted.college_spotted_counter %>. <%= spotted.content %>
-                    </p>
+                    <div class="spotted-number">
+                        <%= link_to college_spotted_path(:college_id, spotted.id) do %>
+                            Spotted <%= spotted.college_spotted_counter %>
+                        <% end %>
+                    </div>
+                    <div class="spotted-text">
+                        <%= simple_format(spotted.content) %>
+                    </div>
                     <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
                     <% like_count = spotted.like.count %>
                     <p>
@@ -93,17 +98,26 @@
                 <div class="spotted-options">
                     <div class="thumbs">
                         <% if pre_like %> 
-                            <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(spotted, pre_like), method: :delete %>
+                            <%= link_to spotted_like_path(spotted, pre_like), method: :delete do %>
+                                <i class="fa fa-thumbs-up fa-2x"  style="color:black"></i> 
+                            <% end %>
                         <% else %>
-                            <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(spotted), method: :post %>
+                            <%= link_to spotted_likes_path(spotted), method: :post do %>
+                                <i class="fa fa-thumbs-o-up fa-2x"  style="color:black"></i> 
+                            <% end %>
                         <% end %>
                     </div>
                     <div class="trash">
-                        <% if @current_user.id == @college.user_id %> 
+                        <% if isPageAdmin(@college.id) %> 
                             <%= link_to college_spotted_path(:college_id, spotted.id), method: :delete, data: { confirm: "Você tem certeza que deseja apagar este spotted? Essa ação não pode ser desfeita." }, id: "trash-bt" do %>
                                 <i class="fa fa-trash fa-2x"  style="color:black"></i> 
                             <% end %>
                         <% end %>
+                    </div>
+                    <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content"></div>
+                        </div>
                     </div>
                     <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-sm' %>
                 </div>

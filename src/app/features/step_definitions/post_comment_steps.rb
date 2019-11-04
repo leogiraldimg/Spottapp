@@ -7,7 +7,7 @@ When(/^I fill the content comment field with some information$/) do
 end
 
 And(/^I click the Mandar comentário button$/) do
-    click_button("Mandar comentário")
+    find("#send-comment-button").click
 end
 
 Then(/^I should see the view spotted page$/) do

@@ -5,13 +5,10 @@
 
     <div class="container-left">
         <div class="panel-body">
-            <p>
-                <%= @spotted.content %>
-                <p>
-                <% if @spotted.image? %>
-                    <img src="data:image;base64,<%= @spotted.image %>" id="image" class="img-responsive" style="width: 100%; height: auto;">
-                <% end %>
-            </p>
+            <%= simple_format(@spotted.content) %>
+            <% if @spotted.image? %>
+                <p><img src="data:image;base64,<%= @spotted.image %>" id="image" class="img-responsive" style="width: 100%; height: auto;"></p>
+            <% end %>
         </div>
     </div>
 
@@ -40,9 +37,13 @@
         <div class='row' id="curtir-e-comentar">
             <div class="mao">
                 <% if pre_like %>
-                    <%= link_to image_tag('thumbs-up-hand-symbol.png'), spotted_like_path(@spotted, pre_like, :origin => 'modal'), method: :delete %>
+                    <%= link_to spotted_like_path(@spotted, pre_like, :origin => 'modal'), method: :delete do %>
+                        <i class="fa fa-thumbs-up fa-2x"  style="color:black"></i> 
+                    <% end %>
                 <% else %>
-                    <%= link_to image_tag('thumbs-up.png'), spotted_likes_path(@spotted, :origin => 'modal'), method: :post %>
+                    <%= link_to spotted_likes_path(@spotted, :origin => 'modal'), method: :post do %>
+                        <i class="fa fa-thumbs-o-up fa-2x"  style="color:black"></i> 
+                    <% end %>
                 <% end %>        
             </div>
             <div class="comment">

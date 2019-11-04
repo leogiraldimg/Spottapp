@@ -34,7 +34,7 @@
           </span>
           <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.initials %> - <%= college.unit %></a>
           <div class="inner">
-            <% if current_user.id == college.user_id %>
+            <% if isPageAdmin(college.id) %>
               <%= link_to image_tag('star-purple.png'), favorite_college_path(college, type: "admin"), method: :put, id: "star-purple" %>
             <% else %>
               <% if already_favorited(college.id) %>
