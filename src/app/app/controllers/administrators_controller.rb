@@ -10,6 +10,7 @@ class AdministratorsController < ApplicationController
             else
                 @user = User.find_by(nickname: params[:user][:nickname])
                 @college.administrator.create(user_id: @user.id)
+                @user.favorites << @college
                 flash[:notice] = "Usuário adicionado como administrador"
             end
         end
