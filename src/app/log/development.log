@@ -16041,3 +16041,1027 @@ Completed 200 OK in 82ms (Views: 78.9ms | ActiveRecord: 0.9ms)
 
 
 Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-03 14:43:48 -0300
+  [1m[35m (48.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (14.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (672.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (433.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "app_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1895.8ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (916.4ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "administrators" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (69.8ms)[0m  [1m[35mCREATE TABLE "administrators" ("id" bigserial primary key, "user_id" bigint, "college_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (63.0ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_college_id" ON "administrators"  ("college_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_user_id" ON "administrators"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "colleges" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (141.8ms)[0m  [1m[35mCREATE TABLE "colleges" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "initials" character varying DEFAULT '', "city" character varying DEFAULT '' NOT NULL, "state" character varying DEFAULT '' NOT NULL, "country" character varying DEFAULT '' NOT NULL, "unit" character varying DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "background_color" character varying, "font_family" character varying, "background_image" character varying, "font_color" character varying, "request_to_participate" character varying, "admin_approves_spotted" character varying)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE  INDEX  "index_colleges_on_user_id" ON "colleges"  ("user_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  ↳ db/schema.rb:46
+  [1m[35m (143.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:46
+  [1m[35m (74.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_spotted_id" ON "comments"  ("spotted_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorite_colleges" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (98.8ms)[0m  [1m[35mCREATE TABLE "favorite_colleges" ("id" bigserial primary key, "college_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (76.7ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (86.3ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_spotted_id" ON "likes"  ("spotted_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (85.6ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotteds" CASCADE[0m
+  ↳ db/schema.rb:72
+  [1m[35m (109.8ms)[0m  [1m[35mCREATE TABLE "spotteds" ("id" bigserial primary key, "content" text, "college_spotted_counter" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "college_id" bigint, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp, "image" character varying)[0m
+  ↳ db/schema.rb:72
+  [1m[35m (52.3ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_college_id" ON "spotteds"  ("college_id")[0m
+  ↳ db/schema.rb:72
+  [1m[35m (63.9ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_user_id" ON "spotteds"  ("user_id")[0m
+  ↳ db/schema.rb:72
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:88
+  [1m[35m (119.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '' NOT NULL, "last_name" character varying DEFAULT '' NOT NULL, "password_digest" character varying DEFAULT '' NOT NULL, "birth_date" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "city" character varying, "state" character varying, "country" character varying, "nickname" character varying DEFAULT '' NOT NULL)[0m
+  ↳ db/schema.rb:88
+  [1m[35m (43.8ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_df680ac728"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:102
+  [1m[35m (32.6ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_2733f5ea0b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:103
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "colleges" ADD CONSTRAINT "fk_rails_49306e4f49"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:104
+  [1m[35m (10.2ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_ff224da44e"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:105
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:106
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_c9334a5f5a"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:107
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:108
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_86620d5d51"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:109
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_0aa5129631"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:110
+  [1m[35m (109.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191101010849)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190924020758),
+(20191018023813),
+(20190904032115),
+(20191008130948),
+(20191021233923),
+(20190924010505),
+(20190904030130),
+(20190903003832),
+(20190904031944),
+(20191009015901),
+(20190926031057),
+(20190915191815),
+(20190902022737),
+(20190921194746),
+(20191022024453),
+(20190924015930);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (121.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (25.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-05 23:20:42.728727"], ["updated_at", "2019-11-05 23:20:42.728727"]]
+  ↳ db/schema.rb:13
+  [1m[35m (28.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "administrators" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (81.9ms)[0m  [1m[35mCREATE TABLE "administrators" ("id" bigserial primary key, "user_id" bigint, "college_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (74.2ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_college_id" ON "administrators"  ("college_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_user_id" ON "administrators"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "colleges" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (119.6ms)[0m  [1m[35mCREATE TABLE "colleges" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "initials" character varying DEFAULT '', "city" character varying DEFAULT '' NOT NULL, "state" character varying DEFAULT '' NOT NULL, "country" character varying DEFAULT '' NOT NULL, "unit" character varying DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "background_color" character varying, "font_family" character varying, "background_image" character varying, "font_color" character varying, "request_to_participate" character varying, "admin_approves_spotted" character varying)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (74.8ms)[0m  [1m[35mCREATE  INDEX  "index_colleges_on_user_id" ON "colleges"  ("user_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  ↳ db/schema.rb:46
+  [1m[35m (154.6ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:46
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_spotted_id" ON "comments"  ("spotted_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorite_colleges" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (65.6ms)[0m  [1m[35mCREATE TABLE "favorite_colleges" ("id" bigserial primary key, "college_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (65.4ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (64.3ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_spotted_id" ON "likes"  ("spotted_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotteds" CASCADE[0m
+  ↳ db/schema.rb:72
+  [1m[35m (110.5ms)[0m  [1m[35mCREATE TABLE "spotteds" ("id" bigserial primary key, "content" text, "college_spotted_counter" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "college_id" bigint, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp, "image" character varying)[0m
+  ↳ db/schema.rb:72
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_college_id" ON "spotteds"  ("college_id")[0m
+  ↳ db/schema.rb:72
+  [1m[35m (97.5ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_user_id" ON "spotteds"  ("user_id")[0m
+  ↳ db/schema.rb:72
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:88
+  [1m[35m (175.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '' NOT NULL, "last_name" character varying DEFAULT '' NOT NULL, "password_digest" character varying DEFAULT '' NOT NULL, "birth_date" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "city" character varying, "state" character varying, "country" character varying, "nickname" character varying DEFAULT '' NOT NULL)[0m
+  ↳ db/schema.rb:88
+  [1m[35m (22.1ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_df680ac728"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:102
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_2733f5ea0b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:103
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "colleges" ADD CONSTRAINT "fk_rails_49306e4f49"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:104
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_ff224da44e"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:105
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:106
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_c9334a5f5a"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:107
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:108
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_86620d5d51"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:109
+  [1m[35m (54.0ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_0aa5129631"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:110
+  [1m[35m (142.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191101010849)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190924020758),
+(20191018023813),
+(20190904032115),
+(20191008130948),
+(20191021233923),
+(20190924010505),
+(20190904030130),
+(20190903003832),
+(20190904031944),
+(20191009015901),
+(20190926031057),
+(20190915191815),
+(20190902022737),
+(20190921194746),
+(20191022024453),
+(20190924015930);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (109.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-05 23:20:44.697955"], ["updated_at", "2019-11-05 23:20:44.697955"]]
+  ↳ db/schema.rb:13
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-11-05 23:20:44.708067"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  ↳ bin/rails:9
+  [1m[35m (23.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCollegeWhitelists (20191105234050)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (178.7ms)[0m  [1m[35mCREATE TABLE "college_whitelists" ("id" bigserial primary key, "status" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105234050_create_college_whitelists.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD "user_id" bigint NOT NULL[0m
+  ↳ db/migrate/20191105234050_create_college_whitelists.rb:9
+  [1m[35m (40.6ms)[0m  [1m[35mCREATE  INDEX  "index_college_whitelists_on_user_id" ON "college_whitelists"  ("user_id")[0m
+  ↳ db/migrate/20191105234050_create_college_whitelists.rb:9
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD CONSTRAINT "fk_rails_b7f63e7496"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20191105234050_create_college_whitelists.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD "college_id" bigint NOT NULL[0m
+  ↳ db/migrate/20191105234050_create_college_whitelists.rb:10
+  [1m[35m (49.4ms)[0m  [1m[35mCREATE  INDEX  "index_college_whitelists_on_college_id" ON "college_whitelists"  ("college_id")[0m
+  ↳ db/migrate/20191105234050_create_college_whitelists.rb:10
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD CONSTRAINT "fk_rails_97d9690e4b"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/migrate/20191105234050_create_college_whitelists.rb:10
+  [1m[35m (39.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_college_whitelists_on_user_id_and_college_id" ON "college_whitelists"  ("user_id", "college_id")[0m
+  ↳ db/migrate/20191105234050_create_college_whitelists.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105234050"]]
+  ↳ bin/rails:9
+  [1m[35m (25.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (379.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (355.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "app_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1866.2ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (920.1ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "administrators" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (78.5ms)[0m  [1m[35mCREATE TABLE "administrators" ("id" bigserial primary key, "user_id" bigint, "college_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (74.2ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_college_id" ON "administrators"  ("college_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_user_id" ON "administrators"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "college_whitelists" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (65.6ms)[0m  [1m[35mCREATE TABLE "college_whitelists" ("id" bigserial primary key, "status" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint NOT NULL, "college_id" bigint NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE  INDEX  "index_college_whitelists_on_college_id" ON "college_whitelists"  ("college_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_college_whitelists_on_user_id_and_college_id" ON "college_whitelists"  ("user_id", "college_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_college_whitelists_on_user_id" ON "college_whitelists"  ("user_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "colleges" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (141.2ms)[0m  [1m[35mCREATE TABLE "colleges" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "initials" character varying DEFAULT '', "city" character varying DEFAULT '' NOT NULL, "state" character varying DEFAULT '' NOT NULL, "country" character varying DEFAULT '' NOT NULL, "unit" character varying DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "background_color" character varying, "font_family" character varying, "background_image" character varying, "font_color" character varying, "request_to_participate" character varying, "admin_approves_spotted" character varying)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_colleges_on_user_id" ON "colleges"  ("user_id")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  ↳ db/schema.rb:57
+  [1m[35m (120.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:57
+  [1m[35m (63.1ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_spotted_id" ON "comments"  ("spotted_id")[0m
+  ↳ db/schema.rb:57
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/schema.rb:57
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorite_colleges" CASCADE[0m
+  ↳ db/schema.rb:67
+  [1m[35m (65.7ms)[0m  [1m[35mCREATE TABLE "favorite_colleges" ("id" bigserial primary key, "college_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:67
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes" CASCADE[0m
+  ↳ db/schema.rb:74
+  [1m[35m (78.1ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:74
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_spotted_id" ON "likes"  ("spotted_id")[0m
+  ↳ db/schema.rb:74
+  [1m[35m (64.4ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/schema.rb:74
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotteds" CASCADE[0m
+  ↳ db/schema.rb:83
+  [1m[35m (132.2ms)[0m  [1m[35mCREATE TABLE "spotteds" ("id" bigserial primary key, "content" text, "college_spotted_counter" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "college_id" bigint, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp, "image" character varying)[0m
+  ↳ db/schema.rb:83
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_college_id" ON "spotteds"  ("college_id")[0m
+  ↳ db/schema.rb:83
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_user_id" ON "spotteds"  ("user_id")[0m
+  ↳ db/schema.rb:83
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:99
+  [1m[35m (119.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '' NOT NULL, "last_name" character varying DEFAULT '' NOT NULL, "password_digest" character varying DEFAULT '' NOT NULL, "birth_date" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "city" character varying, "state" character varying, "country" character varying, "nickname" character varying DEFAULT '' NOT NULL)[0m
+  ↳ db/schema.rb:99
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_df680ac728"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:113
+  [1m[35m (10.7ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_2733f5ea0b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:114
+  [1m[35m (10.1ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD CONSTRAINT "fk_rails_97d9690e4b"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:115
+  [1m[35m (10.6ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD CONSTRAINT "fk_rails_b7f63e7496"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:116
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "colleges" ADD CONSTRAINT "fk_rails_49306e4f49"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:117
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_ff224da44e"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:118
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:119
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_c9334a5f5a"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:120
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:121
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_86620d5d51"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:122
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_0aa5129631"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:123
+  [1m[35m (120.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191105234050)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190924020758),
+(20191018023813),
+(20190904032115),
+(20191008130948),
+(20191101010849),
+(20191021233923),
+(20190924010505),
+(20190904030130),
+(20190903003832),
+(20190904031944),
+(20191009015901),
+(20190926031057),
+(20190915191815),
+(20190902022737),
+(20190921194746),
+(20191022024453),
+(20190924015930);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (120.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-05 23:44:26.590300"], ["updated_at", "2019-11-05 23:44:26.590300"]]
+  ↳ db/schema.rb:13
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (4.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "administrators" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (69.2ms)[0m  [1m[35mCREATE TABLE "administrators" ("id" bigserial primary key, "user_id" bigint, "college_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (63.2ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_college_id" ON "administrators"  ("college_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_user_id" ON "administrators"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "college_whitelists" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (65.6ms)[0m  [1m[35mCREATE TABLE "college_whitelists" ("id" bigserial primary key, "status" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint NOT NULL, "college_id" bigint NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (64.4ms)[0m  [1m[35mCREATE  INDEX  "index_college_whitelists_on_college_id" ON "college_whitelists"  ("college_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (74.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_college_whitelists_on_user_id_and_college_id" ON "college_whitelists"  ("user_id", "college_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (53.1ms)[0m  [1m[35mCREATE  INDEX  "index_college_whitelists_on_user_id" ON "college_whitelists"  ("user_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "colleges" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (119.3ms)[0m  [1m[35mCREATE TABLE "colleges" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "initials" character varying DEFAULT '', "city" character varying DEFAULT '' NOT NULL, "state" character varying DEFAULT '' NOT NULL, "country" character varying DEFAULT '' NOT NULL, "unit" character varying DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "background_color" character varying, "font_family" character varying, "background_image" character varying, "font_color" character varying, "request_to_participate" character varying, "admin_approves_spotted" character varying)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (53.3ms)[0m  [1m[35mCREATE  INDEX  "index_colleges_on_user_id" ON "colleges"  ("user_id")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  ↳ db/schema.rb:57
+  [1m[35m (108.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:57
+  [1m[35m (63.8ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_spotted_id" ON "comments"  ("spotted_id")[0m
+  ↳ db/schema.rb:57
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/schema.rb:57
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorite_colleges" CASCADE[0m
+  ↳ db/schema.rb:67
+  [1m[35m (76.8ms)[0m  [1m[35mCREATE TABLE "favorite_colleges" ("id" bigserial primary key, "college_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:67
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes" CASCADE[0m
+  ↳ db/schema.rb:74
+  [1m[35m (76.7ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:74
+  [1m[35m (64.3ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_spotted_id" ON "likes"  ("spotted_id")[0m
+  ↳ db/schema.rb:74
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/schema.rb:74
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotteds" CASCADE[0m
+  ↳ db/schema.rb:83
+  [1m[35m (121.1ms)[0m  [1m[35mCREATE TABLE "spotteds" ("id" bigserial primary key, "content" text, "college_spotted_counter" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "college_id" bigint, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp, "image" character varying)[0m
+  ↳ db/schema.rb:83
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_college_id" ON "spotteds"  ("college_id")[0m
+  ↳ db/schema.rb:83
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_user_id" ON "spotteds"  ("user_id")[0m
+  ↳ db/schema.rb:83
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:99
+  [1m[35m (140.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '' NOT NULL, "last_name" character varying DEFAULT '' NOT NULL, "password_digest" character varying DEFAULT '' NOT NULL, "birth_date" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "city" character varying, "state" character varying, "country" character varying, "nickname" character varying DEFAULT '' NOT NULL)[0m
+  ↳ db/schema.rb:99
+  [1m[35m (10.2ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_df680ac728"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:113
+  [1m[35m (10.9ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_2733f5ea0b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:114
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD CONSTRAINT "fk_rails_97d9690e4b"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:115
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD CONSTRAINT "fk_rails_b7f63e7496"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:116
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "colleges" ADD CONSTRAINT "fk_rails_49306e4f49"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:117
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_ff224da44e"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:118
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:119
+  [1m[35m (10.1ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_c9334a5f5a"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:120
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:121
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_86620d5d51"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:122
+  [1m[35m (10.2ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_0aa5129631"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:123
+  [1m[35m (120.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191105234050)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190924020758),
+(20191018023813),
+(20190904032115),
+(20191008130948),
+(20191101010849),
+(20191021233923),
+(20190924010505),
+(20190904030130),
+(20190903003832),
+(20190904031944),
+(20191009015901),
+(20190926031057),
+(20190915191815),
+(20190902022737),
+(20190921194746),
+(20191022024453),
+(20190924015930);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (131.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-05 23:44:28.648996"], ["updated_at", "2019-11-05 23:44:28.648996"]]
+  ↳ db/schema.rb:13
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-11-05 23:44:28.661274"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (640.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (343.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "app_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1289.2ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (877.4ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "administrators" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (92.4ms)[0m  [1m[35mCREATE TABLE "administrators" ("id" bigserial primary key, "user_id" bigint, "college_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (61.5ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_college_id" ON "administrators"  ("college_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (52.0ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_user_id" ON "administrators"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "colleges" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (118.2ms)[0m  [1m[35mCREATE TABLE "colleges" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "initials" character varying DEFAULT '', "city" character varying DEFAULT '' NOT NULL, "state" character varying DEFAULT '' NOT NULL, "country" character varying DEFAULT '' NOT NULL, "unit" character varying DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "background_color" character varying, "font_family" character varying, "background_image" character varying, "font_color" character varying, "request_to_participate" character varying, "admin_approves_spotted" character varying)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (86.4ms)[0m  [1m[35mCREATE  INDEX  "index_colleges_on_user_id" ON "colleges"  ("user_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  ↳ db/schema.rb:46
+  [1m[35m (143.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:46
+  [1m[35m (86.3ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_spotted_id" ON "comments"  ("spotted_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (86.3ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorite_colleges" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (76.7ms)[0m  [1m[35mCREATE TABLE "favorite_colleges" ("id" bigserial primary key, "college_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (76.7ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (86.3ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_spotted_id" ON "likes"  ("spotted_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotteds" CASCADE[0m
+  ↳ db/schema.rb:72
+  [1m[35m (121.5ms)[0m  [1m[35mCREATE TABLE "spotteds" ("id" bigserial primary key, "content" text, "college_spotted_counter" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "college_id" bigint, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp, "image" character varying)[0m
+  ↳ db/schema.rb:72
+  [1m[35m (53.1ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_college_id" ON "spotteds"  ("college_id")[0m
+  ↳ db/schema.rb:72
+  [1m[35m (63.1ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_user_id" ON "spotteds"  ("user_id")[0m
+  ↳ db/schema.rb:72
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:88
+  [1m[35m (108.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '' NOT NULL, "last_name" character varying DEFAULT '' NOT NULL, "password_digest" character varying DEFAULT '' NOT NULL, "birth_date" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "city" character varying, "state" character varying, "country" character varying, "nickname" character varying DEFAULT '' NOT NULL)[0m
+  ↳ db/schema.rb:88
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_df680ac728"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:102
+  [1m[35m (10.7ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_2733f5ea0b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:103
+  [1m[35m (10.2ms)[0m  [1m[35mALTER TABLE "colleges" ADD CONSTRAINT "fk_rails_49306e4f49"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:104
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_ff224da44e"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:105
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:106
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_c9334a5f5a"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:107
+  [1m[35m (10.7ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:108
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_86620d5d51"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:109
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_0aa5129631"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:110
+  [1m[35m (120.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191101010849)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190924020758),
+(20191018023813),
+(20190904032115),
+(20191008130948),
+(20191021233923),
+(20190924010505),
+(20190904030130),
+(20190903003832),
+(20190904031944),
+(20191009015901),
+(20190926031057),
+(20190915191815),
+(20190902022737),
+(20190921194746),
+(20191022024453),
+(20190924015930);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (110.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-05 23:44:54.984416"], ["updated_at", "2019-11-05 23:44:54.984416"]]
+  ↳ db/schema.rb:13
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "administrators" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (86.8ms)[0m  [1m[35mCREATE TABLE "administrators" ("id" bigserial primary key, "user_id" bigint, "college_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (85.2ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_college_id" ON "administrators"  ("college_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (75.4ms)[0m  [1m[35mCREATE  INDEX  "index_administrators_on_user_id" ON "administrators"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "colleges" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (130.8ms)[0m  [1m[35mCREATE TABLE "colleges" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "initials" character varying DEFAULT '', "city" character varying DEFAULT '' NOT NULL, "state" character varying DEFAULT '' NOT NULL, "country" character varying DEFAULT '' NOT NULL, "unit" character varying DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "background_color" character varying, "font_family" character varying, "background_image" character varying, "font_color" character varying, "request_to_participate" character varying, "admin_approves_spotted" character varying)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (64.6ms)[0m  [1m[35mCREATE  INDEX  "index_colleges_on_user_id" ON "colleges"  ("user_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  ↳ db/schema.rb:46
+  [1m[35m (108.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:46
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_spotted_id" ON "comments"  ("spotted_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/schema.rb:46
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorite_colleges" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (87.8ms)[0m  [1m[35mCREATE TABLE "favorite_colleges" ("id" bigserial primary key, "college_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (65.6ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "spotted_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_spotted_id" ON "likes"  ("spotted_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (86.5ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotteds" CASCADE[0m
+  ↳ db/schema.rb:72
+  [1m[35m (132.7ms)[0m  [1m[35mCREATE TABLE "spotteds" ("id" bigserial primary key, "content" text, "college_spotted_counter" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "college_id" bigint, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp, "image" character varying)[0m
+  ↳ db/schema.rb:72
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_college_id" ON "spotteds"  ("college_id")[0m
+  ↳ db/schema.rb:72
+  [1m[35m (64.3ms)[0m  [1m[35mCREATE  INDEX  "index_spotteds_on_user_id" ON "spotteds"  ("user_id")[0m
+  ↳ db/schema.rb:72
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:88
+  [1m[35m (130.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '' NOT NULL, "last_name" character varying DEFAULT '' NOT NULL, "password_digest" character varying DEFAULT '' NOT NULL, "birth_date" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "city" character varying, "state" character varying, "country" character varying, "nickname" character varying DEFAULT '' NOT NULL)[0m
+  ↳ db/schema.rb:88
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_df680ac728"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:102
+  [1m[35m (10.4ms)[0m  [1m[35mALTER TABLE "administrators" ADD CONSTRAINT "fk_rails_2733f5ea0b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:103
+  [1m[35m (10.6ms)[0m  [1m[35mALTER TABLE "colleges" ADD CONSTRAINT "fk_rails_49306e4f49"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:104
+  [1m[35m (10.2ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_ff224da44e"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:105
+  [1m[35m (10.6ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:106
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_c9334a5f5a"
+FOREIGN KEY ("spotted_id")
+  REFERENCES "spotteds" ("id")
+[0m
+  ↳ db/schema.rb:107
+  [1m[35m (10.5ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:108
+  [1m[35m (10.6ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_86620d5d51"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/schema.rb:109
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "spotteds" ADD CONSTRAINT "fk_rails_0aa5129631"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:110
+  [1m[35m (109.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191101010849)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190924020758),
+(20191018023813),
+(20190904032115),
+(20191008130948),
+(20191021233923),
+(20190924010505),
+(20190904030130),
+(20190903003832),
+(20190904031944),
+(20191009015901),
+(20190926031057),
+(20190915191815),
+(20190902022737),
+(20190921194746),
+(20191022024453),
+(20190924015930);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (120.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-05 23:44:56.822060"], ["updated_at", "2019-11-05 23:44:56.822060"]]
+  ↳ db/schema.rb:13
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-11-05 23:44:56.834390"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCollegeWhitelists (20191105234543)
+  [1m[35m (12.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (96.7ms)[0m  [1m[35mCREATE TABLE "college_whitelists" ("id" bigserial primary key, "status" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105234543_create_college_whitelists.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD "user_id" bigint NOT NULL[0m
+  ↳ db/migrate/20191105234543_create_college_whitelists.rb:9
+  [1m[35m (40.5ms)[0m  [1m[35mCREATE  INDEX  "index_college_whitelists_on_user_id" ON "college_whitelists"  ("user_id")[0m
+  ↳ db/migrate/20191105234543_create_college_whitelists.rb:9
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD CONSTRAINT "fk_rails_b7f63e7496"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20191105234543_create_college_whitelists.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD "college_id" bigint NOT NULL[0m
+  ↳ db/migrate/20191105234543_create_college_whitelists.rb:10
+  [1m[35m (38.3ms)[0m  [1m[35mCREATE  INDEX  "index_college_whitelists_on_college_id" ON "college_whitelists"  ("college_id")[0m
+  ↳ db/migrate/20191105234543_create_college_whitelists.rb:10
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "college_whitelists" ADD CONSTRAINT "fk_rails_97d9690e4b"
+FOREIGN KEY ("college_id")
+  REFERENCES "colleges" ("id")
+[0m
+  ↳ db/migrate/20191105234543_create_college_whitelists.rb:10
+  [1m[35m (60.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_college_whitelists_on_user_id_and_college_id" ON "college_whitelists"  ("user_id", "college_id")[0m
+  ↳ db/migrate/20191105234543_create_college_whitelists.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105234543"]]
+  ↳ bin/rails:9
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
