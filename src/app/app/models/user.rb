@@ -21,5 +21,6 @@ class User < ApplicationRecord
     has_many :favorite_colleges
     has_many :favorites, through: :favorite_colleges, source: :college
     has_many :administrator
+    has_many :college_whitelist
 
 end
