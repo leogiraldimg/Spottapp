@@ -13,7 +13,9 @@ class AdministratorsController < ApplicationController
             else
                 @user = User.find_by(nickname: params[:user][:nickname])
                 @college.administrator.create(user_id: @user.id)
-                @user.favorites << @college
+                if (!college_is_already_favorite?)
+                    @user.favorites << @college
+                end
                 flash[:notice] = "Usuário adicionado como administrador"
             end
         end
@@ -34,6 +36,10 @@ class AdministratorsController < ApplicationController
     def user_is_owner_of_the_page?
         @user = User.find_by(nickname: params[:user][:nickname])
         College.where(user_id: @user.id, id: @college.id).exists?
+    end
+
+    def college_is_already_favorite?
+        FavoriteCollege.where(user_id: @user.id, college_id: @college.id).exists?
     end
 
 end
