@@ -12,9 +12,7 @@ Background: I am logged, I have a page and I am at the favorite colleges menu pa
     And I go to favorite colleges menu page
 
 Scenario: Show the link to the management page if I am administrator of the page
-    #Given I am administrator of the page
     Then I should see the link to the management page
 
 Scenario: Don't show the link to the management page if I'm not administrator of the page
-    #Given I am not administrator of the page
     Then I shouldn't see the link to the management page
