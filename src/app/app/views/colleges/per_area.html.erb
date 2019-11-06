@@ -1,0 +1,53 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-4' align='center' id="list-near-colleges">
+      <h2 align='center'>Páginas de instituições próximas</h2>
+      <% @colleges.each do |college| %>
+        <div class="block">
+          <span class="tooltiptext">
+            <table>
+              <tr>
+                <td>Nome</td>
+                <td><%= college.name %></td>
+              </tr>
+              <tr>
+                <td>Sigla</td>
+                <td><%= college.initials %></td>
+              </tr>
+              <tr>
+                <td>Cidade</td>
+                <td><%= college.city %></td>
+              </tr>
+              <tr>
+                <td>Estado</td>
+                <td><%= college.state %></td>
+              </tr>
+              <tr>
+                <td>País</td>
+                <td><%= college.country %></td>
+              </tr>
+              <tr class="noBorder">
+                <td>Unidade</td>
+                <td><%= college.unit %></td>
+              </tr>
+            </table>
+          </span>
+          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.initials %> - <%= college.unit %></a>
+          <div class="inner">
+            <% if isPageAdmin(college.id) %>
+              <%= link_to image_tag('star-purple.png'), favorite_college_path(college, type: "admin"), method: :put, id: "star-purple" %>
+            <% else %>
+              <% if already_favorited(college.id) %>
+                <%= link_to image_tag('star.png'), favorite_college_path(college, type: "unfavorite"), method: :put, id: "star" %>
+              <% else %>
+                <%= link_to image_tag('star-white.png'), favorite_college_path(college, type: "favorite"), method: :put, id: "star-white" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <%end%>
+      <br>
+    <p><%= link_to 'Finalizar', user_path(current_user), class: 'btn btn-primary' %></p>
+    </div>
+  </div>
+</div>

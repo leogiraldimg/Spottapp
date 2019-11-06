@@ -74,14 +74,24 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-4 col-xs-12">
+            <div class="form-group form-check" id="div-see-fav-pages">
+                <%= check_box_tag :see_fav_pages, 1, false %>
+                <label class="form-check-label" for="see_fav_pages">Desejo ver as páginas recomendadas para mim</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-4 col-xs-4">
-            <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+            <div class="form-group">
+                <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+            </div>
         </div>
     </div>
 
-<script>
-    var latitude = null;
-    var longitude = null;
+    <script>
+        var latitude = null;
+        var longitude = null;
     var cidade = null;
     var estado = null;
     var pais = null;
