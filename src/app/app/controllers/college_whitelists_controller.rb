@@ -1,0 +1,2 @@
+class CollegeWhitelistsController < ApplicationController
+end
