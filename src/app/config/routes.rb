@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
     resources :college_whitelists
+    get 'verify_permission', to: 'college_whitelists#verify_permission'
   end
 
 end
