@@ -1,0 +1,17 @@
+<%= form_with url: college_college_whitelists_path, model: @college_whitelist, local: true do |form| %>
+  <% if college_whitelist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(college_whitelist.errors.count, "error") %> prohibited this college_whitelist from being saved:</h2>
+
+      <ul>
+      <% college_whitelist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>  
+  <%= hidden_field(college_whitelist, :status, :value => :pending) %>
+  <div class="actions">
+    <%= form.submit 'Pedir permissão', class: 'btn btn-primary' %>
+  </div>
+<% end %>
