@@ -75,6 +75,10 @@ class CollegesController < ApplicationController
 
         if state && city
             @colleges = College.where(state: state).or(College.where(city: city))
+        elsif state
+            @colleges = College.where(state: state)
+        else
+            @colleges = College.where(city: city)
         end
     end
 

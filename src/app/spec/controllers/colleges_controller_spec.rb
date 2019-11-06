@@ -229,9 +229,25 @@ RSpec.describe CollegesController, type: :controller do
             end
             
             it "has a 200 status code" do
+                get :per_area, params: {state: @current_user.state, city: @current_user.city}
+
+                expect(response.status).to eq(200)
+            end
+
+            it "show colleges just passing state" do
                 get :per_area, params: {state: @current_user.state}
 
-                expect(response.status).to eq(200)                
+                assigns(:colleges).each do |college|
+                    expect(college.id).to eq(@college.id)
+                end
+            end
+
+            it "show colleges just passing city" do
+                get :per_area, params: {city: @current_user.city}
+
+                assigns(:colleges).each do |college|
+                    expect(college.id).to eq(@college.id)
+                end
             end
         end
 
