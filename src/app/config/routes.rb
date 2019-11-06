@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'list_likes', to: 'spotteds#list_likes'
   post 'setting_manager', to: 'administrators#setting_manager'
 
+  get 'per_area', to: 'colleges#per_area'
+
   resources :users, only: [:new, :create, :show]
   
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do

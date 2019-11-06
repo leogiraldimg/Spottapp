@@ -69,6 +69,19 @@ class CollegesController < ApplicationController
         redirect_to favorite_colleges_path
     end
 
+    def per_area
+        state = current_user.state
+        city = current_user.city
+
+        if state && city
+            @colleges = College.where(state: state).or(College.where(city: city))
+        elsif state
+            @colleges = College.where(state: state)
+        else
+            @colleges = College.where(city: city)
+        end
+    end
+
     private 
         def college_params
             params.require(:college).permit(:name, :initials, :city, :state, :country, :unit, :user_id, :background_color, :font_family, :background_image, :font_color, :request_to_participate, :admin_approves_spotted)
