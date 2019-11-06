@@ -20,5 +20,6 @@ class College < ApplicationRecord
     has_many :favorite_colleges, dependent: :destroy
     has_many :favorited_by, through: :favorite_colleges, source: :user, dependent: :destroy
     has_many :administrator
+    has_many :college_whitelist
   
 end

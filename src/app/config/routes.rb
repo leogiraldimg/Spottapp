@@ -36,4 +36,8 @@ Rails.application.routes.draw do
     resources :likes
   end
 
+  resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
+    resources :college_whitelists
+  end
+
 end

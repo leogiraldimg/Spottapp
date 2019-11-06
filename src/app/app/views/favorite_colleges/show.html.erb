@@ -33,8 +33,9 @@
             </table>
           </span>
           <a class="overlay" href="<%= college_spotteds_path(college_id: fav.college.id) %>"><%= fav.college.initials %> - <%= fav.college.unit %></a>
-          <div class="inner" id="edit-and-favorite">
+          <div class="inner" id="manage-edit-and-favorite">
               <% if isPageAdmin(fav.college.id) %>
+                <%= link_to "Gerenciar", college_college_whitelists_path(fav.college.id) %>
                 <%= link_to "Editar", edit_college_path(fav.college) %>
                 <%= link_to image_tag('star-purple.png'), favorite_college_path(fav.college, type: "admin"), method: :put, id: "star-purple" %>
               <% else %>

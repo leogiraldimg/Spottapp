@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_01_010849) do
+ActiveRecord::Schema.define(version: 2019_11_05_234543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2019_11_01_010849) do
     t.datetime "updated_at", null: false
     t.index ["college_id"], name: "index_administrators_on_college_id"
     t.index ["user_id"], name: "index_administrators_on_user_id"
+  end
+
+  create_table "college_whitelists", force: :cascade do |t|
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "college_id", null: false
+    t.index ["college_id"], name: "index_college_whitelists_on_college_id"
+    t.index ["user_id", "college_id"], name: "index_college_whitelists_on_user_id_and_college_id", unique: true
+    t.index ["user_id"], name: "index_college_whitelists_on_user_id"
   end
 
   create_table "colleges", force: :cascade do |t|
@@ -101,6 +112,8 @@ ActiveRecord::Schema.define(version: 2019_11_01_010849) do
 
   add_foreign_key "administrators", "colleges"
   add_foreign_key "administrators", "users"
+  add_foreign_key "college_whitelists", "colleges"
+  add_foreign_key "college_whitelists", "users"
   add_foreign_key "colleges", "users"
   add_foreign_key "comments", "spotteds"
   add_foreign_key "comments", "users"

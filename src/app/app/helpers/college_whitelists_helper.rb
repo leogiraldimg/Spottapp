@@ -1,0 +1,2 @@
+module CollegeWhitelistsHelper
+end
