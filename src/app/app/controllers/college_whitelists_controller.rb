@@ -3,7 +3,7 @@ class CollegeWhitelistsController < ApplicationController
     before_action :set_college
     before_action :set_college_whitelist, only: [:show, :edit, :update, :destroy]
 
-    def verifica_caminho
+    def verify_permission
         if college_dont_need_permission
           redirect_to college_spotteds_path(college_id: @college.id)
         else
@@ -13,12 +13,13 @@ class CollegeWhitelistsController < ApplicationController
               when :approved
                 redirect_to college_spotteds_path(college_id: @college.id)
               when :pending
-                render nil
+                render "pending"
               when :rejected
-                render nil
+                render "rejected"
             end
           else
-            render :new
+            @college_whitelist = CollegeWhitelist.new
+            render "new"
           end
         end
     end
@@ -45,8 +46,9 @@ class CollegeWhitelistsController < ApplicationController
         @college_whitelist = CollegeWhitelist.find_by(user_id: current_user.id, college_id: @college.id)
         if @college_whitelist.nil?
             @college_whitelist = CollegeWhitelist.new
+            render :new
         else
-            redirect_to verify_permission_path
+            edirect_to college_verify_permission_path(college_id: @college.id)
         end
     end
 
