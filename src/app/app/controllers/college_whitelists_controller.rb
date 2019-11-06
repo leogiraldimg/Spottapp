@@ -4,22 +4,22 @@ class CollegeWhitelistsController < ApplicationController
     before_action :set_college_whitelist, only: [:show, :edit, :update, :destroy]
 
     def verify_permission
-        if college_dont_need_permission
+        if @college.request_to_participate == "0"
           redirect_to college_spotteds_path(college_id: @college.id)
         else
           @college_whitelist = CollegeWhitelist.find_by(user_id: current_user.id, college_id: @college.id)
           if !@college_whitelist.nil?
             case @college_whitelist.status
-              when :approved
+              when "approved"
                 redirect_to college_spotteds_path(college_id: @college.id)
-              when :pending
-                render "pending"
-              when :rejected
-                render "rejected"
+              when "pending"
+                render :template => "college_whitelists/pending"
+              when "rejected"
+                render :template => "college_whitelists/rejected"
             end
           else
             @college_whitelist = CollegeWhitelist.new
-            render "new"
+            render :new
           end
         end
     end
@@ -60,10 +60,12 @@ class CollegeWhitelistsController < ApplicationController
     # POST /college_whitelists.json
     def create
         @college_whitelist = CollegeWhitelist.new(college_whitelist_params)
+        @college_whitelist.user = current_user
+        @college_whitelist.college = @college
 
         respond_to do |format|
             if @college_whitelist.save
-                format.html { redirect_to @college_whitelist, notice: 'College whitelist was successfully created.' }
+                format.html { render :template => "college_whitelists/pending", notice: 'College whitelist was successfully created.' }
             else
                 format.html { render :new }
             end
@@ -104,9 +106,5 @@ class CollegeWhitelistsController < ApplicationController
         # Never trust parameters from the scary internet, only allow the white list through.
         def college_whitelist_params
             params.require(:college_whitelist).permit(:status)
-        end
-
-        def college_dont_need_permission
-            @college.request_to_participate == "0" ? true : false
         end
 end

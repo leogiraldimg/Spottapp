@@ -32,7 +32,11 @@
               </tr>
             </table>
           </span>
-          <a class="overlay" href="<%= college_spotteds_path(college_id: fav.college.id) %>"><%= fav.college.initials %> - <%= fav.college.unit %></a>
+          <%if fav.college.request_to_participate == "0" %>
+            <a class="overlay" href="<%=college_spotteds_path(college_id: fav.college.id) %>"><%= fav.college.initials %> - <%= fav.college.unit %></a>
+          <%else%>
+            <a class="overlay" href="<%=college_verify_permission_path(college_id: fav.college.id) %>"><%= fav.college.initials %> - <%= fav.college.unit %></a>
+          <%end%>
           <div class="inner" id="manage-edit-and-favorite">
               <% if isPageAdmin(fav.college.id) %>
                 <%= link_to "Gerenciar", college_college_whitelists_path(fav.college.id) %>
