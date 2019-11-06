@@ -48,7 +48,7 @@ class CollegeWhitelistsController < ApplicationController
             @college_whitelist = CollegeWhitelist.new
             render :new
         else
-            edirect_to college_verify_permission_path(college_id: @college.id)
+            redirect_to college_verify_permission_path(college_id: @college.id)
         end
     end
 
