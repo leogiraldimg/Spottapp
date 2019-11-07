@@ -99,6 +99,18 @@ RSpec.describe User, type: :model do
 
 			expect(user).to eq(false)
 		end
+
+		it 'long state' do
+			user = User.new(:email => "teste001.user@spottapp.com.br", :nickname => "teste001.user", :first_name => "teste001", :last_name => "user", :password => "teste001user", :password_confirmation => "teste001user", :birth_date => "10/10/1998", :city => "São Paulo", :state => "São Paulo", :country => "Brasil").save
+
+			expect(user).to eq(false)
+		end
+
+		it 'short state' do
+			user = User.new(:email => "teste001.user@spottapp.com.br", :nickname => "teste001.user", :first_name => "teste001", :last_name => "user", :password => "teste001user", :password_confirmation => "teste001user", :birth_date => "10/10/1998", :city => "São Paulo", :state => "S", :country => "Brasil").save
+
+			expect(user).to eq(false)
+		end
 	end
 
 	context "validation tests - format" do

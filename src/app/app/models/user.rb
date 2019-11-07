@@ -11,7 +11,7 @@ class User < ApplicationRecord
     validates :password_confirmation, presence: true, length: {minimum: 6}
     validates :birth_date, presence: true
     validates :city, presence: true
-    validates :state, presence: true
+    validates :state, presence: true, length: {maximum: 2, minimum: 2}
     validates :country, presence: true
 
     has_many :spotted
