@@ -89,12 +89,122 @@
         </div>
     </div>
 
-    <script>
-        var latitude = null;
-        var longitude = null;
+<script>
+    var latitude = null;
+    var longitude = null;
     var cidade = null;
     var estado = null;
     var pais = null;
+    var estados_brasil = [
+        {
+            estado_sigla: 'AC',
+            estado: 'Acre'
+        },
+        {
+            estado_sigla: 'AL',
+            estado: 'Alagoas'
+        },
+        {
+            estado_sigla: 'AP',
+            estado: 'Amapá'
+        },
+        {
+            estado_sigla: 'AM',
+            estado: 'Amazonas'
+        },
+        {
+            estado_sigla: 'BA',
+            estado: 'Bahia'
+        },
+        {
+            estado_sigla: 'CE',
+            estado: 'Ceará'
+        },
+        {
+            estado_sigla: 'DF',
+            estado: 'Distrito Federal'
+        },
+        {
+            estado_sigla: 'ES',
+            estado: 'Espírito Santo'
+        },
+        {
+            estado_sigla: 'GO',
+            estado: 'Goiás'
+        },
+        {
+            estado_sigla: 'MA',
+            estado: 'Maranhão'
+        },
+        {
+            estado_sigla: 'MT',
+            estado: 'Mato Grosso'
+        },
+        {
+            estado_sigla: 'MS',
+            estado: 'Mato Grosso do Sul'
+        },
+        {
+            estado_sigla: 'MG',
+            estado: 'Minas Gerais'
+        },
+        {
+            estado_sigla: 'PA',
+            estado: 'Pará'
+        },
+        {
+            estado_sigla: 'PB',
+            estado: 'Paraíba'
+        },
+        {
+            estado_sigla: 'PR',
+            estado: 'Paraná'
+        },
+        {
+            estado_sigla: 'PE',
+            estado: 'Pernambuco'
+        },
+        {
+            estado_sigla: 'PI',
+            estado: 'Piauí'
+        },
+        {
+            estado_sigla: 'RJ',
+            estado: 'Rio de Janeiro'
+        },
+        {
+            estado_sigla: 'RN',
+            estado: 'Rio Grande do Norte'
+        },
+        {
+            estado_sigla: 'RS',
+            estado: 'Rio Grande do Sul'
+        },
+        {
+            estado_sigla: 'RO',
+            estado: 'Rondônia'
+        },
+        {
+            estado_sigla: 'RR',
+            estado: 'Roraima'
+        },
+        {
+            estado_sigla: 'SC',
+            estado: 'Santa Catarina'
+        },
+        {
+            estado_sigla: 'SP',
+            estado: 'São Paulo'
+        },
+        {
+            estado_sigla: 'SE',
+            estado: 'Sergipe'
+        },
+        {
+            estado_sigla: 'TO',
+            estado: 'Tocantins'
+        }
+    ];
 
     var geolocationPromise = new Promise(function(resolve, reject){
 		if(navigator.geolocation){
@@ -135,6 +245,24 @@
                 $("#user_country").val(pais);
             }
             if (estado) {
+                var estado_tratado = estados_brasil.find(function (el) {
+                    return el.estado == estado;
+                });
+
+                if (estado_tratado && estado_tratado.estado_sigla) {
+                    estado = estado_tratado.estado_sigla;
+                }
+                else {
+                    var estado_split = estado.split(" ");
+
+                    if (estado_split.length > 1) {
+                        estado = estado_split[0].substring(0,1) + estado_split[estado_split.length - 1].substring(0,1);
+                    }
+                    else {
+                        estado = estado_split[0].substring(0,1);
+                    }
+                }
+
                 $("#user_state").val(estado);
             }
             if (cidade) {
