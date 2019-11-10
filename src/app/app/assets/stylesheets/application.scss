@@ -116,3 +116,7 @@ footer {
     border-color: #000000;
     background-color: #FFFFFF;
 }
+
+.botao:active, .botao:focus {
+  outline: none;
+}
