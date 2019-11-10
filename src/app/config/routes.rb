@@ -25,19 +25,21 @@ Rails.application.routes.draw do
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
     resources :spotteds, only: [:new, :create, :show, :index, :destroy]
   end
-  resources :spotteds, only: [:new, :create, :show, :index, :delete] do
-    resources :comments
+
+  resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
+    resources :college_whitelists
   end
 
   resources :colleges do
     put :favorite, on: :member
   end
-  resources :spotteds, only: [:new, :create, :show, :index] do
-    resources :likes
+
+  resources :spotteds, only: [:new, :create, :show, :index, :delete] do
+    resources :comments
   end
 
-  resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
-    resources :college_whitelists
+  resources :spotteds, only: [:new, :create, :show, :index] do
+    resources :likes
   end
 
 end

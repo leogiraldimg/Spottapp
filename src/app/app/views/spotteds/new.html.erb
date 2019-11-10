@@ -17,11 +17,11 @@
                 <%= f.text_area :content, class: 'form-control', id: 'text-area', placeholder: 'Escreva o seu spotted aqui' %>
                 <%= f.file_field :image, class: 'form-control' %>
             </div>
-            <div class="botoes">
-                <%= f.submit 'Mandar spotted', class: 'btn' %>
-                <%= link_to 'Voltar', college_spotteds_path(college_id: @college.id), class: 'btn' %></p>
-            </div>
+            <%= f.submit 'Mandar spotted', class: 'botao' %>
         <% end %>
+        <p>
+            <%= button_to 'Voltar', college_spotteds_path, method: "get", class: 'botao' %>
+        </p>
     </div>
 
 </div>

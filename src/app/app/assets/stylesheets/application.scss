@@ -81,3 +81,38 @@ footer {
         width: 0;
     }   
 }
+
+.botao {
+    width: 130px;
+    margin: 2px 0px;
+    padding: 10px 10px;
+
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+
+    border-style: solid;
+    border-radius: 30px;
+    border-width: 1px;
+
+    background-color: #000000;
+}
+
+.botao.large {
+    width: 170px;
+}
+
+.botao.small {
+    width: 100px;
+    height: 28px;
+    margin: 0px;
+    padding: 2px 10px;
+
+    font-size: 13px;
+}
+
+.botao:hover {
+    color: #000000;
+    border-color: #000000;
+    background-color: #FFFFFF;
+}

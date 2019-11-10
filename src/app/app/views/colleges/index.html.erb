@@ -32,7 +32,7 @@
               </tr>
             </table>
           </span>
-          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.initials %> - <%= college.unit %></a>
+          <a class="overlay" href="<%=college_spotteds_path(college.id) %>"><%= college.initials %> - <%= college.unit %></a>
           <div class="inner">
             <% if isPageAdmin(college.id) %>
               <%= link_to image_tag('star-purple.png'), favorite_college_path(college, type: "admin"), method: :put, id: "star-purple" %>
@@ -47,7 +47,7 @@
         </div>
       <%end%>
 	    <br>
-        <p><%= link_to 'Criar nova página', new_college_path, class: 'btn btn-primary' %></p>
+        <p><%= button_to 'Criar nova página', new_college_path, method: "get", class: 'botao large' %></p>
       <br>
     </div>
   </div>

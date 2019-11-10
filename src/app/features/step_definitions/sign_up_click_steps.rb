@@ -23,8 +23,8 @@ end
 
 Then(/^I should see the welcome page$/) do
     expect(page).to have_xpath('.//div[@class="alert alert-success alert-dismissible"]')
-    expect(page).to have_xpath('.//a[@href="/users/new"]')
-    expect(page).to have_xpath('.//a[@href="/entrar"]')
+    expect(page).to have_xpath('.//form[@action="/users/new"]')
+    expect(page).to have_xpath('.//form[@action="/entrar"]')
 end
 
 # - - -

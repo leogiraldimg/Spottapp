@@ -12,7 +12,7 @@ When (/^I click the Entrar button$/) do
 end
 
 Then (/^I should see the initial user page$/) do
-    expect(page).to have_xpath('.//a[@id="pages-menu-access"]') 
+    expect(page).to have_xpath('.//input[@id="pages-menu-access"]') 
 end
 
 # - - -
