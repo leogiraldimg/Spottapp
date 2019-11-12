@@ -1,5 +1,5 @@
 Given(/^I am on the new spotted page$/) do
-    click_link("Novo spotted")
+    click_button("Novo spotted")
 end
 
 When(/^I fill the content spotted field with some information$/) do

@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='row'>
-    <div class='col-4' align='center'>
-      <h2 align='center'>Menu de Faculdades </h2>
+    <div class='col-4' align='center' id="list-near-colleges">
+      <h2 align='center'>Páginas de instituições próximas</h2>
       <% @colleges.each do |college| %>
         <div class="block">
           <span class="tooltiptext">
@@ -32,7 +32,7 @@
               </tr>
             </table>
           </span>
-          <a class="overlay" href="<%=college_spotteds_path(college.id) %>"><%= college.initials %> - <%= college.unit %></a>
+          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.initials %> - <%= college.unit %></a>
           <div class="inner">
             <% if isPageAdmin(college.id) %>
               <%= link_to image_tag('star-purple.png'), favorite_college_path(college, type: "admin"), method: :put, id: "star-purple" %>
@@ -46,10 +46,8 @@
           </div>
         </div>
       <%end%>
-	    <br>
-        <p><%= button_to 'Criar nova página', new_college_path, method: "get", class: 'botao large' %></p>
       <br>
+    <p><%= link_to 'Finalizar', user_path(current_user), class: 'btn btn-primary' %></p>
     </div>
   </div>
 </div>
-

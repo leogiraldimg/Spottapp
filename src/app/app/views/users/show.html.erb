@@ -1,8 +1,5 @@
 <h2> Olá <%= current_user.first_name %> </h2>
 
-<p>
-    <%= link_to 'Menu das faculdades', colleges_path, class: 'btn btn-primary', id: 'pages-menu-access' %>
-</p>
-<p>
-    <%= link_to 'Faculdades favoritas', favorite_colleges_path, class: 'btn btn-primary' %>
-</p>
+<%= button_to 'Menu das faculdades', colleges_path, method: "get", action: "show", class: 'botao large', id: 'pages-menu-access' %>
+
+<%= button_to 'Faculdades favoritas', favorite_colleges_path, method: "get", action: "show", class: 'botao large' %>

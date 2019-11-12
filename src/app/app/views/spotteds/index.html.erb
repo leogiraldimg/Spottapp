@@ -60,11 +60,13 @@
         </p>
         <div class="botoes">
             <br>
-            <p><%= link_to 'Novo spotted', new_college_spotted_path, class: 'btn' %></p>
+            <%= button_to 'Novo spotted', new_college_spotted_path, method: "get", action: "create", class: 'botao' %>
+
             <% if isPageAdmin(@college.id) %>
-                <p><%= link_to "Editar", edit_college_path(@college.id), class: 'btn', id: "editar-button" %></p>
+                <%= button_to "Editar", edit_college_path(@college.id), method: "get", action: "edit", class: 'botao', id: "editar-button" %>
             <% end %>
-            <p><%= link_to 'Voltar', colleges_path, class: 'btn' %></p>
+
+            <%= button_to 'Voltar', colleges_path, method: "get", class: 'botao' %>
         </div>
     </div>
 
@@ -119,7 +121,7 @@
                             <div class="modal-content"></div>
                         </div>
                     </div>
-                    <%= link_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), class: 'btn btn-sm' %>
+                    <%= button_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), method: "get", class: 'botao small' %>
                 </div>
             </div>
         <% end %>

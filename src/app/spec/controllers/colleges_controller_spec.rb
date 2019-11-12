@@ -170,7 +170,6 @@ RSpec.describe CollegesController, type: :controller do
         before(:each) do
             @current_user = FactoryBot.create(:user)
             @college = FactoryBot.create(:college)
-            @college.save
         end
 
         context "user logged in" do
@@ -215,6 +214,49 @@ RSpec.describe CollegesController, type: :controller do
                     @college.reload
                 }.to raise_error ActiveRecord::RecordNotFound
              end
+        end
+    end
+
+    describe "GET #per_area" do
+        before(:each) do
+            @current_user = FactoryBot.create(:user)
+            @college = FactoryBot.create(:college)
+        end
+
+        context "user logged in" do
+            before(:each) do
+                session[:user_id] = @current_user.id
+            end
+            
+            it "has a 200 status code" do
+                get :per_area, params: {state: @current_user.state, city: @current_user.city}
+
+                expect(response.status).to eq(200)
+            end
+
+            it "show colleges just passing state" do
+                get :per_area, params: {state: @current_user.state}
+
+                assigns(:colleges).each do |college|
+                    expect(college.id).to eq(@college.id)
+                end
+            end
+
+            it "show colleges just passing city" do
+                get :per_area, params: {city: @current_user.city}
+
+                assigns(:colleges).each do |college|
+                    expect(college.id).to eq(@college.id)
+                end
+            end
+        end
+
+        context "user not logged in" do
+            it "has a 302 status code" do
+                get :per_area
+
+                expect(response.status).to eq(302)
+            end
         end
     end
 end

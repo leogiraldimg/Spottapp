@@ -1,5 +1,5 @@
 Given(/^I am on the view spotted page$/) do
-    click_link("Ver spotted")
+    click_button("Ver spotted")
 end
 
 When(/^I fill the content comment field with some information$/) do
