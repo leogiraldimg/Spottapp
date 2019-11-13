@@ -1,0 +1,4 @@
+class FavoriteSpottedsController < ApplicationController
+
+    
+end

@@ -78,7 +78,30 @@
                         <%= link_to college_spotted_path(:college_id, spotted.id) do %>
                             Spotted <%= spotted.college_spotted_counter %>
                         <% end %>
+                        
                     </div>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                         </a>
+                            <% if already_favorited_spotted(spotted.id) %>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <%= link_to favorite_spotted_path(spotted, type: "unfavorite"), method: :put, id: "desativar-not"  do %>
+                                             Ativar notificações 
+                                        <% end %>
+                                    </li>
+                                </ul>
+                            <% else %>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <%= link_to favorite_spotted_path(spotted, type: "favorite"), method: :put, id: "ativar-not"  do %>
+                                            Desativar notificações
+                                        <% end %>
+                                    </li>
+                                </ul>
+                        <% end %>
+                     </div> 
                     <div class="spotted-text">
                         <%= simple_format(spotted.content) %>
                     </div>
