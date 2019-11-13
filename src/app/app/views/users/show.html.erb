@@ -1,5 +1,7 @@
 <h2> Olá <%= current_user.first_name %> </h2>
 
+<%= button_to 'Editar perfil', edit_user_path, method: "get", class: 'botao large' %>
+
 <%= button_to 'Menu das faculdades', colleges_path, method: "get", action: "show", class: 'botao large', id: 'pages-menu-access' %>
 
 <%= button_to 'Faculdades favoritas', favorite_colleges_path, method: "get", action: "show", class: 'botao large' %>
