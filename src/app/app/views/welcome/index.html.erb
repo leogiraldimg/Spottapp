@@ -1,13 +1,17 @@
 <div class="welcome" id="index">
+
   <div class="jumbotron">
-    <h1>Spottapp</h1>
-    <p>
-      Encontre seu crush aqui
-    </p>
-    
-    <%= button_to 'Crie Sua Conta', new_user_path, method: "get", action: "create", class: 'botao' %>
+    <div class="login-area">
+      <p>
+        <%= image_tag("logo2-medium.png") %>
+        <br>
+        Encontre seu crush aqui
+      </p>
+      
+      <%= button_to 'Crie Sua Conta', new_user_path, method: "get", action: "create", class: 'botao' %>
 
-    <%= button_to 'Faça Login', entrar_path, method: "get", action: "create", class: 'botao' %>
-
+      <%= button_to 'Faça Login', entrar_path, method: "get", action: "create", class: 'botao' %>
+    </div>
   </div>
+
 </div>
