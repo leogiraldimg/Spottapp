@@ -39,6 +39,15 @@ RSpec.describe CollegeWhitelistsController, type: :controller do
           get :verify_permission, params: {college_id: @college.id}
           expect(response).to render_template("new")
         end
+
+        # it "renders :new" do
+        #   @college = create(:college)
+        #   @current_user = nil
+        #   @current_user = create(:user, email: "teste002.user@spottapp.com.br", nickname: "teste002.user")
+        #   session[:user_id] = @current_user.id
+        #   get :verify_permission, params: {college_id: @college.id}
+        #   expect(response).to render_template("new")
+        # end
     end
     
     describe "GET #new" do
@@ -49,10 +58,11 @@ RSpec.describe CollegeWhitelistsController, type: :controller do
         end
         
         it "redirects to verify_permission_path" do
-          @current_user = nil
           @current_user = create(:user, email: "teste002.user@spottapp.com.br", nickname: "teste002.user")
           session[:user_id] = @current_user.id
-          @college_whitelist = create(:college_whitelist_pending, user: @current_user)
+          @college_whitelist = build(:college_whitelist_pending, user: @current_user)
+          @college_whitelist.college_id = @college.id
+          @college_whitelist.save
           get :new, params: {college_id: @college.id}
           expect(response).to redirect_to(college_verify_permission_path)
         end
