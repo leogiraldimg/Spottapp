@@ -186,10 +186,14 @@
     text-align: center;
 }
 
+.colleges#new .jumbotron .form .box .left.small {
+  font-size: 14px;
+}
+
 @media (max-width: 639px) {
 
-    .colleges#new .jumbotron .form .left,
-    .colleges#new .jumbotron .form .right {
+    .colleges#new .jumbotron .form .box .left,
+    .colleges#new .jumbotron .form .box .right {
         margin-bottom: 10px;
     }
 }
@@ -206,22 +210,131 @@
         margin: 20px 0px;
     }
 
-    .colleges#new .jumbotron .form .left {
+    .colleges#new .jumbotron .form .box .left {
         width: 50%;
         margin-right: 20px;
     }
 
-    .colleges#new .jumbotron .form .left.small {
+    .colleges#new .jumbotron .form .box .right {
+        width: 50%;
+    }
+
+    .colleges#new .jumbotron .form .box .left.small {
         width: 30%;
         margin-right: 20px;
     }
 
-    .colleges#new .jumbotron .form .right {
-        width: 50%;
-    }
-
-    .colleges#new .jumbotron .form .right.big {
+    .colleges#new .jumbotron .form .box .right.big {
         width: 70%;
         margin-right: 20px;
     }
+}
+
+// - - - Edit - - -
+.colleges#edit {
+  border-style: none;
+}
+
+.colleges#edit .jumbotron {
+  width: 100%;
+  height: 100%;
+  background: rgb(137,71,255);
+  background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+  padding: 15px 20px;
+}
+
+.colleges#edit .jumbotron h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.colleges#edit .jumbotron .form {
+  width: 90%;
+  margin: auto;
+}
+
+.colleges#edit .jumbotron .form .btn-update,
+.colleges#edit .jumbotron .form .btn-add,
+.colleges#edit .jumbotron .form .btn-delete {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+@media (max-width: 639px) {
+
+    .colleges#edit .jumbotron .form .box .left,
+    .colleges#edit .jumbotron .form .box .right {
+        margin-bottom: 10px;
+    }
+}
+
+.colleges#edit .jumbotron .form .box .left.small {
+  font-size: 14px;
+}
+
+@media (min-width: 640px) {
+
+    .colleges#edit .jumbotron .form {
+        width: 85%;
+        margin: auto;
+    }
+
+    .colleges#edit .jumbotron .form .box {
+        display: flex;
+        margin: 20px 0px;
+    }
+
+    .colleges#edit .jumbotron .form .box .left {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .colleges#edit .jumbotron .form .box .right {
+        width: 50%;
+    }
+
+    .colleges#edit .jumbotron .form .box .left.small {
+        width: 30%;
+        margin-right: 20px;
+    }
+
+    .colleges#edit .jumbotron .form .box .right.big {
+        width: 70%;
+        margin-right: 20px;
+    }
+
+    .colleges#edit .jumbotron .form .box .left.medium {
+        width: 30%;
+        margin-right: 20px;
+        margin-left: 20%;
+    }
+
+    .colleges#edit .jumbotron .form .box .right.medium {
+        width: 30%;
+        margin-right: 20%;
+    }
+
+    .colleges#edit .jumbotron .form .nickname {
+        width: 60%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 991px) {
+
+  .colleges#edit .jumbotron .form .box .left.medium {
+      width: 35%;
+      margin-right: 20px;
+      margin-left: 15%;
+  }
+
+  .colleges#edit .jumbotron .form .box .right.medium {
+    width: 35%;
+    margin-right: 15%;
+  }
+
+  .colleges#edit .jumbotron .form .nickname {
+      width: 70%;
+      margin: auto;
+  }
 }
