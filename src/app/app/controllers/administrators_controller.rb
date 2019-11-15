@@ -4,22 +4,36 @@ class AdministratorsController < ApplicationController
     def setting_manager
         @college = College.find(params[:college])
         if !(user_found?)
-            flash[:notice] = "Nenhum usuário encontrado com esse nome"
+            flash[:danger] = "Nenhum usuário encontrado com esse nome"
         else
             if (user_is_already_administrator?)
-                flash[:notice] = "Usuário já é administrador"
+                flash[:danger] = "Usuário já é administrador"
             elsif (user_is_owner_of_the_page?)
-                flash[:notice] = "Usuário é o criador e administrador da página"
+                flash[:danger] = "Usuário é o criador e administrador da página"
             else
                 @user = User.find_by(nickname: params[:user][:nickname])
                 @college.administrator.create(user_id: @user.id)
                 if (!college_is_already_favorite?)
                     @user.favorites << @college
                 end
-                flash[:notice] = "Usuário adicionado como administrador"
+                flash[:success] = "Usuário adicionado como administrador"
             end
         end
         redirect_to edit_college_path(@college)
+    end
+
+    def show
+        @college = College.find_by(id: params[:college_id])
+        @administrators = Administrator.where(college_id: params[:college_id])
+    end
+
+    def destroy
+        @administrador = Administrator.find_by(id: params[:id])
+        @college = College.find_by(id: params[:college_id])
+        @administrador.destroy
+        notice = "O administrador foi excluído"
+        flash[:success] =  notice
+        redirect_to college_administrator_path(@college)
     end
     
     private
