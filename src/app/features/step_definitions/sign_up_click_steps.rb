@@ -46,7 +46,7 @@ Given (/^There is an unregistered user$/) do
 end
 
 When /^I check the checkbox to see the page's wizard$/ do
-    page.check 'Desejo ver as páginas recomendadas para mim'
+    find(:css, "#checkbox").set(true)
 end
 
 Then /^I should see the page's wizard$/ do
