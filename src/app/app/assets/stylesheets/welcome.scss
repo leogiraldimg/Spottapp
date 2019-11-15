@@ -15,3 +15,40 @@
     border-radius: 6px;
     background-color: #FFFFFF30;
 }
+
+.welcome#index .jumbotron .login-area .small-screen,
+.welcome#index .jumbotron .login-area .medium-screen {
+    display: none;
+}
+
+@media (max-width: 309px) {
+
+    .welcome#index .jumbotron .login-area {
+        width: 95%;
+    }
+
+    .welcome#index .jumbotron .login-area .medium-screen,
+    .welcome#index .jumbotron .login-area .big-screen {
+        display: none;
+    }
+
+    .welcome#index .jumbotron .login-area .small-screen {
+        display: inline;
+    }
+}
+
+@media (min-width: 310px) and (max-width: 520px) {
+
+    .welcome#index .jumbotron .login-area {
+        width: 95%;
+    }
+
+    .welcome#index .jumbotron .login-area .small-screen,
+    .welcome#index .jumbotron .login-area .big-screen {
+        display: none;
+    }
+
+    .welcome#index .jumbotron .login-area .medium-screen {
+        display: inline;
+    }
+}
