@@ -43,3 +43,68 @@
         width: 50%;
     }
 }
+
+// - - - New - - -
+.user#new h2 {
+    text-align: center;
+}
+
+.user#new .jumbotron {
+    background: rgb(137,71,255);
+    background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+}
+
+.user#new .jumbotron .register-area {
+    width: 95%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #FFFFFF30;
+}
+
+.user#new .jumbotron .register-area .form {
+    width: 100%;
+}
+
+.user#new .jumbotron .register-area .form .register {
+    text-align: center;
+}
+
+.user#new .jumbotron .register-area .form .left,
+.user#new .jumbotron .register-area .form .right,
+.user#new .jumbotron .register-area .form .email,
+.user#new .jumbotron .register-area .form .city,
+.user#new .jumbotron .register-area .form .fav-pages {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 640px) {
+
+    .user#new .jumbotron .register-area .form {
+        width: 80%;
+        margin: auto;
+    }
+
+    .user#new .jumbotron .register-area .form .box {
+        display: flex;
+        margin: 20px 0px;
+    }
+
+    .user#new .jumbotron .register-area .form .left {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .user#new .jumbotron .register-area .form .right {
+        width: 50%;
+    }
+
+    .user#new .jumbotron .register-area .form .left,
+    .user#new .jumbotron .register-area .form .right,
+    .user#new .jumbotron .register-area .form .email,
+    .user#new .jumbotron .register-area .form .city,
+    .user#new .jumbotron .register-area .form .fav-pages {
+        margin-bottom: 0px;
+    }
+}
