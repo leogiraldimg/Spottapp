@@ -24,3 +24,22 @@
 .session#new .jumbotron .login-area .login-information .box {
     margin-bottom: 20px;
 }
+
+@media (max-width: 499px) {
+
+    .session#new .jumbotron .login-area {
+        width: 95%;
+    }
+
+    .session#new .jumbotron .login-area .login-information {
+        width: 90%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 991px) {
+
+    .session#new .jumbotron .login-area .login-information {
+        width: 70%;
+    }
+
+}
