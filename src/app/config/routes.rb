@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'per_area', to: 'colleges#per_area'
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :edit, :update]
   
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
     resources :spotteds, only: [:new, :create, :show, :index, :destroy]

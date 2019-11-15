@@ -1,3 +1,45 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// - - - Edit - - -
+.user#edit h3.subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user#edit .data .save {
+    text-align: center;
+}
+
+@media (max-width: 639px) {
+
+    .user#edit .data .left,
+    .user#edit .data .right,
+    .user#edit .data .email,
+    .user#edit .data .city {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 640px) {
+
+    .user#edit .data {
+        width: 600px;
+        margin: auto;
+    }
+
+    .user#edit .data .box {
+        display: flex;
+        margin: 20px 0px;
+    }
+
+    .user#edit .data .left {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .user#edit .data .right {
+        width: 50%;
+    }
+}
