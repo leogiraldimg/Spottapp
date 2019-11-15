@@ -5,8 +5,13 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        if @user.save
 
+        if (user_params[:profile_picture])
+            img_file = user_params[:profile_picture].tempfile.open.read.force_encoding(Encoding::UTF_8)
+            @user.profile_picture = Base64.encode64(img_file)
+        end
+
+        if @user.save
             if params[:see_fav_pages]
                 sign_in(@user)
 
@@ -22,6 +27,6 @@ class UsersController < ApplicationController
 
     private
         def user_params
-            params.require(:user).permit(:email, :nickname, :first_name, :last_name, :password, :password_confirmation, :birth_date, :city, :state, :country)
+            params.require(:user).permit(:email, :nickname, :first_name, :last_name, :password, :password_confirmation, :birth_date, :city, :state, :country, :profile_picture)
         end
 end

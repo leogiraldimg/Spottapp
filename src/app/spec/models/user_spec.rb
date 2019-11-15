@@ -61,6 +61,12 @@ RSpec.describe User, type: :model do
 
 			expect(user).to eq(false)
 		end
+
+		it 'ensures profile_picture is not required' do
+			user = User.new(:email => "teste001.user@spottapp.com.br", :nickname => "teste001.user", :first_name => "teste001", :last_name => "user", :password => "teste001user", :password_confirmation => "teste001user", :birth_date => "10/10/1998", :city => "São Paulo", :state => "SP", :country => "Brasil", :profile_picture => "").save
+
+			expect(user).to eq(true)
+		end
 	end
 
 	context "validation tests - length" do

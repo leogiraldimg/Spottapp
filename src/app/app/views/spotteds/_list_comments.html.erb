@@ -3,6 +3,11 @@
     <% @comments.each do |comment| %>
         <div class="comment-container">
             <% if current_user.id == comment.user.id %> 
+                <% if comment.user.profile_picture? %> 
+                    <img src="data:image;base64,<%= comment.user.profile_picture %>" class="img-responsive" style="width: 40px; height: 40px; float: left; border-radius: 50px; margin-right: 5px;" alt="Profile picture">
+                <% else %>
+                    <%= image_tag 'default_profile_picture.png', alt: 'Profile picture', class: 'img-responsive', style: "width: 40px; height: 40px; float: left; margin-right: 5px;" %>
+                <% end %>
                 <div class="dropdown">
                     <label>
                         <%= comment.user.first_name + ' ' + comment.user.last_name %>
@@ -26,6 +31,11 @@
                     </ul>
                 </div>
             <% else %>
+                <% if comment.user.profile_picture? %> 
+                    <img src="data:image;base64,<%= comment.user.profile_picture %>" class="img-responsive" style="width: 40px; height: 40px; float: left; border-radius: 50px; margin-right: 5px;" alt="Profile picture">
+                <% else %>
+                    <%= image_tag 'default_profile_picture.png', alt: 'Profile picture', class: 'img-responsive', style: "width: 40px; height: 40px; float: left; margin-right: 5px;" %>
+                <% end %>
                 <label>
                     <%= comment.user.first_name + ' ' + comment.user.last_name %>
                 </label>
