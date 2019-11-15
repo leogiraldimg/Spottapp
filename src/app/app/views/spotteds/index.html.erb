@@ -75,7 +75,7 @@
             <div class="panel-body">
             <div class="drop2">
                 <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="dropdown-toggle2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="caret"></span>
                     </a>
                     <% if already_favorited_spotted(spotted.id) %>
@@ -87,7 +87,7 @@
                             </li>
                         </ul>
                     <% else %>
-                        <ul class="dropdown-menu dropdown-menu-left">
+                        <ul class="dropdown-menu dropdown-menu-right">
                             <li>
                                 <%= link_to favorite_spotted_path(spotted, type: "favorite"), method: :put, id: "ativar-not"  do %>
                                     Ativar notificações

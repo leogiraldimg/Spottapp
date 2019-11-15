@@ -40,4 +40,6 @@ Given(/^I created a college page$/) do
         Then I should see the initial user page
     }
     @college = College.find_by(initials: "UT001")
+    
+    
 end

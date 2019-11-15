@@ -30,38 +30,44 @@
                         </ul>
                     </li>
                 </ul>
-
-
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item dropdown">
-                    <a class="nav-link text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-bell"></i>
                     </a>
-                        <ul class="dropdown-menu">
-                        <li class="head text-light bg-dark">
+                    <ul class="dropdown-menu notify-drop">
+                        <div class="notify-drop-title">
                             <div class="row">
-                            <div class="col-lg-12 col-sm-12 col-12">
-                                <span>Notifications (3)</span>
-                                <a href="" class="float-right text-light">Mark all as read</a>
+                                <div class="col-md-6 col-sm-6 col-xs-6">Notificações</div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-right"><a href="" class="rIcon allRead" data-tooltip="tooltip" data-placement="bottom" title="tümü okundu."><i class="fa fa-dot-circle-o"></i></a></div>
                             </div>
-                        </li>
-                        <li class="notification-box">
-                            <div class="row">
-                            <div class="col-lg-3 col-sm-3 col-3 text-center">
-                                <img src="/demo/man-profile.jpg" class="w-50 rounded-circle">
-                            </div>    
-                            <div class="col-lg-8 col-sm-8 col-8">
-                                <strong class="text-info">David John</strong>
-                                <div>
-                                Lorem ipsum dolor sit amet, consectetur
-                                </div>
-                                <small class="text-warning">27.11.2015, 15:00</small>
-                            </div>    
-                            </div>
-                        </li>
+                        </div>
+                    <!-- end notify title -->
+                    <!-- notify content -->
+                    <% if already_favorited_any_spotted%>
+                        <div class="drop-content">
+                            <% FavoriteSpotted.where(user_id: current_user.id).each do |fav| %>
+                                <% Comment.where(spotted_id: fav.spotted_id).each do |comment| %>
+                                    <% if comment.user_id != @current_user.id %>
+                                    <li>
+                                        <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9 pd-l0">Novo comentário de <a href=""><%= comment.user.first_name %></a> 
+                                        <p>Comentário: <%= comment.content %></p>
+                                        <a href="<%= college_spotted_path(comment.spotted.college.id, comment.spotted.id) %>"><p class="time">Novo comentário no spotteds de <%= comment.spotted.college.initials %></p></a>
+                                        </div>
+                                    </li>
+                                    <%end%>
+                                <%end%>
+                            <%end%>
+                        <% end %>
+                        </div>
+                        <div class="notify-drop-footer text-center"></div>
+                    </div>
                     </ul>
-            </div><!-- /.navbar-collapse -->
-
+                    </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
         <% end %>
     </div><!-- /.container-fluid -->
 </nav>

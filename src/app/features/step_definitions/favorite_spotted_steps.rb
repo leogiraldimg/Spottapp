@@ -1,5 +1,4 @@
 Given(/^I click on Ativar Notificações/) do
-    click_link "ativar-not"
+    find('a.dropdown-toggle2').click # assuming you only have one a.dropdown-toggle
+    click_on 'ativar-not'
 end
-
- 
