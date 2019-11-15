@@ -2,56 +2,84 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.block {
-  width: 50%;
-  height: 50px;
-  background-color:#fdfdfd;
-  position:relative;
+// - - - Index - - -
+.colleges#index {
+  border-style: none;
+}
+
+.colleges#index .jumbotron {
+  width: 100%;
+  height: 100%;
+  background: rgb(137,71,255);
+  background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+  padding: 15px 20px;
+}
+
+.colleges#index .jumbotron h2 {
   text-align: center;
-  color:black; 
+  margin-bottom: 20px;
+}
+
+.colleges#index .jumbotron .collegebox {
+  width: 50%;
+  margin: auto;
+}
+
+.colleges#index .jumbotron .collegebox .college {
+  width: 100%;
+  height: 50px;
+  background-color: #fdfdfd;
+  position: relative;
   border-style: solid;
   border-width: 0.5px;
   border-color: rgb(228, 225, 225);
-  text-align:left;
   border-radius: 15px;
-  padding-top:13px;
-  padding-left:20px;
-  padding-right:20px;
+  padding: 15px 20px 0px 20px;
+  margin-bottom: 5px;
+  display: flex;
 }
 
-.block .overlay {
+.colleges#index .jumbotron .collegebox .college .overlay {
+  width: 40%;
   text-decoration: none;
-  position:absolute;
-  left:0;
-  top:0;
-  bottom:0;
-  right:0;
-  color:black; 
-  padding-left:20px;
-  padding-top:15px;
+  color: black;
 }
 
-.block .overlay:hover {
+.colleges#index .jumbotron .collegebox .college .overlay span { 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  padding: 15px 0px 0px 20px;
+}
+
+.colleges#index .jumbotron .collegebox .college .overlay span:hover {
   background-color: #cce5fbef;
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
 }
 
-.block .inner {
-  position:relative;
-  pointer-events: none;
-  z-index: 1;
+.colleges#index .jumbotron .collegebox .college .options {
+  width: 60%;
   text-align: right;
+  pointer-events: none;
+  z-index: 6;
 }
 
-.block .inner a {
+.colleges#index .jumbotron .collegebox .college .options a {
   pointer-events: all;
-  position:relative;
 }
 
-a:hover {
+.colleges#index .jumbotron .collegebox .college .options a:hover {
   color: green;
+}
+
+.colleges#index .jumbotron .collegebox .btn-create {
+  margin-top: 20px;
+  text-align: center;
 }
 
 .tooltip {
@@ -60,7 +88,7 @@ a:hover {
   border-bottom: 1px dotted black;
 }
 
-.block .tooltiptext {
+.colleges#index .jumbotron .collegebox .college .tooltiptext {
   visibility: hidden;
   width: 200px;
   background-color: #fdfdfd;
@@ -75,50 +103,49 @@ a:hover {
   padding: 10px;
 
   position: absolute;
-  z-index: 5;
+  z-index: 10;
 
   top: 0px;
   left: 102%;
 }
 
-.block:hover .tooltiptext {
+.colleges#index .jumbotron .collegebox .college:hover .tooltiptext {
   visibility: visible;
 }
 
-.block table {
+.colleges#index .jumbotron .collegebox .college table {
   border-collapse: collapse;
   width: 100%;
 }
 
-.block table td {
+.colleges#index .jumbotron .collegebox .college table td {
   border-bottom: 1px solid #000;
   text-align: left;
   vertical-align: bottom;
   padding: 5px;
 }
 
-.block table tr.noBorder td {
+.colleges#index .jumbotron .collegebox .college table tr.noBorder td {
   border: 0;
 }
 
 @media (max-width: 768px) {
-
-  .block {
+  .colleges#index .jumbotron .collegebox {
     width: 80%;
   }  
 }
 
 @media screen and (max-width: 900px) {
 
-  .block .tooltiptext {
-    top: 20px;
+  .colleges#index .jumbotron .collegebox .college .tooltiptext {
+    top: 40px;
     left: 50%;
   }
 }
 
 @media screen and (max-width: 420px) {
 
-  .block .tooltiptext {
+  .colleges#index .jumbotron .collegebox .college .tooltiptext {
     top: 40px;
     left: 20%;
   }
@@ -126,8 +153,75 @@ a:hover {
 
 @media screen and (max-width: 300px) {
 
-  .block .tooltiptext {
+  .colleges#index .jumbotron .collegebox .college .tooltiptext {
     top: 45px;
     left: -15%;
   }
+}
+
+// - - - New - - -
+.colleges#new {
+  border-style: none;
+}
+
+.colleges#new .jumbotron {
+  width: 100%;
+  height: 100%;
+  background: rgb(137,71,255);
+  background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+  padding: 15px 20px;
+}
+
+.colleges#new .jumbotron h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.colleges#new .jumbotron .form {
+  width: 90%;
+  margin: auto;
+}
+
+.colleges#new .jumbotron .form .register {
+    text-align: center;
+}
+
+@media (max-width: 639px) {
+
+    .colleges#new .jumbotron .form .left,
+    .colleges#new .jumbotron .form .right {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 640px) {
+
+    .colleges#new .jumbotron .form {
+        width: 85%;
+        margin: auto;
+    }
+
+    .colleges#new .jumbotron .form .box {
+        display: flex;
+        margin: 20px 0px;
+    }
+
+    .colleges#new .jumbotron .form .left {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .colleges#new .jumbotron .form .left.small {
+        width: 30%;
+        margin-right: 20px;
+    }
+
+    .colleges#new .jumbotron .form .right {
+        width: 50%;
+    }
+
+    .colleges#new .jumbotron .form .right.big {
+        width: 70%;
+        margin-right: 20px;
+    }
 }
