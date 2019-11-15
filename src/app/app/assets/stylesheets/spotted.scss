@@ -147,13 +147,11 @@ h2.title {
 
 #show .container-right .mao {
     width: 30px;
-    float: left;
     margin-top: 15px;
 }
 
 #show .container-right .comment {
     width: 100%;
-    float: right;
     height: 55px;
     padding-top: 10px;
 }
@@ -169,11 +167,6 @@ h2.title {
     width: -webkit-calc(100% - 40px);
     width: -o-calc(100% - 40px);
     margin-left: 10px;
-    float: left;
-}
-
-#new-comment .send-button {
-    float: right;
 }
 
 #new-comment .send-button .btn{
