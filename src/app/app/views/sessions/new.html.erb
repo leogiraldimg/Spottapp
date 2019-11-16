@@ -1,25 +1,32 @@
-<div class="row">
-    <div class="col-xs-12">
-        <h1>Entrar</h1>
+<div class="session" id="new">
+
+    <div class="jumbotron">
+        <div class="login-area">
+            <div class="login-information">
+                
+                <%= form_for :session, url: entrar_path, method: :post do |f| %>
+
+                    <div class="box">
+                        <label for="login">Login</label>
+                        <div class="input-group margin-bottom-sm">                    
+                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                            <%= f.text_field :email, placeholder: 'Email ou usuário', class: 'form-control' %>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <label for="senha">Senha</label>
+                        <div class="input-group margin-bottom-sm">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <%= f.password_field :password, placeholder: 'Senha', class: 'form-control' %>
+                        </div>
+                    </div>
+
+                    <%= f.submit 'Entrar', class: 'botao' %>
+
+                <% end %>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-6 col-md-offset-3 col-xs-12">
-        <%= form_for :session, url: entrar_path, method: :post do |f| %>
-
-            <div class="form-group">
-                <label for="login">Login</label>
-                <%= f.text_field :email, placeholder: 'Email ou usuário', class: 'form-control' %>
-            </div>
-
-            <div class="form-group">
-            
-                <label for="senha">Senha</label>
-                <%= f.password_field :password, placeholder: 'Senha', class: 'form-control' %>
-           
-            </div>
-
-            <%= f.submit 'Entrar', class: 'botao' %>
-
-        <% end %>
-    </div>
 </div>
