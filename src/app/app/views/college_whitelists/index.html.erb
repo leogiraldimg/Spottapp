@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Permissões de entrada</h1>
+
+<div>
+  <div class="row">
+    <div class="col-xs-4">
+      <table>
+        <thead>
+          <tr>
+            <th>Pendentes</th>
+            <th colspan="3"></th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @college_whitelists.each do |college_whitelist| %>
+            <% if (college_whitelist.status == 'pending') %>
+              <tr>
+                <td><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+                <td><%= button_to 'Aprovar', { action: "aprove", :college_whitelist => {:status => college_whitelist.status}, :college_id => college_whitelist.college.id, :college_whitelist_id => college_whitelist.id }, method: "patch" %></td>
+                <td><%= button_to 'Rejeitar', { action: "reject", :college_whitelist => {:status => college_whitelist.status}, :college_id => college_whitelist.college.id, :college_whitelist_id => college_whitelist.id }, method: "patch" %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+      <div class="col-xs-4">
+        <table>
+          <thead>
+            <tr>
+              <th>Aprovados</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @college_whitelists.each do |college_whitelist| %>
+              <% if (college_whitelist.status == 'approved') %>
+              <tr>
+                <td><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+                <td><%= button_to 'Revogar', { action: "revoke", :college_whitelist => {:status => college_whitelist.status}, :college_id => college_whitelist.college.id, :college_whitelist_id => college_whitelist.id }, method: "patch" %></td>
+              </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <div class="col-xs-4">
+      <table>
+        <thead>
+          <tr>
+            <th>Rejeitados</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @college_whitelists.each do |college_whitelist| %>
+            <% if (college_whitelist.status == 'rejected') %>
+            <tr>
+              <td><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+              <td><%= button_to 'Revogar', { action: "revoke", :college_whitelist => {:status => college_whitelist.status}, :college_id => college_whitelist.college.id, :college_whitelist_id => college_whitelist.id }, method: "patch" %></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<br>
