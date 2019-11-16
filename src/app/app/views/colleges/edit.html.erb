@@ -1,67 +1,76 @@
-<div class="row">
-    <div class="col-xs-12">
-        <h1><%= @college.name %></h1>
-    </div>
-</div>
-<%= form_for @college do |f| %>
-    <legend><%= translate 'identidade_visual' %></legend>
-    <div class="form-group row">
-        <div class="col-md-3 col-xs-12">
-            <%= f.label :background_color %>
-            <%= f.color_field :background_color, class:"form-control" %>
-        </div>
-        <div class="col-md-3 col-xs-12">
-            <%= f.label :background_image %>
-            <%= f.text_field :background_image, class:"form-control" %>
-        </div>
-        <div class="col-md-3 col-xs-12">
-            <%= f.label :font_family %>
-            <%= f.text_field :font_family, class:"form-control" %>
-        </div>
-        <div class="col-md-3 col-xs-12">
-            <%= f.label :font_color %>
-            <%= f.color_field :font_color, class:"form-control" %>
-        </div>
-    </div>
-    <legend><%= translate 'administracao' %></legend>
-    <div class="form-group row">
-        <div class="col-md-3 col-xs-12">
-            <%= f.label :request_to_participate %>
-            <%= f.select :request_to_participate, ([['Sim', 1], ['Não', 0]]), {}, { class: "form-control"} %>
-        </div>
-        <div class="col-md-3 col-xs-12">
-            <%= f.label :admin_approves_spotted %>
-            <%= f.select :admin_approves_spotted, ([['Manual', 1], ['Automática', 0]]), {}, { class: "form-control"} %>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-xs-6 col-md-6">
-            <%= f.submit 'Atualizar', class: 'botao' %>
-        </div>
-    </div>
-<% end %>
+<div class="colleges" id="edit">
 
+    <div class="jumbotron">
+        <h2 class="title"><%= @college.name %></h2>
+        <div class="form">
+            <%= form_for @college do |f| %>
 
-<%= form_for :user , url: setting_manager_path(college: @college) do |f| %>
-    <legend>Adicionar Administrador</legend>
-    <div class="form-group row">
-        <div class="col-md-3 col-xs-12">
-            <%= f.label 'Nickname do usuário' %>
-            <%= f.text_field :nickname, class:"form-control" %>
+                <legend><%= translate 'identidade_visual' %></legend>
+                
+                <div class="box">
+                    <div class="left small">
+                        <%= f.label :background_color %>
+                        <%= f.color_field :background_color, class: "form-control" %>
+                    </div>
+                    <div class="right big">
+                        <%= f.label :background_image %>
+                        <%= f.text_field :background_image, class: "form-control" %>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="left small">
+                        <%= f.label :font_color %>
+                        <%= f.color_field :font_color, class: "form-control" %>
+                    </div>
+                    <div class="right big">
+                        <%= f.label :font_family %>
+                        <%= f.text_field :font_family, class: "form-control" %>
+                    </div>
+                </div>
+
+                <legend><%= translate 'administracao' %></legend>
+                
+                <div class="box">
+                    <div class="left medium">
+                        <%= f.label :request_to_participate %>
+                        <%= f.select :request_to_participate, ([['Sim', 1], ['Não', 0]]), {}, { class: "form-control"} %>
+                    </div>
+                    <div class="right medium">
+                        <%= f.label :admin_approves_spotted %>
+                        <%= f.select :admin_approves_spotted, ([['Manual', 1], ['Automática', 0]]), {}, { class: "form-control"} %>
+                    </div>
+                </div>
+                
+                <div class="btn-update">
+                    <%= f.submit 'Atualizar', class: 'botao' %>
+                </div>
+            <% end %>
+
+            <%= form_for :user , url: setting_manager_path(college: @college) do |f| %>
+                <legend>Adicionar Administrador</legend>
+                
+                <div class="nickname">
+                    <%= f.label 'Nickname do usuário' %>
+                    <%= f.text_field :nickname, class:"form-control" %>
+                </div>
+                <div class="btn-add">
+                    <%= f.submit 'Adicionar', class: 'botao' %>                    
+                </div>
+            <% end %>
+
+            <legend><%= translate 'apagar_pagina' %></legend>
+
+            <div class="btn-delete">
+                <%= button_to "Apagar a página", college_path(@college), method: :delete, data: { confirm: "Você tem certeza que quer apagar está página e todo o conteúdo dentro dela? Essa ação não pode ser desfeita." }, id: "delete-button", class: 'botao' %>
+            </div>
+
+            <hr>
+
+            <div class="btn-back">
+                <%= button_to 'Voltar', favorite_colleges_path, method: "get", class: 'botao small' %>
+            </div>
         </div>
     </div>
-    <div class="form-group row">
-        <div class="col-xs-6 col-md-6">
-            <%= f.submit 'Adicionar', class: 'botao' %>
-        </div>
-    </div>
-<% end %>
 
-<legend><%= translate 'apagar_pagina' %></legend>
-<div class="apagar">
-    <%= button_to "Apagar a página", college_path(@college), method: :delete, data: { confirm: "Você tem certeza que quer apagar está página e todo o conteúdo dentro dela? Essa ação não pode ser desfeita." }, id: "delete-button", class: 'botao' %>
-</div>
-<div class="voltar">
-    <hr>
-    <p><%= button_to 'Voltar', favorite_colleges_path, method: "get", class: 'botao small' %></p>
 </div>

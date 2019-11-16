@@ -15,5 +15,5 @@ When(/^I go to favorite colleges menu page$/) do
 end
 
 Then(/^I should see the college$/) do
-    find('.block')
+    find('.college')
 end

@@ -1,8 +1,21 @@
-<h2> Olá <%= current_user.first_name %> </h2>
+<div class="user" id="show">
 
-<%= button_to 'Menu das faculdades', colleges_path, method: "get", action: "show", class: 'botao large', id: 'pages-menu-access' %>
+    <div class="jumbotron">
+        <div class="user-area">
+            <h2> Olá <%= current_user.first_name %> </h2>
 
-<%= button_to 'Faculdades favoritas', favorite_colleges_path, method: "get", action: "show", class: 'botao large' %>
+            <div class="mybtn">
+                <%= button_to 'Editar perfil', edit_user_path, method: "get", class: 'botao large' %>
+            </div>
+            
+            <div class="mybtn">
+            <%= button_to 'Menu das faculdades', colleges_path, method: "get", action: "show", class: 'botao large', id: 'pages-menu-access' %>
+            </div>
 
-
-
+            <div class="mybtn">
+            <%= button_to 'Faculdades favoritas', favorite_colleges_path, method: "get", action: "show", class: 'botao large' %>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -149,6 +149,7 @@ footer {
     border-style: solid;
     border-radius: 30px;
     border-width: 1px;
+    border-color: #000000;
 
     background-color: #000000;
 }
@@ -168,7 +169,6 @@ footer {
 
 .botao:hover {
     color: #000000;
-    border-color: #000000;
     background-color: #FFFFFF;
 }
 
@@ -292,3 +292,21 @@ footer {
   color: #333;
 }
 
+#spottapp-header a.navbar-brand {
+    padding: 2px 16px;
+}
+
+#spottapp-header .small-screen {
+    display: none;
+}
+
+@media (max-width: 269px) {
+
+    #spottapp-header .big-screen {
+        display: none;
+    }
+
+    #spottapp-header .small-screen {
+        display: inline;
+    }
+}

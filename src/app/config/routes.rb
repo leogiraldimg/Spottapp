@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'per_area', to: 'colleges#per_area'
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :edit, :update]
   
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
     resources :spotteds, only: [:new, :create, :show, :index, :destroy]
@@ -39,6 +39,16 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
+    resources :college_whitelists, only: [:new, :create, :index] do
+      patch 'aprove', to: 'college_whitelists#aprove'
+      patch 'reject', to: 'college_whitelists#reject'
+      patch 'revoke', to: 'college_whitelists#revoke'
+    end
+    get 'verify_permission', to: 'college_whitelists#verify_permission'
+    
+  end
+  
   resources :spotteds, only: [:new, :create, :show, :index] do
     resources :likes
   end

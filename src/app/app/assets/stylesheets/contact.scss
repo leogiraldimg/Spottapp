@@ -5,3 +5,80 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// - - - Index - - -
+.contact#index {
+    height: auto;
+    border-style: none;
+}
+
+.contact#index .jumbotron {
+    width: 100%;
+    height: 100%;
+    background: rgb(137,71,255);
+    background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+}
+
+.contact#index .jumbotron .contact-area {
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px 20px 20px;
+    border-radius: 6px;
+    background-color: #FFFFFF30;
+}
+
+@media (max-width: 439px) {
+
+    .contact#index .jumbotron .contact-area h2 {
+        font-size: 20px;
+    }
+
+    .contact#index .jumbotron .contact-area p.subtitle {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 767px) {
+    .contact#index .jumbotron .contact-area {
+        width: 90%;
+        margin: auto;
+    }
+
+    .contact#index .jumbotron .contact-area h2 {
+        font-size: 24px;
+    }
+
+    .contact#index .jumbotron .contact-area p.subtitle {
+        font-size: 18px;
+    }
+}
+
+// - - - Form - - -
+.contact#form .form .name,
+.contact#form .form .email,
+.contact#form .form .message {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.contact#form .form .message #message-area {
+    resize: none;
+}
+
+@media (max-width: 439px) {
+
+    .contact#form .form .name,
+    .contact#form .form .email,
+    .contact#form .form .message {
+        width: 95%;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 767px) {
+    .contact#form .form .name,
+    .contact#form .form .email,
+    .contact#form .form .message {
+        width: 85%;
+    }
+}
