@@ -26,7 +26,7 @@ Given(/^There is a college page created$/) do
     steps %Q{
         Given There is an unregistered user
     }
-    u = College.new(:name => "Universidade Teste 002", :initials => "UT002", :city => "São Paulo", :state => "SP", :country => "Brasil", :unit => "Faculdade Teste 002", :user_id => @user.id, :background_color => "fafafa", :font_family => "Arial", :background_image => "", :font_color => "#000000")
+    u = College.new(:name => "Universidade Teste 002", :initials => "UT002", :city => "São Paulo", :state => "SP", :country => "Brasil", :unit => "Faculdade Teste 002", :user_id => @user.id, :background_color => "fafafa", :font_family => "Arial", :background_image => "", :font_color => "#000000", :request_to_participate => 1)
     u.save
 
     @college = College.find_by(initials: "UT002")
