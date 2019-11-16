@@ -8,16 +8,16 @@ Background: I am logged, there is a college created and I am at the favorite col
     Given I am at the favorite college menu page
     And There is an another college page
 
-# Scenario: Apply for permission to the page
-#     Given I have entered the another college page
-#     And I haven't applied to the page
-#     Then I click the apply button
-#     And I should see the successful apply message
+Scenario: Apply for permission to the page
+    Given I have entered the another college page
+    And I haven't applied to the page
+    Then I click the apply button
+    And I should see the successful apply message
 
-# Scenario: I had my permission rejected to the page
-#     Given Someone have rejected my permission
-#     And I have entered the another college page
-#     Then I should see the rejected apply message
+Scenario: I had my permission rejected to the page
+    Given Someone have rejected my permission
+    And I have entered the another college page
+    Then I should see the rejected apply message
 
 Scenario: I had my permission approved to the page
     Given Someone have approved my permission
