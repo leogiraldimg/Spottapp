@@ -7,10 +7,13 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
+        puts user_params[:profile_picture]
 
         if (user_params[:profile_picture])
             img_file = user_params[:profile_picture].tempfile.open.read.force_encoding(Encoding::UTF_8)
+            img_file_type = user_params[:profile_picture].content_type
             @user.profile_picture = Base64.encode64(img_file)
+            @user.profile_picture_content_type = img_file_type
         end
 
         if @user.save
