@@ -16,20 +16,6 @@
 //= require_tree .
 //= require serviceworker-companion
 
-function changeMenuLayout() {
-    if(document.getElementById("btn-change-user-menu").value == "circle"){
-        document.getElementById("btn-change-user-menu").value = "list";
-        document.getElementById("circle-menu").style.display = "none";
-        document.getElementById("list-menu").style.display = "inline-block";
-    }
-     
-    else if(document.getElementById("btn-change-user-menu").value == "list"){
-        document.getElementById("btn-change-user-menu").value = "circle";
-        document.getElementById("circle-menu").style.display = "inline-block";
-        document.getElementById("list-menu").style.display = "none";
-    }
-}
-
 function resizeIcons() {
     if($(window).width() > 400) {
         $('.user#show #icon').addClass('fa-2x');

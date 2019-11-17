@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_234543) do
+ActiveRecord::Schema.define(version: 2019_11_17_005258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_234543) do
     t.string "state"
     t.string "country"
     t.string "nickname", default: "", null: false
+    t.string "menu_preference", default: "list"
   end
 
   add_foreign_key "administrators", "colleges"

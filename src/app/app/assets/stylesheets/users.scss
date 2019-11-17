@@ -134,13 +134,19 @@
     background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
 }
 
-.user#show .jumbotron .user-area {
-    text-align: center;
+.user#show .jumbotron .user-area .big-screen {
+    width: 100%;
+    display: inline-block;
+}
+
+.user#show .jumbotron .user-area .small-screen {
+    width: 100%;
+    display: none;
 }
 
 // -> List Menu
 .user#show .jumbotron .user-area #list-menu {
-    display: none;
+    text-align: center;
 }
 
 .user#show .jumbotron .user-area #list-menu .mybtn {
@@ -150,7 +156,7 @@
 // -> Circle Menu
 .user#show .jumbotron .user-area #circle-menu {
     width: 330px;
-    display: inline-block;
+    margin: auto;
 }
 
 .user#show .jumbotron .user-area #circle-menu .profile {
@@ -213,20 +219,18 @@
 }
 
 @media (max-width: 289px) {
-    .user#show .jumbotron .user-area .dropdown {
+
+    .user#show .jumbotron .user-area .big-screen {
         display: none;
     }
 
-    .user#show .jumbotron .user-area #list-menu {
+    .user#show .jumbotron .user-area .small-screen {
         display: inline-block;
-    }
-
-    .user#show .jumbotron .user-area #circle-menu {
-        display: none;
     }
 }
 
 @media (min-width: 290px) and (max-width: 400px) {
+
     .user#show .jumbotron .user-area #circle-menu .botao.circle {
         width: 55px;
         height: 55px;

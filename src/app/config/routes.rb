@@ -22,6 +22,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :edit, :update]
   
+  resource :users do
+    member do
+      post :change_menu_preference
+    end
+  end
+
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
     resources :spotteds, only: [:new, :create, :show, :index, :destroy]
   end
