@@ -118,7 +118,7 @@
 
 // - - - Show - - -
 .user#show {
-    height: auto;
+    height: calc(100vh - 122px);
     border-style: none;
 }
 
@@ -129,9 +129,18 @@
 
 .user#show .jumbotron {
     width: 100%;
-    padding-bottom: 20px;
+    height: 100%;
+    padding: 48px;
     background: rgb(137,71,255);
     background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+}
+
+.user#show .jumbotron .user-area {
+    width: 100%;
+    margin: auto;
+    padding: 30px 5px 5px 5px;
+    border-radius: 6px;
+    background-color: #FFFFFF30;
 }
 
 .user#show .jumbotron .user-area .big-screen {
@@ -217,6 +226,10 @@
 
 @media (max-width: 289px) {
 
+    .user#show .jumbotron {
+        padding: 10px;
+    }
+
     .user#show .jumbotron .user-area .big-screen {
         display: none;
     }
@@ -227,6 +240,10 @@
 }
 
 @media (min-width: 290px) and (max-width: 400px) {
+
+    .user#show .jumbotron {
+        padding: 10px;
+    }
 
     .user#show .jumbotron .user-area #circle-menu .botao.circle {
         width: 55px;
@@ -240,5 +257,12 @@
 
     .user#show .jumbotron .user-area #circle-menu .third .space {
         width: 50px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 499px) {
+
+    .user#show .jumbotron {
+        padding: 20px;
     }
 }

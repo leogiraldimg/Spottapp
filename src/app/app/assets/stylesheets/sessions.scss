@@ -2,7 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.session#new {
+    height: calc(100vh - 122px);
+}
+
 .session#new .jumbotron {
+    height: 100%;
     background: rgb(137,71,255);
     background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
 }
