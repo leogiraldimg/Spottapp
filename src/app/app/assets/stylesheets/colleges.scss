@@ -13,16 +13,22 @@
   background: rgb(137,71,255);
   background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
   padding: 15px 20px;
+  text-align: center;
 }
 
 .colleges#index .jumbotron h2 {
-  text-align: center;
+  // text-align: center;
   margin-bottom: 20px;
 }
 
 .colleges#index .jumbotron .collegebox {
   width: 50%;
+  height: calc(100% - 130px);
+  height: -moz-calc(100% - 130px);
+  height: -webkit-calc(100% - 130px);
   margin: auto;
+  overflow: scroll;
+  text-align: left;
 }
 
 .colleges#index .jumbotron .collegebox .college {

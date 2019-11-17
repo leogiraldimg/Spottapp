@@ -17,7 +17,11 @@
 
 .favorite-colleges#show .jumbotron .collegebox {
   width: 50%;
+  height: calc(100% - 80px);
+  height: -moz-calc(100% - 80px);
+  height: -webkit-calc(100% - 80px);
   margin: auto;
+  overflow: scroll;
 }
 
 .favorite-colleges#show .jumbotron .collegebox .college {
