@@ -13,6 +13,7 @@ pt-BR:
         state: 'Estado'
         country: 'País'
         profile_picture_content_type: 'Foto de perfil'
+        profile_picture: 'Foto de perfil'
 
       college:
         name: 'Nome'
