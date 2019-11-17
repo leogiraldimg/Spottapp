@@ -157,6 +157,7 @@
 .user#show .jumbotron .user-area #circle-menu {
     width: 330px;
     margin: auto;
+    text-align: center;
 }
 
 .user#show .jumbotron .user-area #circle-menu .profile {
@@ -191,10 +192,6 @@
     width: 80px;
     pointer-events: none;
     margin-right: auto;
-}
-
-.user#show .jumbotron .user-area .change {
-    text-align: left;
 }
 
 .user#show .jumbotron .user-area #circle-menu .botao.circle {
