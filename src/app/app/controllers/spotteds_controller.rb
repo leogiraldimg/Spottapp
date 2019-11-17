@@ -1,5 +1,4 @@
 class SpottedsController < ApplicationController
-    
     before_action :set_college, only: [:index, :new]
     before_action :set_font_google, only: [:index, :new]
     before_action :set_style, only: [:index, :new]
@@ -50,6 +49,24 @@ class SpottedsController < ApplicationController
         @spotted.destroy
         flash[:success] = 'Spotted apagado com sucesso'
         redirect_to college_spotteds_path(@spotted.college)
+    end
+
+    def favorite
+        @spotted = Spotted.find(params[:id])
+        type = params[:type]
+        if type == "favorite"
+            current_user.notification << @spotted
+            notice = "Você favoritou esse spotted com sucesso"
+            flash[:success] = notice
+            redirect_back fallback_location: college_spotteds_path(@spotted.college)
+
+        elsif type == "unfavorite"
+            current_user.notification.delete(@spotted)
+            notice = "Você desfavoritou esse spotted com sucesso"
+            flash[:success] = notice
+            redirect_back fallback_location: college_spotteds_path(@spotted.college)
+        end
+        
     end
 
     private 
