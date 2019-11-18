@@ -1,4 +1,4 @@
-<div class="favorite-colleges" id="show">
+<div class="favorite_colleges" id="show">
 
   <div class="jumbotron">
       <h2>Minhas Faculdades Favoritas</h2>
@@ -6,46 +6,13 @@
         <% @favorite_colleges.each do |fav| %>
 
           <div class="college" >
-            <span class="tooltiptext">
-              <table>
-                <tr>
-                  <td>Nome</td>
-                  <td><%= fav.college.name %></td>
-                </tr>
-                <tr>
-                  <td>Sigla</td>
-                  <td><%= fav.college.initials %></td>
-                </tr>
-                <tr>
-                  <td>Cidade</td>
-                  <td><%= fav.college.city %></td>
-                </tr>
-                <tr>
-                  <td>Estado</td>
-                  <td><%= fav.college.state %></td>
-                </tr>
-                <tr>
-                  <td>País</td>
-                  <td><%= fav.college.country %></td>
-                </tr>
-                <tr class="noBorder">
-                  <td>Unidade</td>
-                  <td><%= fav.college.unit %></td>
-                </tr>
-              </table>
-            </span>
 
-            <%if fav.college.request_to_participate == "0" %>
-              <a class="overlay" href="<%=college_spotteds_path(college_id: fav.college.id) %>"><span><%= fav.college.initials %> - <%= fav.college.unit %></span></a>
-            <%else%>
-              <%if isPageAdmin(fav.college.id)%>
-                <a class="overlay" href="<%=college_spotteds_path(college_id: fav.college.id) %>"><span><%= fav.college.initials %> - <%= fav.college.unit %></span></a>
-              <%else%>
-                <a class="overlay" href="<%=college_verify_permission_path(college_id: fav.college.id) %>"><span><%= fav.college.initials %> - <%= fav.college.unit %></span></a>
-              <%end%>
-            <%end%>
+            <div class="summary">
+              <div class="name">
+                <%= fav.college.initials %> - <%= fav.college.unit %>
+              </div>
 
-            <div class="options">
+              <div class="options">
                 <% if isPageAdmin(fav.college.id) %>
                   <%= link_to "Gerenciar", college_college_whitelists_path(fav.college.id) %>
                   <%= link_to "Editar", edit_college_path(fav.college) %>
@@ -57,9 +24,61 @@
                     <%= link_to image_tag('star-white.png'), favorite_college_path(fav.college, type: "favorite"), method: :put, id: "star-white" %>
                   <% end %>
                 <% end %>
+              </div>
             </div>
+
+            <div class="details">
+              <div class="table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th class="col1"></th>
+                      <th class="col2"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Nome</td>
+                      <td><%= fav.college.name %></td>
+                    </tr>
+                    <tr>
+                      <td>Sigla</td>
+                      <td><%= fav.college.initials %></td>
+                    </tr>
+                    <tr>
+                      <td>Cidade</td>
+                      <td><%= fav.college.city %></td>
+                    </tr>
+                    <tr>
+                      <td>Estado</td>
+                      <td><%= fav.college.state %></td>
+                    </tr>
+                    <tr>
+                      <td>País</td>
+                      <td><%= fav.college.country %></td>
+                    </tr>
+                    <tr class="noBorder">
+                      <td>Unidade</td>
+                      <td><%= fav.college.unit %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             
+              <div class="college-btn">
+                <%if fav.college.request_to_participate == "0" %>
+                  <a class="botao small" href="<%=college_spotteds_path(college_id: fav.college.id) %>">Entrar</a>
+                <%else%>
+                  <%if isPageAdmin(fav.college.id)%>
+                    <a class="botao small" href="<%=college_spotteds_path(college_id: fav.college.id) %>">Entrar</a>
+                  <%else%>
+                    <a class="botao small" href="<%=college_verify_permission_path(college_id: fav.college.id) %>">Entrar</a>
+                  <%end%>
+                <%end%>
+              </div>
+            </div>
           </div>
+
         <%end%>
       </div>
     </div>

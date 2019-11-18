@@ -32,5 +32,22 @@ function resizeIcons() {
     }
 }
 
-$( window ).on( "load", resizeIcons );
-$( window ).on( "resize", resizeIcons );
+$( window ).on( 'load', resizeIcons );
+$( window ).on( 'resize', resizeIcons );
+
+$(document).ready(function(){
+    $('.favorite_colleges#show .jumbotron .collegebox .college').click(function() {
+        var $this = $(this).children('.details');
+
+        var openDetails = $('.favorite_colleges#show .jumbotron .collegebox .college .details').not($this).filter(function () { 
+            return this.style.display == 'block' 
+        });
+        openDetails.css('display', 'none');
+
+        if( $this.css('display') === 'block' ){
+            $this.css('display', 'none');
+        } else {
+            $this.css('display', 'block');
+        }
+    });
+});

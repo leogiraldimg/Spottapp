@@ -2,12 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.favorite-colleges#show {
+.favorite_colleges#show {
   border-style: none;
   height: calc(100vh - 122px);
 }
 
-.favorite-colleges#show .jumbotron {
+.favorite_colleges#show .jumbotron {
   width: 100%;
   height: 100%;
   background: rgb(137,71,255);
@@ -15,146 +15,114 @@
   padding: 15px 20px;
 }
 
-.favorite-colleges#show .jumbotron h2 {
+.favorite_colleges#show .jumbotron h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.favorite-colleges#show .jumbotron .collegebox {
-  width: calc(50% + 210px);
-  width: -moz-calc(50% + 210px);
-  width: -webkit-calc(50% + 210px);
+.favorite_colleges#show .jumbotron .collegebox {
+  width: 100%;
   height: calc(100% - 80px);
   height: -moz-calc(100% - 80px);
   height: -webkit-calc(100% - 80px);
   margin: auto;
-  margin-left: calc(25%);
-  margin-left: -webkit-calc(25%);
-  margin-left: -moz-calc(25%);
   overflow: scroll;
 }
 
-.favorite-colleges#show .jumbotron .collegebox .college {
-  width: calc(100% - 210px);
-  width: -moz-calc(100% - 210px);
-  width: -webkit-calc(100% - 210px);
-  height: 50px;
+.favorite_colleges#show .jumbotron .collegebox .college {
+  width: 400px;
+  height: auto;
+  min-height: 50px;
   background-color: #fdfdfd;
-  position: relative;
   border-style: solid;
   border-width: 0.5px;
   border-color: rgb(228, 225, 225);
   border-radius: 15px;
   padding: 15px 20px 0px 20px;
+  margin: auto;
   margin-bottom: 5px;
+}
+
+.favorite_colleges#show .jumbotron .collegebox .college .summary {
   display: flex;
 }
 
-.favorite-colleges#show .jumbotron .collegebox .college .overlay {
-  width: 40%;
-  text-decoration: none;
-  color: black;
+.favorite_colleges#show .jumbotron .collegebox .college .summary .name {
+  width: calc(100% - 125px);
 }
 
-.favorite-colleges#show .jumbotron .collegebox .college .overlay span { 
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  padding: 15px 0px 0px 20px;
-}
-
-.favorite-colleges#show .jumbotron .collegebox .college .overlay span:hover {
-  background-color: #cce5fbef;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-}
-
-.favorite-colleges#show .jumbotron .collegebox .college .options {
-  width: 60%;
+.favorite_colleges#show .jumbotron .collegebox .college .summary .options {
+  flex-grow: 1;
   text-align: right;
-  pointer-events: none;
-  z-index: 6;
 }
 
-.favorite-colleges#show .jumbotron .collegebox .college .options a {
-  pointer-events: all;
+.favorite_colleges#show .jumbotron .collegebox .college .details {
+  display: none;
+  margin: 10px 0px;
 }
 
-.favorite-colleges#show .jumbotron .collegebox .college .options a:hover {
-  color: green;
-}
-
-.favorite-colleges#show .jumbotron .collegebox .college .tooltiptext {
-  visibility: hidden;
-  width: 200px;
-  background-color: #fdfdfd;
-  color: black;
+.favorite_colleges#show .jumbotron .collegebox .college .details .table {
   border-style: solid;
-  border-width: 0.5px;
-  border-color: #000000;
-  text-align: center;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  padding: 10px;
-
-  position: absolute;
-  z-index: 10;
-
-  top: 0px;
-  left: 102%;
+  border-width: 1px;
+  border-color: #7a7a7a;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
-.favorite-colleges#show .jumbotron .collegebox .college:hover .tooltiptext {
-  visibility: visible;
-}
-
-.favorite-colleges#show .jumbotron .collegebox .college table {
+.favorite_colleges#show .jumbotron .collegebox .college .details .table table {
   border-collapse: collapse;
   width: 100%;
 }
 
-.favorite-colleges#show .jumbotron .collegebox .college table td {
+.favorite_colleges#show .jumbotron .collegebox .college .details .table table thead th.col1 {
+  width: 25%;
+}
+
+.favorite_colleges#show .jumbotron .collegebox .college .details .table table td {
   border-bottom: 1px solid #000;
   text-align: left;
   vertical-align: bottom;
   padding: 5px;
 }
 
-.favorite-colleges#show .jumbotron .collegebox .college table tr.noBorder td {
+.favorite_colleges#show .jumbotron .collegebox .college .details .table table tr.noBorder td {
   border: 0;
 }
 
-@media (max-width: 768px) {
-  .favorite-colleges#show .jumbotron .collegebox {
-    width: 80%;
+.favorite_colleges#show .jumbotron .collegebox .college .details .college-btn {
+  text-align: center;
+}
+
+.favorite_colleges#show .jumbotron .collegebox .college .details .college-btn a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 579px) {
+  .favorite_colleges#show .jumbotron .collegebox .college {
+    width: 100%;
   }  
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 340px) {
 
-  .favorite-colleges#show .jumbotron .collegebox .college .tooltiptext {
-    top: 40px;
-    left: 50%;
+  .favorite_colleges#show .jumbotron h2 {
+    margin-top: 0px;
   }
+
+  .favorite_colleges#show .jumbotron .collegebox {
+    height: calc(100% - 118px);
+    height: -moz-calc(100% - 118px);
+    height: -webkit-calc(100% - 118px);
+  }
+
 }
 
-@media screen and (max-width: 420px) {
+@media (min-width:341px) and (max-width: 476px) {
 
-  .favorite-colleges#show .jumbotron .collegebox .college .tooltiptext {
-    top: 40px;
-    left: 20%;
+  .favorite_colleges#show .jumbotron .collegebox {
+    height: calc(100% - 105px);
+    height: -moz-calc(100% - 105px);
+    height: -webkit-calc(100% - 105px);
   }
-}
 
-@media screen and (max-width: 300px) {
-
-  .favorite-colleges#show .jumbotron .collegebox .college .tooltiptext {
-    top: 45px;
-    left: -15%;
-  }
 }
