@@ -76,15 +76,13 @@
                     </div>
                 <% end %>
 
-                <% if current_user.menu_preference == "list" %>
-                    <div class="change">
+                <div class="change">
+                    <% if current_user.menu_preference == "list" %>
                         <%= button_to "Alterar Menu", change_menu_preference_users_path(type: "circle"), method: "post", action: "change_menu_preference", class: 'botao small black', id: "btn-change-user-menu" %>
-                    </div>
-                <% elsif current_user.menu_preference == "circle" %>
-                        <div class="change">
-                            <%= button_to "Alterar Menu", change_menu_preference_users_path(type: "list"), method: "post", action: "change_menu_preference", class: 'botao small black', id: "btn-change-user-menu" %>
-                        </div>
-                <% end %>
+                    <% elsif current_user.menu_preference == "circle" %>
+                        <%= button_to "Alterar Menu", change_menu_preference_users_path(type: "list"), method: "post", action: "change_menu_preference", class: 'botao small black', id: "btn-change-user-menu" %>
+                    <% end %>
+                </div>
             </div>
 
             <div class="small-screen">

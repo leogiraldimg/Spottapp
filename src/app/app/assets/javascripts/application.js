@@ -24,6 +24,12 @@ function resizeIcons() {
         $('.user#show #icon').addClass('fa-lg');
         $('.user#show #icon').removeClass('fa-2x');
     }
+
+    if($(window).width() > 439) {
+        $('.college_whitelists#form .actions .botao').addClass('large');
+    }else{
+        $('.college_whitelists#form .actions .botao').removeClass('large');
+    }
 }
 
 $( window ).on( "load", resizeIcons );
