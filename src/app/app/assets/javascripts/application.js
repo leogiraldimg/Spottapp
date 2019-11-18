@@ -51,3 +51,20 @@ $(document).ready(function(){
         }
     });
 });
+
+$(document).ready(function(){
+    $('.colleges#index .jumbotron .collegebox .college').click(function() {
+        var $this = $(this).children('.details');
+
+        var openDetails = $('.colleges#index .jumbotron .collegebox .college .details').not($this).filter(function () { 
+            return this.style.display == 'block' 
+        });
+        openDetails.css('display', 'none');
+
+        if( $this.css('display') === 'block' ){
+            $this.css('display', 'none');
+        } else {
+            $this.css('display', 'block');
+        }
+    });
+});
