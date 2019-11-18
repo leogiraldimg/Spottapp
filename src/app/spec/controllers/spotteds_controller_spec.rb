@@ -20,6 +20,33 @@ RSpec.describe SpottedsController, type: :controller do
              end
         end
     end
+
+    describe "POST #favorite" do
+        before(:each) do
+            @current_user = FactoryBot.create(:user)
+            @spotted = FactoryBot.create(:spotted)
+        end
+        
+        context "user logged in" do
+            before(:each) do
+                session[:user_id] = @current_user.id
+            end
+
+            it "notice that you have favorited" do
+                post :favorite, params: {id: @spotted.id, type: "favorite"}
+
+                expect(response).to redirect_to(college_spotteds_path(@spotted.college))
+                expect(flash[:success]).to match(/Você favoritou*/)
+            end
+
+            it "notice that you have unfavorited" do
+                post :favorite, params: {id: @spotted.id, type: "unfavorite"}
+
+                expect(response).to redirect_to(college_spotteds_path(@spotted.college))
+                expect(flash[:success]).to match(/Você desfavoritou*/)
+            end
+        end
+    end
 end
 
 

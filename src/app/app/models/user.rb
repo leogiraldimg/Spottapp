@@ -23,6 +23,8 @@ class User < ApplicationRecord
     has_many :favorites, through: :favorite_colleges, source: :college
     has_many :administrator
     has_many :college_whitelist
+    has_many :favorite_spotteds
+    has_many :notification, through: :favorite_spotteds, source: :spotted
 
     def profile_picture_content_type
         if self[:profile_picture_content_type]
