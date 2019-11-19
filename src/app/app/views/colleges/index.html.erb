@@ -8,9 +8,7 @@
         <div class="college" >
 
           <div class="summary">
-            <div class="name">
-              <%= college.initials %> - <%= college.unit %>
-            </div>
+            <div class="name"><%= college.initials %> - <%= college.unit %></div>
 
             <div class="options">
               <% if isPageAdmin(college.id) %>
@@ -28,53 +26,27 @@
           </div>
 
           <div class="details">
-            <div class="table">
-              <table>
-                <thead>
-                  <tr>
-                    <th class="col1"></th>
-                    <th class="col2"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Nome</td>
-                    <td><%= college.name %></td>
-                  </tr>
-                  <tr>
-                    <td>Sigla</td>
-                    <td><%= college.initials %></td>
-                  </tr>
-                  <tr>
-                    <td>Cidade</td>
-                    <td><%= college.city %></td>
-                  </tr>
-                  <tr>
-                    <td>Estado</td>
-                    <td><%= college.state %></td>
-                  </tr>
-                  <tr>
-                    <td>País</td>
-                    <td><%= college.country %></td>
-                  </tr>
-                  <tr class="noBorder">
-                    <td>Unidade</td>
-                    <td><%= college.unit %></td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="specifications">
+                <%= college.name %> - <%= college.initials %>
+                <br>
+                <%= college.unit %>
+                <br>
+                <%= college.city %> - <%= college.state %>
+                <br>
+                <%= college.country %>
+                <br>
             </div>
           
             <div class="college-btn">
-              <%if college.request_to_participate == "0" %>
-                <a class="botao small" href="<%=college_spotteds_path(college_id: college.id) %>">Entrar</a>
-              <%else%>
-                <%if isPageAdmin(college.id)%>
-                  <a class="botao small" href="<%=college_spotteds_path(college_id: college.id) %>">Entrar</a>
-                <%else%>
-                  <a class="botao small" href="<%=college_verify_permission_path(college_id: college.id) %>">Entrar</a>
-                <%end%>
-              <%end%>
+              <% if college.request_to_participate == "0" %>
+                <a class="botao small" href="<%= college_spotteds_path(college_id: college.id) %>">Entrar</a>
+              <% else %>
+                <% if isPageAdmin(college.id) %>
+                  <a class="botao small" href="<%= college_spotteds_path(college_id: college.id) %>">Entrar</a>
+                <% else %>
+                  <a class="botao small" href="<%= college_verify_permission_path(college_id: college.id) %>">Entrar</a>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>

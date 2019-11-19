@@ -61,32 +61,14 @@
   margin: 10px 0px;
 }
 
-.favorite_colleges#show .jumbotron .collegebox .college .details .table {
+.favorite_colleges#show .collegebox .college .details .specifications {
+  text-align: center;
   border-style: solid;
   border-width: 1px;
   border-color: #7a7a7a;
   border-radius: 6px;
+  padding: 10px;
   margin-bottom: 10px;
-}
-
-.favorite_colleges#show .jumbotron .collegebox .college .details .table table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.favorite_colleges#show .jumbotron .collegebox .college .details .table table thead th.col1 {
-  width: 25%;
-}
-
-.favorite_colleges#show .jumbotron .collegebox .college .details .table table td {
-  border-bottom: 1px solid #000;
-  text-align: left;
-  vertical-align: bottom;
-  padding: 5px;
-}
-
-.favorite_colleges#show .jumbotron .collegebox .college .details .table table tr.noBorder td {
-  border: 0;
 }
 
 .favorite_colleges#show .jumbotron .collegebox .college .details .college-btn {
