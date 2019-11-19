@@ -16,5 +16,9 @@ before_install:
   - psql -c "alter user railsuser with password 'Rails@123'" -U postgres
   - sudo apt-get install imagemagick
 
+script:
+  - rails db:migrate
+  - rake
+
 services:
   - postgresql

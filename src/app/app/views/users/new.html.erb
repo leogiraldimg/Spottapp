@@ -68,6 +68,11 @@
                         <%= f.text_field :city, class: 'form-control' %>
                     </div>
 
+                    <div class="profile-picture">
+                        <%= f.label :profile_picture %>
+                        <%= f.file_field :profile_picture, class: 'form-control', accept: 'image/jpeg, image/png' %>
+                    </div>
+
                     <hr>
 
                     <div class="fav-pages" id="div-see-fav-pages">
