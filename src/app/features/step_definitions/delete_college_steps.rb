@@ -1,5 +1,4 @@
 When(/^I click the Apagar a página button$/) do
-    # page.evaluate_script('window.confirm = function() { return true; }')
     find('#delete-button').click
 end
 

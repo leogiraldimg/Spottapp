@@ -13,7 +13,7 @@ When (/^I fill the create new page form$/) do
     fill_in "college[font_family]", with: "Arial"
     fill_in "college[font_color]", with: "#000000"
     select 'Manual', from: "college[admin_approves_spotted]"
-    select 'Sim', from: "college[request_to_participate]"
+    select 'Não', from: "college[request_to_participate]"
 end
 
 When (/^I click the Cadastrar Nova Página button$/) do
@@ -26,7 +26,7 @@ Given(/^There is a college page created$/) do
     steps %Q{
         Given There is an unregistered user
     }
-    u = College.new(:name => "Universidade Teste 002", :initials => "UT002", :city => "São Paulo", :state => "SP", :country => "Brasil", :unit => "Faculdade Teste 002", :user_id => @user.id, :background_color => "fafafa", :font_family => "Arial", :background_image => "", :font_color => "#000000", :request_to_participate => 1)
+    u = College.new(:name => "Universidade Teste 002", :initials => "UT002", :city => "São Paulo", :state => "SP", :country => "Brasil", :unit => "Faculdade Teste 002", :user_id => @user.id, :background_color => "fafafa", :font_family => "Arial", :background_image => "", :font_color => "#000000", :request_to_participate => 0)
     u.save
 
     @college = College.find_by(initials: "UT002")

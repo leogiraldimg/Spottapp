@@ -20,12 +20,12 @@ end
 
 # - - -
 
-Given (/^I posted a comment successfully$/) do
-    steps %Q{
-        Given I am on the view spotted page
-        When I fill the content comment field with some information
-        And I click the Mandar comentário button
-        Then I should see the view spotted page
-        And I should see my new comment on the timeline
-    }
-end
+# Given (/^I posted a comment successfully$/) do
+#     steps %Q{
+#         Given I am on the view spotted page
+#         When I fill the content comment field with some information
+#         And I click the Mandar comentário button
+#         Then I should see the view spotted page
+#         And I should see my new comment on the timeline
+#     }
+# end

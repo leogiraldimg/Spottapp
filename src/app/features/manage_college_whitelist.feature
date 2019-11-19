@@ -1,3 +1,4 @@
+@javascript
 Feature: Manage college whitelist
 
 As a page manager

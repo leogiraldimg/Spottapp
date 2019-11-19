@@ -3,7 +3,8 @@ Given (/^I am on the colleges menu$/) do
 end
 
 When (/^I click on a link to college$/) do
-    click_link "UT002 - Faculdade Teste 002"
+    find('#UT002-FaculdadeTeste002').click
+    click_link("Entrar")
 end
 
 Then (/^I should see the college page$/) do
@@ -21,7 +22,8 @@ Given (/^I accessed a college page successfully$/) do
 end
 
 When (/^I click on my college page link$/) do
-    click_link "UT001 - Faculdade Teste 001"
+    find('#UT001-FaculdadeTeste001').click
+    click_link("Entrar")
 end
 
 Then (/^I should see my college page$/) do

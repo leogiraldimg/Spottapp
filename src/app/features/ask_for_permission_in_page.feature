@@ -1,3 +1,4 @@
+@javascript
 Feature: Ask permission to enter a private page
 
 As a user

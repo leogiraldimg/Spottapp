@@ -1,3 +1,4 @@
+@javascript
 Feature: Delete spotted
 
 As a page manager 

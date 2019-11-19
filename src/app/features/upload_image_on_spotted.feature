@@ -1,3 +1,4 @@
+@javascript
 Feature: Post a spotted with an image
 
 As a student

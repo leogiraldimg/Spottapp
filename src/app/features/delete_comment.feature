@@ -1,3 +1,4 @@
+@javascript
 Feature: Delete comment
 
 As a student

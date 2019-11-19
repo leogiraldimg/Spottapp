@@ -1,3 +1,4 @@
+@javascript
 Feature: Post a spotted at a college page
 
 As a student
