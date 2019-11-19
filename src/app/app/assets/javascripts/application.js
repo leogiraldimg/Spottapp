@@ -68,16 +68,3 @@ $(document).ready(function(){
         }
     });
 });
-
-$(document).ready(function(){
-
-    $('.colleges#index .jumbotron .collegebox .college .summary').each(function() {
-        var newId = $(this).children('.name').text().replace(/ /g,'');
-        $(this).attr('id', newId);
-    });
-
-    $('.favorite_colleges#show .jumbotron .collegebox .college .summary').each(function() {
-        var newId = $(this).children('.name').text().replace(/ /g,'');
-        $(this).attr('id', newId);
-    });
-});

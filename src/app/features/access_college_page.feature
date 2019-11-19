@@ -1,4 +1,3 @@
-@javascript
 Feature: Access a college page
 
 As a student 

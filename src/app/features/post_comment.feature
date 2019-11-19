@@ -1,4 +1,3 @@
-@javascript
 Feature: Post a comment at a spotted
 
 As a student
