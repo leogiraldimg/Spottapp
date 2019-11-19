@@ -63,4 +63,4 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 require 'report_builder'
 
 # Capybara.javascript_driver = :selenium_chrome #roda no navegador
-Capybara.javascript_driver = :selenium_chrome_headless #roda com o nageador em background
+# Capybara.javascript_driver = :selenium_chrome_headless #roda com o nageador em background
