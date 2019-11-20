@@ -1,3 +1,45 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.session#new .jumbotron {
+    background: rgb(137,71,255);
+    background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+}
+
+.session#new .jumbotron .login-area {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding: 30px 0px;
+    border-radius: 6px;
+    background-color: #FFFFFF30;
+}
+
+.session#new .jumbotron .login-area .login-information {
+    width: 50%;
+    margin: auto;
+}
+
+.session#new .jumbotron .login-area .login-information .box {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 499px) {
+
+    .session#new .jumbotron .login-area {
+        width: 95%;
+    }
+
+    .session#new .jumbotron .login-area .login-information {
+        width: 90%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 991px) {
+
+    .session#new .jumbotron .login-area .login-information {
+        width: 70%;
+    }
+
+}

@@ -95,6 +95,13 @@ h2.title {
     clear: both;
 } 
 
+#index .drop2 .dropdown {
+    float: right;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+ 
 @media (max-width: 800px) {
     #index .container-left {
         width: 100%;
@@ -147,13 +154,11 @@ h2.title {
 
 #show .container-right .mao {
     width: 30px;
-    float: left;
     margin-top: 15px;
 }
 
 #show .container-right .comment {
     width: 100%;
-    float: right;
     height: 55px;
     padding-top: 10px;
 }
@@ -169,11 +174,6 @@ h2.title {
     width: -webkit-calc(100% - 40px);
     width: -o-calc(100% - 40px);
     margin-left: 10px;
-    float: left;
-}
-
-#new-comment .send-button {
-    float: right;
 }
 
 #new-comment .send-button .btn{
@@ -226,15 +226,6 @@ h2.title {
         height: -o-calc(100% - 110px);
         overflow-x: hidden;
     }
-}
-
-#new h2.title {
-    background-color: #FFFFFFE0;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 40px;
-    padding: 10px;
-    text-align: center;
 }
 
 #new .spotted-content {

@@ -1,21 +1,28 @@
-<%= form_for @contact, url: contact_index_path do |f| %>
-  
-  <div class="form-group w-75">        
-    <%= f.label :name %></br>
-    <%= f.text_field  :name, required: true, class:"form-control", placeholder: "Nome"%></br>     
-  </div> 
-  <div class="form-group w-75">       
-    <%= f.label :email %></br>
-    <%= f.text_field :email, required: true, class:"form-control", placeholder: "Email" %></br>
+<div class="contact" id="form">
+
+    <div class="form">
+      <%= form_for @contact, url: contact_index_path do |f| %>
+        
+        <div class="name">
+          <%= f.label :name %>
+          <%= f.text_field  :name, required: true, class:"form-control", placeholder: "Nome"%>
+        </div>
+
+        <div class="email">
+          <%= f.label :email %>
+          <%= f.text_field :email, required: true, class:"form-control", placeholder: "Email" %>
+        </div>
+
+        <div class="message">
+          <%= f.label :message %>
+          <%= f.text_area :message, rows: 8, cols: 40, required: true, class:"form-control", placeholder: "Mensagem", id: "message-area" %>
+        </div>
+
+          <div class="btn-send">
+            <%= f.submit 'Enviar Mensagem', class: 'botao large' %>
+          </div>
+          
+      <% end %>
   </div>
-  <div class="form-group w-75">   
-    <%= f.label :message %></br>
-    <%= f.text_area :message, rows: 8, cols: 40, required: true, class:"form-control",
-                      placeholder: "Mensagem"%></br>
-  </di>
 
-    <div class="text-center text-md-left">
-      <%= f.submit 'Enviar Mensagem', class: 'botao large' %>
-    </div>
-
-<% end %>
+</div>

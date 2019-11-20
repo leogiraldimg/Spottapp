@@ -1,0 +1,2 @@
+module FavoriteSpottedHelper
+end

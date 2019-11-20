@@ -1,3 +1,54 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.welcome#index .jumbotron {
+    background: rgb(137,71,255);
+    background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+}
+
+.welcome#index .jumbotron .login-area {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding: 30px 0px;
+    border-radius: 6px;
+    background-color: #FFFFFF30;
+}
+
+.welcome#index .jumbotron .login-area .small-screen,
+.welcome#index .jumbotron .login-area .medium-screen {
+    display: none;
+}
+
+@media (max-width: 309px) {
+
+    .welcome#index .jumbotron .login-area {
+        width: 95%;
+    }
+
+    .welcome#index .jumbotron .login-area .medium-screen,
+    .welcome#index .jumbotron .login-area .big-screen {
+        display: none;
+    }
+
+    .welcome#index .jumbotron .login-area .small-screen {
+        display: inline;
+    }
+}
+
+@media (min-width: 310px) and (max-width: 520px) {
+
+    .welcome#index .jumbotron .login-area {
+        width: 95%;
+    }
+
+    .welcome#index .jumbotron .login-area .small-screen,
+    .welcome#index .jumbotron .login-area .big-screen {
+        display: none;
+    }
+
+    .welcome#index .jumbotron .login-area .medium-screen {
+        display: inline;
+    }
+}
