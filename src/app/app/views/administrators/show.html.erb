@@ -1,16 +1,27 @@
-<div class="row" style="margin-bottom:20px;">
-    <%= button_to 'Voltar', edit_college_path(@college), method: "get", class: 'botao small' %>
-</div>
-<legend>Administrador da página: <%= @college.name %></legend>
-<div class="container">
-    <div class="row">
-        <% @administrators.each do |adm| %>
-            <div class="col-4" style="display:flex;margin:10px;">
-                <div style="margin-right:20px;"> <p style="font-size:20px"> <%= adm.user.nickname %> </p> </div>
-                <%= link_to  college_administrator_path(@college, adm), method: :delete, id: "trash-bt" do %>
-                    <i class="fa fa-trash fa-2x"></i>
-                <% end %>
+<div class="administrators" id="show">
+
+    <div class="jumbotron">
+        <legend>Administradores da página: <%= @college.name %></legend>
+        <div class="list">
+            <div class="table">
+                <table>
+                    <% @administrators.each do |adm| %>
+                        <tr>
+                            <td class="column-trash">
+                                <%= link_to  college_administrator_path(@college, adm), method: :delete, id: "trash-bt" do %>
+                                    <i class="fa fa-trash fa-lg"></i>
+                                <% end %>
+                            </td>
+                            <td class="column-name"><%= adm.user.nickname %></td>
+                        </tr>
+                    <% end %>
+                </table>
             </div>
-        <% end %>
+        </div>
+
+        <div class="btn-back">
+            <%= button_to 'Voltar', edit_college_path(@college), method: "get", class: 'botao small' %>
+        </div>
     </div>
+
 </div>

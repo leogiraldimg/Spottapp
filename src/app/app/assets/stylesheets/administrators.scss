@@ -1,3 +1,70 @@
 // Place all the styles related to the Administrators controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// - - - Show - - -
+.administrators#show {
+    border-style: none;
+    height: calc(100vh - 122px);
+}
+
+.administrators#show .jumbotron {
+    width: 100%;
+    height: 100%;
+    background: rgb(137,71,255);
+    background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+    text-align: center;
+    padding: 15px 48px;
+}
+
+.administrators#show .jumbotron .list {
+    width: 100%;
+    height: calc(100% - 95px);
+    height: -moz-calc(100% - 95px);
+    height: -webkit-calc(100% - 95px);
+    padding: 15px;
+    background-color: #FFFFFF30;
+    border-style: solid;
+    border-width: 0.5px; 
+    border-color: #FFFFFF30;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    overflow: scroll;
+}
+
+.administrators#show .jumbotron .list table {
+    width: 100%;
+}
+
+.administrators#show .jumbotron .list table tr:hover {
+    background-color: #FFFFFF30;
+}
+
+.administrators#show .jumbotron .list table tr td {
+    padding: 4px;
+    text-align: left;
+}
+
+.administrators#show .jumbotron .list table tr td.column-trash {
+    width: 30px;
+}
+
+@media (max-width: 355px) {
+
+    .administrators#show .jumbotron {
+        padding: 15px;
+    }
+
+    .administrators#show .jumbotron .list {
+        height: calc(100% - 125px);
+        height: -moz-calc(100% - 125px);
+        height: -webkit-calc(100% - 125px);
+    }
+}
+
+@media (min-width: 356px) and (max-width: 459px) {
+
+    .administrators#show .jumbotron {
+        padding: 15px;
+    }
+}
