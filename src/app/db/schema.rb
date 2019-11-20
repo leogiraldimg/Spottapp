@@ -115,8 +115,8 @@ ActiveRecord::Schema.define(version: 2019_11_17_102711) do
     t.string "state"
     t.string "country"
     t.string "nickname", default: "", null: false
-    t.string "menu_preference", default: "list"
     t.string "profile_picture"
+    t.string "menu_preference", default: "list"
     t.string "profile_picture_content_type"
   end
 
