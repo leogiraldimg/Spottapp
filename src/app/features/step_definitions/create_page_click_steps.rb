@@ -41,5 +41,25 @@ Given(/^I created a college page$/) do
     }
     @college = College.find_by(initials: "UT001")
     
-    
+end
+
+Given(/^There is a college page with request needed created$/) do
+    steps %Q{
+        Given There is another unregistered user
+    }
+    u = College.new(:name => "Universidade Teste 003",
+        :initials => "UT003",
+        :city => "São Paulo",
+        :state => "SP",
+        :country => "Brasil",
+        :unit => "Faculdade Teste 003",
+        :user_id => @user.id,
+        :background_color => "fafafa",
+        :font_family => "Arial",
+        :background_image => "",
+        :font_color => "#000000",
+        :request_to_participate => 1)
+    u.save
+
+    @college = College.find_by(initials: "UT003")
 end

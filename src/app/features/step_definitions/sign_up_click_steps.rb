@@ -61,6 +61,22 @@ Given (/^There is an unregistered user$/) do
     @user = User.find_by(nickname: "teste002.user")
 end
 
+Given (/^There is another unregistered user$/) do
+    u = User.new(:email => "teste003.user@spottapp.com.br",
+        :nickname => "teste003.user",
+        :first_name => "teste003" ,
+        :last_name => "user",
+        :password => "teste003user",
+        :password_confirmation => "teste003user",
+        :birth_date => "10/11/1998",
+        :city => "São Paulo",
+        :state => "SP",
+        :country => "Brasil")
+    u.save
+
+    @user = User.find_by(nickname: "teste003.user")
+end
+
 When /^I check the checkbox to see the page's wizard$/ do
     find(:css, "#checkbox").set(true)
 end
