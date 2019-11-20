@@ -42,4 +42,16 @@ class ApplicationController < ActionController::Base
     end
     helper_method :isPageAdmin
 
+    def isUserAdminOfPage(college_id, user_id)
+        if College.exists?(user_id: user_id, id: college_id)  
+            return true
+
+        elsif Administrator.exists?(user_id: user_id, college_id: college_id)
+            return true
+        
+        else
+            return false
+        end
+    end
+    helper_method :isUserAdminOfPage
 end
