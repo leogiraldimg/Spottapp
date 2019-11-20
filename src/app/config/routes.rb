@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
     resources :spotteds, only: [:new, :create, :show, :index, :destroy]
+    resources :administrators, only: [:show, :destroy]
   end
 
   resources :colleges, only: [:new, :create, :show, :index, :edit, :update] do
