@@ -11,20 +11,20 @@ Background: I am logged, I have a page and I am at the favorite colleges menu pa
 
 Scenario: I approve someone on the pending list
     Given There is someone on the pending list
-    And I click to Approve it's permission
+    And I click the Aprovar button
     Then It should appear in the approved list
 
 Scenario: I reject someone on the pending list
     Given There is someone on the pending list
-    And I click to Reject it's permission
+    And I click the Rejeitar button
     Then It should appear in the rejected list
 
 Scenario: I revoke someone on the approved list
     Given Someone has been approved
-    And I click to Revoke it's permission
+    And I click the Revogar button
     Then It should appear in the pending list
 
 Scenario: I revoke someone on the rejected list
     Given Someone has been rejected
-    And I click to Revoke it's permission
+    And I click the Revogar button
     Then It should appear in the pending list
