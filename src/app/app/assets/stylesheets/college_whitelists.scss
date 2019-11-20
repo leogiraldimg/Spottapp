@@ -246,7 +246,7 @@
     overflow: scroll;
 }
 
-.college_whitelists#index .jumbotron .options table tr:hover {
+.college_whitelists#index .jumbotron .options .tbody table tr:hover {
     background-color: #FFFFFF30;
 }
 
@@ -254,11 +254,11 @@
     padding-top: 4px;
 }
 
-.college_whitelists#index .jumbotron .options .column-name {
+.college_whitelists#index .jumbotron .options table tr td.column-name {
     text-align: left;
 }
 
-.college_whitelists#index .jumbotron .options .column-btn {
+.college_whitelists#index .jumbotron .options table tr td.column-btn {
     text-align: right;
 }
 
