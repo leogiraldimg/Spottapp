@@ -50,9 +50,7 @@ $(document).ready(function(){
             $this.css('display', 'block');
         }
     });
-});
 
-$(document).ready(function(){
     $('.colleges#index .jumbotron .collegebox .college').click(function() {
         var $this = $(this).children('.details');
 
@@ -67,4 +65,10 @@ $(document).ready(function(){
             $this.css('display', 'block');
         }
     });
+});
+
+$(document).ready(function(){
+    $('.user#edit #user_profile_picture').on('change', function() { 
+        $('.user#edit .jumbotron .data .file').text('1 arquivo selecionado.'); 
+    }); 
 });

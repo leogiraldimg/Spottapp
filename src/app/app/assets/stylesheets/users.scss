@@ -11,13 +11,33 @@
     background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
 }
 
-.user#edit .jumbotron h3.subtitle {
+.user#edit .jumbotron .profile-picture .img-responsive {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin: auto;
+}
+
+.user#edit .jumbotron .data .picture {
+    height: 26px;
     text-align: center;
-    margin-bottom: 20px;
+}
+
+.user#edit .jumbotron .data .picture .form-control {
+    visibility: hidden;
+}
+
+.user#edit .jumbotron .data .file {
+    text-align: center;
+    margin-top: 10px;
 }
 
 .user#edit .jumbotron .data .save {
     text-align: center;
+}
+
+.user#edit .jumbotron .data .city {
+    margin-bottom: 15px;
 }
 
 @media (max-width: 639px) {
@@ -28,10 +48,6 @@
     .user#edit .jumbotron .data .city {
         margin-bottom: 10px;
     }
-}
-
-.user#edit .jumbotron .data .city {
-    margin-bottom: 15px;
 }
 
 @media (min-width: 640px) {
@@ -91,7 +107,7 @@
     margin-bottom: 10px;
 }
 
-.user#new .jumbotron .register-area .form .profile-picture {
+.user#new .jumbotron .register-area .form .picture {
     margin-top: 15px;
 }
 
