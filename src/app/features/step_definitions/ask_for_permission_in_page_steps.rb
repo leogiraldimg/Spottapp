@@ -1,5 +1,5 @@
 And (/^Someone asked permission to enter the page$/) do
-    c = College.find_by(initials: "UT001")
+    c = College.find_by(initials: "UT003")
     u = User.find_by(nickname: "teste001.user")
     cw = CollegeWhitelist.new(college: c, user: u, status: "pending")
     cw.save
@@ -8,15 +8,11 @@ And (/^Someone asked permission to enter the page$/) do
 end
 
 And (/^There is an another college page$/) do
-    expect(page).to have_xpath("//*[text()[contains(.,'UT002 - Faculdade Teste 002')]]")
+    expect(page).to have_xpath("//*[text()[contains(.,'UT003 - Faculdade Teste 003')]]")
 end
 
 Given (/^I clicked to enter that college page$/) do
-    #click_link('Entrar')
-    #find(:xpath, "//*[text()[contains(.,'UT002 - Faculdade Teste 002')]]/..//div[@class='college-btn']/a").click
-    #p page.html
-    page.find(:xpath, "//*[text()[contains(.,'UT002 - Faculdade Teste 002')]]/../..//div[@class='college-btn']/a").click
-    #find("a[href='#{college_verify_permission_path(college_id: fav.college.id)}']").click
+    page.find(:xpath, "//*[text()[contains(.,'UT003 - Faculdade Teste 003')]]/../..//div[@class='college-btn']/a").click
 end
 
 Then (/^I should see the page to apply$/) do
@@ -31,7 +27,7 @@ Given (/^I have entered the another college page$/) do
 end
 
 And (/^I haven't applied to the page$/) do
-    expect(page).to have_xpath(".//div[@class='actions']/input[@class='btn btn-primary']")
+    expect(page).to have_xpath(".//div[@class='actions']/input[@class='botao']")
 end
 
 Then (/^I click the apply button$/) do
@@ -39,11 +35,11 @@ Then (/^I click the apply button$/) do
 end
 
 And (/^I should see the successful apply message$/) do
-    expect(page).to have_xpath(".//h3", text: "Sua permissão de entrada está pendente. Aguarde.")
+    expect(page).to have_xpath(".//p", text: "Sua permissão de entrada está pendente.Aguarde.")
 end
 
 Given (/^Someone have rejected my permission$/) do
-    c = College.find_by(initials: "UT002")
+    c = College.find_by(initials: "UT003")
     u = User.find_by(nickname: "teste001.user")
     cw = CollegeWhitelist.new(college: c, user: u, status: "rejected")
     cw.save
@@ -52,11 +48,11 @@ Given (/^Someone have rejected my permission$/) do
 end
 
 Then (/^I should see the rejected apply message$/) do
-    expect(page).to have_xpath(".//h3", text: 'Sua permissão foi rejeitada pela administração.')
+    expect(page).to have_xpath(".//p", text: 'Sua permissão foi rejeitada pela administração.')
 end
 
 Given (/^Someone have approved my permission$/) do
-    c = College.find_by(initials: "UT002")
+    c = College.find_by(initials: "UT003")
     u = User.find_by(nickname: "teste001.user")
     cw = CollegeWhitelist.new(college: c, user: u, status: "approved")
     cw.save

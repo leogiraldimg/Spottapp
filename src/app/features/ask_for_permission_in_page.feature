@@ -22,4 +22,4 @@ Scenario: I had my permission rejected to the page
 Scenario: I had my permission approved to the page
     Given Someone have approved my permission
     When I clicked to enter that college page
-    Then I should see the college page
+    Then I should see the UT003 college page

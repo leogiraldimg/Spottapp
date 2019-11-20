@@ -25880,3 +25880,751 @@ Completed 200 OK in 801ms (Views: 777.1ms | ActiveRecord: 10.4ms)
 
 
 Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 01:20:29 -0300
+Started GET "/colleges/1/verify_permission" for 127.0.0.1 at 2019-11-20 02:19:52 -0300
+Processing by CollegeWhitelistsController#verify_permission as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (66.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (23.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:115
+  [1m[36mCollegeWhitelist Load (19.4ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."user_id" = $1 AND "college_whitelists"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:10
+  Rendering college_whitelists/new.html.erb within layouts/application
+  Rendered college_whitelists/_form.html.erb (3318.4ms)
+  Rendered college_whitelists/new.html.erb within layouts/application (5879.6ms)
+Started GET "/colleges/1/verify_permission" for 127.0.0.1 at 2019-11-20 02:21:03 -0300
+Processing by CollegeWhitelistsController#verify_permission as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:115
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."user_id" = $1 AND "college_whitelists"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:10
+  Rendering college_whitelists/new.html.erb within layouts/application
+  Rendered college_whitelists/_form.html.erb (90.6ms)
+  Rendered college_whitelists/new.html.erb within layouts/application (446.7ms)
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-11-20 02:21:30 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-11-20 02:21:31 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-11-20 02:21:31 -0300
+Processing by FavoriteCollegesController#show as HTML
+  Parameters: {"authenticity_token"=>"WKw5wE6Ggby8lBMEsAnAEWBeGCEahbCQ8EBuMrmQv+aoXQnqXgOfkQd6/gMBIlw+Fw8tlVxo4a/m4PCgM/w+xw=="}
+Processing by FavoriteCollegesController#show as HTML
+Processing by FavoriteCollegesController#show as HTML
+  Parameters: {"authenticity_token"=>"WKw5wE6Ggby8lBMEsAnAEWBeGCEahbCQ8EBuMrmQv+aoXQnqXgOfkQd6/gMBIlw+Fw8tlVxo4a/m4PCgM/w+xw=="}
+  Parameters: {"authenticity_token"=>"WKw5wE6Ggby8lBMEsAnAEWBeGCEahbCQ8EBuMrmQv+aoXQnqXgOfkQd6/gMBIlw+Fw8tlVxo4a/m4PCgM/w+xw=="}
+  [1m[36mUser Load (65.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  [1m[36mFavoriteCollege Load (0.7ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mFavoriteCollege Load (107.7ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mFavoriteCollege Load (25.0ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mCollege Load (11.3ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCollege Load (5.1ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCollege Load (3.2ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (4.6ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mAdministrator Exists (272.0ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mAdministrator Exists (252.7ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mAdministrator Exists (242.6ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mFavoriteCollege Exists (16.4ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1 AND "favorite_colleges"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+  [1m[36mFavoriteCollege Exists (103.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1 AND "favorite_colleges"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  [1m[36mFavoriteCollege Exists (89.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1 AND "favorite_colleges"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE Administrator Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  ↳ app/controllers/application_controller.rb:36
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE Administrator Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  Rendered favorite_colleges/show.html.erb within layouts/application (839.6ms)
+  [1m[36mCACHE Administrator Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  ↳ app/controllers/application_controller.rb:36
+  Rendered favorite_colleges/show.html.erb within layouts/application (1347.2ms)
+  Rendered favorite_colleges/show.html.erb within layouts/application (970.8ms)
+  [1m[36mFavoriteSpotted Exists (128.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (351.9ms)
+  Rendered layouts/_footer.html.erb (5.8ms)
+Completed 200 OK in 113886ms (Views: 107834.3ms | ActiveRecord: 303.7ms)
+
+
+  [1m[36mFavoriteSpotted Exists (52.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (101.2ms)
+  Rendered layouts/_footer.html.erb (39.1ms)
+Completed 200 OK in 63853ms (Views: 63631.7ms | ActiveRecord: 85.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-11-20 02:22:08 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered users/show.html.erb within layouts/application (56.0ms)
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:22:09 -0300
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mFavoriteSpotted Exists (9.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (55.7ms)
+  Rendered layouts/_footer.html.erb (151.6ms)
+Completed 200 OK in 1684ms (Views: 1661.3ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:22:10 -0300
+  [1m[36mFavoriteSpotted Exists (7.5ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (27.2ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 35567ms (Views: 34446.4ms | ActiveRecord: 458.8ms)
+
+
+  [1m[36mFavoriteSpotted Exists (20.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (75.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 35811ms (Views: 34508.0ms | ActiveRecord: 634.3ms)
+
+
+  [1m[36mFavoriteSpotted Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (5.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 35920ms (Views: 34927.2ms | ActiveRecord: 459.2ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:22:13 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:22:14 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:22:15 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:22:16 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-11-20 02:36:27 -0300
+Processing by FavoriteCollegesController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  [1m[36mFavoriteCollege Load (0.6ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mCollege Load (0.9ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mAdministrator Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mFavoriteCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1 AND "favorite_colleges"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE Administrator Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendered favorite_colleges/show.html.erb within layouts/application (44.6ms)
+  [1m[36mFavoriteSpotted Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (34.0ms)
+  Rendered layouts/_footer.html.erb (13.1ms)
+Completed 200 OK in 677ms (Views: 664.7ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:36:30 -0300
+Started DELETE "/sair" for 127.0.0.1 at 2019-11-20 02:36:35 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lP5TnPYZTgZfS18QkU1QQSKRIEEdP/ojRH0RevEgDOlkD2O25pxQK+SlshcgZsxuVcAV9VvSqxxS3Y/oe0yNyA=="}
+Redirected to http://localhost:3000/entrar
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/entrar" for 127.0.0.1 at 2019-11-20 02:36:35 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (14.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (8.4ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 144ms (Views: 139.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:36:39 -0300
+Started POST "/entrar" for 127.0.0.1 at 2019-11-20 02:36:42 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V0sei/7EVa6XWO95qycUv5dsXc5DP40URQV0osMwl2mnui6h7kFLgyy2An4aDIiQ4D1oegXS3CtTpeowSVwWSA==", "session"=>{"email"=>"fernando.kga@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (88.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."nickname" = $1 LIMIT $2[0m  [["nickname", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 437ms (ActiveRecord: 88.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-11-20 02:36:42 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered users/show.html.erb within layouts/application (27.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (17.3ms)
+  Rendered layouts/_footer.html.erb (3.8ms)
+Completed 200 OK in 255ms (Views: 253.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:36:45 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-11-20 02:36:46 -0300
+Processing by FavoriteCollegesController#show as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  [1m[36mFavoriteCollege Load (0.5ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendered favorite_colleges/show.html.erb within layouts/application (36.0ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 142ms (Views: 134.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:36:48 -0300
+Started GET "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-11-20 02:36:49 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:115
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (2.7ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists"[0m
+  ↳ app/views/college_whitelists/index.html.erb:18
+  Rendered college_whitelists/index.html.erb within layouts/application (41.8ms)
+  [1m[36mFavoriteSpotted Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (13.3ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 327ms (Views: 317.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:36:52 -0300
+Started DELETE "/sair" for 127.0.0.1 at 2019-11-20 02:37:54 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sADCrSLYKdeATtclMUjLwwTGxZZuK3A87Z8gB9TmfDJA8fKHMl03+jugOiKAY1fsc5fwIijGIQP7P76VXor9Ew=="}
+Redirected to http://localhost:3000/entrar
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/entrar" for 127.0.0.1 at 2019-11-20 02:37:54 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (6.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 148ms (Views: 144.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:37:57 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:02 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:05 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:05 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:07 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:10 -0300
+Started GET "/colleges/1/spotteds" for 127.0.0.1 at 2019-11-20 02:38:12 -0300
+Processing by SpottedsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spotteds_controller.rb:82
+  Rendering spotteds/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered spotteds/index.html.erb within layouts/application (197.2ms)
+Completed 500 Internal Server Error in 555ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7: 
+     8: <h2 class="title"><%= @college.name %>
+     9: 
+    10: <% if isPageAdmin(@college.id) %>
+    11:     <td style="text-align: center"><%= link_to image_tag('star-bigger-purple.png'), favorite_college_path(@college, type: "admin"), method: :put, id: "star-purple" %></td>
+    12: <% else %>
+    13:     <% if already_favorited(@college.id) %>
+  
+app/controllers/application_controller.rb:33:in `isPageAdmin'
+app/views/spotteds/index.html.erb:10:in `_app_views_spotteds_index_html_erb___167845321366191369_70214125637660'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:15 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:24 -0300
+Started GET "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-11-20 02:38:28 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+Redirected to http://localhost:3000/entrar
+Filter chain halted as :require_logged_in_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/entrar" for 127.0.0.1 at 2019-11-20 02:38:28 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (9.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 127ms (Views: 123.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:31 -0300
+Started POST "/entrar" for 127.0.0.1 at 2019-11-20 02:38:34 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ptyguGrLxW5g/PtY1ASBVYu1v9RPSRT5nVbEFkbQKFVWLZCSek7bQ9sSFl9lLx16/OSKYAmkRcaL9lqEzLypdA==", "session"=>{"email"=>"fernando.kga@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."nickname" = $1 LIMIT $2[0m  [["nickname", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 363ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-11-20 02:38:35 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered users/show.html.erb within layouts/application (30.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 128ms (Views: 125.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:38 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-11-20 02:38:38 -0300
+Processing by FavoriteCollegesController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  [1m[36mFavoriteCollege Load (0.5ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendered favorite_colleges/show.html.erb within layouts/application (11.6ms)
+  [1m[36mFavoriteSpotted Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 123ms (Views: 117.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:41 -0300
+Started GET "/colleges/1/spotteds" for 127.0.0.1 at 2019-11-20 02:38:42 -0300
+Processing by SpottedsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mCollege Load (3.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spotteds_controller.rb:82
+  Rendering spotteds/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mSpotted Load (25.2ms)[0m  [1m[34mSELECT "spotteds".* FROM "spotteds" WHERE "spotteds"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/spotteds/index.html.erb:74
+  Rendered spotteds/index.html.erb within layouts/application (77.4ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mFavoriteSpotted Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (13.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 448ms (Views: 173.4ms | ActiveRecord: 68.9ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:45 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:50 -0300
+Started DELETE "/sair" for 127.0.0.1 at 2019-11-20 02:38:51 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZpM2VatbmoYSE8kmCm/MapfTALHaMCZvLkjxhmk8wtmWYgZ/u96Eq6n9JCG7RFBF4II1BZzdd1A46G8U41BD+A=="}
+Redirected to http://localhost:3000/entrar
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/entrar" for 127.0.0.1 at 2019-11-20 02:38:52 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (9.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (7.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 215ms (Views: 209.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:38:54 -0300
+Started POST "/entrar" for 127.0.0.1 at 2019-11-20 02:41:27 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/O5oDkydUUrNdpzpUfAFRGfw+d0AxdZeHCwlt8DVIdQMH1gkXBhPZ3aYce7g25lrEKHMaUYoh2EKjLslSrmg9Q==", "session"=>{"email"=>"fernando.kga@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."nickname" = $1 LIMIT $2[0m  [["nickname", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 354ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-11-20 02:41:27 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered users/show.html.erb within layouts/application (10.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mFavoriteSpotted Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (8.8ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 126ms (Views: 118.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:41:30 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-11-20 02:41:32 -0300
+Processing by FavoriteCollegesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  [1m[36mFavoriteCollege Load (0.6ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mCollege Load (2.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendered favorite_colleges/show.html.erb within layouts/application (24.8ms)
+  [1m[36mFavoriteSpotted Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 135ms (Views: 126.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:41:35 -0300
+Started GET "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-11-20 02:41:35 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (2.1ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:115
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (1.3ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists"[0m
+  ↳ app/views/college_whitelists/index.html.erb:18
+  Rendered college_whitelists/index.html.erb within layouts/application (3.6ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.2ms)
+  Rendered layouts/_footer.html.erb (6.6ms)
+Completed 200 OK in 145ms (Views: 132.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:41:38 -0300
+Started DELETE "/sair" for 127.0.0.1 at 2019-11-20 02:43:24 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0BsQZn5Iy47/5MY9PLEtd9L0FDhfWQynFvnOPs0H3l0g6iBMbs3Vo0QKKzqNmrFYpaUhjBm0XZgAWVCsR2tffA=="}
+Redirected to http://localhost:3000/entrar
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/entrar" for 127.0.0.1 at 2019-11-20 02:43:24 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (109.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 427ms (Views: 423.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:43:27 -0300
+Started POST "/entrar" for 127.0.0.1 at 2019-11-20 02:43:28 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CUnvF87YlCq8llqdHPKf37yGLAszCji0dZTqQ56cOpf5uN893l2KBwd4t5qt2QPwy9cZv3XnaYtjNHTRFPC7tg==", "session"=>{"email"=>"joaoc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joaoc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."nickname" = $1 LIMIT $2[0m  [["nickname", "joaoc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 357ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-11-20 02:43:29 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered users/show.html.erb within layouts/application (8.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mFavoriteSpotted Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 122ms (Views: 119.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:43:31 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-11-20 02:43:31 -0300
+Processing by FavoriteCollegesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  [1m[36mFavoriteCollege Load (0.5ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mAdministrator Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mFavoriteCollege Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1 AND "favorite_colleges"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE Administrator Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendered favorite_colleges/show.html.erb within layouts/application (15.8ms)
+  [1m[36mFavoriteSpotted Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 132ms (Views: 124.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:43:34 -0300
+Started GET "/colleges/1/verify_permission" for 127.0.0.1 at 2019-11-20 02:43:35 -0300
+Processing by CollegeWhitelistsController#verify_permission as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:115
+  [1m[36mCollegeWhitelist Load (1.7ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."user_id" = $1 AND "college_whitelists"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:10
+  Rendering college_whitelists/new.html.erb within layouts/application
+  Rendered college_whitelists/_form.html.erb (1.9ms)
+  Rendered college_whitelists/new.html.erb within layouts/application (11.9ms)
+  [1m[36mFavoriteSpotted Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (19.7ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 573ms (Views: 544.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:43:38 -0300
+Started POST "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-11-20 02:43:38 -0300
+Processing by CollegeWhitelistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vvUo0GD1kzvG1y1ACgwTzWHbH83iV+MgKDPZAe4wSNJOBBj6cHCNFn05wEe7J4/iFooqeaS6sh8+k0eTZFzJ8w==", "college_whitelist"=>{"status"=>"pending"}, "commit"=>"Pedir permissão", "college_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:115
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:58
+  [1m[36mCollegeWhitelist Create (94.3ms)[0m  [1m[32mINSERT INTO "college_whitelists" ("status", "created_at", "updated_at", "user_id", "college_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["status", 0], ["created_at", "2019-11-20 05:43:38.542641"], ["updated_at", "2019-11-20 05:43:38.542641"], ["user_id", 2], ["college_id", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:58
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/college_whitelists_controller.rb:58
+  Rendering college_whitelists/pending.html.erb within layouts/application
+  Rendered college_whitelists/pending.html.erb within layouts/application (0.9ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.6ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 252ms (Views: 129.9ms | ActiveRecord: 110.8ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:43:41 -0300
+Started DELETE "/sair" for 127.0.0.1 at 2019-11-20 02:43:42 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5PUXAVLEvdi73oZKeJhfWMgQ/mmlMyjYsJ9fceXxOSwUBCcrQkGj9QAwa03Js8N3v0HL3ePeeeemP8Hjb524DQ=="}
+Redirected to http://localhost:3000/entrar
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/entrar" for 127.0.0.1 at 2019-11-20 02:43:42 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (13.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (24.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 963ms (Views: 950.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:43:45 -0300
+Started POST "/entrar" for 127.0.0.1 at 2019-11-20 02:43:47 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dfnaat1Ob9B+RG2+hvitdCp8e2wFujpnGbnVckVndTyFCOpAzctx/cWqgLk30zFbXS1O2ENXa1gPGUvgzwv0HQ==", "session"=>{"email"=>"fernando.kga@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."nickname" = $1 LIMIT $2[0m  [["nickname", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 371ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-11-20 02:43:47 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered users/show.html.erb within layouts/application (6.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mFavoriteSpotted Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (9.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 123ms (Views: 118.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:43:50 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-11-20 02:43:54 -0300
+Processing by FavoriteCollegesController#show as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  [1m[36mFavoriteCollege Load (0.5ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mCollege Load (0.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendered favorite_colleges/show.html.erb within layouts/application (11.9ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 124ms (Views: 117.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-11-20 02:43:57 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (1.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:115
+  [1m[36mCollege Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (1.7ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists"[0m
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (2.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:24
+  Rendered college_whitelists/index.html.erb within layouts/application (21.4ms)
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:43:57 -0300
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (10.4ms)
+  Rendered layouts/_footer.html.erb (2.2ms)
+Completed 200 OK in 180ms (Views: 158.0ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 02:43:59 -0300

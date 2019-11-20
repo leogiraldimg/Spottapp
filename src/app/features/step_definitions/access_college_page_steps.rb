@@ -11,6 +11,10 @@ Then (/^I should see the college page$/) do
     expect(page).to have_xpath('.//h2', text: "Universidade Teste 002")
 end
 
+Then (/^I should see the UT003 college page$/) do
+    expect(page).to have_xpath('.//h2', text: "Universidade Teste 003")
+end
+
 # - - -
 
 Given (/^I accessed a college page successfully$/) do
