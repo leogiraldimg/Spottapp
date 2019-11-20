@@ -16,10 +16,6 @@ When (/^I fill the create new page form$/) do
     select 'Não', from: "college[request_to_participate]"
 end
 
-When (/^I click the Cadastrar Nova Página button$/) do
-    click_button "Cadastrar"
-end
-
 # - - -
 
 Given(/^There is a college page created$/) do
@@ -36,7 +32,7 @@ Given(/^I created a college page$/) do
     steps %Q{
         Given I am on the create new page page
         When I fill the create new page form
-        And I click the Cadastrar Nova Página button
+        And I click the Cadastrar button
         Then I should see the initial user page
     }
     @college = College.find_by(initials: "UT001")

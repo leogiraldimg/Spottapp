@@ -7,10 +7,6 @@ When (/^I fill the login form with login information$/) do
     fill_in "Senha", :with => "teste001user"
 end
 
-When (/^I click the Entrar button$/) do
-    click_button "Entrar"
-end
-
 Then (/^I should see the initial user page$/) do
     expect(page).to have_xpath('.//input[@id="pages-menu-access"]') 
 end

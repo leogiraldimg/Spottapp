@@ -30,10 +30,6 @@ And (/^I haven't applied to the page$/) do
     expect(page).to have_xpath(".//div[@class='actions']/input[@class='botao']")
 end
 
-Then (/^I click the apply button$/) do
-    click_button('Pedir permissão')
-end
-
 And (/^I should see the successful apply message$/) do
     expect(page).to have_xpath(".//p", text: "Sua permissão de entrada está pendente.Aguarde.")
 end

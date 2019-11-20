@@ -11,5 +11,5 @@ Background: I am logged in and there is a college page already created
     And I posted a spotted successfully on my college page
 
 Scenario: page manager clicks on trash button
-    Given I click on trash button
+    Given I click on trash button icon
     Then I should see the green success toast

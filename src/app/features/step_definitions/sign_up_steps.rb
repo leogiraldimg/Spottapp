@@ -15,14 +15,11 @@ When(/^I fill the user registration form$/) do
     fill_in "user[country]", with: @user.country
     fill_in "user[state]", with: @user.state
     fill_in "user[city]", with: @user.city
-end
-
-When (/^I upload a profile picture$/) do
     attach_file("user[profile_picture]", 'features/upload-files/icon-384x384.png')
 end
 
-When(/^I click the Cadastrar button$/) do
-    click_button "Cadastrar"
+When /^I click the (.*) button$/ do |button_name|
+    click_button button_name
 end
 
 Then(/^I should see the welcome page$/) do
