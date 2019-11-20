@@ -27,24 +27,12 @@ Given (/^There is someone on the pending list$/) do
     expect(page).to have_xpath(".//div[@class='pending']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste003 user")
 end
 
-And (/^I click to Approve it's permission$/) do
-    click_button("Aprovar")
-end
-
 Then (/^It should appear in the approved list$/) do
     expect(page).to have_xpath(".//div[@class='approved']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste003 user")
 end
 
-And (/^I click to Reject it's permission$/) do
-    click_button("Rejeitar")
-end
-
 Then (/^It should appear in the rejected list$/) do
     expect(page).to have_xpath(".//div[@class='rejected']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste003 user")
-end
-
-And (/^I click to Revoke it's permission$/) do
-    click_button("Revogar")
 end
 
 Then (/^It should appear in the pending list$/) do
@@ -62,7 +50,7 @@ end
 Given (/^Someone has been approved$/) do
     steps %Q{
         Given There is someone on the pending list
-        And I click to Approve it's permission
+        And I click the Aprovar button
         Then It should appear in the approved list
     }
 end
@@ -70,7 +58,7 @@ end
 Given (/^Someone has been rejected$/) do
     steps %Q{
         Given There is someone on the pending list
-        And I click to Reject it's permission
+        And I click the Rejeitar button
         Then It should appear in the rejected list
     }
 end
