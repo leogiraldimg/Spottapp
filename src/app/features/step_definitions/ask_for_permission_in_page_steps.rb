@@ -1,6 +1,6 @@
 And (/^Someone asked permission to enter the page$/) do
-    c = College.find_by(initials: "UT003")
-    u = User.find_by(nickname: "teste001.user")
+    c = College.find_by(initials: "UT001")
+    u = User.find_by(nickname: "teste003.user")
     cw = CollegeWhitelist.new(college: c, user: u, status: "pending")
     cw.save
 

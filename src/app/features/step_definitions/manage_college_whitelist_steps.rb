@@ -24,7 +24,7 @@ Then (/^I entered the management page$/) do
 end
 
 Given (/^There is someone on the pending list$/) do
-    expect(page).to have_xpath(".//div[@class='pending']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste001 user")
+    expect(page).to have_xpath(".//div[@class='pending']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste003 user")
 end
 
 And (/^I click to Approve it's permission$/) do
@@ -32,9 +32,7 @@ And (/^I click to Approve it's permission$/) do
 end
 
 Then (/^It should appear in the approved list$/) do
-    p page.html
-    expect(page).to have_xpath(".//div[@class='approved']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste001 user")
-    #expect(page).to have_xpath(".//div[@class='row']/div[@class='col-xs-4'][2]/table/tbody/tr/td[1]", text: "teste001 user")
+    expect(page).to have_xpath(".//div[@class='approved']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste003 user")
 end
 
 And (/^I click to Reject it's permission$/) do
@@ -42,8 +40,7 @@ And (/^I click to Reject it's permission$/) do
 end
 
 Then (/^It should appear in the rejected list$/) do
-    expect(page).to have_xpath(".//div[@class='rejected']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste001 user")
-    #expect(page).to have_xpath(".//div[@class='row']/div[@class='col-xs-4'][3]/table/tbody/tr/td[1]", text: "teste001 user")
+    expect(page).to have_xpath(".//div[@class='rejected']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste003 user")
 end
 
 And (/^I click to Revoke it's permission$/) do
@@ -51,15 +48,15 @@ And (/^I click to Revoke it's permission$/) do
 end
 
 Then (/^It should appear in the pending list$/) do
-    expect(page).to have_xpath(".//div[@class='row']/div[@class='col-xs-4'][1]/table/tbody/tr/td[1]", text: "teste001 user")
+    expect(page).to have_xpath(".//div[@class='pending']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste003 user")
 end
 
 Given (/^There is someone on the approved list$/) do
-    expect(page).to have_xpath(".//div[@class='row']/div[@class='col-xs-4'][2]/table/tbody/tr/td[1]", text: "teste001 user")
+    expect(page).to have_xpath(".//div[@class='approved']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste003 user")
 end
 
 Given (/^There is someone on the rejected list$/) do
-    expect(page).to have_xpath(".//div[@class='row']/div[@class='col-xs-4'][3]/table/tbody/tr/td[1]", text: "teste001 user")
+    expect(page).to have_xpath(".//div[@class='rejected']/div[@class='tbody']/table/tr/td[1][@class='column-name']", text: "teste003 user")
 end
 
 Given (/^Someone has been approved$/) do
