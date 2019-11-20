@@ -12,5 +12,5 @@ Background: I am logged in and there is a college page and a comment already cre
     And I posted a comment successfully
 
 Scenario: student clicks on trash button
-    Given I click on trash button
+    Given I click on trash button icon
     Then I should see the green success toast

@@ -11,13 +11,33 @@
     background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
 }
 
-.user#edit .jumbotron h3.subtitle {
+.user#edit .jumbotron .profile-picture .img-responsive {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin: auto;
+}
+
+.user#edit .jumbotron .data .picture {
+    height: 26px;
     text-align: center;
-    margin-bottom: 20px;
+}
+
+.user#edit .jumbotron .data .picture .form-control {
+    visibility: hidden;
+}
+
+.user#edit .jumbotron .data .file {
+    text-align: center;
+    margin-top: 10px;
 }
 
 .user#edit .jumbotron .data .save {
     text-align: center;
+}
+
+.user#edit .jumbotron .data .city {
+    margin-bottom: 15px;
 }
 
 @media (max-width: 639px) {
@@ -30,14 +50,10 @@
     }
 }
 
-.user#edit .jumbotron .data .city {
-    margin-bottom: 15px;
-}
-
 @media (min-width: 640px) {
 
     .user#edit .jumbotron .data {
-        width: 600px;
+        width: 569px;
         margin: auto;
     }
 
@@ -86,12 +102,13 @@
 .user#new .jumbotron .register-area .form .right,
 .user#new .jumbotron .register-area .form .email,
 .user#new .jumbotron .register-area .form .city,
+.user#new .jumbotron .register-area .form .profile-picture,
 .user#new .jumbotron .register-area .form .fav-pages {
     width: 100%;
     margin-bottom: 10px;
 }
 
-.user#new .jumbotron .register-area .form .profile-picture {
+.user#new .jumbotron .register-area .form .picture {
     margin-top: 15px;
 }
 
@@ -126,6 +143,7 @@
 
 // - - - Show - - -
 .user#show {
+    height: calc(100vh - 122px);
     border-style: none;
 }
 
@@ -137,14 +155,139 @@
 .user#show .jumbotron {
     width: 100%;
     height: 100%;
+    padding: 48px;
     background: rgb(137,71,255);
     background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
 }
 
 .user#show .jumbotron .user-area {
+    width: 100%;
+    margin: auto;
+    padding: 30px 5px 5px 5px;
+    border-radius: 6px;
+    background-color: #FFFFFF30;
+}
+
+.user#show .jumbotron .user-area .big-screen {
+    width: 100%;
+    display: inline-block;
+}
+
+.user#show .jumbotron .user-area .small-screen {
+    width: 100%;
+    display: none;
+}
+
+// -> List Menu
+.user#show .jumbotron .user-area #list-menu {
     text-align: center;
 }
 
-.user#show .jumbotron .user-area .mybtn {
+.user#show .jumbotron .user-area #list-menu .mybtn {
     margin-bottom: 6px;
+}
+
+// -> Circle Menu
+.user#show .jumbotron .user-area #circle-menu {
+    width: 330px;
+    margin: auto;
+    text-align: center;
+}
+
+.user#show .jumbotron .user-area #circle-menu .profile {
+    width: 80px;
+    pointer-events: none;
+    margin: auto;
+}
+
+.user#show .jumbotron .user-area #circle-menu .second,
+.user#show .jumbotron .user-area #circle-menu .third {
+    display: flex;
+}
+
+.user#show .jumbotron .user-area #circle-menu .second .hello {
+    font-size: 20px;
+    margin: auto;
+}
+
+.user#show .jumbotron .user-area #circle-menu .third .space {
+    width: 70px;
+}
+
+.user#show .jumbotron .user-area #circle-menu .second .menu,
+.user#show .jumbotron .user-area #circle-menu .third .favorites {
+    width: 80px;
+    pointer-events: none;
+    margin-left: auto;
+}
+
+.user#show .jumbotron .user-area #circle-menu .second .friends,
+.user#show .jumbotron .user-area #circle-menu .third .chat {
+    width: 80px;
+    pointer-events: none;
+    margin-right: auto;
+}
+
+.user#show .jumbotron .user-area #circle-menu .botao.circle {
+    pointer-events: all;
+}
+
+.user#show .jumbotron .user-area #circle-menu .profile .tooltiptext,
+.user#show .jumbotron .user-area #circle-menu .menu .tooltiptext,
+.user#show .jumbotron .user-area #circle-menu .favorites .tooltiptext,
+.user#show .jumbotron .user-area #circle-menu .friends .tooltiptext,
+.user#show .jumbotron .user-area #circle-menu .chat .tooltiptext {
+    visibility: hidden;
+    font-size: 16px;
+}
+
+.user#show .jumbotron .user-area #circle-menu .profile:hover .tooltiptext,
+.user#show .jumbotron .user-area #circle-menu .menu:hover .tooltiptext,
+.user#show .jumbotron .user-area #circle-menu .friends:hover .tooltiptext,
+.user#show .jumbotron .user-area #circle-menu .favorites:hover .tooltiptext,
+.user#show .jumbotron .user-area #circle-menu .chat:hover .tooltiptext {
+    visibility: visible;
+}
+
+@media (max-width: 289px) {
+
+    .user#show .jumbotron {
+        padding: 10px;
+    }
+
+    .user#show .jumbotron .user-area .big-screen {
+        display: none;
+    }
+
+    .user#show .jumbotron .user-area .small-screen {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 290px) and (max-width: 400px) {
+
+    .user#show .jumbotron {
+        padding: 10px;
+    }
+
+    .user#show .jumbotron .user-area #circle-menu .botao.circle {
+        width: 55px;
+        height: 55px;
+        border-radius: 30px;
+    }
+
+    .user#show .jumbotron .user-area #circle-menu {
+        width: 230px;
+    }
+
+    .user#show .jumbotron .user-area #circle-menu .third .space {
+        width: 50px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 499px) {
+
+    .user#show .jumbotron {
+        padding: 20px;
+    }
 }

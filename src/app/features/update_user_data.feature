@@ -11,5 +11,5 @@ Scenario: Update my user data information
     Given I am on the edit user page
     When I fill the username with a new username information
     And I fill the passwords fields
-    And I click the Save button
+    And I click the Salvar button
     Then I should see the green success toast

@@ -1,3 +1,302 @@
 // Place all the styles related to the college_whitelists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// - - - New - - -
+.college_whitelists#new {
+    border-style: none;
+    height: calc(100vh - 122px);
+}
+
+.college_whitelists#new .jumbotron {
+    width: 100%;
+    height: 100%;
+    background: rgb(137,71,255);
+    background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+    text-align: center;
+    padding: 48px;
+}
+
+.college_whitelists#new .jumbotron .information {
+    width: 100%;
+    padding: 0px 20px 15px 20px;
+    border-radius: 6px;
+    background-color: #FFFFFF30;
+}
+
+.college_whitelists#new .jumbotron .information h2 {
+  padding-top: 20px;
+  margin: 0px;
+}
+
+.college_whitelists#new .jumbotron .information .btn-back {
+  text-align: left;
+}
+
+@media (max-width: 439px) {
+
+    .college_whitelists#new .jumbotron {
+        padding: 15px;
+    }
+
+    .college_whitelists#new .jumbotron .information h2 {
+        font-size: 20px;
+    }
+
+    .college_whitelists#new .jumbotron .information p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 767px) {
+    .contact#index .jumbotron .information {
+        width: 90%;
+    }
+
+    .college_whitelists#new .jumbotron .information h2 {
+        font-size: 24px;
+    }
+
+    .college_whitelists#new .jumbotron .information p {
+        font-size: 18px;
+    }
+}
+
+// - - - Form - - -
+.college_whitelists#form {
+    height: 100px;
+}
+
+// - - - Pending - - -
+.college_whitelists#pending {
+    border-style: none;
+    height: calc(100vh - 122px);
+}
+
+.college_whitelists#pending .jumbotron {
+    width: 100%;
+    height: 100%;
+    background: rgb(137,71,255);
+    background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+    text-align: center;
+    padding: 48px;
+}
+
+.college_whitelists#pending .jumbotron .information {
+    width: 100%;
+    padding: 0px 20px 15px 20px;
+    border-radius: 6px;
+    background-color: #FFFFFF30;
+}
+
+.college_whitelists#pending .jumbotron .information h2 {
+  padding-top: 20px;
+  margin: 0px 0px 10px 0px;
+}
+
+.college_whitelists#pending .jumbotron .information .btn-back {
+  text-align: left;
+}
+
+@media (max-width: 439px) {
+
+    .college_whitelists#pending .jumbotron {
+        padding: 15px;
+    }
+
+    .college_whitelists#pending .jumbotron .information h2 {
+        font-size: 20px;
+    }
+
+    .college_whitelists#pending .jumbotron .information p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 767px) {
+    .college_whitelists#pending .jumbotron .information {
+        width: 90%;
+    }
+
+    .college_whitelists#pending .jumbotron .information h2 {
+        font-size: 24px;
+    }
+
+    .college_whitelists#pending .jumbotron .information p {
+        font-size: 18px;
+    }
+}
+
+
+
+// - - - Rejected - - -
+.college_whitelists#rejected {
+    border-style: none;
+    height: calc(100vh - 122px);
+}
+
+.college_whitelists#rejected .jumbotron {
+    width: 100%;
+    height: 100%;
+    background: rgb(137,71,255);
+    background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+    text-align: center;
+    padding: 48px;
+}
+
+.college_whitelists#rejected .jumbotron .information {
+    width: 100%;
+    padding: 0px 20px 15px 20px;
+    border-radius: 6px;
+    background-color: #FFFFFF30;
+}
+
+.college_whitelists#rejected .jumbotron .information h2 {
+  padding-top: 20px;
+  margin: 0px 0px 10px 0px;
+}
+
+.college_whitelists#rejected .jumbotron .information .btn-back {
+  text-align: left;
+}
+
+@media (max-width: 439px) {
+
+    .college_whitelists#rejected .jumbotron {
+        padding: 15px;
+    }
+
+    .college_whitelists#rejected .jumbotron .information h2 {
+        font-size: 20px;
+    }
+
+    .college_whitelists#rejected .jumbotron .information p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 767px) {
+    .college_whitelists#rejected .jumbotron .information {
+        width: 90%;
+    }
+
+    .college_whitelists#rejected .jumbotron .information h2 {
+        font-size: 24px;
+    }
+
+    .college_whitelists#rejected .jumbotron .information p {
+        font-size: 18px;
+    }
+}
+
+// - - - Index - - -
+.college_whitelists#index {
+    border-style: none;
+    height: calc(100vh - 122px);
+}
+
+.college_whitelists#index .jumbotron {
+    width: 100%;
+    height: 100%;
+    background: rgb(137,71,255);
+    background: linear-gradient(326deg, rgba(137,71,255,1) 0%, rgba(255,129,251,1) 50%, rgba(255,82,82,1) 100%);
+    text-align: center;
+    padding: 15px 48px;
+}
+
+.college_whitelists#index .jumbotron .options {
+    width: 100%;
+    height: calc(100% - 85px);
+    height: -moz-calc(100% - 85px);
+    height: -webkit-calc(100% - 85px);
+    padding: 10px 5px 5px 5px;
+    display: flex;
+}
+
+.college_whitelists#index .jumbotron .options .pending,
+.college_whitelists#index .jumbotron .options .approved {
+    width: 33%;
+    height: 100%;
+    margin-right: 4px;
+}
+
+.college_whitelists#index .jumbotron .options .rejected {
+    flex-grow: 1;
+}
+
+.college_whitelists#index .jumbotron .options table {
+    width: 100%;
+}
+
+.college_whitelists#index .jumbotron .options .thead {
+    padding-left: 6px;
+}
+
+.college_whitelists#index .jumbotron .options .thead th {
+    text-align: center;
+}
+
+.college_whitelists#index .jumbotron .options .tbody {
+    height: calc(100% - 20px);
+    padding: 0px 6px;
+    border-style: solid;
+    border-width: 0.5px; 
+    border-color: #FFFFFF30;
+    border-radius: 6px;
+    overflow: scroll;
+}
+
+.college_whitelists#index .jumbotron .options .tbody table tr:hover {
+    background-color: #FFFFFF30;
+}
+
+.college_whitelists#index .jumbotron .options table tr td {
+    padding-top: 4px;
+}
+
+.college_whitelists#index .jumbotron .options table tr td.column-name {
+    text-align: left;
+}
+
+.college_whitelists#index .jumbotron .options table tr td.column-btn {
+    text-align: right;
+}
+
+@media (max-width: 653px) {
+    .college_whitelists#index {
+        height: auto;
+    }
+
+    .college_whitelists#index .jumbotron {
+        height: auto;
+        padding: 15px;
+    }
+
+    .college_whitelists#index .jumbotron .options {
+        display: inline-block;
+        height: auto;
+        padding: 5px;
+    }
+
+    .college_whitelists#index .jumbotron .options .pending,
+    .college_whitelists#index .jumbotron .options .approved,
+    .college_whitelists#index .jumbotron .options .rejected {
+        width: 100%;
+        height: 200px;
+    }
+
+    .college_whitelists#index .jumbotron .options .thead {
+        margin-top: 5px;
+    }
+
+    .college_whitelists#index .jumbotron .options .tbody {
+        background-color: #FFFFFF30;
+    }
+}
+
+@media (min-width: 654px) {
+
+    .college_whitelists#index .jumbotron .options {
+        background-color: #FFFFFF30;
+    }
+}

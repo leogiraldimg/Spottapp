@@ -1,5 +1,15 @@
-<h1>Pedir permissão de entrada</h1>
+<div class="college_whitelists" id="pending">
 
-<h3>Sua permissão de entrada está pendente. Aguarde.</h3>
+    <div class="jumbotron">
+        <div class="information">
+            <h2>Pedir permissão de entrada</h2>
 
-<%= link_to 'Voltar', colleges_path %>
+            <p>Sua permissão de entrada está pendente.<br>Aguarde.</p>
+
+            <div class="btn-back">
+                <%= button_to 'Voltar', colleges_path, method: "get", class: 'botao small' %>
+            </div>
+        </div>
+    </div>
+
+</div>

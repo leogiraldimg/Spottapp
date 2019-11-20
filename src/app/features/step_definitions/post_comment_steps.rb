@@ -1,12 +1,8 @@
-Given(/^I am on the view spotted page$/) do
-    click_button("Ver spotted")
-end
-
 When(/^I fill the content comment field with some information$/) do
     fill_in "comment[content]", with: "Comment Teste"
 end
 
-And(/^I click the Mandar comentário button$/) do
+And(/^I click the Mandar comentário button icon$/) do
     find("#send-comment-button").click
 end
 
@@ -22,9 +18,9 @@ end
 
 Given (/^I posted a comment successfully$/) do
     steps %Q{
-        Given I am on the view spotted page
+        Given I click the Ver spotted button
         When I fill the content comment field with some information
-        And I click the Mandar comentário button
+        And I click the Mandar comentário button icon
         Then I should see the view spotted page
         And I should see my new comment on the timeline
     }

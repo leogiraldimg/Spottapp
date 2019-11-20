@@ -4,57 +4,58 @@
     <h2>Menu de Faculdades </h2>
     <div class="collegebox">
       <% @colleges.each do |college| %>
-        <div class="college">
-          <span class="tooltiptext">
-            <table>
-              <tr>
-                <td>Nome</td>
-                <td><%= college.name %></td>
-              </tr>
-              <tr>
-                <td>Sigla</td>
-                <td><%= college.initials %></td>
-              </tr>
-              <tr>
-                <td>Cidade</td>
-                <td><%= college.city %></td>
-              </tr>
-              <tr>
-                <td>Estado</td>
-                <td><%= college.state %></td>
-              </tr>
-              <tr>
-                <td>País</td>
-                <td><%= college.country %></td>
-              </tr>
-              <tr class="noBorder">
-                <td>Unidade</td>
-                <td><%= college.unit %></td>
-              </tr>
-            </table>
-          </span>
 
-          <a class="overlay" href="<%=college_spotteds_path(college.id) %>"><span><%= college.initials %> - <%= college.unit %></span></a>
-          
-          <div class="options">
-            <% if isPageAdmin(college.id) %>
-              <%= link_to image_tag('star-purple.png'), favorite_college_path(college, type: "admin"), method: :put, id: "star-purple" %>
-            <% else %>
-              <% if already_favorited(college.id) %>
-                <%= link_to image_tag('star.png'), favorite_college_path(college, type: "unfavorite"), method: :put, id: "star" %>
+        <div class="college" >
+
+          <div class="summary">
+            <div class="name"><%= college.initials %> - <%= college.unit %></div>
+
+            <div class="options">
+              <% if isPageAdmin(college.id) %>
+                <%= link_to "Gerenciar", college_college_whitelists_path(college.id) %>
+                <%= link_to "Editar", edit_college_path(college) %>
+                <%= link_to image_tag('star-purple.png'), favorite_college_path(college, type: "admin"), method: :put, id: "star-purple" %>
               <% else %>
-                <%= link_to image_tag('star-white.png'), favorite_college_path(college, type: "favorite"), method: :put, id: "star-white" %>
+                <% if already_favorited(college.id) %>
+                  <%= link_to image_tag('star.png'), favorite_college_path(college, type: "unfavorite"), method: :put, id: "star" %>
+                <% else %>
+                  <%= link_to image_tag('star-white.png'), favorite_college_path(college, type: "favorite"), method: :put, id: "star-white" %>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
+          </div>
+
+          <div class="details">
+            <div class="specifications">
+                <%= college.name %> - <%= college.initials %>
+                <br>
+                <%= college.unit %>
+                <br>
+                <%= college.city %> - <%= college.state %>
+                <br>
+                <%= college.country %>
+                <br>
+            </div>
+          
+            <div class="college-btn">
+              <% if college.request_to_participate == "0" %>
+                <a class="botao small" href="<%= college_spotteds_path(college_id: college.id) %>">Entrar</a>
+              <% else %>
+                <% if isPageAdmin(college.id) %>
+                  <a class="botao small" href="<%= college_spotteds_path(college_id: college.id) %>">Entrar</a>
+                <% else %>
+                  <a class="botao small" href="<%= college_verify_permission_path(college_id: college.id) %>">Entrar</a>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
 
       <%end%>
+    </div>
 
-      <div class="btn-create">
-        <%= button_to 'Criar nova página', new_college_path, method: "get", class: 'botao large' %>
-      </div>
-
+    <div class="btn-create">
+      <%= button_to 'Criar nova página', new_college_path, method: "get", class: 'botao large' %>
     </div>
   </div>
 </div>

@@ -22,10 +22,6 @@ When(/^I fill the user's nickname field to a new administrator, but this user is
     fill_in "user[nickname]", with: "teste001.user"
 end
 
-And(/^I click on the button Adicionar$/) do
-    click_button("Adicionar")
-end
-
 Then(/^I should see the college settings page with a message informing that the action was a success$/) do
     expect(page).to have_xpath('.//div', text: "Usuário adicionado como administrador")
 end
@@ -47,7 +43,7 @@ Given(/^I already defined the user as administrator$/) do
         Given There is more than one user registered 
         And I am on the settings page of a college
         When I fill the nickname field to a new administrator
-        And I click on the button Adicionar
+        And I click the Adicionar button
         Then I should see the college settings page with a message informing that the action was a success
     }
 end

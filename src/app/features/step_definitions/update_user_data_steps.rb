@@ -10,7 +10,3 @@ When("I fill the passwords fields") do
     fill_in "user[password]", with: "teste001user"
     fill_in "user[password_confirmation]", with: "teste001user"
 end
-
-When("I click the Save button") do
-    click_button "Salvar"
-end

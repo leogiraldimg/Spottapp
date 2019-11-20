@@ -2,19 +2,115 @@
 
     <div class="jumbotron">
         <div class="user-area">
-            <h2> Olá <%= current_user.first_name %> </h2>
 
-            <div class="mybtn">
-                <%= button_to 'Editar perfil', edit_user_path, method: "get", class: 'botao large' %>
-            </div>
-            
-            <div class="mybtn">
-            <%= button_to 'Menu das faculdades', colleges_path, method: "get", action: "show", class: 'botao large', id: 'pages-menu-access' %>
+            <div class="big-screen">
+                <% if current_user.menu_preference == "list" %>
+                    <div id="list-menu">
+                        <h2>Olá <%= current_user.first_name %></h2>
+
+                        <div class="mybtn">
+                            <%= button_to 'Meu perfil', edit_user_path, method: "get", class: 'botao large' %>
+                        </div>
+                        
+                        <div class="mybtn">
+                            <%= button_to 'Menu das faculdades', colleges_path, method: "get", action: "show", class: 'botao large', id: 'pages-menu-access' %>
+                        </div>
+
+                        <div class="mybtn">
+                            <%= button_to 'Faculdades favoritas', favorite_colleges_path, method: "get", action: "show", class: 'botao large' %>
+                        </div>
+
+                        <div class="mybtn">
+                            <%= button_to 'Amigos', entrar_path, method: "get", class: 'botao large' %>
+                        </div>
+
+                        <div class="mybtn">
+                            <%= button_to 'Conversas', entrar_path, method: "get", class: 'botao large' %>
+                        </div>
+                    </div>
+
+                <% elsif current_user.menu_preference == "circle" %>
+                    <div id="circle-menu">
+                        <div class="profile">
+                            <%= button_to edit_user_path, method: "get", class: 'botao circle' do %>
+                                <i class="fa fa-id-card" id="icon"></i>
+                            <% end %>
+                            <span class="tooltiptext">Meu Perfil</span>
+                        </div>
+
+                        <div class="second">
+                            <div class="menu">
+                                <%= button_to colleges_path, method: "get", action: "show", class: 'botao circle', id: 'pages-menu-access' do %>
+                                    <i class="fa fa-list-ul" id="icon"></i>
+                                <% end %>
+                            <span class="tooltiptext">Menu de Faculdades</span>
+                            </div>
+
+                            <h2 class="hello">Olá <%= current_user.first_name %></h2>
+
+                            <div class="friends">
+                                <%= button_to entrar_path, method: "get", class: 'botao circle' do %>
+                                    <i class="fa fa-users" id="icon"></i>
+                                <% end %>
+                            <span class="tooltiptext">Amigos</span>
+                            </div>
+                        </div>
+
+                        <div class="third">
+                            <div class="favorites">
+                                <%= button_to favorite_colleges_path, method: "get", action: "show", class: 'botao circle' do %>
+                                    <i class="fa fa-star" id="icon"></i>
+                                <% end %>
+                            <span class="tooltiptext">Faculdades Favoritas</span>
+                            </div>
+
+                            <div class="space"></div>
+
+                            <div class="chat">
+                                <%= button_to entrar_path, method: "get", class: 'botao circle' do %>
+                                    <i class="fa fa-paper-plane" id="icon"></i>
+                                <% end %>
+                            <span class="tooltiptext">Conversas</span>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+
+                <div class="change">
+                    <% if current_user.menu_preference == "list" %>
+                        <%= button_to "Alterar Menu", change_menu_preference_users_path(type: "circle"), method: "post", action: "change_menu_preference", class: 'botao small black', id: "btn-change-user-menu" %>
+                    <% elsif current_user.menu_preference == "circle" %>
+                        <%= button_to "Alterar Menu", change_menu_preference_users_path(type: "list"), method: "post", action: "change_menu_preference", class: 'botao small black', id: "btn-change-user-menu" %>
+                    <% end %>
+                </div>
             </div>
 
-            <div class="mybtn">
-            <%= button_to 'Faculdades favoritas', favorite_colleges_path, method: "get", action: "show", class: 'botao large' %>
+            <div class="small-screen">
+                <div id="list-menu">
+                    <h2>Olá <%= current_user.first_name %></h2>
+
+                    <div class="mybtn">
+                        <%= button_to 'Meu perfil', edit_user_path, method: "get", class: 'botao large' %>
+                    </div>
+                    
+                    <div class="mybtn">
+                        <%= button_to 'Menu das faculdades', colleges_path, method: "get", action: "show", class: 'botao large', id: 'pages-menu-access' %>
+                    </div>
+
+                    <div class="mybtn">
+                        <%= button_to 'Faculdades favoritas', favorite_colleges_path, method: "get", action: "show", class: 'botao large' %>
+                    </div>
+
+                    <div class="mybtn">
+                        <%= button_to 'Amigos', entrar_path, method: "get", class: 'botao large' %>
+                    </div>
+
+                    <div class="mybtn">
+                        <%= button_to 'Conversas', entrar_path, method: "get", class: 'botao large' %>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
     

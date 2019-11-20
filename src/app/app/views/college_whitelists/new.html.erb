@@ -1,5 +1,16 @@
-<h1>Pedir permissão de entrada</h1>
+<div class="college_whitelists" id="new">
 
-<%= render 'form', college_whitelist: @college_whitelist %>
+    <div class="jumbotron">
+        <div class="information">
+            <h2>Pedir permissão de entrada</h2>
+            <p>Esta página necessita de aprovação de um dos administradores para entrar.</p>
 
-<%= link_to 'Voltar', colleges_path %>
+            <%= render 'form', college_whitelist: @college_whitelist %>
+
+            <div class="btn-back">
+                <%= button_to 'Voltar', colleges_path, method: "get", class: 'botao small' %>
+            </div>
+        </div>
+    </div>
+
+</div>

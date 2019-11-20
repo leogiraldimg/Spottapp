@@ -11,10 +11,6 @@ When(/^I fill the edit page settings form$/) do
     select 'Sim', from: "college[request_to_participate]"
 end
 
-When(/^I click the Atualizar Edição de Página button$/) do
-    click_button "Atualizar"
-end
-
 Then(/^I should see the green success toast$/) do
     expect(page).to have_xpath('.//div[@class="alert alert-success alert-dismissible"]')
 end

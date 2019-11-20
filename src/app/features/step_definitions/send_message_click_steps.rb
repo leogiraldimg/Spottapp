@@ -7,8 +7,3 @@ When(/^I fill the Contact form$/) do
     fill_in "contact[name]", with: "teste001"
     fill_in "contact[message]", with: "teste001"
 end
-
-When(/^I click the Enviar Mensagem button$/) do
-    click_button "Enviar Mensagem"
-end
-

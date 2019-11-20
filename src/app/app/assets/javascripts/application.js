@@ -15,3 +15,60 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require serviceworker-companion
+
+function resizeIcons() {
+    if($(window).width() > 400) {
+        $('.user#show #icon').addClass('fa-2x');
+        $('.user#show #icon').removeClass('fa-lg');
+    }else{
+        $('.user#show #icon').addClass('fa-lg');
+        $('.user#show #icon').removeClass('fa-2x');
+    }
+
+    if($(window).width() > 439) {
+        $('.college_whitelists#form .actions .botao').addClass('large');
+    }else{
+        $('.college_whitelists#form .actions .botao').removeClass('large');
+    }
+}
+
+$( window ).on( 'load', resizeIcons );
+$( window ).on( 'resize', resizeIcons );
+
+$(document).ready(function(){
+    $('.favorite_colleges#show .jumbotron .collegebox .college').click(function() {
+        var $this = $(this).children('.details');
+
+        var openDetails = $('.favorite_colleges#show .jumbotron .collegebox .college .details').not($this).filter(function () { 
+            return this.style.display == 'block' 
+        });
+        openDetails.css('display', 'none');
+
+        if( $this.css('display') === 'block' ){
+            $this.css('display', 'none');
+        } else {
+            $this.css('display', 'block');
+        }
+    });
+
+    $('.colleges#index .jumbotron .collegebox .college').click(function() {
+        var $this = $(this).children('.details');
+
+        var openDetails = $('.colleges#index .jumbotron .collegebox .college .details').not($this).filter(function () { 
+            return this.style.display == 'block' 
+        });
+        openDetails.css('display', 'none');
+
+        if( $this.css('display') === 'block' ){
+            $this.css('display', 'none');
+        } else {
+            $this.css('display', 'block');
+        }
+    });
+});
+
+$(document).ready(function(){
+    $('.user#edit #user_profile_picture').on('change', function() { 
+        $('.user#edit .jumbotron .data .file').text('1 arquivo selecionado.'); 
+    }); 
+});

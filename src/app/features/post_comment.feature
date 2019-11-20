@@ -11,8 +11,8 @@ Background:
     And I posted a spotted successfully on the college page
 
 Scenario: student write a comment on the content field and clicks the button "Mandar Comentário"
-    Given I am on the view spotted page
+    Given I click the Ver spotted button
     When I fill the content comment field with some information
-    And I click the Mandar comentário button
+    And I click the Mandar comentário button icon
     Then I should see the view spotted page
     And I should see my new comment on the timeline

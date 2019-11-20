@@ -20,25 +20,27 @@ h2.title {
     float: left;
     width: 25%;
     height: 100%;
-    overflow: auto;
     background-color: #FFFFFFE0;
     border-radius: 20px;
     border-style: solid;
     border-width: 1px;
 }
 
-#index .container-left table {
+#index .container-left .details {
+    overflow: scroll;
+    padding: 10px 0px 0px 10px;
+}
+
+#index .container-left .details table {
     border-collapse: collapse;
     width: 100%;
-    font-size: 16px;
-    margin-left: 10px;
+    font-size: 14px;
 }
 
 #index .container-left table td {
     text-align: left;
     vertical-align: bottom;
     padding: 1px;
-    vertical-align: middle;
 }
 
 #index .container-left table thead th.col1 {

@@ -3,11 +3,16 @@ Given (/^I am on the colleges menu$/) do
 end
 
 When (/^I click on a link to college$/) do
-    click_link "UT002 - Faculdade Teste 002"
+    find('.name', text: 'UT002 - Faculdade Teste 002').click
+    click_link("Entrar")
 end
 
 Then (/^I should see the college page$/) do
     expect(page).to have_xpath('.//h2', text: "Universidade Teste 002")
+end
+
+Then (/^I should see the UT003 college page$/) do
+    expect(page).to have_xpath('.//h2', text: "Universidade Teste 003")
 end
 
 # - - -
@@ -21,7 +26,8 @@ Given (/^I accessed a college page successfully$/) do
 end
 
 When (/^I click on my college page link$/) do
-    click_link "UT001 - Faculdade Teste 001"
+    find('.name', text: 'UT001 - Faculdade Teste 001').click
+    click_link("Entrar")
 end
 
 Then (/^I should see my college page$/) do

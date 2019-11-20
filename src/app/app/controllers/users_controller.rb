@@ -55,6 +55,21 @@ class UsersController < ApplicationController
         end
     end
 
+    def change_menu_preference
+        type = params[:type]
+        if type == "circle"
+            current_user.update_column(:menu_preference, "circle")
+            redirect_back fallback_location: root_url
+
+        elsif type == "list"
+            current_user.update_column(:menu_preference, "list")
+            redirect_back fallback_location: root_url
+
+        else
+            redirect_back fallback_location: root_url, notice: 'Nada aconteceu.'
+        end
+      end
+
     private
         def user_params
             params.require(:user).permit(:email, :nickname, :first_name, :last_name, :password, :password_confirmation, :birth_date, :city, :state, :country, :profile_picture, :profile_picture_content_type)

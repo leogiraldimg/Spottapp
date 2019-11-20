@@ -10,7 +10,7 @@ Background:
     And I accessed a college page successfully
 
 Scenario: student write a spotted on the content field and clicks the button "Mandar Spotted"
-    Given I am on the new spotted page
+    Given I click the Novo spotted button
     When I fill the content spotted field with some information
     And I click the Mandar spotted button
     Then I should see the college page

@@ -10,7 +10,7 @@ Background: I am logged in and there is a college page created
     And I accessed a college page successfully
 
 Scenario: Post a spotted with an image when I create a new spotted and upload an image
-    Given I am on the new spotted page
+    Given I click the Novo spotted button
     When I fill the content spotted field with some information
     And I upload an image to the spotted
     And I click the Mandar spotted button

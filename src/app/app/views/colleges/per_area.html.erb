@@ -1,39 +1,51 @@
-<div class='container'>
-  <div class='row'>
-    <div class='col-4' align='center' id="list-near-colleges">
-      <h2 align='center'>Páginas de instituições próximas</h2>
+<div class="colleges" id="per_area">
+
+  <div class="jumbotron">
+    <h2 >Páginas de instituições próximas</h2>
+    <div class="collegebox">    
+
       <% @colleges.each do |college| %>
-        <div class="block">
-          <span class="tooltiptext">
+        <div class="college">
+
+          <div class="details">
             <table>
-              <tr>
-                <td>Nome</td>
-                <td><%= college.name %></td>
-              </tr>
-              <tr>
-                <td>Sigla</td>
-                <td><%= college.initials %></td>
-              </tr>
-              <tr>
-                <td>Cidade</td>
-                <td><%= college.city %></td>
-              </tr>
-              <tr>
-                <td>Estado</td>
-                <td><%= college.state %></td>
-              </tr>
-              <tr>
-                <td>País</td>
-                <td><%= college.country %></td>
-              </tr>
-              <tr class="noBorder">
-                <td>Unidade</td>
-                <td><%= college.unit %></td>
-              </tr>
+              <thead>
+                <tr>
+                  <th class="col1"></th>
+                  <th class="col2"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nome</td>
+                  <td><%= college.name %></td>
+                </tr>
+                <tr>
+                  <td>Sigla</td>
+                  <td><%= college.initials %></td>
+                </tr>
+                <tr>
+                  <td>Cidade</td>
+                  <td><%= college.city %></td>
+                </tr>
+                <tr>
+                  <td>Estado</td>
+                  <td><%= college.state %></td>
+                </tr>
+                <tr>
+                  <td>País</td>
+                  <td><%= college.country %></td>
+                </tr>
+                <tr class="noBorder">
+                  <td>Unidade</td>
+                  <td><%= college.unit %></td>
+                </tr>
+              </tbody>
             </table>
-          </span>
-          <a class="overlay" href="<%=college_spotteds_path(college_id: college.id) %>"><%= college.initials %> - <%= college.unit %></a>
-          <div class="inner">
+          </div>
+          
+          <div class="favorite">
+            Favoritar 
             <% if isPageAdmin(college.id) %>
               <%= link_to image_tag('star-purple.png'), favorite_college_path(college, type: "admin"), method: :put, id: "star-purple" %>
             <% else %>
@@ -44,10 +56,20 @@
               <% end %>
             <% end %>
           </div>
+
+          <div class="college-btn">
+            <%= button_to 'Ver página', college_spotteds_path(college_id: college.id), method: "get", class: "botao small" %>
+          </div>
+
         </div>
       <%end%>
-      <br>
-    <p><%= link_to 'Finalizar', user_path(current_user), class: 'btn btn-primary' %></p>
+
     </div>
+
+    <div class="btn-end">
+      <%= button_to 'Finalizar', user_path(current_user), method: "get", class: 'botao small' %>
+    </div>
+
   </div>
+
 </div>

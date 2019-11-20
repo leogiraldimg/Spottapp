@@ -11,7 +11,7 @@ Background: I am logged, there is a college created and I am at the favorite col
 Scenario: Apply for permission to the page
     Given I have entered the another college page
     And I haven't applied to the page
-    Then I click the apply button
+    Then I click the Pedir permissão button
     And I should see the successful apply message
 
 Scenario: I had my permission rejected to the page
@@ -22,4 +22,4 @@ Scenario: I had my permission rejected to the page
 Scenario: I had my permission approved to the page
     Given Someone have approved my permission
     When I clicked to enter that college page
-    Then I should see the college page
+    Then I should see the UT003 college page
