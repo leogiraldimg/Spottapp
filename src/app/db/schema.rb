@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_005258) do
+ActiveRecord::Schema.define(version: 2019_11_17_102711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,13 @@ ActiveRecord::Schema.define(version: 2019_11_17_005258) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favorite_spotteds", force: :cascade do |t|
+    t.integer "spotted_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "spotted_id"
@@ -109,6 +116,8 @@ ActiveRecord::Schema.define(version: 2019_11_17_005258) do
     t.string "country"
     t.string "nickname", default: "", null: false
     t.string "menu_preference", default: "list"
+    t.string "profile_picture"
+    t.string "profile_picture_content_type"
   end
 
   add_foreign_key "administrators", "colleges"

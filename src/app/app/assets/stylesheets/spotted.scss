@@ -95,6 +95,13 @@ h2.title {
     clear: both;
 } 
 
+#index .drop2 .dropdown {
+    float: right;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+ 
 @media (max-width: 800px) {
     #index .container-left {
         width: 100%;

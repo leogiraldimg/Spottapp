@@ -30,6 +30,10 @@
     }
 }
 
+.user#edit .jumbotron .data .city {
+    margin-bottom: 15px;
+}
+
 @media (min-width: 640px) {
 
     .user#edit .jumbotron .data {
@@ -85,6 +89,10 @@
 .user#new .jumbotron .register-area .form .fav-pages {
     width: 100%;
     margin-bottom: 10px;
+}
+
+.user#new .jumbotron .register-area .form .profile-picture {
+    margin-top: 15px;
 }
 
 @media (min-width: 640px) {

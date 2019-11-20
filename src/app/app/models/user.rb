@@ -13,6 +13,7 @@ class User < ApplicationRecord
     validates :city, presence: true
     validates :state, presence: true, length: {maximum: 2, minimum: 2}
     validates :country, presence: true
+    validate :profile_picture_content_type
 
     has_many :spotted
     has_many :college
@@ -22,5 +23,15 @@ class User < ApplicationRecord
     has_many :favorites, through: :favorite_colleges, source: :college
     has_many :administrator
     has_many :college_whitelist
+    has_many :favorite_spotteds
+    has_many :notification, through: :favorite_spotteds, source: :spotted
+
+    def profile_picture_content_type
+        if self[:profile_picture_content_type]
+            unless self[:profile_picture_content_type] == "image/jpeg" || self[:profile_picture_content_type] == "image/png"
+                errors.add(:profile_picture_content_type, "deve ser no formato JPEG ou PNG")
+            end
+        end
+    end
 
 end
