@@ -59,6 +59,9 @@
                 </div>
             <% end %>
 
+            <legend>Lista de administradores</legend>
+            <%= button_to 'Ver lista de administradores', college_administrator_path(@college), method: "get", class: 'botao xlarge' %>
+
             <legend><%= translate 'apagar_pagina' %></legend>
 
             <div class="btn-delete">
@@ -72,15 +75,4 @@
             </div>
         </div>
     </div>
-
-<legend>Lista de administradores</legend>
-<%= button_to 'Ver lista de administradores', college_administrator_path(@college), method: "get", class: 'botao xlarge' %>
-
-<legend><%= translate 'apagar_pagina' %></legend>
-<div class="apagar">
-    <%= button_to "Apagar a página", college_path(@college), method: :delete, data: { confirm: "Você tem certeza que quer apagar está página e todo o conteúdo dentro dela? Essa ação não pode ser desfeita." }, id: "delete-button", class: 'botao' %>
-</div>
-<div class="voltar">
-    <hr>
-    <p><%= button_to 'Voltar', favorite_colleges_path, method: "get", class: 'botao small' %></p>
 </div>
