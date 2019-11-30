@@ -35,36 +35,27 @@ function resizeIcons() {
 $( window ).on( 'load', resizeIcons );
 $( window ).on( 'resize', resizeIcons );
 
+var htmlClasses = ['.favorite_colleges#show .jumbotron .collegebox .college', '.colleges#index .jumbotron .collegebox .college'];
+
 $(document).ready(function(){
-    $('.favorite_colleges#show .jumbotron .collegebox .college').click(function() {
-        var $this = $(this).children('.details');
 
-        var openDetails = $('.favorite_colleges#show .jumbotron .collegebox .college .details').not($this).filter(function () { 
-            return this.style.display == 'block' 
+    for(var i = 0; i<this.htmlClasses.lenght; i++) {
+
+        $(htmlClasses[i]).click(function() {
+            var $this = $(this).children('.details');
+    
+            var openDetails = $( htmlClasses[i] + ' .details').not($this).filter(function () { 
+                return this.style.display == 'block' 
+            });
+            openDetails.css('display', 'none');
+    
+            if( $this.css('display') === 'block' ){
+                $this.css('display', 'none');
+            } else {
+                $this.css('display', 'block');
+            }
         });
-        openDetails.css('display', 'none');
-
-        if( $this.css('display') === 'block' ){
-            $this.css('display', 'none');
-        } else {
-            $this.css('display', 'block');
-        }
-    });
-
-    $('.colleges#index .jumbotron .collegebox .college').click(function() {
-        var $this = $(this).children('.details');
-
-        var openDetails = $('.colleges#index .jumbotron .collegebox .college .details').not($this).filter(function () { 
-            return this.style.display == 'block' 
-        });
-        openDetails.css('display', 'none');
-
-        if( $this.css('display') === 'block' ){
-            $this.css('display', 'none');
-        } else {
-            $this.css('display', 'block');
-        }
-    });
+    }
 });
 
 $(document).ready(function(){
