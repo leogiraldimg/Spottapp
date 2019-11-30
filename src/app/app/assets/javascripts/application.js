@@ -35,16 +35,16 @@ function resizeIcons() {
 $( window ).on( 'load', resizeIcons );
 $( window ).on( 'resize', resizeIcons );
 
-var htmlClasses = ['.favorite_colleges#show .jumbotron .collegebox .college', '.colleges#index .jumbotron .collegebox .college'];
-
 $(document).ready(function(){
 
-    for(var i = 0; i<this.htmlClasses.lenght; i++) {
+    var htmlClasses = ['.favorite_colleges#show .jumbotron .collegebox .college', '.colleges#index .jumbotron .collegebox .college'];
+
+    for(var i = 0; i<htmlClasses.length; i++) {
 
         $(htmlClasses[i]).click(function() {
             var $this = $(this).children('.details');
     
-            var openDetails = $( htmlClasses[i] + ' .details').not($this).filter(function () { 
+            var openDetails = $(htmlClasses[i] + ' .details').not($this).filter(function () { 
                 return this.style.display == 'block' 
             });
             openDetails.css('display', 'none');
