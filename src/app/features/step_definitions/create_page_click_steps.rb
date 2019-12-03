@@ -16,6 +16,20 @@ When (/^I fill the create new page form$/) do
     select 'Não', from: "college[request_to_participate]"
 end
 
+When("I fill the create new page form with invalid data") do
+    fill_in "college[name]", with: ""
+    fill_in "college[initials]", with: "UT001"
+    fill_in "college[city]", with: "São Paulo"
+    fill_in "college[state]", with: "SP"
+    fill_in "college[country]", with: "Brasil"
+    fill_in "college[unit]", with: "Faculdade Teste 001"
+    fill_in "college[background_color]", with: "#fafafa"
+    fill_in "college[font_family]", with: "Arial"
+    fill_in "college[font_color]", with: "#000000"
+    select 'Manual', from: "college[admin_approves_spotted]"
+    select 'Não', from: "college[request_to_participate]"
+end
+
 # - - -
 
 Given(/^There is a college page created$/) do

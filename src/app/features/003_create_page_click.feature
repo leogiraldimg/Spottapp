@@ -12,3 +12,9 @@ Scenario: spotted page manager clicks the create new page button with valid data
     When I fill the create new page form
     And I click the Cadastrar button
     Then I should see the initial user page
+
+Scenario: spotted page manager clicks the create new page button with invalid data
+    Given I am on the create new page page
+    When I fill the create new page form with invalid data
+    And I click the Cadastrar button
+    Then I should see the red failed toast
