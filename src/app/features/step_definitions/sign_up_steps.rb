@@ -78,4 +78,23 @@ end
 Then /^I should see the page's wizard$/ do
     expect(page).to have_xpath('.//div[@class="jumbotron"]/h2', text: 'Páginas de instituições próximas')
 end
+
+When (/^I fill the user registration form with invalid data$/)  do
+    @user = FactoryBot.build(:user)
+
+    fill_in "user[email]", with: @user.email
+    fill_in "user[nickname]", with: @user.nickname
+    fill_in "user[first_name]", with: @user.first_name
+    fill_in "user[last_name]", with: @user.last_name
+    fill_in "user[birth_date]", with: @user.birth_date
+    fill_in "user[password]", with: @user.password
+    fill_in "user[password_confirmation]", with: 'senha errada'
+    fill_in "user[country]", with: @user.country
+    fill_in "user[state]", with: @user.state
+    fill_in "user[city]", with: @user.city
+    attach_file("user[profile_picture]", 'features/upload-files/icon-384x384.png')
+end
   
+Then (/^I should see the red failed toast$/)  do
+    expect(page).to have_xpath('.//div[@class="alert alert-danger"]')
+end

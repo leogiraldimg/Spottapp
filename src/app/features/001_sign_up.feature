@@ -16,3 +16,9 @@ Scenario: User creates a new account successfully checking the checkbox to see n
     And I check the checkbox to see the page's wizard
     And I click the Cadastrar button
     Then I should see the page's wizard
+
+Scenario: User try to create a new account with invalid data
+    Given I am on the create account page
+    When I fill the user registration form with invalid data
+    And I click the Cadastrar button
+    Then I should see the red failed toast
