@@ -84,13 +84,24 @@ class SpottedsController < ApplicationController
 
         def set_style
             @college_style = ''
+            check_to_set_background_image
+            check_to_set_background_color
+            check_to_set_font_family_and_color
+        end
 
+        def check_to_set_background_image
             if @college.background_image.present?
                 @college_style.concat('body { background-image: url(' + @college.background_image + '); }')
-            elsif @college.background_color.present?
+            end
+        end
+
+        def check_to_set_background_color
+            if @college.background_color.present?
                 @college_style.concat('body { background-color:' + @college.background_color + ';}')
             end
-            
+        end
+
+        def check_to_set_font_family_and_color
             if @college.font_family.present? && @college.font_color.present?
                 @college_style.concat('#content-container { font-family: ' + @college.font_family + '!important; color: ' + @college.font_color + '; }')
             elsif @college.font_family.present?
@@ -99,6 +110,7 @@ class SpottedsController < ApplicationController
                 @college_style.concat('#content-container { color: ' + @college.font_color + '; }')
             end
         end
+
 
         def set_font_google
             response = HTTParty.get('https://fonts.googleapis.com/css?family=' + @college.font_family)
