@@ -38,7 +38,7 @@ Given (/^I posted a spotted successfully on my college page$/) do
     @spotted = Spotted.find_by(content: "Spotted")
 end
 
-Given (/^There is a spotted$/) do
+Given (/^There is a spotted created$/) do
     steps %Q{
         Given There is a college page created
     }

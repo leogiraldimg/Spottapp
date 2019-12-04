@@ -45,3 +45,7 @@ Given (/^I accessed my college page successfully$/) do
         Then I should see my college page
     }
 end
+
+Given /^I am on the college page$/ do
+    visit college_spotteds_path(@college.id)
+end

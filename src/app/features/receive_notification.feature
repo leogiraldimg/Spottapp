@@ -5,7 +5,7 @@ I want to receive notifications from spotted
 So that I can follow spotted updates
 
 Background: There is a spotted and a comment created
-    Given There is a comment
+    Given There is a comment created
     And I logged in successfully
 
 Scenario: Student clicks on bell button

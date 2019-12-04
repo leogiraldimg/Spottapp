@@ -7,7 +7,7 @@ And(/^I click the Mandar comentário button icon$/) do
 end
 
 Then(/^I should see the view spotted page$/) do
-    expect(page).to have_xpath('.//h2', text: "Spotted n. 1")
+    expect(page).to have_xpath('.//h2', text: "Spotted n.")
 end
 
 And(/^I should see my new comment on the timeline$/) do
@@ -33,9 +33,9 @@ Given (/^I posted a comment successfully$/) do
 
 end
 
-Given (/^There is a comment$/) do
+Given (/^There is a comment created$/) do
     steps %Q{
-        Given There is a spotted
+        Given There is a spotted created
     }
 
     u = Comment.new(:content => "Comment Test", :user_id => @user.id, :spotted_id => @spotted.id)
