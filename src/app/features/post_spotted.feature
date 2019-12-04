@@ -15,3 +15,9 @@ Scenario: student write a spotted on the content field and clicks the button "Ma
     And I click the Mandar spotted button
     Then I should see the college page
     And I should see my new spotted on the timeline
+
+Scenario: student tries to post a spotted with empty content
+    Given I click the Novo spotted button
+    When I dont fill the content spotted field
+    And I click the Mandar spotted button
+    Then I should see the red failed toast
