@@ -26,11 +26,11 @@ Scenario Outline: User clicks the create new page button with invalid data
 
     Examples:
     | form field | value |
-    | college_name | |
-    | college_initials | nove letras |
-    | college_city | |
-    | college_state | |
-    | college_state | São Paulo |
-    | college_country | |
-    | college_font_color | |
-    | college_background_color | |
+    | college name | |
+    | college initials | nove letras |
+    | college city | |
+    | college state | |
+    | college state | São Paulo |
+    | college country | |
+    | college font color | |
+    | college background color | |
