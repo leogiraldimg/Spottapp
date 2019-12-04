@@ -1,48 +1,53 @@
-Given (/^I am on the create new page page$/) do
+Given /^I am on the create new page page$/ do
     visit new_college_path
 end
 
-When (/^I fill the create new page form$/) do
-    fill_in "college[name]", with: "Universidade Teste 001"
-    fill_in "college[initials]", with: "UT001"
-    fill_in "college[city]", with: "São Paulo"
-    fill_in "college[state]", with: "SP"
-    fill_in "college[country]", with: "Brasil"
-    fill_in "college[unit]", with: "Faculdade Teste 001"
-    fill_in "college[background_color]", with: "#fafafa"
-    fill_in "college[font_family]", with: "Arial"
-    fill_in "college[font_color]", with: "#000000"
-    select 'Manual', from: "college[admin_approves_spotted]"
-    select 'Não', from: "college[request_to_participate]"
+When /^I fill the create new page form$/ do
+    steps %Q{
+        When I fill in "college_name" with "Universidade Teste 001"
+        When I fill in "college_initials" with "UT001"
+        When I fill in "college_city" with "São Paulo"
+        When I fill in "college_state" with "SP"
+        When I fill in "college_country" with "Brasil"
+        When I fill in "college_unit" with "Faculdade Teste 001"
+        When I fill in "college_background_color" with "#fafafa"
+        When I fill in "college_font_family" with "Arial"
+        When I fill in "college_font_color" with "#000000"
+    }
 end
 
-When("I fill the create new page form with invalid data") do
-    fill_in "college[name]", with: ""
-    fill_in "college[initials]", with: "UT001"
-    fill_in "college[city]", with: "São Paulo"
-    fill_in "college[state]", with: "SP"
-    fill_in "college[country]", with: "Brasil"
-    fill_in "college[unit]", with: "Faculdade Teste 001"
-    fill_in "college[background_color]", with: "#fafafa"
-    fill_in "college[font_family]", with: "Arial"
-    fill_in "college[font_color]", with: "#000000"
+When /^I select manual approve$/ do
     select 'Manual', from: "college[admin_approves_spotted]"
+end
+
+When /^I select to not request to participate$/ do
     select 'Não', from: "college[request_to_participate]"
 end
 
 # - - -
 
-Given(/^There is a college page created$/) do
+Given /^There is a college page created$/ do
     steps %Q{
         Given There is an unregistered user
     }
-    u = College.new(:name => "Universidade Teste 002", :initials => "UT002", :city => "São Paulo", :state => "SP", :country => "Brasil", :unit => "Faculdade Teste 002", :user_id => @user.id, :background_color => "fafafa", :font_family => "Arial", :background_image => "", :font_color => "#000000", :request_to_participate => 0)
+    u = College.new(:name => "Universidade Teste 002",
+        :initials => "UT002",
+        :city => "São Paulo",
+        :state => "SP",
+        :country => "Brasil",
+        :unit => "Faculdade Teste 002",
+        :user_id => @user.id,
+        :background_color => "fafafa",
+        :font_family => "Arial",
+        :background_image => "",
+        :font_color => "#000000",
+        :request_to_participate => 0)
     u.save
 
     @college = College.find_by(initials: "UT002")
 end
 
-Given(/^I created a college page$/) do
+Given /^I created a college page$/ do
     steps %Q{
         Given I am on the create new page page
         When I fill the create new page form
@@ -53,7 +58,7 @@ Given(/^I created a college page$/) do
     
 end
 
-Given(/^There is a college page with request needed created$/) do
+Given /^There is a college page with request needed created$/ do
     steps %Q{
         Given There is another unregistered user
     }
