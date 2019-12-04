@@ -29,26 +29,26 @@ Scenario Outline: User try to create a new account with invalid data
 
     Examples:
     | form field | value |
-    | user_first_name | |
-    | user_last_name | |
-    | user_nickname | |
-    | user_birth_date | |
-    | user_email | |
-    | user_email | emailinvalido.com |
-    | user_email | emailinvalido@empresa |
-    | user_password | |
-    | user_password_confirmation | |
-    | user_password_confirmation | confirmacao errada |
-    | user_country | |
-    | user_state | |
-    | user_state | São Paulo |
-    | user_city | |
+    | user first name | |
+    | user last name | |
+    | user nickname | |
+    | user birth date | |
+    | user email | |
+    | user email | emailinvalido.com |
+    | user email | emailinvalido@empresa |
+    | user password | |
+    | user password confirmation | |
+    | user password confirmation | confirmacao errada |
+    | user country | |
+    | user state | |
+    | user state | São Paulo |
+    | user city | |
 
 Scenario: User try to create a new account with invalid password format
     Given I am on the create account page
     When I fill the user registration form 
-    When I fill in "user_password" with "cinco"
-    And I fill in "user_password_confirmation" with "cinco"
+    When I fill in "user password" with "cinco"
+    And I fill in "user password confirmation" with "cinco"
     And I attach a profile picture
     And I click the Cadastrar button
     Then I should see the red failed toast
@@ -57,7 +57,7 @@ Scenario: User try to create a new account with existing user nickname
     Given There is an unregistered user
     And I am on the create account page
     When I fill the user registration form
-    And I fill in "user_nickname" with "teste002.user"
+    And I fill in "user nickname" with "teste002.user"
     And I attach a profile picture
     And I click the Cadastrar button
     Then I should see the red failed toast
