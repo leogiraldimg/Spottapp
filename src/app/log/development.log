@@ -28210,3 +28210,1776 @@ Completed 200 OK in 219ms (Views: 199.0ms | ActiveRecord: 6.7ms)
 
 Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 23:22:04 -0300
 Started GET "/serviceworker.js" for 127.0.0.1 at 2019-11-20 23:22:11 -0300
+Started GET "/" for 127.0.0.1 at 2019-12-04 00:10:42 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 00:10:43 -0300
+  [1m[35m (79.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fernandok/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (128.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fernandok/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (21.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (797.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (7.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 2457ms (Views: 2049.7ms | ActiveRecord: 132.2ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 00:10:50 -0300
+Started GET "/entrar" for 127.0.0.1 at 2019-12-04 00:10:51 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (9.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (8.2ms)
+  Rendered layouts/_footer.html.erb (1.9ms)
+Completed 200 OK in 167ms (Views: 160.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 00:10:52 -0300
+Started POST "/entrar" for 127.0.0.1 at 2019-12-04 00:10:55 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPF6ipdPBGrQIgDVHT3XZVRJObwuDByF60VBx6txnZG58h79OtK/8wb1UBB4YsTeZ3hJEYEvg3qyoAWXx83Oiw==", "session"=>{"email"=>"fernando.kga@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (28.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."nickname" = $1 LIMIT $2[0m  [["nickname", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 592ms (ActiveRecord: 192.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-12-04 00:10:55 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered users/show.html.erb within layouts/application (7.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mFavoriteSpotted Exists (16.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (35.0ms)
+  Rendered layouts/_footer.html.erb (2.4ms)
+Completed 200 OK in 134ms (Views: 111.6ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 00:10:57 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-12-04 00:10:58 -0300
+Processing by FavoriteCollegesController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  [1m[36mFavoriteCollege Load (85.0ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mCollege Load (63.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCollege Load (1.2ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendered favorite_colleges/show.html.erb within layouts/application (230.0ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (56.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 462ms (Views: 288.4ms | ActiveRecord: 165.0ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 00:11:01 -0300
+Started GET "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-12-04 00:11:02 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:116
+  [1m[36mCollege Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (154.6ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists"[0m
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  Rendered college_whitelists/index.html.erb within layouts/application (202.4ms)
+  [1m[36mFavoriteSpotted Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 323ms (Views: 149.6ms | ActiveRecord: 165.0ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 00:11:03 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 00:11:33 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"sHN7H1cyq39Btm5i1NEmzyENEu45GCVPIK+xnNPwVOkRcB9o+q8Q5pdhPqexjjV0EjxiQ5Y7urB5SvXMv0wH8w==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:116
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:112
+  [1m[36mCACHE CollegeWhitelist Load (0.0ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollege Load (0.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (138.6ms)
+Completed 500 Internal Server Error in 742ms (ActiveRecord: 3.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb___3775531201234151436_70213835829920'
+app/controllers/college_whitelists_controller.rb:103:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:97:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 00:11:38 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 00:12:36 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 00:12:39 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"sHN7H1cyq39Btm5i1NEmzyENEu45GCVPIK+xnNPwVOkRcB9o+q8Q5pdhPqexjjV0EjxiQ5Y7urB5SvXMv0wH8w==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:116
+  [1m[36mCollegeWhitelist Load (0.8ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 26.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb___3775531201234151436_70213834425540'
+app/controllers/college_whitelists_controller.rb:103:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:97:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 00:12:40 -0300
+Started PUT "/__web_console/repl_sessions/d02c46ebfe5b957ddfbd19c80c268d34" for 127.0.0.1 at 2019-12-04 00:12:47 -0300
+Started PUT "/__web_console/repl_sessions/d02c46ebfe5b957ddfbd19c80c268d34" for 127.0.0.1 at 2019-12-04 00:12:48 -0300
+Started GET "/" for 127.0.0.1 at 2019-12-04 10:15:00 -0300
+  [1m[35m (47.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fernandok/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering welcome/index.html.erb within layouts/application
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:15:01 -0300
+  Rendered welcome/index.html.erb within layouts/application (984.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1835ms (Views: 1763.9ms | ActiveRecord: 35.0ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:15:05 -0300
+Started GET "/entrar" for 127.0.0.1 at 2019-12-04 10:15:06 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered layouts/_header.html.erb (6.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 114ms (Views: 108.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:15:07 -0300
+Started POST "/entrar" for 127.0.0.1 at 2019-12-04 10:15:14 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aZhkJ73uwlp7eiwV5RNlWAFYxv1FhqKoNWW/x2m2AkGAMz15hVh1ZA1DCD5OK1LiM2yQoPX0cjQVSazCb4lJ0w==", "session"=>{"email"=>"fernando.kga@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (52.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."nickname" = $1 LIMIT $2[0m  [["nickname", "fernando.kga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 547ms (ActiveRecord: 150.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-12-04 10:15:15 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendered users/show.html.erb within layouts/application (8.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mFavoriteSpotted Exists (13.2ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (28.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 156ms (Views: 134.5ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:15:16 -0300
+Started GET "/favorite_colleges" for 127.0.0.1 at 2019-12-04 10:15:17 -0300
+Processing by FavoriteCollegesController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  Rendering favorite_colleges/show.html.erb within layouts/application
+  [1m[36mFavoriteCollege Load (76.6ms)[0m  [1m[34mSELECT "favorite_colleges".* FROM "favorite_colleges" WHERE "favorite_colleges"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:6
+  [1m[36mCollege Load (39.9ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/favorite_colleges/show.html.erb:12
+  [1m[36mCollege Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE College Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendered favorite_colleges/show.html.erb within layouts/application (211.0ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (9.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 386ms (Views: 248.5ms | ActiveRecord: 129.8ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:15:19 -0300
+Started GET "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-12-04 10:15:20 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (1.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:116
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (31.4ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (1.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (118.6ms)
+  [1m[36mFavoriteSpotted Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (8.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 256ms (Views: 196.1ms | ActiveRecord: 45.4ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:15:21 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:15:36 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"1IBvh9kZD9G1mxSAZhJSuV3lEEkOxaqN7Axr8cLEvQQ9KzbZ4a+478OiMKvNKmUDb9FGFL63ehHMIHj0xPv2lg==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (1.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:116
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb___1265514627900625378_70291724758380'
+app/controllers/college_whitelists_controller.rb:103:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:97:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:15:37 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:16:22 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:16:23 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"1IBvh9kZD9G1mxSAZhJSuV3lEEkOxaqN7Axr8cLEvQQ9KzbZ4a+478OiMKvNKmUDb9FGFL63ehHMIHj0xPv2lg==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:97
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 21.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb___1265514627900625378_70291724605920'
+app/controllers/college_whitelists_controller.rb:104:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:16:24 -0300
+Started GET "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-12-04 10:16:36 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollege Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (1.4ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (22.1ms)
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:16:36 -0300
+  [1m[36mFavoriteSpotted Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (23.5ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 235ms (Views: 215.1ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:16:39 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:16:39 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"dogC6k+yv7giOf3NxxCkhgc9eNYcXERIXTcCLlAKnbqfI1u0dwQIhlQA2eZsKJM8NQkui6wulNR9GxErVjXWKA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollegeWhitelist Load (0.8ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:97
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mCollege Load (1.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[35m (5.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 11.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb___1265514627900625378_70291719818000'
+app/controllers/college_whitelists_controller.rb:104:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:16:40 -0300
+Started POST "/__web_console/repl_sessions/d4865fb422a4bc02f2b122d06db305b0/trace" for 127.0.0.1 at 2019-12-04 10:17:08 -0300
+Started PUT "/__web_console/repl_sessions/d4865fb422a4bc02f2b122d06db305b0" for 127.0.0.1 at 2019-12-04 10:17:13 -0300
+Started PUT "/__web_console/repl_sessions/d4865fb422a4bc02f2b122d06db305b0" for 127.0.0.1 at 2019-12-04 10:17:13 -0300
+Started PUT "/__web_console/repl_sessions/d4865fb422a4bc02f2b122d06db305b0" for 127.0.0.1 at 2019-12-04 10:17:19 -0300
+Started PUT "/__web_console/repl_sessions/d4865fb422a4bc02f2b122d06db305b0" for 127.0.0.1 at 2019-12-04 10:17:28 -0300
+Started PUT "/__web_console/repl_sessions/d4865fb422a4bc02f2b122d06db305b0" for 127.0.0.1 at 2019-12-04 10:17:33 -0300
+Started PUT "/__web_console/repl_sessions/d4865fb422a4bc02f2b122d06db305b0" for 127.0.0.1 at 2019-12-04 10:17:40 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 10:21:05 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fernandok/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.7ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (71.1ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (12.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 1381ms (Views: 1192.5ms | ActiveRecord: 27.3ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:21:08 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:21:09 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:21:09 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:21:11 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"JuG8M+5TD1G8C4dyO0IY3X57p/voPVv8cutqZj3VBLvPSuVt1uW4b8oyo1mQei9nTE/xplhPi2BSx3ljO+pPKQ==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (3.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:97
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mCollege Load (1.1ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 8.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3195832291392552276_70280214754600'
+app/controllers/college_whitelists_controller.rb:104:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:21:12 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 10:23:23 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (32.5ms)
+  [1m[36mFavoriteSpotted Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (11.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 235ms (Views: 132.6ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:23:25 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:23:26 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"WtAF8YCSkI03wK+0XLlTVdrBWD1JInS0rS47FduItbuze1yvuCQns0H5i5/3gWTv6PUOYPlQpCiNAigQ3bf+KQ==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollege Load (0.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3195832291392552276_70280219889460'
+app/controllers/college_whitelists_controller.rb:104:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:97:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:23:27 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 10:23:32 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (1.3ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (19.2ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 127ms (Views: 112.8ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 10:23:34 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollege Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (3.2ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (20.0ms)
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:23:35 -0300
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (8.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 185ms (Views: 171.6ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:23:37 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:23:39 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"2lTVjZnwnyU+aeoEjfO+jE/LRtS0gDtbghym0L8UMQMz/4zToUYoG0hQzi8my4k2ff8QiQTy68eiMLXVuSt6kQ==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollegeWhitelist Load (2.3ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3195832291392552276_70280218024960'
+app/controllers/college_whitelists_controller.rb:104:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:97:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:23:40 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 10:23:49 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fernandok/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.7ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (88.9ms)
+  [1m[36mFavoriteSpotted Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (13.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 750ms (Views: 564.2ms | ActiveRecord: 31.9ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:23:52 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:23:53 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"hwOCSEkpnrLRujXLAylwzf+SO0fg7ef+evcex2DBBNFuqNsWcZ8pjKeDEeCoEUd3zaZtGlCfN2Ja2w3CZv5PQw==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollegeWhitelist Load (0.4ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollege Load (1.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__916775929006155802_70099388233740'
+app/controllers/college_whitelists_controller.rb:104:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:97:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:23:54 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:24:10 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:24:11 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"hwOCSEkpnrLRujXLAylwzf+SO0fg7ef+evcex2DBBNFuqNsWcZ8pjKeDEeCoEUd3zaZtGlCfN2Ja2w3CZv5PQw==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollegeWhitelist Load (1.2ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 24.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__916775929006155802_70099388068220'
+app/controllers/college_whitelists_controller.rb:104:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:97:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:24:12 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 10:31:37 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:31:37 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (1.2ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollege Exists (5.4ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.8ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (3.2ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (36.4ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (12.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 279ms (Views: 143.2ms | ActiveRecord: 49.9ms)
+
+
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:31:40 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"QHEcwVgoPZQKO+Hw3Zl3cD7xQ+mmojShZB6EQGtQF16p2kWfYJ6KqnwCxdt2oUDKDMUVtBbQ5D1EMpdFbW9czA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:117
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 26.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__916775929006155802_70099387907240'
+app/controllers/college_whitelists_controller.rb:104:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:97:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:31:41 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:32:21 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:32:21 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"QHEcwVgoPZQKO+Hw3Zl3cD7xQ+mmojShZB6EQGtQF16p2kWfYJ6KqnwCxdt2oUDKDMUVtBbQ5D1EMpdFbW9czA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:118
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 27.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__916775929006155802_47441623607780'
+app/controllers/college_whitelists_controller.rb:105:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:32:22 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:42:04 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 10:42:04 -0300
+  
+SyntaxError (/home/fernandok/Projetos/Spottapp/src/app/app/controllers/college_whitelists_controller.rb:159: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/college_whitelists_controller.rb:159: syntax error, unexpected end-of-input, expecting end
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:42:06 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 10:42:18 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:118
+  [1m[36mCollege Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.7ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (61.4ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (114.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 1334ms (Views: 1156.1ms | ActiveRecord: 76.0ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:42:22 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 10:42:22 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"nXfbsXgYuKxeQwQOtjepb3hV4lrPIrn6YSwpG/G4xBt03ILvQK4Pkih6ICUdD57VSmG0B39QaWZBADoe94ePiQ==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:118
+  [1m[36mCollegeWhitelist Load (1.1ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 5.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__916775929006155802_70099386052200'
+app/controllers/college_whitelists_controller.rb:105:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 10:42:24 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:08:33 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 11:08:35 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (1.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollege Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.7ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (41.5ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (113.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 1282ms (Views: 1106.4ms | ActiveRecord: 58.6ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:08:40 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:08:42 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"xbg2m+EL0gmBBu7HHj4kml783OPF3O4CxcGN8coIB78sE2/F2b1lN/c/yuy1BhMgbMiKvnWuPp7l7Z70zDdMLQ==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.7ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__916775929006155802_47441627436280'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:08:43 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:09:12 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:09:14 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"xbg2m+EL0gmBBu7HHj4kml783OPF3O4CxcGN8coIB78sE2/F2b1lN/c/yuy1BhMgbMiKvnWuPp7l7Z70zDdMLQ==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (1.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.8ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (2.3ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 208ms (ActiveRecord: 30.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__916775929006155802_70099388159420'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:09:16 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:16:53 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 11:16:54 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollege Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (175.4ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (90.2ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 2569ms (Views: 1753.0ms | ActiveRecord: 101.8ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:17:03 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:17:06 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"W4FSLijqLl/grHS2Unz1hnrbk2/ra68hiT6Pl42vFoKyKgtwEFyZYZaVUJ35RMI8SO/FMlsZf72pEpySi5BdEA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (9.6ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 12.6ms)
+
+
+  
+NoMethodError (undefined method `status' for #<Class:0x00007f8291d5d7a0>):
+  
+app/controllers/college_whitelists_controller.rb:153:in `return_status_enum'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:17:09 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:18:26 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:18:27 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"W4FSLijqLl/grHS2Unz1hnrbk2/ra68hiT6Pl42vFoKyKgtwEFyZYZaVUJ35RMI8SO/FMlsZf72pEpySi5BdEA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.9ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 26.4ms)
+
+
+  
+NoMethodError (undefined method `status' for #<Class:0x00007f8292af9738>):
+  
+app/controllers/college_whitelists_controller.rb:153:in `return_status_enum'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:18:28 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:20:01 -0300
+Started GET "/colleges/1/college_whitelists/" for 127.0.0.1 at 2019-12-04 11:20:02 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.4ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (62.9ms)
+  [1m[36mFavoriteSpotted Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (80.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 1487ms (Views: 1313.6ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:20:08 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:20:08 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.7ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.9ms)
+
+
+  
+NoMethodError (undefined method `status' for #<Class:0x00007f8288478008>):
+  
+app/controllers/college_whitelists_controller.rb:153:in `return_status_enum'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:20:10 -0300
+Started PUT "/__web_console/repl_sessions/5ed067fad6b03387a7b1d87ec47446b0" for 127.0.0.1 at 2019-12-04 11:20:21 -0300
+Started PUT "/__web_console/repl_sessions/5ed067fad6b03387a7b1d87ec47446b0" for 127.0.0.1 at 2019-12-04 11:20:22 -0300
+Started PUT "/__web_console/repl_sessions/5ed067fad6b03387a7b1d87ec47446b0" for 127.0.0.1 at 2019-12-04 11:20:25 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:27:35 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:27:36 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (2.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 49.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__916775929006155802_70099436728380'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:27:38 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:28:12 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (1.1ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__916775929006155802_70099387611620'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:28:13 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:29:50 -0300
+  [1m[35m (52.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fernandok/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:29:51 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.7ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 612ms (ActiveRecord: 29.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3154168490089095789_69836440266600'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:29:53 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:32:46 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:32:46 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 20.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3154168490089095789_69836438065920'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:32:47 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:33:26 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:33:26 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:118
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:99
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 22.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3154168490089095789_69836510072800'
+app/controllers/college_whitelists_controller.rb:105:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:33:27 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:36:16 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:36:16 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 18.6ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/college_whitelists_controller.rb:152:in `return_status_enum'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:36:17 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:36:35 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:36:35 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 25.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3154168490089095789_69836509961380'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:36:36 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:37:06 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:37:06 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (1.1ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.9ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 28.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3154168490089095789_69836438095480'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:37:08 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:37:47 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:37:47 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.4ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 22.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3154168490089095789_69836443615580'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:37:49 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:38:16 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:38:16 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 18.1ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/college_whitelists_controller.rb:98:in `[]'
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:38:17 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:38:43 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:38:43 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.4ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 23.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3154168490089095789_69836470698820'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:38:44 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:39:10 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:39:11 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.5ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 25.8ms)
+
+
+  
+NoMethodError (undefined method `status' for #<ActionController::Parameters:0x00007f082c24ce68>):
+  
+app/controllers/college_whitelists_controller.rb:98:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:39:12 -0300
+Started PUT "/__web_console/repl_sessions/d0210f1b3143e7358ca8c39ccd131d1e" for 127.0.0.1 at 2019-12-04 11:39:17 -0300
+Started PUT "/__web_console/repl_sessions/d0210f1b3143e7358ca8c39ccd131d1e" for 127.0.0.1 at 2019-12-04 11:39:18 -0300
+Started PUT "/__web_console/repl_sessions/d0210f1b3143e7358ca8c39ccd131d1e" for 127.0.0.1 at 2019-12-04 11:39:23 -0300
+Started PUT "/__web_console/repl_sessions/d0210f1b3143e7358ca8c39ccd131d1e" for 127.0.0.1 at 2019-12-04 11:39:30 -0300
+Started PUT "/__web_console/repl_sessions/d0210f1b3143e7358ca8c39ccd131d1e" for 127.0.0.1 at 2019-12-04 11:39:32 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:39:45 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:39:46 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:119
+  [1m[36mCollegeWhitelist Load (0.4ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/college_whitelists_controller.rb:100
+  Rendering college_whitelists/index.html.erb within layouts/application
+  Rendered college_whitelists/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 22.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:         </div>
+    16:         <div class="tbody">
+    17:           <table>
+    18:             <% @college_whitelists.each do |college_whitelist| %>
+    19:               <% if (college_whitelist.status == 'pending') %>
+    20:                 <tr>
+    21:                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
+  
+app/views/college_whitelists/index.html.erb:18:in `_app_views_college_whitelists_index_html_erb__3154168490089095789_47386581077240'
+app/controllers/college_whitelists_controller.rb:106:in `block (2 levels) in update'
+app/controllers/college_whitelists_controller.rb:99:in `update'
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:39:47 -0300
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:40:28 -0300
+Started PATCH "/colleges/1/college_whitelists/3?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:40:28 -0300
+Processing by CollegeWhitelistsController#update as HTML
+  Parameters: {"authenticity_token"=>"8AUQhAlcPflfCJzBUp6yyehk7XqLzQ3pMFn6/IWG3b4ZrknaMeqKxykxuOr5poVz2lC7Jzu/3XUQden5g7mWLA==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.4ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:116
+  [1m[36mCollegeWhitelist Load (0.4ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:96
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollege Load (0.7ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[36mCollegeWhitelist Update (157.7ms)[0m  [1m[33mUPDATE "college_whitelists" SET "status" = $1, "updated_at" = $2 WHERE "college_whitelists"."id" = $3[0m  [["status", 1], ["updated_at", "2019-12-04 14:40:28.680502"], ["id", 3]]
+  ↳ app/controllers/college_whitelists_controller.rb:98
+  [1m[35m (35.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/college_whitelists_controller.rb:98
+Redirected to http://localhost:3000/colleges/1/college_whitelists
+Completed 302 Found in 520ms (ActiveRecord: 214.7ms)
+
+
+Started GET "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-12-04 11:40:29 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.3ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:116
+  [1m[36mCollege Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCollege Load (4.2ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  [1m[36mAdministrator Exists (27.9ms)[0m  [1m[34mSELECT  1 AS one FROM "administrators" WHERE "administrators"."user_id" = $1 AND "administrators"."college_id" = $2 LIMIT $3[0m  [["user_id", 2], ["college_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:49
+  Rendered college_whitelists/index.html.erb within layouts/application (167.6ms)
+  [1m[36mFavoriteSpotted Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (28.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 4337ms (Views: 4288.2ms | ActiveRecord: 44.9ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:40:36 -0300
+Started PATCH "/colleges/1/college_whitelists/3/revoke?college_whitelist%5Bstatus%5D=approved" for 127.0.0.1 at 2019-12-04 11:41:14 -0300
+Processing by CollegeWhitelistsController#revoke as HTML
+  Parameters: {"authenticity_token"=>"wlm+CMLWa7N90C3YlDbQYtt0ECLlpBbH+807LsnM334r8udW+mDcjQvpCfM/DufY6UBGf1XWxlvb4Sgrz/OU7A==", "college_whitelist"=>{"status"=>"approved"}, "college_id"=>"1", "college_whitelist_id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.8ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:116
+  [1m[36mCollegeWhitelist Load (0.6ms)[0m  [1m[34mSELECT  "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:54
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/college_whitelists_controller.rb:56
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:56
+  [1m[36mCollege Load (3.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:56
+  [1m[36mCollegeWhitelist Update (0.9ms)[0m  [1m[33mUPDATE "college_whitelists" SET "status" = $1, "updated_at" = $2 WHERE "college_whitelists"."id" = $3[0m  [["status", 0], ["updated_at", "2019-12-04 14:41:14.969149"], ["id", 3]]
+  ↳ app/controllers/college_whitelists_controller.rb:56
+  [1m[35m (19.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/college_whitelists_controller.rb:56
+Redirected to http://localhost:3000/colleges/1/college_whitelists
+Completed 302 Found in 45ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/colleges/1/college_whitelists" for 127.0.0.1 at 2019-12-04 11:41:15 -0300
+Processing by CollegeWhitelistsController#index as HTML
+  Parameters: {"college_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12
+  [1m[36mCollege Load (0.6ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/college_whitelists_controller.rb:116
+  [1m[36mCollege Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering college_whitelists/index.html.erb within layouts/application
+  [1m[36mCollegeWhitelist Load (1.3ms)[0m  [1m[34mSELECT "college_whitelists".* FROM "college_whitelists" WHERE "college_whitelists"."college_id" = $1[0m  [["college_id", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:18
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:21
+  [1m[36mCollege Load (0.5ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:49
+  [1m[36mCACHE College Load (0.0ms)[0m  [1m[34mSELECT  "colleges".* FROM "colleges" WHERE "colleges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/college_whitelists/index.html.erb:50
+  [1m[36mCollege Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "colleges" WHERE "colleges"."user_id" = $1 AND "colleges"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:46
+  Rendered college_whitelists/index.html.erb within layouts/application (33.7ms)
+  [1m[36mFavoriteSpotted Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorite_spotteds" WHERE "favorite_spotteds"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  Rendered layouts/_header.html.erb (7.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 271ms (Views: 256.7ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/serviceworker.js" for 127.0.0.1 at 2019-12-04 11:41:17 -0300
