@@ -53,6 +53,7 @@ Given(/^I have an account$/) do
     steps %Q{
         Given I am on the create account page
         When I fill the user registration form
+        And I attach a profile picture
         And I click the Cadastrar button
         Then I should see the welcome page
     }
