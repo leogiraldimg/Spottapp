@@ -22,3 +22,10 @@ Scenario: User try to create a new account with invalid data
     When I fill the user registration form with invalid data
     And I click the Cadastrar button
     Then I should see the red failed toast
+
+Scenario: User try to create a new account with existing user id
+    Given There is an unregistered user
+    And I am on the create account page
+    When I fill the user registration form with existing user id
+    And I click the Cadastrar button
+    Then I should see the red failed toast
