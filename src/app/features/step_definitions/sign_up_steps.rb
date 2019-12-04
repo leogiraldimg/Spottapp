@@ -2,19 +2,26 @@ Given(/^I am on the create account page$/) do
     visit new_user_path
 end
 
-When(/^I fill the user registration form$/) do
-    @user = FactoryBot.build(:user)
+When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
+    fill_in(field.gsub(' ', '_'), :with => value)
+end
 
-    fill_in "user[email]", with: @user.email
-    fill_in "user[nickname]", with: @user.nickname
-    fill_in "user[first_name]", with: @user.first_name
-    fill_in "user[last_name]", with: @user.last_name
-    fill_in "user[birth_date]", with: @user.birth_date
-    fill_in "user[password]", with: @user.password
-    fill_in "user[password_confirmation]", with: @user.password_confirmation
-    fill_in "user[country]", with: @user.country
-    fill_in "user[state]", with: @user.state
-    fill_in "user[city]", with: @user.city
+When /^I fill the user registration form$/ do
+    steps %Q{
+        When I fill in "user_first_name" with "teste001"
+        When I fill in "user_last_name" with "user"
+        When I fill in "user_nickname" with "teste001.user"
+        When I fill in "user_birth_date" with "1998-10-25"
+        When I fill in "user_email" with "teste001.user@spottapp.com.br"
+        When I fill in "user_password" with "teste001user"
+        When I fill in "user_password_confirmation" with "teste001user"
+        When I fill in "user_country" with "Brasil"
+        When I fill in "user_state" with "SP"
+        When I fill in "user_city" with "São Paulo"
+    }
+end
+
+When /^I attach a profile picture$/ do
     attach_file("user[profile_picture]", 'features/upload-files/icon-384x384.png')
 end
 
@@ -22,10 +29,22 @@ When /^I click the (.*) button$/ do |button_name|
     click_button button_name
 end
 
+When /^I check the checkbox to see the page's wizard$/ do
+    find(:css, "#checkbox").set(true)
+end
+
 Then(/^I should see the welcome page$/) do
     expect(page).to have_xpath('.//div[@class="alert alert-success alert-dismissible"]')
     expect(page).to have_xpath('.//form[@action="/users/new"]')
     expect(page).to have_xpath('.//form[@action="/entrar"]')
+end
+
+Then /^I should see the page's wizard$/ do
+    expect(page).to have_xpath('.//div[@class="jumbotron"]/h2', text: 'Páginas de instituições próximas')
+end
+  
+Then (/^I should see the red failed toast$/)  do
+    expect(page).to have_xpath('.//div[@class="alert alert-danger"]')
 end
 
 # - - -
@@ -69,48 +88,4 @@ Given (/^There is another unregistered user$/) do
     u.save
 
     @user = User.find_by(nickname: "teste003.user")
-end
-
-When /^I check the checkbox to see the page's wizard$/ do
-    find(:css, "#checkbox").set(true)
-end
-
-Then /^I should see the page's wizard$/ do
-    expect(page).to have_xpath('.//div[@class="jumbotron"]/h2', text: 'Páginas de instituições próximas')
-end
-
-When (/^I fill the user registration form with invalid data$/)  do
-    @user = FactoryBot.build(:user)
-
-    fill_in "user[email]", with: @user.email
-    fill_in "user[nickname]", with: @user.nickname
-    fill_in "user[first_name]", with: @user.first_name
-    fill_in "user[last_name]", with: @user.last_name
-    fill_in "user[birth_date]", with: @user.birth_date
-    fill_in "user[password]", with: @user.password
-    fill_in "user[password_confirmation]", with: 'senha errada'
-    fill_in "user[country]", with: @user.country
-    fill_in "user[state]", with: @user.state
-    fill_in "user[city]", with: @user.city
-    attach_file("user[profile_picture]", 'features/upload-files/icon-384x384.png')
-end
-
-When (/^I fill the user registration form with existing user id$/)  do
-    @user = FactoryBot.build(:user)
-
-    fill_in "user[email]", with: @user.email
-    fill_in "user[nickname]", with: 'teste002.user'
-    fill_in "user[first_name]", with: @user.first_name
-    fill_in "user[last_name]", with: @user.last_name
-    fill_in "user[birth_date]", with: @user.birth_date
-    fill_in "user[password]", with: @user.password
-    fill_in "user[password_confirmation]", with: @user.password_confirmation
-    fill_in "user[country]", with: @user.country
-    fill_in "user[state]", with: @user.state
-    fill_in "user[city]", with: @user.city
-    attach_file("user[profile_picture]", 'features/upload-files/icon-384x384.png')
-end
-  
-Then (/^I should see the red failed toast$/)  do
-    expect(page).to have_xpath('.//div[@class="alert alert-danger"]')
 end
