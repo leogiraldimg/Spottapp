@@ -2,15 +2,15 @@ Given(/^I am on the edit page settings page$/) do
     visit edit_college_path(@college, :id => @college.id)
 end
 
+Then(/^I should see the green success toast$/) do
+    expect(page).to have_xpath('.//div[@class="alert alert-success alert-dismissible"]')
+end
+
 When(/^I fill the edit page settings form$/) do
     steps %Q{
         Given I fill general info of college
     }
     fill_in "college[background_image]", with: ""
-end
-
-Then(/^I should see the green success toast$/) do
-    expect(page).to have_xpath('.//div[@class="alert alert-success alert-dismissible"]')
 end
 
 When(/^I fill the edit page settings form including background_image field$/) do
