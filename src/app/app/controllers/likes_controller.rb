@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-    before_action :find_spotted
+    before_action :find_spotted, :require_logged_in_user
 
     def create
         if already_liked?
