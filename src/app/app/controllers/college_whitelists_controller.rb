@@ -15,7 +15,7 @@ class CollegeWhitelistsController < ApplicationController
     # GET /college_whitelists.json
     def index
         if isPageAdmin(params[:college_id])
-            @college_whitelists = CollegeWhitelist.all
+            @college_whitelists = CollegeWhitelist.where(college_id: params[:college_id])
             render :index
         else
             flash[:danger] = 'Área restrita. Você não é administrador da página.'
