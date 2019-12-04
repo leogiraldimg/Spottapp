@@ -13,3 +13,8 @@ Scenario: Delete a college page when I go to edit page settings and click the "A
     When I click the Apagar a página button
     And I am on the colleges menu page
     Then The college page shouldn't be exist anymore
+
+Scenario: User tries to delete a college that he is not admin
+    Given There is a college page created
+    And I am on the colleges menu
+    Then I cant find that college Editar button
