@@ -15,3 +15,10 @@ Scenario: student write a comment on the content field and clicks the button "Ma
     And I click the Mandar comentário button icon
     Then I should see the view spotted page
     And I should see my new comment on the timeline
+
+Scenario: student tries to post a comment with empty content
+    Given I am on the college page
+    When I click the Ver spotted button
+    And I dont fill the content comment field
+    And I click the Mandar comentário button icon
+    Then I should see the red failed toast

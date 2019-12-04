@@ -14,6 +14,10 @@ And(/^I should see my new comment on the timeline$/) do
     expect(page).to have_xpath('.//div', text: "Comment Teste")
 end
 
+When(/^I dont fill the content comment field$/) do
+    fill_in "comment[content]", with: ""
+end
+
 # - - -
 
 Given (/^I posted a comment successfully$/) do
@@ -43,3 +47,4 @@ Given (/^There is a comment created$/) do
 
     @comment = Comment.find_by(content: "Comment Test")
 end
+
