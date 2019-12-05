@@ -1,7 +1,7 @@
 class CollegeWhitelistsController < ApplicationController
     before_action :require_logged_in_user
     before_action :set_college
-    before_action :set_college_whitelist, only: [:show, :edit, :update, :destroy]
+    before_action :set_college_whitelist, only: [:show, :edit, :destroy]
 
     def verify_permission
         if @college.request_to_participate == "0"
@@ -15,7 +15,7 @@ class CollegeWhitelistsController < ApplicationController
     # GET /college_whitelists.json
     def index
         if isPageAdmin(params[:college_id])
-            @college_whitelists = CollegeWhitelist.all
+            set_whitelist_by_college
             render :index
         else
             flash[:danger] = 'Área restrita. Você não é administrador da página.'
@@ -50,38 +50,10 @@ class CollegeWhitelistsController < ApplicationController
         end
     end    
 
-    def revoke
-        @college_whitelist = CollegeWhitelist.find(params[:college_whitelist_id])
+    def update
+        @college_whitelist = CollegeWhitelist.find(params[:id])
         respond_to do |format|
-            if @college_whitelist.update(status: :pending)
-                format.html { redirect_to college_college_whitelists_path }
-            else   
-                format.html { 
-                    flash[:danger] = "Não foi possível revogar a credencial do usuário para pendente."
-                    render :index 
-                }
-            end
-        end
-    end
-
-    def aprove
-        @college_whitelist = CollegeWhitelist.find(params[:college_whitelist_id])
-        respond_to do |format|
-            if @college_whitelist.update(status: :approved)
-                format.html { redirect_to college_college_whitelists_path }
-            else   
-                format.html { 
-                    flash[:danger] = "Não foi possível alterar a credencial do usuário para aprovado."
-                    render :index 
-                }
-            end
-        end
-    end
-
-    def reject
-        @college_whitelist = CollegeWhitelist.find(params[:college_whitelist_id])
-        respond_to do |format|
-            if @college_whitelist.update(status: :rejected)
+            if @college_whitelist.update(status: params[:college_whitelist][:status])
                 format.html { redirect_to college_college_whitelists_path }
             else   
                 format.html { 
@@ -107,6 +79,10 @@ class CollegeWhitelistsController < ApplicationController
             params.require(:college_whitelist).permit(:status)
         end
 
+        def set_whitelist_by_college
+            @college_whitelists = CollegeWhitelist.where(college_id: params[:college_id])
+        end
+
         def check_college_access_permission
             @college_whitelist = CollegeWhitelist.find_by(user_id: current_user.id, college_id: @college.id)
           if !@college_whitelist.nil?
@@ -128,5 +104,8 @@ class CollegeWhitelistsController < ApplicationController
           end
         end
 
-
+        def return_status_enum(status)
+            p status
+            CollegeWhitelist.statuses[status]
+        end
 end

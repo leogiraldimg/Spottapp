@@ -20,8 +20,14 @@ class CollegesController < ApplicationController
         @college.user = current_user
         if @college.save
             current_user.favorites << @college
-            flash[:sucess] = 'Faculdade cadastrada com sucesso'
-            redirect_to root_url
+            @cw = CollegeWhitelist.new(college: @college, user: current_user, status: "approved")
+            if @cw.save
+                flash[:sucess] = 'Faculdade cadastrada com sucesso'
+                redirect_to root_url
+            else
+                flash[:danger] = 'Ocorreu um erro com o cadastro'
+                render 'new'
+            end
         else
             render 'new'
         end
@@ -63,6 +69,8 @@ class CollegesController < ApplicationController
 
     def destroy
         @college = College.find(params[:id])
+        @college_whitelist = CollegeWhitelist.find_by(college_id: @college.id)
+        @college_whitelist.destroy
         @college.destroy
         notice = "A página do(a) #{@college.name} foi deletada."
         flash[:success] = notice

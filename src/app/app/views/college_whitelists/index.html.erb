@@ -21,8 +21,8 @@
                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
                   <td class="column-btn">
                     <div class="btn-area">
-                      <%= button_to 'Aprovar', { action: "aprove", :college_whitelist => {:status => college_whitelist.status}, :college_id => college_whitelist.college.id, :college_whitelist_id => college_whitelist.id }, method: "patch", class: "botao super small" %>
-                      <%= button_to 'Rejeitar', { action: "reject", :college_whitelist => {:status => college_whitelist.status}, :college_id => college_whitelist.college.id, :college_whitelist_id => college_whitelist.id }, method: "patch", class: "botao super small" %>
+                      <%= button_to 'Aprovar', { action: "update", :college_whitelist => {:status => :approved}, :college_id => college_whitelist.college_id, :id => college_whitelist.id}, method: "patch", class: "botao super small" %>
+                      <%= button_to 'Rejeitar', { action: "update", :college_whitelist => {:status => :rejected}, :college_id => college_whitelist.college_id, :id => college_whitelist.id}, method: "patch", class: "botao super small" %>
                     </div>
                   </td>
                 </tr>
@@ -46,7 +46,9 @@
               <% if (college_whitelist.status == 'approved') %>
                 <tr>
                   <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
-                  <td class="column-btn"><%= button_to 'Revogar', { action: "revoke", :college_whitelist => {:status => college_whitelist.status}, :college_id => college_whitelist.college.id, :college_whitelist_id => college_whitelist.id }, method: "patch", class: "botao super small" %></td>
+                  <% if !isUserAdminOfPage(college_whitelist.college.id, college_whitelist.user.id) %>
+                    <td class="column-btn"><%= button_to 'Revogar', { action: "update", :college_whitelist => {:status => :pending}, :college_id => college_whitelist.college_id, :id => college_whitelist.id}, method: "patch", class: "botao super small" %></td>
+                  <% end %>
                 </tr>
               <% end %>
             <% end %>
@@ -68,7 +70,7 @@
               <% if (college_whitelist.status == 'rejected') %>
                   <tr>
                     <td class="column-name"><%= college_whitelist.user.first_name + ' ' + college_whitelist.user.last_name %></td>
-                    <td class="column-btn"><%= button_to 'Revogar', { action: "revoke", :college_whitelist => {:status => college_whitelist.status}, :college_id => college_whitelist.college.id, :college_whitelist_id => college_whitelist.id }, method: "patch", class: "botao super small" %></td>
+                    <td class="column-btn"><%= button_to 'Revogar', { action: "update", :college_whitelist => {:status => :pending}, :college_id => college_whitelist.college_id, :id => college_whitelist.id}, method: "patch", class: "botao super small" %></td>
                   </tr>
               <% end %>
             <% end %>
