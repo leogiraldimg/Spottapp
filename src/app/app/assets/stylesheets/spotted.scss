@@ -191,10 +191,11 @@ h2.title {
 
 #show .container-right .scroll {
     width: 100%;
-    height: calc(100% - 60px);
-    height: -moz-calc(100% - 60px);
-    height: -webkit-calc(100% - 60px);
+    height: calc(100% - 66px);
+    height: -moz-calc(100% - 66px);
+    height: -webkit-calc(100% - 66px);
     height: -o-calc(100% - 60px);
+    padding-top: 10px;
     overflow: auto;
 }
 

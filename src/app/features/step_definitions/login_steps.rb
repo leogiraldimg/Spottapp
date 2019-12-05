@@ -11,6 +11,16 @@ Then (/^I should see the initial user page$/) do
     expect(page).to have_xpath('.//input[@id="pages-menu-access"]') 
 end
 
+When(/^I fill the login form with invalid login information$/) do
+    fill_in "Email ou usuário", :with => "email errado"
+    fill_in "Senha", :with => "senha errada"
+end
+
+Then("I should see the failed toast") do
+    expect(page).to have_xpath('.//div[@class="alert alert-danger alert-dismissible"]')
+end
+
+
 # - - -
 
 Given (/^I logged in successfully$/) do

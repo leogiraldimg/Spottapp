@@ -6,6 +6,10 @@ And(/^I should see my new spotted on the timeline$/) do
     expect(page).to have_xpath('.//div', text: "Spotted Teste")
 end
 
+When("I dont fill the content spotted field") do
+    fill_in "spotted[content]", with: ""
+end
+
 # - - -
 
 Given (/^I posted a spotted successfully on the college page$/) do
@@ -38,7 +42,7 @@ Given (/^I posted a spotted successfully on my college page$/) do
     @spotted = Spotted.find_by(content: "Spotted")
 end
 
-Given (/^There is a spotted$/) do
+Given (/^There is a spotted created$/) do
     steps %Q{
         Given There is a college page created
     }

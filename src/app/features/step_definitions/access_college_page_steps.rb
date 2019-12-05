@@ -15,6 +15,10 @@ Then (/^I should see the UT003 college page$/) do
     expect(page).to have_xpath('.//h2', text: "Universidade Teste 003")
 end
 
+Then("I should see empty college page menu") do
+    page.should have_no_content('#star-white')
+end
+
 # - - -
 
 Given (/^I accessed a college page successfully$/) do
@@ -40,4 +44,8 @@ Given (/^I accessed my college page successfully$/) do
         When I click on my college page link
         Then I should see my college page
     }
+end
+
+Given /^I am on the college page$/ do
+    visit college_spotteds_path(@college.id)
 end

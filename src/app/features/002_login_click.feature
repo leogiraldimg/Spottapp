@@ -12,3 +12,9 @@ Scenario: student clicks the login button
     When I fill the login form with login information
     And I click the Entrar button
     Then I should see the initial user page
+
+Scenario: student fill user login with invalid data
+    Given I am on the login page
+    When I fill the login form with invalid login information
+    And I click the Entrar button
+    Then I should see the failed toast
