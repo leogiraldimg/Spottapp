@@ -98,3 +98,5 @@ gem 'image_processing', '~> 1.2'
 gem "paperclip", "~> 5.0.0"
 
 gem 'httparty'
+
+gem 'simplecov', require: false, group: :test
