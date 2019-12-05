@@ -1,8 +1,8 @@
 # Spottapp
 
 [![Build Status](https://travis-ci.com/leogiraldimg/Spottapp.svg?branch=master)](https://travis-ci.com/leogiraldimg/Spottapp)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/leogiraldimg/Spottapp/)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/leogiraldimg/Spottapp/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ed33b6e8264263b634fd/maintainability)](https://codeclimate.com/github/leogiraldimg/Spottapp/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ed33b6e8264263b634fd/test_coverage)](https://codeclimate.com/github/leogiraldimg/Spottapp/test_coverage)
 
 ## Plataformas
 
