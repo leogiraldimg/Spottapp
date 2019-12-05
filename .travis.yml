@@ -4,6 +4,10 @@ rvm:
 gemfile:
   - src/app/Gemfile
 
+env:
+  global:
+    CC_TEST_REPORTER_ID=3310f767d6611bd1260e96aa6b5b6625cdcf72c4d942a8541903d77b96733bc6
+
 before_install:
   - cd ./src/app
   - gem install rails
@@ -15,6 +19,8 @@ before_install:
   - psql -c 'CREATE USER railsuser SUPERUSER INHERIT CREATEDB CREATEROLE' -U postgres
   - psql -c "alter user railsuser with password 'Rails@123'" -U postgres
   - sudo apt-get install imagemagick
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
 
 script:
   - rails db:migrate
@@ -24,4 +30,7 @@ services:
   - postgresql
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json # Format backend coverage
+  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info  # Format frontend coverage
+  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
+  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
