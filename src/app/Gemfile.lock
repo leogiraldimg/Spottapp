@@ -179,7 +179,7 @@ GEM
       mimemagic (~> 0.3.0)
     pg (1.1.4)
     public_suffix (3.1.1)
-    puma (3.12.1)
+    puma (3.12.2)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -325,7 +325,7 @@ DEPENDENCIES
   mail_form
   paperclip (~> 5.0.0)
   pg
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 5.2.3)
   rails-controller-testing
   rake (~> 12.3, >= 12.3.2)
