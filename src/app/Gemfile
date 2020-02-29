@@ -83,7 +83,7 @@ group :test do
   gem 'database_cleaner'
 end
 
-gem 'rake', '~> 12.3', '>=12.3.2'
+gem 'rake', '~> 12.3'
 gem 'therubyracer'
 gem 'execjs'
 
