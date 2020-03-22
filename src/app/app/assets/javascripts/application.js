@@ -41,29 +41,43 @@ $(document).ready(function(){
     // Menu de Faculdades
     $('.colleges#index .collegebox .college').click(function(){
 
-        // Fecha o college aberto (se houver)
-        if( $('.colleges#index .collegebox .college.open').length ) {
-            $('.colleges#index .collegebox .college.open').children('.details').slideUp(400);
-            $('.colleges#index .collegebox .college.open').removeClass('open');
+        // Se o college selecionado é o que estava aberto, apenas fecha
+        if( $(this).hasClass('open') ) {
+            $(this).children('.details').slideUp(400);
+            $(this).removeClass('open');
         }
+        else {
+            // Fecha o college aberto (se houver)
+            if( $('.colleges#index .collegebox .college.open').length ) {
+                $('.colleges#index .collegebox .college.open').children('.details').slideUp(400);
+                $('.colleges#index .collegebox .college.open').removeClass('open');
+            }
 
-        // Abre o college selecionado
-        $(this).addClass('open');
-        $(this).children('.details').slideDown(400);
+            // Abre o college selecionado
+            $(this).addClass('open');
+            $(this).children('.details').slideDown(400);
+        }
     });
 
     // Menu de Faculdades Favoritas
     $('.favorite_colleges#show .collegebox .college').click(function(){
 
-        // Fecha o college aberto (se houver)
-        if( $('.favorite_colleges#show .collegebox .college.open').length ) {
-            $('.favorite_colleges#show .collegebox .college.open').children('.details').slideUp(400);
-            $('.favorite_colleges#show .collegebox .college.open').removeClass('open');
+        // Se o college selecionado é o que estava aberto, apenas fecha
+        if( $(this).hasClass('open') ) {
+            $(this).children('.details').slideUp(400);
+            $(this).removeClass('open');
         }
+        else {
+            // Fecha o college aberto (se houver)
+            if( $('.favorite_colleges#show .collegebox .college.open').length ) {
+                $('.favorite_colleges#show .collegebox .college.open').children('.details').slideUp(400);
+                $('.favorite_colleges#show .collegebox .college.open').removeClass('open');
+            }
 
-        // Abre o college selecionado
-        $(this).addClass('open');
-        $(this).children('.details').slideDown(400);
+            // Abre o college selecionado
+            $(this).addClass('open');
+            $(this).children('.details').slideDown(400);
+        }
     });
 });
 
