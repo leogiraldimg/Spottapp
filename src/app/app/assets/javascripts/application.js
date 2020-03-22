@@ -35,27 +35,36 @@ function resizeIcons() {
 $( window ).on( 'load', resizeIcons );
 $( window ).on( 'resize', resizeIcons );
 
+// Ver detalhes de uma faculdade na lista de faculdades
 $(document).ready(function(){
 
-    var htmlClasses = ['.favorite_colleges#show .jumbotron .collegebox .college', '.colleges#index .jumbotron .collegebox .college'];
+    // Menu de Faculdades
+    $('.colleges#index .collegebox .college').click(function(){
 
-    for(var i = 0; i<htmlClasses.length; i++) {
+        // Fecha o college aberto (se houver)
+        if( $('.colleges#index .collegebox .college.open').length ) {
+            $('.colleges#index .collegebox .college.open').children('.details').slideUp(400);
+            $('.colleges#index .collegebox .college.open').removeClass('open');
+        }
 
-        $(htmlClasses[i]).click(function() {
-            var $this = $(this).children('.details');
-    
-            var openDetails = $(htmlClasses[i] + ' .details').not($this).filter(function () { 
-                return this.style.display == 'block' 
-            });
-            openDetails.css('display', 'none');
-    
-            if( $this.css('display') === 'block' ){
-                $this.css('display', 'none');
-            } else {
-                $this.css('display', 'block');
-            }
-        });
-    }
+        // Abre o college selecionado
+        $(this).addClass('open');
+        $(this).children('.details').slideDown(400);
+    });
+
+    // Menu de Faculdades Favoritas
+    $('.favorite_colleges#show .collegebox .college').click(function(){
+
+        // Fecha o college aberto (se houver)
+        if( $('.favorite_colleges#show .collegebox .college.open').length ) {
+            $('.favorite_colleges#show .collegebox .college.open').children('.details').slideUp(400);
+            $('.favorite_colleges#show .collegebox .college.open').removeClass('open');
+        }
+
+        // Abre o college selecionado
+        $(this).addClass('open');
+        $(this).children('.details').slideDown(400);
+    });
 });
 
 $(document).ready(function(){
