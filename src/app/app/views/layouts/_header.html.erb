@@ -11,17 +11,17 @@
             
             <div class="big-screen">
                 <% if user_signed_in? %>
-                    <%= link_to image_tag('logo2-small.png'), user_path(current_user), class: 'navbar-brand' %>
+                    <%= link_to image_tag('spottapp_logo.svg', height: "45"), user_path(current_user), class: 'navbar-brand' %>
                 <% else %>
-                    <%= link_to image_tag('logo2-small.png'), root_url, class: 'navbar-brand' %>
+                    <%= link_to image_tag('spottapp_logo.svg', height: "45"), root_url, class: 'navbar-brand' %>
                 <% end %>
             </div>
 
             <div class="small-screen">
                 <% if user_signed_in? %>
-                    <%= link_to image_tag('logo3-small.png'), user_path(current_user), class: 'navbar-brand' %>
+                    <%= link_to image_tag('spottapp_icon_logo.svg', height: "45"), user_path(current_user), class: 'navbar-brand' %>
                 <% else %>
-                    <%= link_to image_tag('logo3-small.png'), root_url, class: 'navbar-brand' %>
+                    <%= link_to image_tag('spottapp_icon_logo.svg', height: "45"), root_url, class: 'navbar-brand' %>
                 <% end %>
             </div>
         </div>

@@ -1,156 +1,159 @@
 <% content_for :for_head do %>
-    <style>
-        <%= @college_style %>
-    </style>
-    <link href="<%= @font_google_link %>" rel='stylesheet'>
+<style>
+    <%= @college_style %>
+</style>
+<link href="<%= @font_google_link %>" rel='stylesheet'>
 <% end %>
 
-<h2 class="title"><%= @college.name %>
+<div class="spotteds" id="index">
 
-<% if isPageAdmin(@college.id) %>
-    <td style="text-align: center"><%= link_to image_tag('star-bigger-purple.png'), favorite_college_path(@college, type: "admin"), method: :put, id: "star-purple" %></td>
-<% else %>
-    <% if already_favorited(@college.id) %>
-        <td style="text-align: center"><%= link_to image_tag('star-bigger.png'), favorite_college_path(@college, type: "unfavorite"), method: :put, id: "star" %></td>
-    <% else %>
-        <td style="text-align: center"><%= link_to image_tag('star-bigger-white.png'), favorite_college_path(@college, type: "favorite"), method: :put, id: "star-white" %></td>
-    <% end %>
-<% end %>
+    <h2 class="title"><%= @college.name %>
 
-</h2>
-
-<div class="container-area" id="index">
-
-    <div class="container-left"> 
-        <div class="details">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="col1"></th>
-                        <th class="col2"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Nome</td>
-                        <td><%= @college.name %></td>
-                    </tr>
-                    <tr>
-                        <td>Sigla</td>
-                        <td><%= @college.initials %></td>
-                    </tr>
-                    <tr>
-                        <td>Cidade</td>
-                        <td><%= @college.city %></td>
-                    </tr>
-                    <tr>
-                        <td>Estado</td>
-                        <td><%= @college.state %></td>
-                    </tr>
-                    <tr>
-                        <td>País</td>
-                        <td><%= @college.country %></td>
-                    </tr>
-                    <tr>
-                        <td>Unidade</td>
-                        <td><%= @college.unit %></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="botoes">
-            <br>
-            <%= button_to 'Novo spotted', new_college_spotted_path, method: "get", action: "create", class: 'botao' %>
-
-            <% if isPageAdmin(@college.id) %>
-                <%= button_to "Editar", edit_college_path(@college.id), method: "get", action: "edit", class: 'botao', id: "editar-button" %>
+        <% if isPageAdmin(@college.id) %>
+            <td style="text-align: center"><%= link_to image_tag('pink_star.svg'), favorite_college_path(@college, type: "admin"), method: :put, id: "star-purple" %></td>
+        <% else %>
+            <% if already_favorited(@college.id) %>
+                <td style="text-align: center"><%= link_to image_tag('yellow_star.svg'), favorite_college_path(@college, type: "unfavorite"), method: :put, id: "star" %></td>
+            <% else %>
+                <td style="text-align: center"><%= link_to image_tag('white_star.svg'), favorite_college_path(@college, type: "favorite"), method: :put, id: "star-white" %></td>
             <% end %>
-
-            <%= button_to 'Voltar', colleges_path, method: "get", class: 'botao' %>
-        </div>
-    </div>
-
-    <div class="panel panel-default">
-        <% @spotteds.reverse_each do |spotted| %>
-            <div class="panel-body">
-            <div class="drop2">
-                <div class="dropdown">
-                    <a class="dropdown-toggle2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                    </a>
-                    <% if already_favorited_spotted(spotted.id) %>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li>
-                                <%= link_to favorite_spotted_path(spotted, type: "unfavorite"), method: :put, id: "desativar-not"  do %>
-                                    Desativar notificações 
-                                <% end %>
-                            </li>
-                        </ul>
-                    <% else %>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li>
-                                <%= link_to favorite_spotted_path(spotted, type: "favorite"), method: :put, id: "ativar-not"  do %>
-                                    Ativar notificações
-                                <% end %>
-                            </li>
-                        </ul>
-                <% end %>
-            </div>
-            </div>
-                <div class="spotted-content">
-                    <div class="spotted-number">
-                        <%= link_to college_spotted_path(:college_id, spotted.id) do %>
-                            Spotted <%= spotted.college_spotted_counter %>
-                        <% end %>
-                     </div> 
-                    <div class="spotted-text">
-                        <%= simple_format(spotted.content) %>
-                    </div>
-                    <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
-                    <% like_count = spotted.like.count %>
-                    <p>
-                        <% link = '' %>
-                        <% if pre_like %>
-                            <% link = (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
-                        <% else %>
-                            <%if like_count >= 1 %>
-                                <% link = (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
-                            <% else %>
-                            <% end %>
-                        <% end %>
-                        <%= link_to link, list_likes_path(spotted_id: spotted.id), {:remote => true, 'data-toggle' => "modal", 'data-target' => "#modal-window"}%>
-                    </p>
-                </div>
-                <div class="spotted-options">
-                    <div class="thumbs">
-                        <% if pre_like %> 
-                            <%= link_to spotted_like_path(spotted, pre_like), method: :delete do %>
-                                <i class="fa fa-thumbs-up fa-2x"  style="color:black"></i> 
-                            <% end %>
-                        <% else %>
-                            <%= link_to spotted_likes_path(spotted), method: :post do %>
-                                <i class="fa fa-thumbs-o-up fa-2x"  style="color:black"></i> 
-                            <% end %>
-                        <% end %>
-                    </div>
-                    <div class="trash">
-                        <% if isPageAdmin(@college.id) %> 
-                            <%= link_to college_spotted_path(:college_id, spotted.id), method: :delete, data: { confirm: "Você tem certeza que deseja apagar este spotted? Essa ação não pode ser desfeita." }, id: "trash-bt" do %>
-                                <i class="fa fa-trash fa-2x"  style="color:black"></i> 
-                            <% end %>
-                        <% end %>
-                    </div>
-                    <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content"></div>
-                        </div>
-                    </div>
-                    <%= button_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), method: "get", class: 'botao small' %>
-                </div>
-            </div>
         <% end %>
+
+    </h2>
+
+    <div class="container-area">
+
+        <div class="container-left"> 
+            <div class="details">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col1"></th>
+                            <th class="col2"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nome</td>
+                            <td><%= @college.name %></td>
+                        </tr>
+                        <tr>
+                            <td>Sigla</td>
+                            <td><%= @college.initials %></td>
+                        </tr>
+                        <tr>
+                            <td>Cidade</td>
+                            <td><%= @college.city %></td>
+                        </tr>
+                        <tr>
+                            <td>Estado</td>
+                            <td><%= @college.state %></td>
+                        </tr>
+                        <tr>
+                            <td>País</td>
+                            <td><%= @college.country %></td>
+                        </tr>
+                        <tr>
+                            <td>Unidade</td>
+                            <td><%= @college.unit %></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="botoes">
+                <br>
+                <%= button_to 'Novo spotted', new_college_spotted_path, method: "get", action: "create", class: 'botao' %>
+
+                <% if isPageAdmin(@college.id) %>
+                    <%= button_to "Editar", edit_college_path(@college.id), method: "get", action: "edit", class: 'botao', id: "editar-button" %>
+                <% end %>
+
+                <%= button_to 'Voltar', colleges_path, method: "get", class: 'botao' %>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <% @spotteds.reverse_each do |spotted| %>
+                <div class="panel-body">
+                    <div class="drop2">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                            </a>
+                            <% if already_favorited_spotted(spotted.id) %>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <%= link_to favorite_spotted_path(spotted, type: "unfavorite"), method: :put, id: "desativar-not"  do %>
+                                            Desativar notificações 
+                                        <% end %>
+                                    </li>
+                                </ul>
+                            <% else %>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <%= link_to favorite_spotted_path(spotted, type: "favorite"), method: :put, id: "ativar-not"  do %>
+                                            Ativar notificações
+                                        <% end %>
+                                    </li>
+                                </ul>
+                        <% end %>
+                    </div>
+                </div>
+                    <div class="spotted-content">
+                        <div class="spotted-number">
+                            <%= link_to college_spotted_path(:college_id, spotted.id) do %>
+                                Spotted <%= spotted.college_spotted_counter %>
+                            <% end %>
+                        </div> 
+                        <div class="spotted-text">
+                            <%= simple_format(spotted.content) %>
+                        </div>
+                        <% pre_like = spotted.like.find { |like| like.user_id == current_user.id} %>
+                        <% like_count = spotted.like.count %>
+                        <p>
+                            <% link = '' %>
+                            <% if pre_like %>
+                                <% link = (like_count) == 1 ? 'Você curtiu' : (like_count - 1) < 2 ? 'Você e mais ' + (like_count - 1).to_s + ' pessoa curtiu' : 'Você e mais ' + (like_count - 1).to_s + ' pessoas curtiram' %>
+                            <% else %>
+                                <%if like_count >= 1 %>
+                                    <% link = (like_count) == 1 ? 'Uma pessoa curtiu' : like_count.to_s + ' pessoas curtiram' %>
+                                <% else %>
+                                <% end %>
+                            <% end %>
+                            <%= link_to link, list_likes_path(spotted_id: spotted.id), {:remote => true, 'data-toggle' => "modal", 'data-target' => "#modal-window"}%>
+                        </p>
+                    </div>
+                    <div class="spotted-options">
+                        <div class="thumbs">
+                            <% if pre_like %> 
+                                <%= link_to spotted_like_path(spotted, pre_like), method: :delete do %>
+                                    <i class="fa fa-thumbs-up fa-2x"  style="color:black"></i> 
+                                <% end %>
+                            <% else %>
+                                <%= link_to spotted_likes_path(spotted), method: :post do %>
+                                    <i class="fa fa-thumbs-o-up fa-2x"  style="color:black"></i> 
+                                <% end %>
+                            <% end %>
+                        </div>
+                        <div class="trash">
+                            <% if isPageAdmin(@college.id) %> 
+                                <%= link_to college_spotted_path(:college_id, spotted.id), method: :delete, data: { confirm: "Você tem certeza que deseja apagar este spotted? Essa ação não pode ser desfeita." }, id: "trash-bt" do %>
+                                    <i class="fa fa-trash fa-2x"  style="color:black"></i> 
+                                <% end %>
+                            <% end %>
+                        </div>
+                        <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content"></div>
+                            </div>
+                        </div>
+                        <%= button_to 'Ver spotted', college_spotted_path(:college_id, spotted.id), method: "get", class: 'botao small' %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+
+        <div id="clear"></div>
+
     </div>
-
-    <div id="clear"></div>
-
 </div>

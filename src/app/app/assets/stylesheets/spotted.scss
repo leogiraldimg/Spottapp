@@ -2,94 +2,98 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h2.title {
+.spotteds#index h2.title {
+    margin: 0 0 10px 0;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 0px #000;
     background-color: #FFFFFFE0;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 40px;
-    padding: 10px;
+    padding: 5px 14px;
     text-align: center;
 }
 
-#index {
+.spotteds#index h2.title img {
+    width: 27px;
+    padding-bottom: 6px;
+}
+
+.spotteds#index .container-area {
     width: 100%;
     height: 67vh;
 }
 
-#index .container-left {
+.spotteds#index .container-left {
     float: left;
     width: 25%;
     height: 100%;
     background-color: #FFFFFFE0;
-    border-radius: 20px;
-    border-style: solid;
-    border-width: 1px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 3px 0px #000;
 }
 
-#index .container-left .details {
+.spotteds#index .container-left .details {
     overflow: scroll;
     padding: 10px 0px 0px 10px;
 }
 
-#index .container-left .details table {
+.spotteds#index .container-left .details table {
     border-collapse: collapse;
     width: 100%;
     font-size: 14px;
 }
 
-#index .container-left table td {
+.spotteds#index .container-left table td {
     text-align: left;
     vertical-align: bottom;
     padding: 1px;
 }
 
-#index .container-left table thead th.col1 {
+.spotteds#index .container-left table thead th.col1 {
     width: 30%;
 }
 
-#index .botoes {
+.spotteds#index .botoes {
     text-align: center;
     width: 100%;
 }
 
-#index .panel.panel-default {
+.spotteds#index .panel.panel-default {
     width: 70%;
     height: 100%;
     float: right;
     overflow: auto;
     border-style: none;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: transparent;
 }
 
-#index .panel.panel-default .panel-body {
-    border-radius: 20px;
-    border-width: 1px;
-    border-color: #000000;
-    border-style: solid;
+.spotteds#index .panel.panel-default .panel-body {
+    border-radius: 10px;
+    border: 1px solid #000;
     margin-bottom:10px;
     background-color: #FFFFFF;
 }
 
-#index .spotted-content .spotted-number {
+.spotteds#index .spotted-content .spotted-number {
     text-align: center;
     text-decoration: underline;
 }
 
-#index .spotted-content .spotted-text {
+.spotteds#index .spotted-content .spotted-text {
     overflow: auto;
 }
 
-#index .spotted-options {
+.spotteds#index .spotted-options {
     display: flex;
 }
 
-#index .thumbs {
+.spotteds#index .thumbs {
     align-self: flex-end;
     padding-bottom: 2px;
 }
 
-#index .trash {
+.spotteds#index .trash {
     margin: 0px 4px;
 }
 
@@ -97,7 +101,7 @@ h2.title {
     clear: both;
 } 
 
-#index .drop2 .dropdown {
+.spotteds#index .drop2 .dropdown {
     float: right;
     height: 100%;
     padding-left: 15px;
@@ -105,12 +109,12 @@ h2.title {
 }
  
 @media (max-width: 800px) {
-    #index .container-left {
+    .spotteds#index .container-left {
         width: 100%;
         height: auto;
     }
     
-    #index .panel.panel-default {
+    .spotteds#index .panel.panel-default {
         width: 100%;
         height: 60vh;
         overflow: auto;
