@@ -7,19 +7,7 @@
 
 <div class="spotteds" id="new">
 
-    <h2 class="title"><%= @college.name %>
-
-        <% if isPageAdmin(@college.id) %>
-            <td style="text-align: center"><%= link_to image_tag('pink_star.svg'), favorite_college_path(@college, type: "admin"), method: :put, id: "star-purple" %></td>
-        <% else %>
-            <% if already_favorited(@college.id) %>
-                <td style="text-align: center"><%= link_to image_tag('yellow_star.svg'), favorite_college_path(@college, type: "unfavorite"), method: :put, id: "star" %></td>
-            <% else %>
-                <td style="text-align: center"><%= link_to image_tag('white_star.svg'), favorite_college_path(@college, type: "favorite"), method: :put, id: "star-white" %></td>
-            <% end %>
-        <% end %>
-
-    </h2>
+    <h2 class="title">Novo spotted</h2>
 
     <div class="spotted-content">
         <%= form_for(@spotted, url: college_spotteds_path) do |f| %>
