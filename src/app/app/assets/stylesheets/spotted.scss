@@ -73,19 +73,28 @@
     border: 1px solid #000;
     margin-bottom:10px;
     background-color: #FFFFFF;
+    padding: 0;
 }
 
 .spotteds#index .spotted-content .spotted-number {
     text-align: center;
     text-decoration: underline;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
 }
 
 .spotteds#index .spotted-content .spotted-text {
     overflow: auto;
+    padding: 10px 0;
+}
+
+.spotteds#index .spotted-content p {
+    padding: 0 10px;
 }
 
 .spotteds#index .spotted-options {
     display: flex;
+    padding: 0 10px 5px 10px;
 }
 
 .spotteds#index .thumbs {
@@ -127,7 +136,7 @@
     border-style: solid;
     border-width: 1px;
     border-color: #000000;
-    border-radius: 18px;
+    border-radius: 6px;
 }
 
 #show .container-left {
@@ -235,14 +244,28 @@
     }
 }
 
+.spotteds#new h2.title {
+    margin: 0 0 10px 0;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 0px #000;
+    background-color: #FFFFFFE0;
+    padding: 5px 14px;
+    text-align: center;
+}
+
+.spotteds#new h2.title img {
+    width: 27px;
+    padding-bottom: 6px;
+}
+
 #new .spotted-content {
     width: 50%;
     text-align: center;
     background-color: #FFFFFFE0;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 18px;
-    border-color: #000000;
+    border: 1px solid #000;
+    border-radius: 6px;
+    box-shadow: 0px 0px 3px 0px #000;
     margin: auto;
 }
 
